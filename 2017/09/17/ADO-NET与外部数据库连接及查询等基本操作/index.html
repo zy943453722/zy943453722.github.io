@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content=".net,c#," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="#建立与数据库连接：**需要连接字符串，用到System.Data.SqlClient类库。方法：  使用一个类构建SQL Server 连接字符串-  创建SqlconnectionStringBuider实例 - 根据需要设置其属性 - 访问该对象的ConnectionString属性  与SQL Server数据库建立连接 - 生成一个指向该数据库的连接字符串 - 创建SqlConnecti">
+<meta name="keywords" content=".net,c#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ADO.NET与外部数据库连接及查询等基本操作">
+<meta property="og:url" content="http://yoursite.com/2017/09/17/ADO-NET与外部数据库连接及查询等基本操作/index.html">
+<meta property="og:site_name" content="悲伤逆流">
+<meta property="og:description" content="#建立与数据库连接：**需要连接字符串，用到System.Data.SqlClient类库。方法：  使用一个类构建SQL Server 连接字符串-  创建SqlconnectionStringBuider实例 - 根据需要设置其属性 - 访问该对象的ConnectionString属性  与SQL Server数据库建立连接 - 生成一个指向该数据库的连接字符串 - 创建SqlConnecti">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-17T07:39:28.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ADO.NET与外部数据库连接及查询等基本操作">
+<meta name="twitter:description" content="#建立与数据库连接：**需要连接字符串，用到System.Data.SqlClient类库。方法：  使用一个类构建SQL Server 连接字符串-  创建SqlconnectionStringBuider实例 - 根据需要设置其属性 - 访问该对象的ConnectionString属性  与SQL Server数据库建立连接 - 生成一个指向该数据库的连接字符串 - 创建SqlConnecti">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/17/ADO-NET与外部数据库连接及查询等基本操作/"/>
+
+
+
+
+
+  <title>ADO.NET与外部数据库连接及查询等基本操作 | 悲伤逆流</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">悲伤逆流</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/ADO-NET与外部数据库连接及查询等基本操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/boys.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悲伤逆流">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ADO.NET与外部数据库连接及查询等基本操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T15:37:04+08:00">
+                2017-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#建立与数据库连接：<br>**需要连接字符串，用到System.Data.SqlClient类库。<br>方法：</p>
+<ul>
+<li>使用一个类构建SQL Server 连接字符串<pre><code>-  创建SqlconnectionStringBuider实例
+- 根据需要设置其属性
+- 访问该对象的ConnectionString属性
+</code></pre></li>
+<li><p>与SQL Server数据库建立连接</p>
+<pre><code>- 生成一个指向该数据库的连接字符串
+- 创建SqlConnection实例，向构造函数传递连接字符串
+- 调用Sqlconnection实例的open方法
+</code></pre><h2 id="代码实例："><a href="#代码实例：" class="headerlink" title="代码实例："></a>代码实例：</h2><pre><code>   /*建立连接字符串生成器*/
+SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
+
+ /*能连上本地服务器，以windows身份登录*/
+if (LocalServer.Checked == true)
+          connection.DataSource = &quot;(local)&quot;;
+
+         /*以sql身份登录*/
+ else
+           connection.DataSource = ServerName.Text;
+
+    /*若sql server是express版本*/
+ if (IsExpressEdition.Checked == true)
+           connection.DataSource += @&quot;\SQLEXPRESS&quot;;
+
+    /*基于当前windows登陆的集成安全验证*/
+ if(AuthenticateWindows.Checked == true)
+ {
+      connection.IntegratedSecurity = true;
+ }                       
+ else
+ {
+     connection.IntegratedSecurity = false;//基于SQL用户的安全验证
+     connection.UserID = UserName.Text;
+     connection.Password = UserPassword.Text;
+ }
+     SqlConnection linkToDB = new SqlConnection(connection.ConnectionString);//新建连接对象
+     linkToDB.Open();//打开数据库连接
+         linkToDB.close();//关闭数据库，或用dispose方法，或者用using语句就会自动关闭
+</code></pre><p>#对数据库进行查询、修改、更新、删除等操作：<br>**需要用到System.Data.SqlClient类库中的sqlcommand类<br>方法：</p>
+</li>
+<li><p>通过一个ADO.NET连接运行SQL查询</p>
+<pre><code>-  创建Sqlcommandr实例
+- 将其CommandText属性设置为SQL语句
+- 将其Connection属性设置为一个有效的Sqlconnection实例
+- 调用这个命令对象的ExecuteNonQuery方法
+</code></pre></li>
+<li><p>调用一个返回静态结果的SQL Server存储过程</p>
+<pre><code>-  创建Sqlcommandr实例
+- 将其CommandText属性设置为这个存储过程的名字
+- 将其Connection属性设置为一个有效的Sqlconnection实例
+- 调用这个命令对象的ExecuteScalar方法，捕获返回值
+</code></pre></li>
+</ul>
+<h2 id="代码实例：-1"><a href="#代码实例：-1" class="headerlink" title="代码实例："></a>代码实例：</h2><pre><code>     /*对于对数据库采取操作但不返回存储数据的服务*/
+   string sqlText = @&quot;UPDATE WorkTable SET ProcessedOn = GETDATE() WHERE ProcessedOn IS NULL&quot;;
+
+  SqlCommand dataAction = new SqlCommand(sqlText, linkToDB);
+  dataAction.ExecuteNonQuery();
+
+      /*对于返回单个值的查询*/
+string sqlText1 = &quot;select count(*) from WorkTable&quot;;
+
+SqlCommand dataAction1 = new SqlCommand(sqlText1, linkToDB);
+
+int total = (int)dataAction1.ExecuteScalar();//返回单个值
+
+      /*对于返回数据行的操作*/
+      string sqlText2 = &quot;select ID,FullName,ZipCode from Customer&quot;;
+
+   SqlCommand dataAction2 = new SqlCommand(sqlText2, linkToDB);
+
+   SqlDataReader scanCustomer = dataAction2.ExecuteReader();//一次返回一个数据行
+
+   if (scanCustomer.HasRows)
+       while (scanCustomer.Read());
+
+     /*对于访问字段的值，用访问器*/
+     result = scanCustomer[0];//从起始位置查找
+      result = scanCustomer[“ID”];//按列名称查找
+  scanCustomer.NextResult();//若有多个列的返回时
+
+     /*查询中存在参数时，用@标识符替代*/
+     string test = @&quot;update Employee set Salary = @NewSalary where ID = @EmployeeID&quot;；
+
+  SqlCommand salaryUpadate = new SqlCommand(test, linkToDB);
+
+   paramValue.Value = 50000m;//设置参数的值
+
+   salaryUpadate.Parameters.Add(paramValue);//获取参数的值到原来的字符串中
+
+    salaryUpadate.Parameters.AddWithValue(&quot;@NewSalary&quot;, 50000m);//另外一种实例化方式，用于简单的参数时
+
+    salaryUpadate.ExecuteNonQuery();
+
+  /*对于存储过程的查询时*/
+  string test1 = &quot;dbo.AddLocation&quot;;//创建存储过程的字符串
+
+   SqlCommand locationCommand = new SqlCommand(test1, linkToDB);
+
+   locationCommand.CommandType = CommandType.StoredProcedure;//把数据库命令的类型设置成存储过程
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/net/" rel="tag"># .net</a>
+          
+            <a href="/tags/c/" rel="tag"># c#</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/14/c-重载覆盖隐藏的区别和执行方式/" rel="next" title="c++重载覆盖隐藏的区别和执行方式">
+                <i class="fa fa-chevron-left"></i> c++重载覆盖隐藏的区别和执行方式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/boys.jpg"
+              alt="John Doe" />
+          
+            <p class="site-author-name" itemprop="name">John Doe</p>
+            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zy943453722" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="943453722@qq.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
+                  
+                    <i class="fa fa-fw fa-globe"></i>FB Page</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实例："><span class="nav-number">1.</span> <span class="nav-text">代码实例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实例：-1"><span class="nav-number">2.</span> <span class="nav-text">代码实例：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
