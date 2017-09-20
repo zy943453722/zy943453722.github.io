@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[浅析select函数及FD宏]]></title>
+    <url>%2F2017%2F09%2F19%2F%E6%B5%85%E6%9E%90select%E5%87%BD%E6%95%B0%E5%8F%8AFD%E5%AE%8F%2F</url>
+    <content type="text"><![CDATA[select函数这个函数允许进程指示内核等待多个事件中的任一个发生，并仅在一个或者多个事件发生或经过某指定时间后才唤醒进程。 函数原型：12345#include&lt;sys/select.h&gt;#include&lt;sys/time.h&gt;int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *exceptset, const struct timeval *timeout); 返回：准备好的描述字正数目，0表示超时，-1表示出错 函数参数解析： 参数maxfdp1指定被测试的描述字数目，即经过FD_SET之后，所关心的描述符的个数，（因为从0开始，因此一般这个值是测试描述符集下标最大值+1）并通知内核。 中间三个参数readset，writeset，exceptset指定我们要让内核测试读、写、异常条件所需的描述字。]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>网络编程，c</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[c++重载覆盖隐藏的区别和执行方式]]></title>
+    <url>%2F2017%2F09%2F14%2Fc-%E9%87%8D%E8%BD%BD%E8%A6%86%E7%9B%96%E9%9A%90%E8%97%8F%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E6%89%A7%E8%A1%8C%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[###]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ADO.NET与外部数据库连接及查询等基本操作]]></title>
+    <url>%2F2017%2F05%2F21%2FADO-NET%E4%B8%8E%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E5%8F%8A%E6%9F%A5%E8%AF%A2%E7%AD%89%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[建立与数据库连接:需要连接字符串，用到System.Data.SqlClient类库。 方法： 使用一个类构建SQL Server 连接字符串- 创建SqlconnectionStringBuider实例 - 根据需要设置其属性 - 访问该对象的ConnectionString属性 与SQL Server数据库建立连接 - 生成一个指向该数据库的连接字符串 - 创建SqlConnection实例，向构造函数传递连接字符串 - 调用Sqlconnection实例的open方法 代码实例： /*建立连接字符串生成器*/ SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder(); /*能连上本地服务器，以windows身份登录*/ if (LocalServer.Checked == true) connection.DataSource = &quot;(local)&quot;; /*以sql身份登录*/ else connection.DataSource = ServerName.Text; /*若sql server是express版本*/ if (IsExpressEdition.Checked == true) connection.DataSource += @&quot;\SQLEXPRESS&quot;; /*基于当前windows登陆的集成安全验证*/ if(AuthenticateWindows.Checked == true) { connection.IntegratedSecurity = true; } else { connection.IntegratedSecurity = false;//基于SQL用户的安全验证 connection.UserID = UserName.Text; connection.Password = UserPassword.Text; } SqlConnection linkToDB = new SqlConnection(connection.ConnectionString);//新建连接对象 linkToDB.Open();//打开数据库连接 linkToDB.close();//关闭数据库，或用dispose方法，或者用using语句就会自动关闭 对数据库进行查询、修改、更新、删除等操作：需要用到System.Data.SqlClient类库中的sqlcommand类 方法： 通过一个ADO.NET连接运行SQL查询 - 创建Sqlcommandr实例 - 将其CommandText属性设置为SQL语句 - 将其Connection属性设置为一个有效的Sqlconnection实例 - 调用这个命令对象的ExecuteNonQuery方法 调用一个返回静态结果的SQL Server存储过程 - 创建Sqlcommandr实例 - 将其CommandText属性设置为这个存储过程的名字 - 将其Connection属性设置为一个有效的Sqlconnection实例 - 调用这个命令对象的ExecuteScalar方法，捕获返回值 代码实例： /*对于对数据库采取操作但不返回存储数据的服务*/ string sqlText = @&quot;UPDATE WorkTable SET ProcessedOn = GETDATE() WHERE ProcessedOn IS NULL&quot;; SqlCommand dataAction = new SqlCommand(sqlText, linkToDB); dataAction.ExecuteNonQuery(); /*对于返回单个值的查询*/ string sqlText1 = &quot;select count(*) from WorkTable&quot;; SqlCommand dataAction1 = new SqlCommand(sqlText1, linkToDB); int total = (int)dataAction1.ExecuteScalar();//返回单个值 /*对于返回数据行的操作*/ string sqlText2 = &quot;select ID,FullName,ZipCode from Customer&quot;; SqlCommand dataAction2 = new SqlCommand(sqlText2, linkToDB); SqlDataReader scanCustomer = dataAction2.ExecuteReader();//一次返回一个数据行 if (scanCustomer.HasRows) while (scanCustomer.Read()); /*对于访问字段的值，用访问器*/ result = scanCustomer[0];//从起始位置查找 result = scanCustomer[“ID”];//按列名称查找 scanCustomer.NextResult();//若有多个列的返回时 /*查询中存在参数时，用@标识符替代*/ string test = @&quot;update Employee set Salary = @NewSalary where ID = @EmployeeID&quot;； SqlCommand salaryUpadate = new SqlCommand(test, linkToDB); paramValue.Value = 50000m;//设置参数的值 salaryUpadate.Parameters.Add(paramValue);//获取参数的值到原来的字符串中 salaryUpadate.Parameters.AddWithValue(&quot;@NewSalary&quot;, 50000m);//另外一种实例化方式，用于简单的参数时 salaryUpadate.ExecuteNonQuery(); /*对于存储过程的查询时*/ string test1 = &quot;dbo.AddLocation&quot;;//创建存储过程的字符串 SqlCommand locationCommand = new SqlCommand(test1, linkToDB); locationCommand.CommandType = CommandType.StoredProcedure;//把数据库命令的类型设置成存储过程]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>.net</tag>
+        <tag>c#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SQL中的function自定义函数]]></title>
+    <url>%2F2017%2F05%2F20%2FSQL%E4%B8%AD%E7%9A%84function%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[SQL自定义函数 产生背景（已经有了存储过程，为什么还要使用自定义函数） 发展历史 构成 使用方法 适用范围 注意事项 疑问 内容产生背景（已经有了存储过程，为什么还要使用自定义函数）与存储过程的区别（存在的意义）： 能够在select等SQL语句中直接使用自定义函数，存储过程不行。 自定义函数可以调用其他函数，也可以调用自己（递归） 可以在表列和 CHECK 约束中使用自定义函数来实现特殊列或约束 自定义函数不能有任何副作用。函数副作用是指对具有函数外作用域（例如数据库表的修改）的资源状态的任何永久性更改。函数中的语句唯一能做的更改是对函数上的局部对象（如局部游标或局部变量）的更改。不能在函数中执行的操作包括：对数据库表的修改，对不在函数上的局部游标进行操作，发送电子邮件，尝试修改 目录，以及生成返回至用户的结果集。存储过程没有此限制 函数只能返回一个变量。而存储过程可以返回多个 发展历史SqlServer 2000之后都支持用户自定义函数 构成在SQL Server 2000 中根据函数返回值形式的不同将用户自定义函数分为三种类型：标量函数（Scalar Function）、内嵌表值函数（Inline Function）、多声明表值函数（Multi-Statement Function） 标量函数：标量函数是对单一值操作，返回单一值。能够使用表达式的地方，就可以使用标量函数。像我们经常使用的left、getdate等，都属于标量函数。系统函数中的标量函数包括：数学函数、日期和时间函数、字符串函数、数据类型转换函数等 内嵌表值函数：内嵌表值函数的功能相当于一个参数化的视图。它返回的是一个表，内联表值型函数没有由BEGIN-END 语句括起来的函数体。其返回的表由一个位于RETURN 子句中的SELECT 命令段从数据库中筛选出来。 作用 多声明表值函数：可以看作标量型和内嵌表值型函数的结合体。它的返回值是一个表，但它和标量型函数一样有一个用BEGIN-END 语句括起来的函数体，返回值的表中的数据是由函数体中的语句插入的。由此可见，它可以进行多次查询，对数据进行多次筛选与合并，弥补了内联表值型函数的不足。 使用方法SQL Server 为三种类型的用户自定义函数 提供了不同的命令创建格式。 （1） 创建标量型用户自定义函数（Scalar functions） 其语法如下： 各参数说明如下： owner_name ：指定用户自定义函数的所有者。 function_name：指定用户自定义函数的名称。database_name.owner_name.function_name 应是惟一的。 @parameter_name：定义一个或多个参数的名称。一个函数最多可以定义1024 个参数每个参数前用“@”符号标明。参数的作用范围是整个函数。参数只能替代常量，不能替代表 名、列名或其它数据库对象的名称。用户自定义函数不支持输出参数。 scalar_parameter_data_type：指定标量型参数的数据类型，可以为除TEXT、 NTEXT、 IMAGE、 CURSOR、TIMESTAMP 和TABLE 类型外的其它数据类型。 scalar_return_data_type：指定标量型返回值的数据类型，可以为除TEXT、 NTEXT、 IMAGE、 CURSOR、TIMESTAMP 和TABLE 类型外的其它数据类型。 scalar_expression：指定标量型用户自定义函数返回的标量值表达式。 function_body：指定一系列的Transact-SQL 语句，它们决定了函数的返回值。 ENCRYPTION：加密选项。让SQL Server 对系统表中有关CREATE FUNCTION 的声明加密，以防止用户自定义函数作为SQL Server 复制的一部分被发布（Publish） 。 SCHEMABINDING：计划绑定选项将用户自定义函数绑定到它所引用的数据库对象如果指定 了此选项，则函数所涉及的数据库对象从此将不能被删除或修改，除非函数被删除或去掉此选项。应注意的是，要绑定的数据库对象必须与函数在同一数据库中。 2）创建内联表值型用户自定义函 数（Inline Table-valued Functions） 其语法如下： 各参数说明如下： TABLE：指定返回值为一个表。 select-stmt：单个SELECT 语句，确定返回的表的数据。 其余参数与标量型用户自定义函数相同。 （3） 创建多声明表值型用户自定义函数 其语法如下： 各参数说明如下： @return_variable ：一个TABLE 类型的变量，用于存储和累积返回的表中的数据行。 其余参数与标量型用户自定义函数相同。 在多声明表值型用户自定义函数的函数体中允许使用下列Transact-SQL 语句。 赋值语句（Assignment statements）； 流程控制语句（Control-of-Flow statements）； 定义作用范围在函数内的变量和 游标的DECLARE 语句； SELECT 语句； 编辑函数中定义的表变量的INSERT、 UPDATE 和DELETE 语句； 在函数中允许涉及诸如声明游 标、打开游标、关闭游标、释放游标这样的游标操作，对于读取游标而言，除非在FETCH 语句中使用INTO 从句来对某一变量赋值，否则不允许在函数中使用FETCH 语句来向客户端返回数据。此 外不确定性函数（Non-deterministic functions） 不能在用户自定义函数中使 用。所谓不确定性函数是指那些使用相同的调用参数在不同时刻调用得到的返回值不同的函数。 适用范围用户自定义函数不能用于执行一系列改变数据库状态的操作在编写自定义函数时需要注意的：对于标量函数： 所有的入参前都必须加@ create后的返回，单词是returns，而不是return returns后面的跟的不是变量，而是返回值的类型，如：int，char等。 在begin/end语句块中，是return。 内嵌表值函数： 只能返回table，所以returns后面一定是TABLE AS后没有begin/end，只有一个return语句来返回特定的记录。多语句表值函数： returns后面直接定义返回的表类型，首先是定义表名，表明前面要加@，然后是关键字TABLE，最后是表的结构。 在begin/end语句块中，直接将需要返回的结果insert到returns定义的表中就可以了，在最后return时，会将结果返回。 最后只需要return，return后面不跟任何变量。 疑问自定义函数不能修改数据库，但它可以调用存储过程，那么在自定义函数中调用一个有修改数据库的操作的存储过程，这个自定义函数能不能执行？ 答：自定义函数只能调用扩展存储过程，但是SQL Server 2008的后续版本将删除该功能，不再支持扩展存储过程，所以应避免在开发中使用扩展存储过程。因此，可以得出结论是：实际开发中，函数不会去调用存储过程，也就无法对数据库进行修改操作了。]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>SQL server</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ubuntu下安装命令的区别]]></title>
+    <url>%2F2017%2F05%2F17%2Fubuntu%E4%B8%8B%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[ubuntu下安装命令的区别（dpkg、apt-get、aptitude）dpkg绕过apt包管理数据库对软件包进行操作，所以你用dpkg安装过的软件包用apt可以再安装一遍，系统不知道之前安装过了，将会覆盖之前dpkg的安装。 dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关心ubuntu的软件仓库内的软件,可以用于安装本地的deb文件 apt会解决和安装模块的依赖问题,并会咨询软件仓库, 但不会安装本地的deb文件, apt是建立在dpkg之上的软件管理工具 aptitude与 apt-get 一样，是 Debian 及其衍生系统*能极其强大的包管理工具。与 apt-get 不同的是，aptitude在处理依赖问题上更佳一些。举例来说，aptitude在删除一个包时，会同时删除本身所依赖的包。这样，系统中不会残留无用的包，整个系统更为干净。 安装软件包123456dpkg -i package_name.deb #安装本地软件包，不解决依赖关系apt-get install package #在线安装软件包aptitude install pattern #同上apt-get install package –reinstall #重新安装软件包apitude reinstall package #同上 移除软件包1234567dpkg -r package #删除软件包apt-get remove package #同上aptitude remove package #同上dpkg -P #删除软件包及配置文件apt-get remove package –purge #删除软件包及配置文件apitude purge pattern #同上 自动移除软件包12apt-get autoremove #删除不再需要的软件包注：aptitude 没有，它会自动解决这件事 清除下载的软件包12345apt-get clean #清除 /var/cache/apt/archives 目录aptitude clean #同上apt-get autoclean #清除 /var/cache/apt/archives 目录，不过只清理过时的包aptitude autoclean #同上 编译相关1234apt-get source package #获取源码apt-get build-dep package #解决编译源码 package 的依赖关系aptitude build-dep pattern #解决编译源码 pattern 的依赖关系 平台相关123456apt-cross –arch ARCH –show package 显示属于 ARCH 构架的 package 软件包信息apt-cross –arch ARCH –get package #下载属于 ARCH 构架的 package 软件包apt-cross –arch ARCH –install package #安装属于 ARCH 构架的 package 软件包apt-cross –arch ARCH –remove package #移除属于 ARCH 构架的 package 软件包apt-cross –arch ARCH –purge package #移除属于 ARCH 构架的 package 软件包apt-cross –arch ARCH –update #升级属于 ARCH 构架的 package 软件包 注：慎重考虑要不要用这种方法来安装不同构架的软件包，这样会破坏系统。对于 amd64 的用户可能需要强制安装某些 i386 的包，千万不要把原来 amd64 本身的文件给 replace 了。最好只是安装一些 lib 到 /usr/lib32 目录下。同样地，可以用 apt-file 看某个其它构架的软件包包含哪些文件，或者是文件属于哪个包，不过记得最先要用 apt-file –architecture ARCH update 来升级 apt-file 的数据库，在 search 或 show 时也要指定 ARCH。 更新源12apt-get update #更新源aptitude update #同上 更新系统1234apt-get upgrade #更新已经安装的软件包aptitude safe-upgrade #同上apt-get dist-upgrade #升级系统aptitude full-upgrade #同]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[c语言中struct大小计算]]></title>
+    <url>%2F2017%2F05%2F15%2Fc%E8%AF%AD%E8%A8%80%E4%B8%ADstruct%E5%A4%A7%E5%B0%8F%E8%AE%A1%E7%AE%97%2F</url>
+    <content type="text"><![CDATA[struct 大小计算结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。 默认对齐方式：在默认对齐方式下，结构体成员的内存分配满足下面三个条件： 结构体第一个成员的地址和结构体的首地址相同 结构体每个成员地址相对于结构体首地址的偏移量（offset）是该成员大小的整数倍，如果不是则编译器会在成员之间添加填充字节（internal adding）。 结构体总的大小要是其成员中最大size的整数倍，如果不是编译器会在其末尾添加填充字节（trailing padding）。 下面是一个示例： 123456789101112131415161718192021222324252627282930struct s1&#123; char ch; int a; double b; char c1;&#125;;struct s2&#123; char ch; int a; double b;&#125;;int main()&#123; cout &lt;&lt; &quot;s1的大小： &quot; &lt;&lt; sizeof(struct s1) &lt;&lt; endl; cout &lt;&lt; &quot;ch的地址偏移是 &quot; &lt;&lt; offsetof(s1, ch) &lt;&lt; endl; cout &lt;&lt; &quot;a 的地址偏移是 &quot; &lt;&lt; offsetof(s1, a) &lt;&lt; endl; cout &lt;&lt; &quot;b 的地址偏移是 &quot; &lt;&lt; offsetof(s1, b) &lt;&lt; endl; cout &lt;&lt; &quot;c1的地址偏移是 &quot; &lt;&lt; offsetof(s1, c1) &lt;&lt; endl; cout &lt;&lt; &quot;=====================================&quot; &lt;&lt; endl; cout &lt;&lt; &quot;s2的大小: &quot; &lt;&lt; sizeof(struct s2) &lt;&lt; endl; cout &lt;&lt; &quot;ch的地址偏移是 &quot; &lt;&lt; offsetof(s2, ch) &lt;&lt; endl; cout &lt;&lt; &quot;a 的地址偏移是 &quot; &lt;&lt; offsetof(s2, a) &lt;&lt; endl; cout &lt;&lt; &quot;b 的地址偏移是 &quot; &lt;&lt; offsetof(s2, b) &lt;&lt; endl; getchar(); return 0;&#125; 代码中 offsetof函数可以得到结构体成员相对于该结构体首地址的偏移量。其运行结果如下图： 对于结构体s1来说： ch是其第一个成员故其地址和结构体的地址是相同的也就是说偏移量为0； a是int型其大小为4个字节，按照条件（2） 结构体每个成员地址相对于结构首地址的偏移量（offset）是该成员大小的整数倍，如果不是则编译器会在成员之间添加填充字节，所以其地址偏移应该是4，也就说编译器在第一个成员ch后面填充了3个字节。 b是double型占8个字节，其地址偏移应该是8的整数倍，由于a的地址偏移是4其大小为4个字节，正好b的偏移地址是8，不需要填充字节。 c1是char型占1个字节，偏移地址是16（b的偏移地址是8大小也是8，中间也没有填充字节）。 这时成员ch占1个字节后面有3个字节的填充，a占4个字节后面无填充，b占8个字节后面无填充，c1占1个字节，s1总的大小是1+3+4+8+1=17” role=”presentation”&gt;1+3+4+8+1=171+3+4+8+1=17。按照条件（3）结构体总的大小需是其最大成员所占空间的整数倍，其最大的成员b占有8字节，17显然是不符合条件的，所以需要在结构体的末尾填充7个字节，最后结构体总的大小是24字节。结构体s2和s1的成员是非常相似的，唯一的区别是其末尾没有最后7个字节的填充，所以其大小是16个字节，这里用于和s1做对比说明s1末尾的填充字节。 指定对齐方式可以使用#pragma pack(N)来指定结构体成员的对齐方式对于指定的对齐方式，其成员的地址偏移以及结构的总的大小也有下面三个约束条件： 结构体第一个成员的地址和结构体的首地址相同 结构体每个成员的地址偏移需要满足：N大于等于该成员的大小，那么该成员的地址偏移需满足默认对齐方式（地址偏移是其成员大小的整数倍）；Ｎ小于该成员的大小，那么该成员的地址偏移是N的整数倍。 结构体总的大小需要时N的整数倍，如果不是需要在结构体的末尾进行填充。 如果N大于结构体成员中最大成员的大小，则N不起作用，仍然按照默认方式对齐。 还是用上述示例： 1#pragma pack(4) //设定按照4字节对齐 运行结果为： 说明： 在使用#pragma pack设定对齐方式一定要是2的整数幂，也就是（1，2，4，8，16，…），不然不起作用的，仍然按照默认方式对齐。 当结构体中有其他的结构体作为成员时，计算最大成员是不能把结构体成员作为一个整体来计算，要看其每个成员的大小。 转载自： http://www.cnblogs.com/wangguchangqing/p/4853438.html]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>c</tag>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[const只读变量的内存分配]]></title>
+    <url>%2F2017%2F05%2F15%2Fconst%E5%8F%AA%E8%AF%BB%E5%8F%98%E9%87%8F%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%2F</url>
+    <content type="text"><![CDATA[const只读变量与#define宏定义的常量的内存分配的区别编译器通常不为普通 const 只读变量分配存储空间,而是将它们保存在符号表中,这使得它成为一个编译期间的值,没有了存储与读内存的操作,使得它的效率也很高。 例如： 1234567#define M 3//宏常量const int N=5;//此时并未将 N 放入内存中......int i=N;//此时为 N 分配内存,以后不再分配int I=M;//预编译期间进行宏替换,分配内存int j=N;//没有内存分配int J=M;//再进行宏替换,又一次分配内存 const 定义的只读变量从汇编的角度来看,只是给出了对应的内存地址,而不是象#define一样给出的是立即数,所以,const 定义的只读变量在程序运行过程中只有一份拷贝(因为它是全局的只读变量,存放在静态区),而#define 定义的宏常量在内存中有若干个拷贝。 #define 宏是在预编译阶段进行替换,而 const 修饰的只读变量是在编译的时候确定其值。 #define 宏没有类型,而 const 修饰的只读变量具有特定的类型。]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>c</tag>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git与github基本操作]]></title>
+    <url>%2F2017%2F05%2F10%2Fgit%E4%B8%8Egithub%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[git与github的基本操作一、准备：1、git config –global user.name “Firstname Lastname” 2、git config –global user.email”your_email@example.com” 3、ssh-keygen -t rsa -C “your_email@example.com”添加ssh，一路回车略过 4、id_rsa.pub寻找公开公钥复制到github 5、ssh -T git@github.com 测试ssh是否生效 二、向远程仓库提交本地文件：方法一： 1、git clone git@github.com:username/example.git 2、cd example 3、git add filename//将文件发到缓存区 4、git diff HEAD//查看本次提交与之前提交的区别（可省略） 5、git commit -m “contribtion”//提交文件 6、git status//查看当前工作树情况（可省略） 7、git log -p//查看提交日志，并可查看修改的情况（可省略） 8、git push//直接提交到远程仓库 方法二： 1.git init 2.git add filename//将文件发到缓存区 3.git diff HEAD//查看本次提交与之前提交的区别（可省略） 4.git commit -m “contribtion”//提交文件 5.git status//查看当前工作树情况（可省略） 6.git log -p//查看提交日志，并可查看修改的情况（可省略） 7.git remote add origin 8.git@github.com:usrname/example.git//创建远程仓库 9.git push -u origin master//把本地当前分支上的内容推送到远程origin库的master分支 -u参数可以在推送的同时,将 origin 仓库的 master 分支设置为本地仓库当前分支的 upstream(上游)。添加了这个参数,将来运行 git pull命令从远程仓库获取内容时,本地仓库的这个分支就可以直接从 origin 的 master 分支获取内容,省去了另外添加参数的麻烦。 工作树（当前文件夹） —-&gt; 暂存区 —–&gt;本地仓库 —–&gt;远程仓库]]></content>
+      <categories>
+        <category>研发管理</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+</search>
