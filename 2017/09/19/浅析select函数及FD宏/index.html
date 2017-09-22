@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="悲伤逆流">
 <meta property="og:description" content="select函数这个函数允许进程指示内核等待多个事件中的任一个发生，并仅在一个或者多个事件发生或经过某指定时间后才唤醒进程。 函数原型：12345#include&amp;lt;sys/select.h&amp;gt;#include&amp;lt;sys/time.h&amp;gt;int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *except">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T15:29:44.688Z">
+<meta property="og:updated_time" content="2017-09-22T13:06:12.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅析select函数及FD宏">
 <meta name="twitter:description" content="select函数这个函数允许进程指示内核等待多个事件中的任一个发生，并仅在一个或者多个事件发生或经过某指定时间后才唤醒进程。 函数原型：12345#include&amp;lt;sys/select.h&amp;gt;#include&amp;lt;sys/time.h&amp;gt;int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *except">
@@ -411,8 +411,38 @@
 <h3 id="函数原型："><a href="#函数原型：" class="headerlink" title="函数原型："></a>函数原型：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#include&lt;sys/select.h&gt;</div><div class="line">#include&lt;sys/time.h&gt;</div><div class="line"></div><div class="line">int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *exceptset, const struct timeval *timeout);</div><div class="line">     返回：准备好的描述字正数目，0表示超时，-1表示出错</div></pre></td></tr></table></figure>
 <h3 id="函数参数解析："><a href="#函数参数解析：" class="headerlink" title="函数参数解析："></a>函数参数解析：</h3><ol>
 <li>参数maxfdp1指定被测试的描述字数目，即经过FD_SET之后，所关心的描述符的个数，（因为从0开始，因此一般这个值是测试描述符集下标最大值+1）并通知内核。</li>
-<li>中间三个参数readset，writeset，exceptset指定我们要让内核测试读、写、异常条件所需的描述字。</li>
+<li>中间三个参数readset，writeset，exceptset指定我们要让内核测试读、写、异常条件所需的描述字。也就是说，对于readset，<strong>我们关心是否可以从这些文件中读取数据了</strong>，对于writeset，<strong>我们关心是否可以向这些文件中写入数据了</strong>，对于exceptset，<strong>我们关心这些文件是否发生异常</strong>。</li>
+<li>参数timeout，它告诉内核等待一组指定的描述字中的任意一个准备好可花多长时间，结构timeval指定了秒数和微秒数成员：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">struct timeval</div><div class="line">&#123;</div><div class="line">long tv-sec;//秒</div><div class="line">long tv-usec;//微秒</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ol>
+<p><strong><em>有三种可能：</em></strong></p>
+<p> 1) 、永远等待下去：仅在有一个描述符准备好I/O时才返回，要设置timeout为NULL。</p>
+<p> 2) 、等待固定时间：在有一个描述符准备好I/O时返回，但不超过timeout参数指定的秒数和微秒数。</p>
+<p> 3) 、根本不等待：检查描述字后立即返回，这称为轮询(polling),参数timeout要指向某一个timeval结构，且其中的秒数和微秒数要置0。</p>
+<p> <strong>前两种是阻塞的，最后一种是不阻塞的</strong></p>
+<h2 id="fdset结构体解析"><a href="#fdset结构体解析" class="headerlink" title="fdset结构体解析:"></a>fdset结构体解析:</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#include&lt;typesizes.h&gt;</div><div class="line">#define __FD_SETSIZE 1024</div><div class="line"></div><div class="line">#include&lt;sys/select.h&gt;</div><div class="line">#define FD_SETSIZE __FD_SETSIZE</div><div class="line">typedef long int __fd_mask;//64位系统上大小为8</div><div class="line">#undef __NFDBITS</div><div class="line">#define __NFDBITS (8*(int) sizeof(__fd_mask))  // 8*8 = 64</div><div class="line"></div><div class="line">typedef struct</div><div class="line">&#123;</div><div class="line">#ifdef __USE_XOPEN</div><div class="line">    __fd_mask fds_bits[__FD_SETSIZE / __NFDBITS];//数组长度为1024/64 = 16</div><div class="line"> #define __FDS_BITS(set) ((set)-&gt;fds_bits)</div><div class="line"> #else</div><div class="line">    __fd_mask __fds_bits[____FD_SETSIZE / __NFDBITS];</div><div class="line"> #define __FDS_BITS(set) ((set)-&gt;fds_bits)</div><div class="line"> #endif</div><div class="line"> &#125;fd_set</div></pre></td></tr></table></figure>
+<p> <strong>因此fd_set结构体中仅包含一个整型数组，该数组的每个元素的每一位都会标记一个文件描述符。因此16个long int元素就是 16<em>8</em>8 = 1024位 ，最多容纳1024个文件描述符！！</strong></p>
+<h1 id="select中FD相关的4个宏"><a href="#select中FD相关的4个宏" class="headerlink" title="select中FD相关的4个宏"></a>select中FD相关的4个宏</h1><ol>
+<li>void FD_ZERO(fd_set *fdset);//使fd_set结构体中的整型数组清零</li>
+<li>void  FD_SET(int fd,fd_set *fdset); //设置感兴趣的文件描述符</li>
+<li>void FD_CLR（int fd,fd_set *fdset);//关闭感兴趣的文件描述符</li>
+<li>int FD_ISSET(int fd, fd_set *fdset); //用于判断某个文件描述符是否就绪，且在感兴趣的描述符集合中</li>
+</ol>
+<h1 id="对于几个宏和select的理解"><a href="#对于几个宏和select的理解" class="headerlink" title="对于几个宏和select的理解"></a>对于几个宏和select的理解</h1><ul>
+<li>fd_set是创建文件描述符集合</li>
+<li>FD_SET是设置感兴趣的文件描述符放入描述符集合中，将对应位置为1，但是此文件描述符可能准备好了，也可能没有准备好，可以说是一类文件描述符。</li>
+<li>select是监听这几个文件描述符看哪几个就绪了，就返回个数，没就绪的再次置回0，就绪的保留1。</li>
+<li>FD_ISSET是真正查看哪个指定的文件描述符是否就绪，就绪就为1，未就绪就为0。</li>
+</ul>
+<p><strong><em>example：</em></strong></p>
+<p>   为说明方便，取fd_set长度为1字节，fd_set中的每一bit可以对应一个文件描述符fd。则1字节长的fd_set最大可以对应8个fd。<br>　　<br>  （1）执行fd_set set; FD_ZERO(&amp;set);则set用位表示是0000,0000。
+　　</p>
+<p> （2）若fd＝5,执行FD_SET(fd,&amp;set);后set变为0001,0000(第5位置为1)
+　</p>
+<p> （3）若再加入fd＝2，fd=1,则set变为0001,0011</p>
+<p>（4）执行select(6,&amp;set,0,0,0)阻塞等待</p>
+<p>（5）若fd=1,fd=2上都发生可读事件，则select返回，此时set变为0000,0011。注意：没有事件发生的fd=5被清空。</p>
+<p>（6）此时FD_ISSET(1,&amp;set)返回1，而FD_ISSET(5,&amp;set)返回0</p>
 
       
     </div>
@@ -610,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#select函数"><span class="nav-number">1.</span> <span class="nav-text">select函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数原型："><span class="nav-number">1.0.1.</span> <span class="nav-text">函数原型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数解析："><span class="nav-number">1.0.2.</span> <span class="nav-text">函数参数解析：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#select函数"><span class="nav-number">1.</span> <span class="nav-text">select函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数原型："><span class="nav-number">1.0.1.</span> <span class="nav-text">函数原型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数解析："><span class="nav-number">1.0.2.</span> <span class="nav-text">函数参数解析：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fdset结构体解析"><span class="nav-number">1.1.</span> <span class="nav-text">fdset结构体解析:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#select中FD相关的4个宏"><span class="nav-number">2.</span> <span class="nav-text">select中FD相关的4个宏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对于几个宏和select的理解"><span class="nav-number">3.</span> <span class="nav-text">对于几个宏和select的理解</span></a></li></ol></div>
             
 
           </div>
