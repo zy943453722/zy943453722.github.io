@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c,c++," />
+  <meta name="keywords" content="c,多线程，linux网络编程," />
 
 
 
@@ -113,21 +113,18 @@
 
 
 
-<meta name="description" content="struct 大小计算结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。 默认对齐方式：在默认对齐方式下，结构体成员的内存分配满足下面三个条件：  结构体第一个成员的地">
-<meta name="keywords" content="c,c++">
+<meta name="description" content="多线程并发   众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。    微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。    多线程并发指的是在同一个进程中执行多个线程。有操作系统相关知识的应该知道，线程是轻量级的进程，每个线程可以独立的运行不同的指令序列">
+<meta name="keywords" content="c,多线程，linux网络编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c语言中struct大小计算">
-<meta property="og:url" content="http://yoursite.com/2017/05/15/c语言中struct大小计算/index.html">
+<meta property="og:title" content="浅析多线程并发编写微信红包遇到的问题">
+<meta property="og:url" content="http://yoursite.com/2017/09/24/浅析多线程并发编写微信红包遇到的问题/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="struct 大小计算结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。 默认对齐方式：在默认对齐方式下，结构体成员的内存分配满足下面三个条件：  结构体第一个成员的地">
+<meta property="og:description" content="多线程并发   众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。    微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。    多线程并发指的是在同一个进程中执行多个线程。有操作系统相关知识的应该知道，线程是轻量级的进程，每个线程可以独立的运行不同的指令序列">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20151003143703690">
-<meta property="og:image" content="http://img.blog.csdn.net/20151003150901035">
-<meta property="og:updated_time" content="2017-09-17T13:57:15.317Z">
+<meta property="og:updated_time" content="2017-09-25T07:47:20.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c语言中struct大小计算">
-<meta name="twitter:description" content="struct 大小计算结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。 默认对齐方式：在默认对齐方式下，结构体成员的内存分配满足下面三个条件：  结构体第一个成员的地">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20151003143703690">
+<meta name="twitter:title" content="浅析多线程并发编写微信红包遇到的问题">
+<meta name="twitter:description" content="多线程并发   众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。    微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。    多线程并发指的是在同一个进程中执行多个线程。有操作系统相关知识的应该知道，线程是轻量级的进程，每个线程可以独立的运行不同的指令序列">
 
 
 
@@ -157,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/15/c语言中struct大小计算/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/24/浅析多线程并发编写微信红包遇到的问题/"/>
 
 
 
 
 
-  <title>c语言中struct大小计算 | 悲伤逆流</title>
+  <title>浅析多线程并发编写微信红包遇到的问题 | 悲伤逆流</title>
   
 
 
@@ -310,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/c语言中struct大小计算/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/24/浅析多线程并发编写微信红包遇到的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张越">
@@ -327,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c语言中struct大小计算</h1>
+          <h1 class="post-title" itemprop="name headline">浅析多线程并发编写微信红包遇到的问题</h1>
         
 
         <div class="post-meta">
@@ -339,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T21:12:29+08:00">
-                2017-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-24T21:45:57+08:00">
+                2017-09-24
               </time>
             
 
@@ -362,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">编程语言</span>
+                  <a href="/categories/网络编程/" itemprop="url" rel="index">
+                    <span itemprop="name">网络编程</span>
                   </a>
                 </span>
 
@@ -379,7 +376,7 @@
 
           
           
-             <span id="/2017/05/15/c语言中struct大小计算/" class="leancloud_visitors" data-flag-title="c语言中struct大小计算">
+             <span id="/2017/09/24/浅析多线程并发编写微信红包遇到的问题/" class="leancloud_visitors" data-flag-title="浅析多线程并发编写微信红包遇到的问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,41 +407,43 @@
       
 
       
-        <h1 id="struct-大小计算"><a href="#struct-大小计算" class="headerlink" title="struct 大小计算"></a>struct 大小计算</h1><p>结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。</p>
-<h2 id="默认对齐方式："><a href="#默认对齐方式：" class="headerlink" title="默认对齐方式："></a>默认对齐方式：</h2><p><strong>在默认对齐方式下，结构体成员的内存分配满足下面三个条件：</strong></p>
+        <h2 id="多线程并发"><a href="#多线程并发" class="headerlink" title="多线程并发"></a>多线程并发</h2><p>   众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。</p>
+<p>   微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。</p>
+<p>   多线程并发指的是在同一个进程中执行多个线程。有操作系统相关知识的应该知道，线程是轻量级的进程，每个线程可以独立的运行不同的指令序列，但是线程不独立的拥有资源，依赖于创建它的进程而存在。也就是说，同一进程中的多个线程共享相同的地址空间，可以访问进程中的大部分数据，指针和引用可以在线程间进行传递。这样，同一进程内的多个线程能够很方便的进行数据共享以及通信，也就比进程更适用于并发操作。由于缺少操作系统提供的保护机制，在多线程共享数据及通信时，就需要程序员做更多的工作以保证对共享数据段的操作是以预想的操作顺序进行的，并且要极力的避免死锁(deadlock)。</p>
+<h2 id="微信红包程序"><a href="#微信红包程序" class="headerlink" title="微信红包程序"></a>微信红包程序</h2><p>   <strong>思路：</strong></p>
 <ol>
-<li>结构体第一个成员的地址和结构体的首地址相同</li>
-<li>结构体每个成员地址相对于结构体首地址的偏移量（offset）是该成员大小的整数倍，如果不是则编译器会在成员之间添加填充字节（internal adding）。</li>
-<li>结构体总的大小要是其成员中最大size的整数倍，如果不是编译器会在其末尾添加填充字节（trailing padding）。</li>
+<li>创建抢红包人员的结构体，分别给定名字，所抢金额，以及是否已抢过字段。</li>
+<li>创建生产者线程，用于产生红包，红包金额和红包数目从标注输入读入，并对生产者回调函数进行加锁操作。</li>
+<li>创建多个消费者线程，用于多人抢红包操作，其中消费者回调函数进行红包的随机分配算法，并进行加锁操作。</li>
 </ol>
-<p><strong>下面是一个示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">struct s1&#123;</div><div class="line">    char ch;</div><div class="line">    int a;</div><div class="line">    double b;</div><div class="line">    char c1;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">struct s2&#123;</div><div class="line">    char ch;</div><div class="line">    int a;</div><div class="line">    double b;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    cout &lt;&lt; &quot;s1的大小： &quot; &lt;&lt; sizeof(struct s1) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;ch的地址偏移是   &quot; &lt;&lt; offsetof(s1, ch) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;a 的地址偏移是   &quot; &lt;&lt; offsetof(s1, a) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;b 的地址偏移是   &quot; &lt;&lt; offsetof(s1, b) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;c1的地址偏移是   &quot; &lt;&lt; offsetof(s1, c1) &lt;&lt; endl;</div><div class="line"></div><div class="line">    cout &lt;&lt; &quot;=====================================&quot; &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;s2的大小: &quot; &lt;&lt; sizeof(struct s2) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;ch的地址偏移是   &quot; &lt;&lt; offsetof(s2, ch) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;a 的地址偏移是   &quot; &lt;&lt; offsetof(s2, a) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;b 的地址偏移是   &quot; &lt;&lt; offsetof(s2, b) &lt;&lt; endl;</div><div class="line">    getchar();</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>代码中 offsetof函数可以得到结构体成员相对于该结构体首地址的偏移量。<br>其运行结果如下图：<br><img src="http://img.blog.csdn.net/20151003143703690" alt="这里写图片描述"></p>
-<p><strong>对于结构体s1来说：</strong></p>
-<ol>
-<li>ch是其第一个成员故其地址和结构体的地址是相同的也就是说偏移量为0；</li>
-<li>a是int型其大小为4个字节，按照条件（2） 结构体每个成员地址相对于结构首地址的偏移量（offset）是该成员大小的整数倍，如果不是则编译器会在成员之间添加填充字节，所以其地址偏移应该是4，也就说编译器在第一个成员ch后面填充了3个字节。</li>
-<li>b是double型占8个字节，其地址偏移应该是8的整数倍，由于a的地址偏移是4其大小为4个字节，正好b的偏移地址是8，不需要填充字节。</li>
-<li>c1是char型占1个字节，偏移地址是16（b的偏移地址是8大小也是8，中间也没有填充字节）。</li>
-<li>这时成员ch占1个字节后面有3个字节的填充，a占4个字节后面无填充，b占8个字节后面无填充，c1占1个字节，s1总的大小是1+3+4+8+1=17” role=”presentation”&gt;1+3+4+8+1=171+3+4+8+1=17。按照条件（3）结构体总的大小需是其最大成员所占空间的整数倍，其最大的成员b占有8字节，17显然是不符合条件的，所以需要在结构体的末尾填充7个字节，最后结构体总的大小是24字节。<br>结构体s2和s1的成员是非常相似的，唯一的区别是其末尾没有最后7个字节的填充，所以其大小是16个字节，这里用于和s1做对比说明s1末尾的填充字节。</li>
-</ol>
-<h2 id="指定对齐方式"><a href="#指定对齐方式" class="headerlink" title="指定对齐方式"></a>指定对齐方式</h2><p><strong>可以使用#pragma pack(N)来指定结构体成员的对齐方式<br>对于指定的对齐方式，其成员的地址偏移以及结构的总的大小也有下面三个约束条件：</strong></p>
-<ol>
-<li>结构体第一个成员的地址和结构体的首地址相同</li>
-<li>结构体每个成员的地址偏移需要满足：N大于等于该成员的大小，那么该成员的地址偏移需满足默认对齐方式（地址偏移是其成员大小的整数倍）；Ｎ小于该成员的大小，那么该成员的地址偏移是N的整数倍。</li>
-<li>结构体总的大小需要时N的整数倍，如果不是需要在结构体的末尾进行填充。</li>
-<li>如果N大于结构体成员中最大成员的大小，则N不起作用，仍然按照默认方式对齐。</li>
-</ol>
-<p><strong>还是用上述示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#pragma pack(4) //设定按照4字节对齐</div></pre></td></tr></table></figure>
-<p>运行结果为：</p>
-<p><img src="http://img.blog.csdn.net/20151003150901035" alt="这里写图片描述"></p>
-<h3 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h3><ol>
-<li>在使用#pragma pack设定对齐方式一定要是2的整数幂，也就是（1，2，4，8，16，…），不然不起作用的，仍然按照默认方式对齐。</li>
-<li>当结构体中有其他的结构体作为成员时，计算最大成员是不能把结构体成员作为一个整体来计算，要看其每个成员的大小。</li>
-</ol>
-<p>转载自：</p>
-<p>   <a href="http://www.cnblogs.com/wangguchangqing/p/4853438.html" target="_blank" rel="external">http://www.cnblogs.com/wangguchangqing/p/4853438.html</a></p>
+<p><strong><em>下面是部分代码示例：</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"> /*结构体部分*/</div><div class="line">1  typedef struct person</div><div class="line">2  &#123;</div><div class="line">3      int id;</div><div class="line">4      char name[20];</div><div class="line">5      int flag;</div><div class="line">6       int money;</div><div class="line">7   &#125;Person;</div><div class="line"></div><div class="line">/* 生产者回调函数*/</div><div class="line">8   void *producer(void* value)//生产者只负责产生红包金  额和红包个数</div><div class="line">9   &#123;</div><div class="line">10      double n = *(double*)value;</div><div class="line">11       pthread_mutex_lock(&amp;lock);</div><div class="line">12       money = n;</div><div class="line">13       pthread_mutex_unlock(&amp;lock);</div><div class="line">14       pthread_exit(NULL);</div><div class="line">15    &#125;</div><div class="line"></div><div class="line">/*消费者回调函数*/</div><div class="line">16  void *consumer(void *n)//消费者用于随机获取红包个数</div><div class="line">17  &#123;</div><div class="line">18      int nn = *(int*)n;</div><div class="line">19      pthread_mutex_lock(&amp;lock);</div><div class="line">20      printf(&quot;number%d\n&quot;,nn);</div><div class="line">21      if(money &gt; 0 &amp;&amp; per[nn].flag == 0)//还没抢过</div><div class="line">22      &#123;</div><div class="line">23         if(num &gt; 1)</div><div class="line">24         &#123;</div><div class="line">25            srand((unsigned)time(NULL));//初始化随机数种子       </div><div class="line">26            double avg = money / num;//获取平均值</div><div class="line">27            double t = avg*2;</div><div class="line">28            double randmoney = (rand()%(int)(t*100) + (int)MIN*100)/100.00 + MIN;//初始化随机数</div><div class="line">29            money-=randmoney;</div><div class="line">30            printf(&quot;%s取走%.2lf元\n&quot;,per[nn].name,randmoney);</div><div class="line">31            printf(&quot;剩余%.2lf元\n&quot;,money);</div><div class="line">32            per[nn].id = nn;</div><div class="line">33            per[nn].money = randmoney;</div><div class="line">34            per[nn].flag = 1;</div><div class="line">35            num--;</div><div class="line">36           &#125;</div><div class="line">37           else</div><div class="line">38           &#123;</div><div class="line">39               printf(&quot;%s取走%.2lf元\n&quot;,per[nn].name,money);</div><div class="line">40               printf(&quot;剩余0元\n&quot;);</div><div class="line">41               money = 0;</div><div class="line">42               per[nn].id = nn;</div><div class="line">43               per[nn].money = money;</div><div class="line">44               per[nn].flag = 1;</div><div class="line">45               num--;</div><div class="line">46            &#125;</div><div class="line">47         &#125;</div><div class="line">48       pthread_mutex_unlock(&amp;lock);</div><div class="line">49       pthread_cancel(pthread_self());</div><div class="line">50   &#125;</div><div class="line"></div><div class="line">/*主函数中主要线程API使用部分*/</div><div class="line"></div><div class="line">51    pthread_t th_a,th_b[Total];</div><div class="line">52     pthread_mutex_init(&amp;lock,0);</div><div class="line">53     pthread_create(&amp;th_a,NULL,producer,(void*)&amp;value);</div><div class="line">54     pthread_join(th_a,NULL);</div><div class="line">55     int args[Total];</div><div class="line">56     for(i = 0; i &lt; Total;i++)</div><div class="line">57     &#123; </div><div class="line">58         args[i] = i;</div><div class="line">59         if(per[i].flag == 0)</div><div class="line">60         &#123;</div><div class="line">61             pthread_create(&amp;th_b[i],NULL,consumer,(void*)&amp;args[i]);</div><div class="line">62             // usleep(100);</div><div class="line">63             printf(&quot;i = %d\n&quot;,i);</div><div class="line">64         &#125;</div><div class="line">65      &#125;</div><div class="line">66     for(i = 0; i &lt; Total; i++)</div><div class="line">67     &#123;</div><div class="line">68         pthread_join(th_b[i],NULL);</div><div class="line">69     &#125;</div><div class="line">70     pthread_mutex_destroy(&amp;lock);</div><div class="line"></div><div class="line">/* 全局变量声明*/</div><div class="line">71     #define Total 20//线程个数</div><div class="line">72     Person per[Total];</div><div class="line">73     double money = 0.0;//初始金额</div><div class="line">74     int num = 0;//初始红包个数</div><div class="line">75     pthread_mutex_t lock;//创建锁</div></pre></td></tr></table></figure>
+<p><strong><em>这是笔者在经过对线程的更深入理解后写好的版本。</em></strong></p>
+<p>在最初的版本中，代码的<strong>61行</strong>的最后一个参数传的是(void*)&amp;i,但程序运行后时而成功时而失败，失败时如下图：</p>
+<p>！[图1][<a href="https://github.com/zy943453722/network/3.png" target="_blank" rel="external">https://github.com/zy943453722/network/3.png</a>]</p>
+<p>! [图2][<a href="https://github.com/zy943453722/network/4.png" target="_blank" rel="external">https://github.com/zy943453722/network/4.png</a>]</p>
+<p><strong><em>由运行结果可以看出20个线程全部都已创建出，但是却出现了红包抢不完的情况，而且观察发现，抢红包的顺序是乱序，且出现了同一个number的线程抢了好几次红包。</em></strong></p>
+<h3 id="因此总结为以下几个问题被给出解答："><a href="#因此总结为以下几个问题被给出解答：" class="headerlink" title="因此总结为以下几个问题被给出解答："></a>因此总结为以下几个问题被给出解答：</h3><p><strong> 1. 为什么创建线程是for循环控制，而抢红包是乱序？</strong></p>
+<p><strong><em>答：</em></strong><br>   <font color="red"><br>   这是因为存在资源抢占现象，创建线程的顺序是有for循环控制的，但创建好线程之后，谁先调用回调函数顺序是不定的，谁的抢到cpu资源，谁就先进入回调函数，谁就先抢红包。<br>   </font></p>
+<p><strong> 2. 为什么看似是同一个线程抢了多次红包？</strong></p>
+<p><strong><em>答：</em></strong></p>
+<font color="blue"><br>这是因为i++操作是三条指令，分别是找到i将其放入寄存器，而后+1，最后回赋。而在运行结果中出现多次number7的情况却并不是同一个线程抢红包多次。**因为可能有某几个线程在执行回调函数时，i的值还没有进行回赋操作，就被剥夺了cpu，而pthread_create函数最后一个参数原本传的是i的地址，即从地址中取i的值，但此时i还是原来的值。因此看似是同一个线程抢了多次红包，实则不同线程执行同一个i的回调函数。<br></font>
+
+<p><strong> 3. 为什么经过修改用数组存i值可以，但最初版本用i时不可以？</strong></p>
+<p><strong><em>答：</em></strong></p>
+<font color="green"><br>这是因为pthread_create函数最后一个参数存的是地址。<br><br>当存的是i的地址时，即i变一次，地址中的内容变一次，当创建出线程而不是立即调用回调函数，而是被剥夺cpu资源时，i值就随for循环变化而变化，因此当回调函数有了cpu资源后，i的地址中存的就不是当时地址中的内容了。<br><br>当用数组存i值时，数组共有Total个地址，创建线程时，当对应的i存到对应的地址，某个数组下表元素的地址只存其当时的值，因此即使不立即调用回调函数，之后拿到的也是当时参数地址中的值，这个值未发生变化。<br></font>
+
+<p><strong> 4. 为什么59行有flag控制，而同一个i还能进去呢？</strong></p>
+<p><strong><em>答：</em></strong></p>
+<font color="yellow"><br>**这个if判断由外部for循环控制，for循环是满足条件后进入，结束一次循环后i++，因此每次进入if后的i值都不同，至于说number7打印好多次，好像线程也创建了多次是错误的，是回调函数导致此原因，同问题2，在此就不赘述。<br></font>
+
+<p><strong> 5. 为什么在for循环中加上sleep类的函数就可以正确抢红包，但是是顺序抢？</strong></p>
+<p><strong><em>答：</em></strong></p>
+<font color="cyan"><br>这是因为usleep函数和sleep函数的作用是挂起当前线程，即挂起当前运行的主线程。在线程创建之后，即挂起主线程，只能进入子线程调用回调函数，回调函数又加了互斥锁，因此直到解锁才能释放cpu资源，即抢红包过程是顺序的。<br></font>
+
+<p><strong>6.为什么在number8后会出现number7？（即为什么8号线程后才出现7号线程？</strong></p>
+<p><strong><em>答：</em></strong></p>
+<p>这其实还是存在资源抢占问题，7线程创建后，没进入回调函数就被其他线程剥夺了cpu，因此当轮到其执行回调函数时，已经过去了很久。</p>
 
       
     </div>
@@ -464,7 +463,7 @@
           
             <a href="/tags/c/" rel="tag"># c</a>
           
-            <a href="/tags/c/" rel="tag"># c++</a>
+            <a href="/tags/多线程，linux网络编程/" rel="tag"># 多线程，linux网络编程</a>
           
         </div>
       
@@ -477,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/15/const只读变量的内存分配/" rel="next" title="const只读变量的内存分配">
-                <i class="fa fa-chevron-left"></i> const只读变量的内存分配
+              <a href="/2017/09/19/浅析select函数及FD宏/" rel="next" title="浅析select函数及FD宏">
+                <i class="fa fa-chevron-left"></i> 浅析select函数及FD宏
               </a>
             
           </div>
@@ -486,10 +485,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/17/ubuntu下安装命令的区别/" rel="prev" title="ubuntu下安装命令的区别">
-                ubuntu下安装命令的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -646,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#struct-大小计算"><span class="nav-number">1.</span> <span class="nav-text">struct 大小计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认对齐方式："><span class="nav-number">1.1.</span> <span class="nav-text">默认对齐方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定对齐方式"><span class="nav-number">1.2.</span> <span class="nav-text">指定对齐方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明："><span class="nav-number">1.2.1.</span> <span class="nav-text">说明：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程并发"><span class="nav-number">1.</span> <span class="nav-text">多线程并发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信红包程序"><span class="nav-number">2.</span> <span class="nav-text">微信红包程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#因此总结为以下几个问题被给出解答："><span class="nav-number">2.1.</span> <span class="nav-text">因此总结为以下几个问题被给出解答：</span></a></li></ol></li></ol></div>
             
 
           </div>
