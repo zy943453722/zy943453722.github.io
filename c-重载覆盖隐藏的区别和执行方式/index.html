@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c++,c," />
+  <meta name="keywords" content="c++," />
 
 
 
@@ -108,28 +108,25 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="struct 大小计算结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。 默认对齐方式：在默认对齐方式下，结构体成员的内存分配满足下面三个条件：  结构体第一个成员的地">
-<meta name="keywords" content="c++,c">
+<meta name="description" content="成员函数被重载（overload）的特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 1234567class A&amp;#123;  private:      int a  public：      void print();      void print(int aa);  &amp;#125;; 覆盖（override）的特征 不同的范围（分别于派生类和基类） 函">
+<meta name="keywords" content="c++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c语言中struct大小计算">
-<meta property="og:url" content="http://yoursite.com/2017/05/16/c语言中struct大小计算/index.html">
+<meta property="og:title" content="c++重载覆盖隐藏的区别和执行方式">
+<meta property="og:url" content="http://yoursite.com/c-重载覆盖隐藏的区别和执行方式/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="struct 大小计算结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。 默认对齐方式：在默认对齐方式下，结构体成员的内存分配满足下面三个条件：  结构体第一个成员的地">
+<meta property="og:description" content="成员函数被重载（overload）的特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 1234567class A&amp;#123;  private:      int a  public：      void print();      void print(int aa);  &amp;#125;; 覆盖（override）的特征 不同的范围（分别于派生类和基类） 函">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20151003143703690">
-<meta property="og:image" content="http://img.blog.csdn.net/20151003150901035">
-<meta property="og:updated_time" content="2017-09-17T13:57:15.317Z">
+<meta property="og:updated_time" content="2017-09-22T14:11:58.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c语言中struct大小计算">
-<meta name="twitter:description" content="struct 大小计算结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。 默认对齐方式：在默认对齐方式下，结构体成员的内存分配满足下面三个条件：  结构体第一个成员的地">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20151003143703690">
+<meta name="twitter:title" content="c++重载覆盖隐藏的区别和执行方式">
+<meta name="twitter:description" content="成员函数被重载（overload）的特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 1234567class A&amp;#123;  private:      int a  public：      void print();      void print(int aa);  &amp;#125;; 覆盖（override）的特征 不同的范围（分别于派生类和基类） 函">
 
 
 
@@ -159,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/16/c语言中struct大小计算/"/>
+  <link rel="canonical" href="http://yoursite.com/c-重载覆盖隐藏的区别和执行方式/"/>
 
 
 
 
 
-  <title>c语言中struct大小计算 | 悲伤逆流</title>
+  <title>c++重载覆盖隐藏的区别和执行方式 | 悲伤逆流</title>
   
 
 
@@ -346,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/16/c语言中struct大小计算/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/c-重载覆盖隐藏的区别和执行方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张越">
@@ -363,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c语言中struct大小计算</h1>
+          <h1 class="post-title" itemprop="name headline">c++重载覆盖隐藏的区别和执行方式</h1>
         
 
         <div class="post-meta">
@@ -375,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T05:12:29+08:00">
-                2017-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T06:53:03+08:00">
+                2017-09-14
               </time>
             
 
@@ -398,8 +395,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">编程语言</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -415,7 +412,7 @@
 
           
           
-             <span id="/2017/05/16/c语言中struct大小计算/" class="leancloud_visitors" data-flag-title="c语言中struct大小计算">
+             <span id="/c-重载覆盖隐藏的区别和执行方式/" class="leancloud_visitors" data-flag-title="c++重载覆盖隐藏的区别和执行方式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,41 +444,34 @@
       
 
       
-        <h1 id="struct-大小计算"><a href="#struct-大小计算" class="headerlink" title="struct 大小计算"></a>struct 大小计算</h1><p>结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。</p>
-<h2 id="默认对齐方式："><a href="#默认对齐方式：" class="headerlink" title="默认对齐方式："></a>默认对齐方式：</h2><p><strong>在默认对齐方式下，结构体成员的内存分配满足下面三个条件：</strong></p>
-<ol>
-<li>结构体第一个成员的地址和结构体的首地址相同</li>
-<li>结构体每个成员地址相对于结构体首地址的偏移量（offset）是该成员大小的整数倍，如果不是则编译器会在成员之间添加填充字节（internal adding）。</li>
-<li>结构体总的大小要是其成员中最大size的整数倍，如果不是编译器会在其末尾添加填充字节（trailing padding）。</li>
+        <h2 id="成员函数被重载（overload）的特征"><a href="#成员函数被重载（overload）的特征" class="headerlink" title="成员函数被重载（overload）的特征"></a>成员函数被重载（overload）的特征</h2><ul>
+<li>相同的范围（在同一个类中）</li>
+<li>函数名字相同</li>
+<li>参数不同</li>
+<li><p>virtual关键字可有可无</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">  private: </div><div class="line">     int a</div><div class="line">  public：</div><div class="line">      void print();</div><div class="line">      void print(int aa);</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
+<h2 id="覆盖（override）的特征"><a href="#覆盖（override）的特征" class="headerlink" title="覆盖（override）的特征"></a>覆盖（override）的特征</h2><ul>
+<li>不同的范围（分别于派生类和基类）</li>
+<li>函数名字相同</li>
+<li>参数相同</li>
+<li>基类函数必须有virtual关键字</li>
+</ul>
+<p><strong><em>覆盖是指派生类函数覆盖基类函数</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">  public:</div><div class="line">    virtual void print();</div><div class="line"> &#125;;</div><div class="line"> class B:public A</div><div class="line"> &#123;</div><div class="line">    public:</div><div class="line">      void print();</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
+<h2 id="隐藏（redefining）的规则"><a href="#隐藏（redefining）的规则" class="headerlink" title="隐藏（redefining）的规则"></a>隐藏（redefining）的规则</h2><ul>
+<li>派生类函数与基类函数同名，但是参数不同，此时，不论有无virtual关键字，基类的函数都会被隐藏。</li>
+<li><p>若派生类函数与基类函数同名且参数相同，但是基类函数没有virtual，基类的函数会被隐藏。</p>
+<p><strong><em>隐藏是指派生类的函数屏蔽了与其同名的基类函数。</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">public:</div><div class="line">  void print();</div><div class="line"> &#125;;</div><div class="line"> class B:public A&#123;</div><div class="line"> private:</div><div class="line">  int a;</div><div class="line"> public:</div><div class="line">   void print(int aa);</div><div class="line">   &#125;;</div><div class="line">   -----------------------------------------------------</div><div class="line">   class A&#123;</div><div class="line">   public:</div><div class="line">     void print();</div><div class="line">  &#125;;</div><div class="line">  class B:public A&#123;</div><div class="line">  public:</div><div class="line">    void print();</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
+<h2 id="3种情况怎么执行"><a href="#3种情况怎么执行" class="headerlink" title="3种情况怎么执行"></a>3种情况怎么执行</h2><ol>
+<li>重载：看参数</li>
+<li>隐藏：看指针类型</li>
+<li>覆盖：看实体对象类型</li>
 </ol>
-<p><strong>下面是一个示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">struct s1&#123;</div><div class="line">    char ch;</div><div class="line">    int a;</div><div class="line">    double b;</div><div class="line">    char c1;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">struct s2&#123;</div><div class="line">    char ch;</div><div class="line">    int a;</div><div class="line">    double b;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    cout &lt;&lt; &quot;s1的大小： &quot; &lt;&lt; sizeof(struct s1) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;ch的地址偏移是   &quot; &lt;&lt; offsetof(s1, ch) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;a 的地址偏移是   &quot; &lt;&lt; offsetof(s1, a) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;b 的地址偏移是   &quot; &lt;&lt; offsetof(s1, b) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;c1的地址偏移是   &quot; &lt;&lt; offsetof(s1, c1) &lt;&lt; endl;</div><div class="line"></div><div class="line">    cout &lt;&lt; &quot;=====================================&quot; &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;s2的大小: &quot; &lt;&lt; sizeof(struct s2) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;ch的地址偏移是   &quot; &lt;&lt; offsetof(s2, ch) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;a 的地址偏移是   &quot; &lt;&lt; offsetof(s2, a) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;b 的地址偏移是   &quot; &lt;&lt; offsetof(s2, b) &lt;&lt; endl;</div><div class="line">    getchar();</div><div class="line"></div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>代码中 offsetof函数可以得到结构体成员相对于该结构体首地址的偏移量。<br>其运行结果如下图：<br><img src="http://img.blog.csdn.net/20151003143703690" alt="这里写图片描述"></p>
-<p><strong>对于结构体s1来说：</strong></p>
-<ol>
-<li>ch是其第一个成员故其地址和结构体的地址是相同的也就是说偏移量为0；</li>
-<li>a是int型其大小为4个字节，按照条件（2） 结构体每个成员地址相对于结构首地址的偏移量（offset）是该成员大小的整数倍，如果不是则编译器会在成员之间添加填充字节，所以其地址偏移应该是4，也就说编译器在第一个成员ch后面填充了3个字节。</li>
-<li>b是double型占8个字节，其地址偏移应该是8的整数倍，由于a的地址偏移是4其大小为4个字节，正好b的偏移地址是8，不需要填充字节。</li>
-<li>c1是char型占1个字节，偏移地址是16（b的偏移地址是8大小也是8，中间也没有填充字节）。</li>
-<li>这时成员ch占1个字节后面有3个字节的填充，a占4个字节后面无填充，b占8个字节后面无填充，c1占1个字节，s1总的大小是1+3+4+8+1=17” role=”presentation”&gt;1+3+4+8+1=171+3+4+8+1=17。按照条件（3）结构体总的大小需是其最大成员所占空间的整数倍，其最大的成员b占有8字节，17显然是不符合条件的，所以需要在结构体的末尾填充7个字节，最后结构体总的大小是24字节。<br>结构体s2和s1的成员是非常相似的，唯一的区别是其末尾没有最后7个字节的填充，所以其大小是16个字节，这里用于和s1做对比说明s1末尾的填充字节。</li>
-</ol>
-<h2 id="指定对齐方式"><a href="#指定对齐方式" class="headerlink" title="指定对齐方式"></a>指定对齐方式</h2><p><strong>可以使用#pragma pack(N)来指定结构体成员的对齐方式<br>对于指定的对齐方式，其成员的地址偏移以及结构的总的大小也有下面三个约束条件：</strong></p>
-<ol>
-<li>结构体第一个成员的地址和结构体的首地址相同</li>
-<li>结构体每个成员的地址偏移需要满足：N大于等于该成员的大小，那么该成员的地址偏移需满足默认对齐方式（地址偏移是其成员大小的整数倍）；Ｎ小于该成员的大小，那么该成员的地址偏移是N的整数倍。</li>
-<li>结构体总的大小需要时N的整数倍，如果不是需要在结构体的末尾进行填充。</li>
-<li>如果N大于结构体成员中最大成员的大小，则N不起作用，仍然按照默认方式对齐。</li>
-</ol>
-<p><strong>还是用上述示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#pragma pack(4) //设定按照4字节对齐</div></pre></td></tr></table></figure>
-<p>运行结果为：</p>
-<p><img src="http://img.blog.csdn.net/20151003150901035" alt="这里写图片描述"></p>
-<h3 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h3><ol>
-<li>在使用#pragma pack设定对齐方式一定要是2的整数幂，也就是（1，2，4，8，16，…），不然不起作用的，仍然按照默认方式对齐。</li>
-<li>当结构体中有其他的结构体作为成员时，计算最大成员是不能把结构体成员作为一个整体来计算，要看其每个成员的大小。</li>
-</ol>
-<p>转载自：</p>
-<p>   <a href="http://www.cnblogs.com/wangguchangqing/p/4853438.html" target="_blank" rel="external">http://www.cnblogs.com/wangguchangqing/p/4853438.html</a></p>
+</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -511,8 +501,6 @@
           
             <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c++</a>
           
-            <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c</a>
-          
         </div>
       
 
@@ -524,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/16/const只读变量的内存分配/" rel="next" title="const只读变量的内存分配">
-                <i class="fa fa-chevron-left"></i> const只读变量的内存分配
+              <a href="/using关键字在c#中的使用/" rel="next" title="using关键字在c#中的使用">
+                <i class="fa fa-chevron-left"></i> using关键字在c#中的使用
               </a>
             
           </div>
@@ -534,8 +522,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/17/ubuntu下安装命令的区别/" rel="prev" title="ubuntu下安装命令的区别">
-                ubuntu下安装命令的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/浅析select函数及FD宏/" rel="prev" title="浅析select函数及FD宏">
+                浅析select函数及FD宏 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -726,7 +714,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#struct-大小计算"><span class="nav-number">1.</span> <span class="nav-text">struct 大小计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认对齐方式："><span class="nav-number">1.1.</span> <span class="nav-text">默认对齐方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定对齐方式"><span class="nav-number">1.2.</span> <span class="nav-text">指定对齐方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明："><span class="nav-number">1.2.1.</span> <span class="nav-text">说明：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#成员函数被重载（overload）的特征"><span class="nav-number">1.</span> <span class="nav-text">成员函数被重载（overload）的特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#覆盖（override）的特征"><span class="nav-number">2.</span> <span class="nav-text">覆盖（override）的特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏（redefining）的规则"><span class="nav-number">3.</span> <span class="nav-text">隐藏（redefining）的规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3种情况怎么执行"><span class="nav-number">4.</span> <span class="nav-text">3种情况怎么执行</span></a></li></ol></div>
             
 
           </div>
@@ -1348,6 +1336,21 @@ var jiathis_config={
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

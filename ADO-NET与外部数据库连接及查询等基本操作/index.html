@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c++," />
+  <meta name="keywords" content=".net,c#," />
 
 
 
@@ -108,25 +108,25 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="成员函数被重载（overload）的特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 1234567class A&amp;#123;  private:      int a  public：      void print();      void print(int aa);  &amp;#125;; 覆盖（override）的特征 不同的范围（分别于派生类和基类） 函">
-<meta name="keywords" content="c++">
+<meta name="description" content="建立与数据库连接:需要连接字符串，用到System.Data.SqlClient类库。 方法：  使用一个类构建SQL Server 连接字符串-  创建SqlconnectionStringBuider实例 - 根据需要设置其属性 - 访问该对象的ConnectionString属性  与SQL Server数据库建立连接 - 生成一个指向该数据库的连接字符串 - 创建SqlConnection">
+<meta name="keywords" content=".net,c#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c++重载覆盖隐藏的区别和执行方式">
-<meta property="og:url" content="http://yoursite.com/2017/09/15/c-重载覆盖隐藏的区别和执行方式/index.html">
+<meta property="og:title" content="ADO.NET与外部数据库连接及查询等基本操作">
+<meta property="og:url" content="http://yoursite.com/ADO-NET与外部数据库连接及查询等基本操作/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="成员函数被重载（overload）的特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 1234567class A&amp;#123;  private:      int a  public：      void print();      void print(int aa);  &amp;#125;; 覆盖（override）的特征 不同的范围（分别于派生类和基类） 函">
+<meta property="og:description" content="建立与数据库连接:需要连接字符串，用到System.Data.SqlClient类库。 方法：  使用一个类构建SQL Server 连接字符串-  创建SqlconnectionStringBuider实例 - 根据需要设置其属性 - 访问该对象的ConnectionString属性  与SQL Server数据库建立连接 - 生成一个指向该数据库的连接字符串 - 创建SqlConnection">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-22T14:11:58.515Z">
+<meta property="og:updated_time" content="2017-09-17T13:56:47.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c++重载覆盖隐藏的区别和执行方式">
-<meta name="twitter:description" content="成员函数被重载（overload）的特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 1234567class A&amp;#123;  private:      int a  public：      void print();      void print(int aa);  &amp;#125;; 覆盖（override）的特征 不同的范围（分别于派生类和基类） 函">
+<meta name="twitter:title" content="ADO.NET与外部数据库连接及查询等基本操作">
+<meta name="twitter:description" content="建立与数据库连接:需要连接字符串，用到System.Data.SqlClient类库。 方法：  使用一个类构建SQL Server 连接字符串-  创建SqlconnectionStringBuider实例 - 根据需要设置其属性 - 访问该对象的ConnectionString属性  与SQL Server数据库建立连接 - 生成一个指向该数据库的连接字符串 - 创建SqlConnection">
 
 
 
@@ -156,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/15/c-重载覆盖隐藏的区别和执行方式/"/>
+  <link rel="canonical" href="http://yoursite.com/ADO-NET与外部数据库连接及查询等基本操作/"/>
 
 
 
 
 
-  <title>c++重载覆盖隐藏的区别和执行方式 | 悲伤逆流</title>
+  <title>ADO.NET与外部数据库连接及查询等基本操作 | 悲伤逆流</title>
   
 
 
@@ -343,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/15/c-重载覆盖隐藏的区别和执行方式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/ADO-NET与外部数据库连接及查询等基本操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张越">
@@ -360,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c++重载覆盖隐藏的区别和执行方式</h1>
+          <h1 class="post-title" itemprop="name headline">ADO.NET与外部数据库连接及查询等基本操作</h1>
         
 
         <div class="post-meta">
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T06:53:03+08:00">
-                2017-09-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T23:37:04+08:00">
+                2017-05-21
               </time>
             
 
@@ -412,7 +412,7 @@
 
           
           
-             <span id="/2017/09/15/c-重载覆盖隐藏的区别和执行方式/" class="leancloud_visitors" data-flag-title="c++重载覆盖隐藏的区别和执行方式">
+             <span id="/ADO-NET与外部数据库连接及查询等基本操作/" class="leancloud_visitors" data-flag-title="ADO.NET与外部数据库连接及查询等基本操作">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -444,35 +444,112 @@
       
 
       
-        <h2 id="成员函数被重载（overload）的特征"><a href="#成员函数被重载（overload）的特征" class="headerlink" title="成员函数被重载（overload）的特征"></a>成员函数被重载（overload）的特征</h2><ul>
-<li>相同的范围（在同一个类中）</li>
-<li>函数名字相同</li>
-<li>参数不同</li>
-<li><p>virtual关键字可有可无</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">  private: </div><div class="line">     int a</div><div class="line">  public：</div><div class="line">      void print();</div><div class="line">      void print(int aa);</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
-<h2 id="覆盖（override）的特征"><a href="#覆盖（override）的特征" class="headerlink" title="覆盖（override）的特征"></a>覆盖（override）的特征</h2><ul>
-<li>不同的范围（分别于派生类和基类）</li>
-<li>函数名字相同</li>
-<li>参数相同</li>
-<li>基类函数必须有virtual关键字</li>
-</ul>
-<p><strong><em>覆盖是指派生类函数覆盖基类函数</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">  public:</div><div class="line">    virtual void print();</div><div class="line"> &#125;;</div><div class="line"> class B:public A</div><div class="line"> &#123;</div><div class="line">    public:</div><div class="line">      void print();</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
-<h2 id="隐藏（redefining）的规则"><a href="#隐藏（redefining）的规则" class="headerlink" title="隐藏（redefining）的规则"></a>隐藏（redefining）的规则</h2><ul>
-<li>派生类函数与基类函数同名，但是参数不同，此时，不论有无virtual关键字，基类的函数都会被隐藏。</li>
-<li><p>若派生类函数与基类函数同名且参数相同，但是基类函数没有virtual，基类的函数会被隐藏。</p>
-<p><strong><em>隐藏是指派生类的函数屏蔽了与其同名的基类函数。</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">public:</div><div class="line">  void print();</div><div class="line"> &#125;;</div><div class="line"> class B:public A&#123;</div><div class="line"> private:</div><div class="line">  int a;</div><div class="line"> public:</div><div class="line">   void print(int aa);</div><div class="line">   &#125;;</div><div class="line">   -----------------------------------------------------</div><div class="line">   class A&#123;</div><div class="line">   public:</div><div class="line">     void print();</div><div class="line">  &#125;;</div><div class="line">  class B:public A&#123;</div><div class="line">  public:</div><div class="line">    void print();</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
-<h2 id="3种情况怎么执行"><a href="#3种情况怎么执行" class="headerlink" title="3种情况怎么执行"></a>3种情况怎么执行</h2><ol>
-<li>重载：看参数</li>
-<li>隐藏：看指针类型</li>
-<li>覆盖：看实体对象类型</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
+        <h2 id="建立与数据库连接"><a href="#建立与数据库连接" class="headerlink" title="建立与数据库连接:"></a>建立与数据库连接:</h2><p><strong>需要连接字符串，用到System.Data.SqlClient类库。</strong></p>
+<p>方法：</p>
+<ul>
+<li>使用一个类构建SQL Server 连接字符串<pre><code>-  创建SqlconnectionStringBuider实例
+- 根据需要设置其属性
+- 访问该对象的ConnectionString属性
+</code></pre></li>
+<li><p>与SQL Server数据库建立连接</p>
+<pre><code>- 生成一个指向该数据库的连接字符串
+- 创建SqlConnection实例，向构造函数传递连接字符串
+- 调用Sqlconnection实例的open方法
+</code></pre><h2 id="代码实例："><a href="#代码实例：" class="headerlink" title="代码实例："></a>代码实例：</h2><pre><code>   /*建立连接字符串生成器*/
+SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
 
+ /*能连上本地服务器，以windows身份登录*/
+if (LocalServer.Checked == true)
+          connection.DataSource = &quot;(local)&quot;;
+
+         /*以sql身份登录*/
+ else
+           connection.DataSource = ServerName.Text;
+
+    /*若sql server是express版本*/
+ if (IsExpressEdition.Checked == true)
+           connection.DataSource += @&quot;\SQLEXPRESS&quot;;
+
+    /*基于当前windows登陆的集成安全验证*/
+ if(AuthenticateWindows.Checked == true)
+ {
+      connection.IntegratedSecurity = true;
+ }                       
+ else
+ {
+     connection.IntegratedSecurity = false;//基于SQL用户的安全验证
+     connection.UserID = UserName.Text;
+     connection.Password = UserPassword.Text;
+ }
+     SqlConnection linkToDB = new SqlConnection(connection.ConnectionString);//新建连接对象
+     linkToDB.Open();//打开数据库连接
+         linkToDB.close();//关闭数据库，或用dispose方法，或者用using语句就会自动关闭
+</code></pre><h2 id="对数据库进行查询、修改、更新、删除等操作："><a href="#对数据库进行查询、修改、更新、删除等操作：" class="headerlink" title="对数据库进行查询、修改、更新、删除等操作："></a>对数据库进行查询、修改、更新、删除等操作：</h2><p><strong>需要用到System.Data.SqlClient类库中的sqlcommand类</strong></p>
+</li>
+</ul>
+<p>方法：</p>
+<ul>
+<li><p>通过一个ADO.NET连接运行SQL查询</p>
+<pre><code>-  创建Sqlcommandr实例
+- 将其CommandText属性设置为SQL语句
+- 将其Connection属性设置为一个有效的Sqlconnection实例
+- 调用这个命令对象的ExecuteNonQuery方法
+</code></pre></li>
+<li><p>调用一个返回静态结果的SQL Server存储过程</p>
+<pre><code>-  创建Sqlcommandr实例
+- 将其CommandText属性设置为这个存储过程的名字
+- 将其Connection属性设置为一个有效的Sqlconnection实例
+- 调用这个命令对象的ExecuteScalar方法，捕获返回值
+</code></pre></li>
+</ul>
+<h2 id="代码实例：-1"><a href="#代码实例：-1" class="headerlink" title="代码实例："></a>代码实例：</h2><pre><code>     /*对于对数据库采取操作但不返回存储数据的服务*/
+   string sqlText = @&quot;UPDATE WorkTable SET ProcessedOn = GETDATE() WHERE ProcessedOn IS NULL&quot;;
+
+  SqlCommand dataAction = new SqlCommand(sqlText, linkToDB);
+  dataAction.ExecuteNonQuery();
+
+      /*对于返回单个值的查询*/
+string sqlText1 = &quot;select count(*) from WorkTable&quot;;
+
+SqlCommand dataAction1 = new SqlCommand(sqlText1, linkToDB);
+
+int total = (int)dataAction1.ExecuteScalar();//返回单个值
+
+      /*对于返回数据行的操作*/
+      string sqlText2 = &quot;select ID,FullName,ZipCode from Customer&quot;;
+
+   SqlCommand dataAction2 = new SqlCommand(sqlText2, linkToDB);
+
+   SqlDataReader scanCustomer = dataAction2.ExecuteReader();//一次返回一个数据行
+
+   if (scanCustomer.HasRows)
+       while (scanCustomer.Read());
+
+     /*对于访问字段的值，用访问器*/
+     result = scanCustomer[0];//从起始位置查找
+      result = scanCustomer[“ID”];//按列名称查找
+  scanCustomer.NextResult();//若有多个列的返回时
+
+     /*查询中存在参数时，用@标识符替代*/
+     string test = @&quot;update Employee set Salary = @NewSalary where ID = @EmployeeID&quot;；
+
+  SqlCommand salaryUpadate = new SqlCommand(test, linkToDB);
+
+   paramValue.Value = 50000m;//设置参数的值
+
+   salaryUpadate.Parameters.Add(paramValue);//获取参数的值到原来的字符串中
+
+    salaryUpadate.Parameters.AddWithValue(&quot;@NewSalary&quot;, 50000m);//另外一种实例化方式，用于简单的参数时
+
+    salaryUpadate.ExecuteNonQuery();
+
+  /*对于存储过程的查询时*/
+  string test1 = &quot;dbo.AddLocation&quot;;//创建存储过程的字符串
+
+   SqlCommand locationCommand = new SqlCommand(test1, linkToDB);
+
+   locationCommand.CommandType = CommandType.StoredProcedure;//把数据库命令的类型设置成存储过程
+</code></pre>
       
     </div>
     
@@ -499,7 +576,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c++</a>
+            <a href="/tags/net/" rel="tag"><i class= "fa fa-tag"></i> .net</a>
+          
+            <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c#</a>
           
         </div>
       
@@ -512,8 +591,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/07/using关键字在c#中的使用/" rel="next" title="using关键字在c#中的使用">
-                <i class="fa fa-chevron-left"></i> using关键字在c#中的使用
+              <a href="/SQL中的function自定义函数/" rel="next" title="SQL中的function自定义函数">
+                <i class="fa fa-chevron-left"></i> SQL中的function自定义函数
               </a>
             
           </div>
@@ -522,8 +601,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/20/浅析select函数及FD宏/" rel="prev" title="浅析select函数及FD宏">
-                浅析select函数及FD宏 <i class="fa fa-chevron-right"></i>
+              <a href="/using关键字在c#中的使用/" rel="prev" title="using关键字在c#中的使用">
+                using关键字在c#中的使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -714,7 +793,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#成员函数被重载（overload）的特征"><span class="nav-number">1.</span> <span class="nav-text">成员函数被重载（overload）的特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#覆盖（override）的特征"><span class="nav-number">2.</span> <span class="nav-text">覆盖（override）的特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏（redefining）的规则"><span class="nav-number">3.</span> <span class="nav-text">隐藏（redefining）的规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3种情况怎么执行"><span class="nav-number">4.</span> <span class="nav-text">3种情况怎么执行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立与数据库连接"><span class="nav-number">1.</span> <span class="nav-text">建立与数据库连接:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实例："><span class="nav-number">2.</span> <span class="nav-text">代码实例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数据库进行查询、修改、更新、删除等操作："><span class="nav-number">3.</span> <span class="nav-text">对数据库进行查询、修改、更新、删除等操作：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实例：-1"><span class="nav-number">4.</span> <span class="nav-text">代码实例：</span></a></li></ol></div>
             
 
           </div>
@@ -1336,6 +1415,21 @@ var jiathis_config={
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

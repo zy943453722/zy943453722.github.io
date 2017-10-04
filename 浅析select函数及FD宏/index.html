@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c++,函数," />
+  <meta name="keywords" content="linux,网络编程，c," />
 
 
 
@@ -108,25 +108,25 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="using关键字在C#中的3种用法using 关键字有两个主要用途：   (一).作为指令，用于为命名空间创建别名或导入其他命名空间中定义的类型。   (二).作为语句，用于定义一个范围，在此范围的末尾将释放对象。 (一).作为指令1、用在命名空间里     using + 命名空间名字，这样可以在程序中直接用命令空间中的类型，而不必指定类型的详细命名空间，类似于Java的import，这个功能也">
-<meta name="keywords" content="c++,函数">
+<meta name="description" content="select函数这个函数允许进程指示内核等待多个事件中的任一个发生，并仅在一个或者多个事件发生或经过某指定时间后才唤醒进程。 函数原型：12345#include&amp;lt;sys/select.h&amp;gt;#include&amp;lt;sys/time.h&amp;gt;int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *except">
+<meta name="keywords" content="linux,网络编程，c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="using关键字在c#中的使用">
-<meta property="og:url" content="http://yoursite.com/2017/06/07/using关键字在c#中的使用/index.html">
+<meta property="og:title" content="浅析select函数及FD宏">
+<meta property="og:url" content="http://yoursite.com/浅析select函数及FD宏/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="using关键字在C#中的3种用法using 关键字有两个主要用途：   (一).作为指令，用于为命名空间创建别名或导入其他命名空间中定义的类型。   (二).作为语句，用于定义一个范围，在此范围的末尾将释放对象。 (一).作为指令1、用在命名空间里     using + 命名空间名字，这样可以在程序中直接用命令空间中的类型，而不必指定类型的详细命名空间，类似于Java的import，这个功能也">
+<meta property="og:description" content="select函数这个函数允许进程指示内核等待多个事件中的任一个发生，并仅在一个或者多个事件发生或经过某指定时间后才唤醒进程。 函数原型：12345#include&amp;lt;sys/select.h&amp;gt;#include&amp;lt;sys/time.h&amp;gt;int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *except">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-25T15:03:44.491Z">
+<meta property="og:updated_time" content="2017-09-22T13:06:12.595Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="using关键字在c#中的使用">
-<meta name="twitter:description" content="using关键字在C#中的3种用法using 关键字有两个主要用途：   (一).作为指令，用于为命名空间创建别名或导入其他命名空间中定义的类型。   (二).作为语句，用于定义一个范围，在此范围的末尾将释放对象。 (一).作为指令1、用在命名空间里     using + 命名空间名字，这样可以在程序中直接用命令空间中的类型，而不必指定类型的详细命名空间，类似于Java的import，这个功能也">
+<meta name="twitter:title" content="浅析select函数及FD宏">
+<meta name="twitter:description" content="select函数这个函数允许进程指示内核等待多个事件中的任一个发生，并仅在一个或者多个事件发生或经过某指定时间后才唤醒进程。 函数原型：12345#include&amp;lt;sys/select.h&amp;gt;#include&amp;lt;sys/time.h&amp;gt;int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *except">
 
 
 
@@ -156,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/07/using关键字在c#中的使用/"/>
+  <link rel="canonical" href="http://yoursite.com/浅析select函数及FD宏/"/>
 
 
 
 
 
-  <title>using关键字在c#中的使用 | 悲伤逆流</title>
+  <title>浅析select函数及FD宏 | 悲伤逆流</title>
   
 
 
@@ -343,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/07/using关键字在c#中的使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/浅析select函数及FD宏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张越">
@@ -360,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">using关键字在c#中的使用</h1>
+          <h1 class="post-title" itemprop="name headline">浅析select函数及FD宏</h1>
         
 
         <div class="post-meta">
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T06:50:36+08:00">
-                2017-06-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T07:13:33+08:00">
+                2017-09-19
               </time>
             
 
@@ -395,8 +395,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">编程语言</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -412,7 +412,7 @@
 
           
           
-             <span id="/2017/06/07/using关键字在c#中的使用/" class="leancloud_visitors" data-flag-title="using关键字在c#中的使用">
+             <span id="/浅析select函数及FD宏/" class="leancloud_visitors" data-flag-title="浅析select函数及FD宏">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -444,46 +444,42 @@
       
 
       
-        <h1 id="using关键字在C-中的3种用法"><a href="#using关键字在C-中的3种用法" class="headerlink" title="using关键字在C#中的3种用法"></a>using关键字在C#中的3种用法</h1><p><strong>using 关键字有两个主要用途：</strong></p>
-<p>  (一).作为指令，用于为命名空间创建别名或导入其他命名空间中定义的类型。</p>
-<p>  (二).作为语句，用于定义一个范围，在此范围的末尾将释放对象。</p>
-<h2 id="一-作为指令"><a href="#一-作为指令" class="headerlink" title="(一).作为指令"></a>(一).作为指令</h2><p>1、用在命名空间里    </p>
-<p>using + 命名空间名字，这样可以在程序中直接用命令空间中的类型，而不必指定类型的详细命名空间，类似于Java的import，这个功能也是最常用的，几乎每个cs的程序都会用到。<br>例如：using System; 一般都会出现在*.cs中。</p>
-<p>2、为命名空间或类型创建别名，using + 别名 = 包括详细命名空间信息的具体的类型。</p>
-<p>这种做法有个好处就是当同一个cs引用了两个不同的命名空间，但两个命名空间都包括了一个相同名字的类型的时候。当需要用到这个类型的时候，就每个地方都要用详细命名空间的办法来区分这些相同名字的类型。而用别名的方法会更简洁，用到哪个类就给哪个类做别名声明就可以了。注意：并不是说两个名字重复，给其中一个用了别名，另外一个就不需要用别名了，如果两个都要使用，则两个都需要用using来定义别名的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">using System; </div><div class="line">using aClass = NameSpace1.MyClass; </div><div class="line">using bClass = NameSpace2.MyClass; </div><div class="line">namespace NameSpace1 &#123; </div><div class="line">         public class MyClass &#123; </div><div class="line">                  public override string ToString() &#123; </div><div class="line">                         return &quot;You are in NameSpace1.MyClass&quot;; </div><div class="line">                         &#125; </div><div class="line">                     &#125; </div><div class="line">                 &#125; </div><div class="line">namespace NameSpace2 &#123; </div><div class="line">     class MyClass &#123; </div><div class="line">           public override string ToString() &#123; </div><div class="line">                  return &quot;You are in NameSpace2.MyClass&quot;; </div><div class="line">                  &#125; </div><div class="line">           &#125; </div><div class="line">     &#125; </div><div class="line"> namespace testUsing &#123; </div><div class="line">       using NameSpace1; </div><div class="line">       using NameSpace2; </div><div class="line">       class Class1 &#123; </div><div class="line">             [STAThread] static void Main(string[] args)              &#123; </div><div class="line">                 aClass my1 = new aClass();</div><div class="line">                 Console.WriteLine(my1); bClass my2 = new bClass(); </div><div class="line">                 Console.WriteLine(my2); Console.WriteLine(&quot;Press any key&quot;); Console.Read();</div><div class="line">                 &#125;</div><div class="line">             &#125; </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>(二).作为语句</p>
-<ul>
-<li>using 语句允许程序员指定使用资源的对象应当何时释放资源。</li>
-<li><p>using 语句中使用的对象必须实现 IDisposable 接口。此接口提供了 Dispose 方法，该方法将释放此对象的资源。</p>
-<p>  ①可以在 using 语句之前声明对象。<br>　　    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    Font font2 = new Font(“Arial”, 10.0f);</div><div class="line">    using (font2)</div><div class="line">    &#123;</div><div class="line">    // use font2;</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">②可以在 using 语句之中声明对象。</div></pre></td></tr></table></figure></p>
-<pre><code>using (Font font2 = new Font(“Arial”, 10.0f))
-{
-// use font2;
-}
-</code></pre><p>  ③可以有多个对象与 using 语句一起使用，但是必须在 using 语句内部声明这些对象。</p>
-<pre><code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">       using (Font font3=new Font(“Arial”,10.0f), font4=new Font(“Arial”,10.0f))&#123;</div><div class="line">       // Use font3 and font4. </div><div class="line">       &#125;</div><div class="line"></div><div class="line">***使用规则:***</div><div class="line"></div><div class="line">①using只能用于实现了IDisposable接口的类型，禁止为不支持IDisposable接口的类型使用using语句，否则会出现编译错误；</div><div class="line"></div><div class="line">②using语句适用于清理单个非托管资源的情况，而多个非托管对象的清理最好以try-finnaly来实现，因为嵌套的using语句可能存在隐藏的Bug。内层using块引发异常时，将不能释放外层using块的对象资源；</div><div class="line"></div><div class="line">③using语句支持初始化多个变量，但前提是这些变量的类型必须相同，例如：</div></pre></td></tr></table></figure>
-
-  using(Pen p1 = new Pen(Brushes.Black), p2 = new Pen(Brushes.Blue)){
-  // 
-  }
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">④针对初始化多个不同类型的变量时，可以都声明为IDisposable类型，例如：</div></pre></td></tr></table></figure>
-
-  using (IDisposable font = new Font(“Verdana”, 12), pen = new Pen(Brushes.Black))
-</code></pre><p>　　    {<br>　　        float size = (font as Font).Size;<br>　　        Brush brush = (pen as Pen).Brush;<br>　　    }</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">using实质</div><div class="line">    在程序编译阶段，编译器会自动将using语句生成为try-finally语句，并在finally块中调用对象的Dispose方法，来清理资源。所以，using语句等效于try-finally语句，例如：</div></pre></td></tr></table></figure>
-</code></pre></li>
+        <h1 id="select函数"><a href="#select函数" class="headerlink" title="select函数"></a>select函数</h1><p><strong>这个函数允许进程指示内核等待多个事件中的任一个发生，并仅在一个或者多个事件发生或经过某指定时间后才唤醒进程。</strong></p>
+<h3 id="函数原型："><a href="#函数原型：" class="headerlink" title="函数原型："></a>函数原型：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#include&lt;sys/select.h&gt;</div><div class="line">#include&lt;sys/time.h&gt;</div><div class="line"></div><div class="line">int select(int maxfdp1, fd_set *readset, fd_set *writeset, fd_set *exceptset, const struct timeval *timeout);</div><div class="line">     返回：准备好的描述字正数目，0表示超时，-1表示出错</div></pre></td></tr></table></figure>
+<h3 id="函数参数解析："><a href="#函数参数解析：" class="headerlink" title="函数参数解析："></a>函数参数解析：</h3><ol>
+<li>参数maxfdp1指定被测试的描述字数目，即经过FD_SET之后，所关心的描述符的个数，（因为从0开始，因此一般这个值是测试描述符集下标最大值+1）并通知内核。</li>
+<li>中间三个参数readset，writeset，exceptset指定我们要让内核测试读、写、异常条件所需的描述字。也就是说，对于readset，<strong>我们关心是否可以从这些文件中读取数据了</strong>，对于writeset，<strong>我们关心是否可以向这些文件中写入数据了</strong>，对于exceptset，<strong>我们关心这些文件是否发生异常</strong>。</li>
+<li>参数timeout，它告诉内核等待一组指定的描述字中的任意一个准备好可花多长时间，结构timeval指定了秒数和微秒数成员：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">struct timeval</div><div class="line">&#123;</div><div class="line">long tv-sec;//秒</div><div class="line">long tv-usec;//微秒</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong><em>有三种可能：</em></strong></p>
+<p> 1) 、永远等待下去：仅在有一个描述符准备好I/O时才返回，要设置timeout为NULL。</p>
+<p> 2) 、等待固定时间：在有一个描述符准备好I/O时返回，但不超过timeout参数指定的秒数和微秒数。</p>
+<p> 3) 、根本不等待：检查描述字后立即返回，这称为轮询(polling),参数timeout要指向某一个timeval结构，且其中的秒数和微秒数要置0。</p>
+<p> <strong>前两种是阻塞的，最后一种是不阻塞的</strong></p>
+<h2 id="fdset结构体解析"><a href="#fdset结构体解析" class="headerlink" title="fdset结构体解析:"></a>fdset结构体解析:</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#include&lt;typesizes.h&gt;</div><div class="line">#define __FD_SETSIZE 1024</div><div class="line"></div><div class="line">#include&lt;sys/select.h&gt;</div><div class="line">#define FD_SETSIZE __FD_SETSIZE</div><div class="line">typedef long int __fd_mask;//64位系统上大小为8</div><div class="line">#undef __NFDBITS</div><div class="line">#define __NFDBITS (8*(int) sizeof(__fd_mask))  // 8*8 = 64</div><div class="line"></div><div class="line">typedef struct</div><div class="line">&#123;</div><div class="line">#ifdef __USE_XOPEN</div><div class="line">    __fd_mask fds_bits[__FD_SETSIZE / __NFDBITS];//数组长度为1024/64 = 16</div><div class="line"> #define __FDS_BITS(set) ((set)-&gt;fds_bits)</div><div class="line"> #else</div><div class="line">    __fd_mask __fds_bits[____FD_SETSIZE / __NFDBITS];</div><div class="line"> #define __FDS_BITS(set) ((set)-&gt;fds_bits)</div><div class="line"> #endif</div><div class="line"> &#125;fd_set</div></pre></td></tr></table></figure>
+<p> <strong>因此fd_set结构体中仅包含一个整型数组，该数组的每个元素的每一位都会标记一个文件描述符。因此16个long int元素就是 16<em>8</em>8 = 1024位 ，最多容纳1024个文件描述符！！</strong></p>
+<h1 id="select中FD相关的4个宏"><a href="#select中FD相关的4个宏" class="headerlink" title="select中FD相关的4个宏"></a>select中FD相关的4个宏</h1><ol>
+<li>void FD_ZERO(fd_set *fdset);//使fd_set结构体中的整型数组清零</li>
+<li>void  FD_SET(int fd,fd_set *fdset); //设置感兴趣的文件描述符</li>
+<li>void FD_CLR（int fd,fd_set *fdset);//关闭感兴趣的文件描述符</li>
+<li>int FD_ISSET(int fd, fd_set *fdset); //用于判断某个文件描述符是否就绪，且在感兴趣的描述符集合中</li>
+</ol>
+<h1 id="对于几个宏和select的理解"><a href="#对于几个宏和select的理解" class="headerlink" title="对于几个宏和select的理解"></a>对于几个宏和select的理解</h1><ul>
+<li>fd_set是创建文件描述符集合</li>
+<li>FD_SET是设置感兴趣的文件描述符放入描述符集合中，将对应位置为1，但是此文件描述符可能准备好了，也可能没有准备好，可以说是一类文件描述符。</li>
+<li>select是监听这几个文件描述符看哪几个就绪了，就返回个数，没就绪的再次置回0，就绪的保留1。</li>
+<li>FD_ISSET是真正查看哪个指定的文件描述符是否就绪，就绪就为1，未就绪就为0。</li>
 </ul>
-<p>using (Font f2 = new Font(“Arial”, 10, FontStyle.Bold)）<br>{<br>     font2.F();<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">被编译器翻译为：</div></pre></td></tr></table></figure></p>
-<pre><code>Font f2 = new Font(“Arial”, 10, FontStyle.Bold);　
-try{ 
-    font2.F();　
-}
-finally　{ 
-   if (f2 != null) ((IDisposable)f2).Dispose();
-   }
-</code></pre><p>```</p>
-<p>转载自<br><a href="http://www.cnblogs.com/xiaobiexi/p/6179127.html" target="_blank" rel="external">http://www.cnblogs.com/xiaobiexi/p/6179127.html</a></p>
+<p><strong><em>example：</em></strong></p>
+<p>   为说明方便，取fd_set长度为1字节，fd_set中的每一bit可以对应一个文件描述符fd。则1字节长的fd_set最大可以对应8个fd。<br>　　<br>  （1）执行fd_set set; FD_ZERO(&amp;set);则set用位表示是0000,0000。
+　　</p>
+<p> （2）若fd＝5,执行FD_SET(fd,&amp;set);后set变为0001,0000(第5位置为1)
+　</p>
+<p> （3）若再加入fd＝2，fd=1,则set变为0001,0011</p>
+<p>（4）执行select(6,&amp;set,0,0,0)阻塞等待</p>
+<p>（5）若fd=1,fd=2上都发生可读事件，则select返回，此时set变为0000,0011。注意：没有事件发生的fd=5被清空。</p>
+<p>（6）此时FD_ISSET(1,&amp;set)返回1，而FD_ISSET(5,&amp;set)返回0</p>
 
       
     </div>
@@ -511,9 +507,9 @@ finally　{
       
         <div class="post-tags">
           
-            <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c++</a>
+            <a href="/tags/linux/" rel="tag"><i class= "fa fa-tag"></i> linux</a>
           
-            <a href="/tags/函数/" rel="tag"><i class= "fa fa-tag"></i> 函数</a>
+            <a href="/tags/网络编程，c/" rel="tag"><i class= "fa fa-tag"></i> 网络编程，c</a>
           
         </div>
       
@@ -526,8 +522,8 @@ finally　{
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/21/ADO-NET与外部数据库连接及查询等基本操作/" rel="next" title="ADO.NET与外部数据库连接及查询等基本操作">
-                <i class="fa fa-chevron-left"></i> ADO.NET与外部数据库连接及查询等基本操作
+              <a href="/c-重载覆盖隐藏的区别和执行方式/" rel="next" title="c++重载覆盖隐藏的区别和执行方式">
+                <i class="fa fa-chevron-left"></i> c++重载覆盖隐藏的区别和执行方式
               </a>
             
           </div>
@@ -536,8 +532,8 @@ finally　{
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/15/c-重载覆盖隐藏的区别和执行方式/" rel="prev" title="c++重载覆盖隐藏的区别和执行方式">
-                c++重载覆盖隐藏的区别和执行方式 <i class="fa fa-chevron-right"></i>
+              <a href="/浅析多线程并发及写微信红包遇到的问题/" rel="prev" title="浅析多线程并发及写微信红包遇到的问题">
+                浅析多线程并发及写微信红包遇到的问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -728,7 +724,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#using关键字在C-中的3种用法"><span class="nav-number">1.</span> <span class="nav-text">using关键字在C#中的3种用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-作为指令"><span class="nav-number">1.1.</span> <span class="nav-text">(一).作为指令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#select函数"><span class="nav-number">1.</span> <span class="nav-text">select函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数原型："><span class="nav-number">1.0.1.</span> <span class="nav-text">函数原型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数解析："><span class="nav-number">1.0.2.</span> <span class="nav-text">函数参数解析：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fdset结构体解析"><span class="nav-number">1.1.</span> <span class="nav-text">fdset结构体解析:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#select中FD相关的4个宏"><span class="nav-number">2.</span> <span class="nav-text">select中FD相关的4个宏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对于几个宏和select的理解"><span class="nav-number">3.</span> <span class="nav-text">对于几个宏和select的理解</span></a></li></ol></div>
             
 
           </div>
@@ -1350,6 +1346,21 @@ var jiathis_config={
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
