@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SQL server," />
+  <meta name="keywords" content="c,linux网络编程," />
 
 
 
@@ -115,18 +115,21 @@
 
 
 
-<meta name="description" content="SQL自定义函数 产生背景（已经有了存储过程，为什么还要使用自定义函数） 发展历史 构成 使用方法 适用范围 注意事项 疑问  内容产生背景（已经有了存储过程，为什么还要使用自定义函数）与存储过程的区别（存在的意义）：  能够在select等SQL语句中直接使用自定义函数，存储过程不行。 自定义函数可以调用其他函数，也可以调用自己（递归） 可以在表列和 CHECK 约束中使用自定义函数来实现特殊列">
-<meta name="keywords" content="SQL server">
+<meta name="description" content="线程同步Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。 互斥锁1.互斥量：  互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互斥量对应">
+<meta name="keywords" content="c,linux网络编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL中的function自定义函数">
-<meta property="og:url" content="http://zy943453722.ink/SQL中的function自定义函数/index.html">
+<meta property="og:title" content="线程同步机制之互斥锁和条件变量">
+<meta property="og:url" content="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="SQL自定义函数 产生背景（已经有了存储过程，为什么还要使用自定义函数） 发展历史 构成 使用方法 适用范围 注意事项 疑问  内容产生背景（已经有了存储过程，为什么还要使用自定义函数）与存储过程的区别（存在的意义）：  能够在select等SQL语句中直接使用自定义函数，存储过程不行。 自定义函数可以调用其他函数，也可以调用自己（递归） 可以在表列和 CHECK 约束中使用自定义函数来实现特殊列">
+<meta property="og:description" content="线程同步Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。 互斥锁1.互斥量：  互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互斥量对应">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-17T14:19:37.237Z">
+<meta property="og:image" content="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/1.png">
+<meta property="og:image" content="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/2.png">
+<meta property="og:updated_time" content="2017-10-12T15:00:28.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL中的function自定义函数">
-<meta name="twitter:description" content="SQL自定义函数 产生背景（已经有了存储过程，为什么还要使用自定义函数） 发展历史 构成 使用方法 适用范围 注意事项 疑问  内容产生背景（已经有了存储过程，为什么还要使用自定义函数）与存储过程的区别（存在的意义）：  能够在select等SQL语句中直接使用自定义函数，存储过程不行。 自定义函数可以调用其他函数，也可以调用自己（递归） 可以在表列和 CHECK 约束中使用自定义函数来实现特殊列">
+<meta name="twitter:title" content="线程同步机制之互斥锁和条件变量">
+<meta name="twitter:description" content="线程同步Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。 互斥锁1.互斥量：  互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互斥量对应">
+<meta name="twitter:image" content="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/1.png">
 
 
 
@@ -156,13 +159,13 @@
 
 
 
-  <link rel="canonical" href="http://zy943453722.ink/SQL中的function自定义函数/"/>
+  <link rel="canonical" href="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/"/>
 
 
 
 
 
-  <title>SQL中的function自定义函数 | 悲伤逆流</title>
+  <title>线程同步机制之互斥锁和条件变量 | 悲伤逆流</title>
   
 
 
@@ -343,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/SQL中的function自定义函数/">
+    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张越">
@@ -360,7 +363,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SQL中的function自定义函数</h1>
+          <h1 class="post-title" itemprop="name headline">线程同步机制之互斥锁和条件变量</h1>
         
 
         <div class="post-meta">
@@ -372,8 +375,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-20T18:06:48+08:00">
-                2017-05-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-13T05:24:15+08:00">
+                2017-10-12
               </time>
             
 
@@ -395,8 +398,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -412,7 +415,7 @@
 
           
           
-             <span id="/SQL中的function自定义函数/" class="leancloud_visitors" data-flag-title="SQL中的function自定义函数">
+             <span id="/线程同步机制之互斥锁和条件变量/" class="leancloud_visitors" data-flag-title="线程同步机制之互斥锁和条件变量">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -444,68 +447,47 @@
       
 
       
-        <h1 id="SQL自定义函数"><a href="#SQL自定义函数" class="headerlink" title="SQL自定义函数"></a>SQL自定义函数</h1><ul>
-<li>产生背景（已经有了存储过程，为什么还要使用自定义函数）</li>
-<li>发展历史</li>
-<li>构成</li>
-<li>使用方法</li>
-<li>适用范围</li>
-<li>注意事项</li>
-<li>疑问</li>
+        <h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p><strong>Pthread是POSIX threads 的简称，是POSIX的线程标准。</strong><br> Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。</p>
+<h2 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h2><h3 id="1-互斥量："><a href="#1-互斥量：" class="headerlink" title="1.互斥量："></a>1.互斥量：</h3><p>  互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互斥量对应一个共享资源，互斥量状态：<strong><em>1.解锁状态意味着共享资源可用，2.加锁状态意味着共享资源不可用。</em></strong></p>
+<p>  一个线程需要使用共享资源时，使用thread_mutex_lock申请：1.当互斥量为解锁状态，则占用互斥量，并给互斥量加锁，占用资源（互斥量为加锁状态，其他线程不能使用互斥量并等待互斥量变为解锁状态），2.如果互斥量为加锁状态，则线程等待，直到互斥量为解锁状态（其他线程使用完共享资源后会解锁互斥量，释放资源）。</p>
+<h3 id="2-临界区："><a href="#2-临界区：" class="headerlink" title="2.临界区："></a>2.临界区：</h3><p>临界区指的是一个访问共用资源的程序片断。通常由定义一个互斥量并加锁来保护这段临界区代码。</p>
+<h3 id="3-互斥量的相关函数："><a href="#3-互斥量的相关函数：" class="headerlink" title="3.互斥量的相关函数："></a>3.互斥量的相关函数：</h3><p><strong><em>首先定义互斥量的结构体pthread_mutex_t。</em></strong></p>
+<p><strong>1). 互斥量初始化函数：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include &lt;pthread.h&gt;</div><div class="line">int pthread_mutex_init(pthread_mutex_t *mutex,const pthread_mutexattr_t *mutexattr)</div></pre></td></tr></table></figure></p>
+<p>第一个参数即互斥量结构体的指针，第二个变量则是互斥量的属性（当为NULL时是默认属性）。成功返回0，失败返回错误码。</p>
+<p><strong>2). 互斥量上锁函数：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;pthread.h&gt;</div><div class="line">int pthread_mutex_lock(pthread_mutex_t *mutex)</div></pre></td></tr></table></figure></p>
+<p>此函数参数即互斥量结构体，返回成功为0，失败返回错误码。<br>是阻塞的上锁函数。</p>
+<p><strong>3). 互斥量解锁函数：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;pthread.h&gt;</div><div class="line">int pthread_mutex_unlock(pthread_mutex_t *mutex)</div></pre></td></tr></table></figure></p>
+<p>参数和返回值同上锁函数。</p>
+<p><strong>4). 互斥量的另一种上锁函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;pthread.h&gt;</div><div class="line">int pthread_mutex_trylock(pthread_mutex_t *mutex)</div></pre></td></tr></table></figure></p>
+<p>这是上锁函数的非阻塞版本。若已经上锁，返回EBUSY。</p>
+<p><strong>5). 互斥量的销毁函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;pthread.h&gt;</div><div class="line">int pthread_mutex_destroy(pthread_mutex_t *mutex)</div></pre></td></tr></table></figure></p>
+<p>参数和返回值同上锁函数。</p>
+<h2 id="条件变量"><a href="#条件变量" class="headerlink" title="条件变量"></a>条件变量</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>条件变量通过允许线程阻塞和等待另一个线程发送信号的方法弥补了互斥锁的不足，它常和互斥锁一起使用。使用时，条件变量被用来阻塞一个线程，当条件不满足时，线程往往解开相应的互斥锁并等待条件发生变化。一旦其它的某个线程改变了条件变量，它将通知相应的条件变量唤醒一个或多个正被此条件变量阻塞的线程。这些线程将重新锁定互斥锁并重新测试条件是否满足。</p>
+<h3 id="2-条件变量的相关函数"><a href="#2-条件变量的相关函数" class="headerlink" title="2.条件变量的相关函数"></a>2.条件变量的相关函数</h3><p><strong><em>首先定义条件变量结构体pthread_cond_t</em></strong></p>
+<p><strong>1). 条件变量初始化函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;pthread.h&gt;</div><div class="line">int pthread_cond_init(pthread_cond_t *cond,pthread_condattr_t *cond_attr)</div></pre></td></tr></table></figure></p>
+<p>第一个参数即条件变量结构体指针，第二个变量即条件变量的属性（如果为NULL，则是默认属性）。成功返回0，失败返回错误码。</p>
+<p><strong>2).条件变量的销毁函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;pthread.h&gt;</div><div class="line">int pthread_cond_destroy(pthread_cond_t *cond)</div></pre></td></tr></table></figure></p>
+<p>第一个参数即条件变量结构体指针。返回值同初始化函数。</p>
+<p><strong>3). 条件变量的广播函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;pthread.h&gt;</div><div class="line">int pthread_cond_broadcast(pthread_cond_t *cond)</div></pre></td></tr></table></figure></p>
+<p>参数和返回值同销毁函数。<br>此函数以广播的方式唤醒所有等待目标条件变量的线程。</p>
+<p><strong>4). 条件变量的信号函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;pthread.h&gt;</div><div class="line">int pthread_cond_signal(pthread_cond_t *cond)</div></pre></td></tr></table></figure></p>
+<p>参数返回值同销毁函数<br>此函数用于唤醒一个等待目标变量的线程。至于哪个线程被唤醒，则取决于线程的优先级和调度策略。</p>
+<p><strong>5). 条件变量的等待函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;pthread.h&gt;</div><div class="line">int pthread_cond_wait(pthread_cond_t *cond)</div></pre></td></tr></table></figure></p>
+<p>参数和返回值同销毁函数。<br><strong>在调用此函数之前必须保证互斥量已经加锁。</strong></p>
+<font color="blue"> <strong>重点：模拟等待函数（pthread_cond_wait)调用前后的过程</strong></font>
+
+<p>第一个线程首先调用：<br>    pthread_mutex_lock(&amp;mymutex);</p>
+<p>然后，它检查了列表。没有找到感兴趣的东西，于是它调用：<br>    pthread_cond_wait(&amp;mycond, &amp;mymutex);</p>
+<p>然后，pthread_cond_wait() 调用在返回前执行许多操作：<br>    pthread_mutex_unlock(&amp;mymutex);</p>
+<p>它对 mymutex 解锁，然后进入睡眠状态，等待 mycond 以接收 POSIX 线程“信号”。一旦接收到“信号”（加引号是因为我们并不是在讨论传统的 UNIX 信号，而是来自 pthread_cond_signal() 或 pthread_cond_broadcast() 调用的信号），它就会苏醒。但 pthread_cond_wait() 没有立即返回——它还要做一件事：重新锁定 mutex：<br>    pthread_mutex_lock(&amp;mymutex);</p>
+<p>pthread_cond_wait() 知道我们在查找 mymutex “背后”的变化，因此它继续操作，为我们锁定互斥对象，然后才返回。</p>
+<h3 id="3-代码示例（互斥锁和条件变量一起用实现线程同步）"><a href="#3-代码示例（互斥锁和条件变量一起用实现线程同步）" class="headerlink" title="3.代码示例（互斥锁和条件变量一起用实现线程同步）"></a>3.代码示例（互斥锁和条件变量一起用实现线程同步）</h3><ul>
+<li><strong>程序思路：</strong><br>在这里利用多线程技术实现生产者和消费者问题，生产者线程向一缓冲区中写数据，消费<br>者线程从缓冲区中读取数据，由于生产者线程和消费者线程共享同一缓冲区，为了正确读<br>写数据，在使用缓冲队列时必须保持互斥。生产者线程和消费者线程必须满足：生产者写<br>入缓冲区的数目不能超过缓冲区容量，消费者读取的数目不能超过生产者写入的数目。<br>在程序中使用了一个小技巧来判断缓冲区是空还是满。在初始化时读指针和写指针为0;<br>如果读指针等于写指针,则缓冲区是空的;如果(写指针+ 1) % N 等于读指针,则缓冲区是满的,<br>%表示取余数,这时实际上有一个单元空出未用。下面是完整的程序段和注释。</li>
 </ul>
-<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><h3 id="产生背景（已经有了存储过程，为什么还要使用自定义函数）"><a href="#产生背景（已经有了存储过程，为什么还要使用自定义函数）" class="headerlink" title="产生背景（已经有了存储过程，为什么还要使用自定义函数）"></a>产生背景（已经有了存储过程，为什么还要使用自定义函数）</h3><p><strong>与存储过程的区别（存在的意义）：</strong></p>
-<ol>
-<li>能够在select等SQL语句中直接使用自定义函数，存储过程不行。</li>
-<li>自定义函数可以调用其他函数，也可以调用自己（递归）</li>
-<li>可以在表列和 CHECK 约束中使用自定义函数来实现特殊列或约束</li>
-<li>自定义函数不能有任何副作用。函数副作用是指对具有函数外作用域（例如数据库表的修改）的资源状态的任何永久性更改。函数中的语句唯一能做的更改是对函数上的局部对象（如局部游标或局部变量）的更改。不能在函数中执行的操作包括：对数据库表的修改，对不在函数上的局部游标进行操作，发送电子邮件，尝试修改 目录，以及生成返回至用户的结果集。存储过程没有此限制</li>
-<li>函数只能返回一个变量。而存储过程可以返回多个</li>
-</ol>
-<h3 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h3><p><strong>SqlServer 2000之后都支持用户自定义函数</strong></p>
-<h3 id="构成"><a href="#构成" class="headerlink" title="构成"></a>构成</h3><p>在SQL Server 2000 中根据函数返回值形式的不同将用户自定义函数分为三种类型：标量函数（Scalar Function）、内嵌表值函数（Inline Function）、多声明表值函数（Multi-Statement Function）</p>
-<p>标量函数：标量函数是对单一值操作，返回单一值。能够使用表达式的地方，就可以使用标量函数。像我们经常使用的left、getdate等，都属于标量函数。系统函数中的标量函数包括：数学函数、日期和时间函数、字符串函数、数据类型转换函数等</p>
-<p>内嵌表值函数：内嵌表值函数的功能相当于一个参数化的视图。它返回的是一个表，内联表值型函数没有由BEGIN-END 语句括起来的函数体。其返回的表由一个位于RETURN 子句中的SELECT 命令段从数据库中筛选出来。</p>
-<p><strong><em>作用</em></strong></p>
-<p>多声明表值函数：可以看作标量型和内嵌表值型函数的结合体。它的返回值是一个表，但它和标量型函数一样有一个用BEGIN-END 语句括起来的函数体，返回值的表中的数据是由函数体中的语句插入的。由此可见，它可以进行多次查询，对数据进行多次筛选与合并，弥补了内联表值型函数的不足。</p>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>SQL Server 为三种类型的用户自定义函数 提供了不同的命令创建格式。</p>
-<p>（1） 创建标量型用户自定义函数（Scalar functions） 其语法如下：</p>
-<p>　　各参数说明如下：</p>
-<p>　　owner_name ：指定用户自定义函数的所有者。 </p>
-<p>　　function_name：指定用户自定义函数的名称。database_name.owner_name.function_name 应是惟一的。 </p>
-<p>　　@parameter_name：定义一个或多个参数的名称。一个函数最多可以定义1024 个参数每个参数前用“@”符号标明。参数的作用范围是整个函数。参数只能替代常量，不能替代表 名、列名或其它数据库对象的名称。用户自定义函数不支持输出参数。  </p>
-<p>　　scalar_parameter_data_type：指定标量型参数的数据类型，可以为除TEXT、 NTEXT、 IMAGE、 CURSOR、TIMESTAMP 和TABLE 类型外的其它数据类型。  </p>
-<p>　　scalar_return_data_type：指定标量型返回值的数据类型，可以为除TEXT、 NTEXT、 IMAGE、 CURSOR、TIMESTAMP 和TABLE 类型外的其它数据类型。  </p>
-<p>　　scalar_expression：指定标量型用户自定义函数返回的标量值表达式。 </p>
-<p>　　function_body：指定一系列的Transact-SQL 语句，它们决定了函数的返回值。  </p>
-<p>　　ENCRYPTION：加密选项。让SQL Server 对系统表中有关CREATE FUNCTION 的声明加密，以防止用户自定义函数作为SQL Server 复制的一部分被发布（Publish） 。 </p>
-<p> 　　SCHEMABINDING：计划绑定选项将用户自定义函数绑定到它所引用的数据库对象如果指定 了此选项，则函数所涉及的数据库对象从此将不能被删除或修改，除非函数被删除或去掉此选项。应注意的是，要绑定的数据库对象必须与函数在同一数据库中。　　<br>   2）创建内联表值型用户自定义函 数（Inline Table-valued Functions）</p>
-<p>其语法如下：</p>
-<p>　　各参数说明如下：</p>
-<p>　　TABLE：指定返回值为一个表。</p>
-<p>　　select-stmt：单个SELECT 语句，确定返回的表的数据。</p>
-<p>　　其余参数与标量型用户自定义函数相同。</p>
-<p>（3） 创建多声明表值型用户自定义函数</p>
-<p>　　其语法如下：</p>
-<p>　　各参数说明如下：</p>
-<p>　　@return_variable ：一个TABLE 类型的变量，用于存储和累积返回的表中的数据行。 其余参数与标量型用户自定义函数相同。</p>
-<p>　　在多声明表值型用户自定义函数的函数体中允许使用下列Transact-SQL 语句。 赋值语句（Assignment statements）； 流程控制语句（Control-of-Flow statements）； 定义作用范围在函数内的变量和 游标的DECLARE 语句； SELECT 语句； 编辑函数中定义的表变量的INSERT、 UPDATE 和DELETE 语句； 在函数中允许涉及诸如声明游 标、打开游标、关闭游标、释放游标这样的游标操作，对于读取游标而言，除非在FETCH 语句中使用INTO 从句来对某一变量赋值，否则不允许在函数中使用FETCH 语句来向客户端返回数据。此 外不确定性函数（Non-deterministic functions） 不能在用户自定义函数中使 用。所谓不确定性函数是指那些使用相同的调用参数在不同时刻调用得到的返回值不同的函数。</p>
-<h3 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h3><h4 id="用户自定义函数不能用于执行一系列改变数据库状态的操作在编写自定义函数时需要注意的："><a href="#用户自定义函数不能用于执行一系列改变数据库状态的操作在编写自定义函数时需要注意的：" class="headerlink" title="用户自定义函数不能用于执行一系列改变数据库状态的操作在编写自定义函数时需要注意的："></a>用户自定义函数不能用于执行一系列改变数据库状态的操作在编写自定义函数时需要注意的：</h4><p><strong><em>对于标量函数：</em></strong></p>
-<ol>
-<li>所有的入参前都必须加@</li>
-<li>create后的返回，单词是returns，而不是return</li>
-<li>returns后面的跟的不是变量，而是返回值的类型，如：int，char等。</li>
-<li>在begin/end语句块中，是return。</li>
-</ol>
-<p><strong><em>内嵌表值函数：</em></strong></p>
-<ol>
-<li>只能返回table，所以returns后面一定是TABLE</li>
-<li>AS后没有begin/end，只有一个return语句来返回特定的记录。<br><strong><em>多语句表值函数：</em></strong></li>
-<li>returns后面直接定义返回的表类型，首先是定义表名，表明前面要加@，然后是关键字TABLE，最后是表的结构。</li>
-<li>在begin/end语句块中，直接将需要返回的结果insert到returns定义的表中就可以了，在最后return时，会将结果返回。</li>
-<li>最后只需要return，return后面不跟任何变量。</li>
-</ol>
-<h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h3><p>自定义函数不能修改数据库，但它可以调用存储过程，那么在自定义函数中调用一个有修改数据库的操作的存储过程，这个自定义函数能不能执行？</p>
-<p><strong>答：</strong><br>自定义函数只能调用扩展存储过程，但是SQL Server 2008的后续版本将删除该功能，不再支持扩展存储过程，所以应避免在开发中使用扩展存储过程。因此，可以得出结论是：实际开发中，函数不会去调用存储过程，也就无法对数据库进行修改操作了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div></pre></td><td class="code"><pre><div class="line">#include&lt;stdio.h&gt;</div><div class="line">#include&lt;pthread.h&gt; </div><div class="line">#include&lt;time.h&gt;</div><div class="line">#include&lt;stdlib.h&gt;</div><div class="line">#include&lt;pthread.h&gt;</div><div class="line">#include&lt;unistd.h&gt;</div><div class="line">#define BUFFER_SIZE 8 </div><div class="line">#define OVER (-1)</div><div class="line">#if 0</div><div class="line"></div><div class="line">//互斥量和条件变量综合的结构体</div><div class="line">struct prodcons &#123;</div><div class="line">    int buffer[BUFFER_SIZE]; </div><div class="line">    pthread_mutex_t lock;      //互斥LOCK</div><div class="line">    int readpos , writepos;    //定义写和读的位置</div><div class="line">    pthread_cond_t notempty;   //缓冲区非空条件判断</div><div class="line">    pthread_cond_t notfull;    //缓冲区未满条件判断</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//获取时间的函数</div><div class="line">char * get_time(void)&#123;</div><div class="line">    time_t rawtime;</div><div class="line">    struct tm * timeinfo;</div><div class="line">    time(&amp;rawtime);</div><div class="line">    return asctime(localtime(&amp;rawtime));</div><div class="line">&#125;</div><div class="line"></div><div class="line">//对结构体初始化函数</div><div class="line">void init(struct prodcons * b)&#123;</div><div class="line">    pthread_mutex_init(&amp;b-&gt;lock,NULL);</div><div class="line">    pthread_cond_init(&amp;b-&gt;notempty,NULL);</div><div class="line">    pthread_cond_init(&amp;b-&gt;notfull,NULL);</div><div class="line"></div><div class="line">    b-&gt;readpos=0;</div><div class="line">    b-&gt;writepos=0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//放数据的函数</div><div class="line">void put(struct prodcons* b,int data)&#123;</div><div class="line">    pthread_mutex_lock(&amp;b-&gt;lock);</div><div class="line">    if((b-&gt;writepos + 1) % BUFFER_SIZE == b-&gt;readpos)//这是缓冲区满了的情况，留一个空用于发送-1这个信号</div><div class="line">    &#123;</div><div class="line">        pthread_cond_wait(&amp;b-&gt;notfull, &amp;b-&gt;lock);</div><div class="line">    &#125;</div><div class="line">//    pthread_mutex_lock(&amp;b-&gt;lock);</div><div class="line">//    大家仔细理解互斥锁的位置，以及pthread_cond_wait函数的内核实现（解锁，休眠让出cpu，条件满足后被内核唤醒，上锁，形成临界区，保护资源）</div><div class="line">    b-&gt;buffer[b-&gt;writepos]=data;</div><div class="line">    b-&gt;writepos++;</div><div class="line">    if(b-&gt;writepos &gt;= BUFFER_SIZE)</div><div class="line">        b-&gt;writepos=0;</div><div class="line">    printf(&quot;put %d at %s \n&quot;, data, get_time());</div><div class="line">    pthread_mutex_unlock(&amp;b-&gt;lock);</div><div class="line">    pthread_cond_signal(&amp;b-&gt;notempty);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//取数据的函数</div><div class="line">int get(struct prodcons *b)&#123;</div><div class="line">    int data;</div><div class="line"></div><div class="line">    pthread_mutex_lock(&amp;b-&gt;lock);</div><div class="line">    if(b-&gt;writepos == b-&gt;readpos)</div><div class="line">    &#123;</div><div class="line">        printf(&quot;0 == 0\n&quot;);</div><div class="line">        pthread_cond_wait(&amp;b-&gt;notempty, &amp;b-&gt;lock);</div><div class="line">        printf(&quot;start read \n&quot;);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    data = b-&gt;buffer[b-&gt;readpos];</div><div class="line">    b-&gt;readpos++;</div><div class="line">    if(b-&gt;readpos &gt;= BUFFER_SIZE)</div><div class="line">        b-&gt;readpos=0;</div><div class="line">    printf(&quot;get the data is : %d\n&quot;, data);</div><div class="line">    pthread_cond_signal(&amp;b-&gt;notfull);</div><div class="line">    pthread_mutex_unlock(&amp;b-&gt;lock);</div><div class="line">    return data;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//定义全局结构体对象</div><div class="line">struct prodcons buffer;</div><div class="line"></div><div class="line">//生产者回调函数</div><div class="line">void *producer(void *data)</div><div class="line">&#123;</div><div class="line">    int n;</div><div class="line">    </div><div class="line">    for(n = 0; n &lt; 10; n++)</div><div class="line">    &#123;</div><div class="line">        printf(&quot;before produce %d \n&quot;, n) ;</div><div class="line">        put(&amp;buffer, n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    put(&amp;buffer, OVER);//发信号说-1已经放进去了，说明没内容写了</div><div class="line">    </div><div class="line">    return NULL;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//消费者回调函数</div><div class="line">void *consumer(void * data)</div><div class="line">&#123;</div><div class="line">    int d;</div><div class="line">    while(1)</div><div class="line">    &#123;</div><div class="line">        d = get(&amp;buffer);</div><div class="line">        if(d == OVER)//说明生产者已经写完</div><div class="line">            break;</div><div class="line">        printf(&quot;consumerd the num is %d\n&quot;, d);</div><div class="line">    &#125;</div><div class="line">    return NULL;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//主函数</div><div class="line">int main(void)</div><div class="line">&#123;</div><div class="line">    pthread_t th_a, th_b;</div><div class="line">    pthread_attr_t attr;</div><div class="line">    void *retval;</div><div class="line">    pthread_attr_init(&amp;attr);</div><div class="line">    init(&amp;buffer);</div><div class="line">    pthread_attr_setdetachstate(&amp;attr, PTHREAD_CREATE_DETACHED);</div><div class="line">//    pthread_create(&amp;th_b, &amp;attr, consumer, 0);</div><div class="line">    pthread_create(&amp;th_b, NULL, consumer, 0);</div><div class="line">    sleep(3);</div><div class="line">    pthread_create(&amp;th_a, NULL, producer, 0);</div><div class="line">    pthread_join(th_a, &amp;retval);</div><div class="line">    pthread_join(th_b, &amp;retval);</div><div class="line">    sleep(100);</div><div class="line">    </div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  <img src="/线程同步机制之互斥锁和条件变量/1.png" alt="图1"><br>  <img src="/线程同步机制之互斥锁和条件变量/2.png" alt="图2"><br>  由图中可以看出，当条件变量不空不满足条件时，调用了等待函数使得此线程睡眠，让出cpu，进行其他操作，但是当条件满足时并不是直接回到原线程进行到的地方，而是重新加锁，在读。</p>
+<p>参考资料：</p>
+<p><a href="http://blog.csdn.net/shanshanpt/article/details/" target="_blank" rel="external">http://blog.csdn.net/shanshanpt/article/details/</a><br><a href="http://blog.csdn.net/lovecodeless/article/details/24885127" target="_blank" rel="external">http://blog.csdn.net/lovecodeless/article/details/24885127</a><br><a href="http://blog.sina.com.cn/s/blog_590be5290100ikh5.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_590be5290100ikh5.html</a></p>
 
       
     </div>
@@ -562,7 +544,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SQL-server/" rel="tag"><i class= "fa fa-tag"></i> SQL server</a>
+            <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c</a>
+          
+            <a href="/tags/linux网络编程/" rel="tag"><i class= "fa fa-tag"></i> linux网络编程</a>
           
         </div>
       
@@ -575,8 +559,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/ubuntu下安装命令的区别/" rel="next" title="ubuntu下安装命令的区别">
-                <i class="fa fa-chevron-left"></i> ubuntu下安装命令的区别
+              <a href="/浅析多线程并发及写微信红包遇到的问题/" rel="next" title="浅析多线程并发及写微信红包遇到的问题">
+                <i class="fa fa-chevron-left"></i> 浅析多线程并发及写微信红包遇到的问题
               </a>
             
           </div>
@@ -584,10 +568,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/ADO-NET与外部数据库连接及查询等基本操作/" rel="prev" title="ADO.NET与外部数据库连接及查询等基本操作">
-                ADO.NET与外部数据库连接及查询等基本操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -782,7 +762,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL自定义函数"><span class="nav-number">1.</span> <span class="nav-text">SQL自定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产生背景（已经有了存储过程，为什么还要使用自定义函数）"><span class="nav-number">1.1.1.</span> <span class="nav-text">产生背景（已经有了存储过程，为什么还要使用自定义函数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发展历史"><span class="nav-number">1.1.2.</span> <span class="nav-text">发展历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构成"><span class="nav-number">1.1.3.</span> <span class="nav-text">构成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用范围"><span class="nav-number">1.1.5.</span> <span class="nav-text">适用范围</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户自定义函数不能用于执行一系列改变数据库状态的操作在编写自定义函数时需要注意的："><span class="nav-number">1.1.5.1.</span> <span class="nav-text">用户自定义函数不能用于执行一系列改变数据库状态的操作在编写自定义函数时需要注意的：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#疑问"><span class="nav-number">1.1.6.</span> <span class="nav-text">疑问</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程同步"><span class="nav-number">1.</span> <span class="nav-text">线程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互斥锁"><span class="nav-number">2.</span> <span class="nav-text">互斥锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-互斥量："><span class="nav-number">2.1.</span> <span class="nav-text">1.互斥量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-临界区："><span class="nav-number">2.2.</span> <span class="nav-text">2.临界区：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-互斥量的相关函数："><span class="nav-number">2.3.</span> <span class="nav-text">3.互斥量的相关函数：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件变量"><span class="nav-number">3.</span> <span class="nav-text">条件变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概念"><span class="nav-number">3.1.</span> <span class="nav-text">1.概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-条件变量的相关函数"><span class="nav-number">3.2.</span> <span class="nav-text">2.条件变量的相关函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-代码示例（互斥锁和条件变量一起用实现线程同步）"><span class="nav-number">3.3.</span> <span class="nav-text">3.代码示例（互斥锁和条件变量一起用实现线程同步）</span></a></li></ol></li></ol></div>
             
 
           </div>
