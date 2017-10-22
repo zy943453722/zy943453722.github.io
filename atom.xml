@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zy943453722.ink/"/>
-  <updated>2017-10-12T15:00:28.354Z</updated>
+  <updated>2017-10-22T09:13:54.187Z</updated>
   <id>http://zy943453722.ink/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>c++中类的大小</title>
+    <link href="http://zy943453722.ink/c++%E4%B8%AD%E7%B1%BB%E7%9A%84%E5%A4%A7%E5%B0%8F/"/>
+    <id>http://zy943453722.ink/c++中类的大小/</id>
+    <published>2017-10-22T16:34:26.000Z</published>
+    <updated>2017-10-22T09:13:54.187Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong><em> 类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。 </em></strong></p><h3 id="空类"><a href="#空类" class="headerlink" title="空类"></a>空类</h3><p>空类的大小为1：</p><p>目的标示这个类，c++要求每个实例在内存中都具有独一无二的地址。</p><h3 id="普通类-不继承，不含虚函数）"><a href="#普通类-不继承，不含虚函数）" class="headerlink" title="普通类(不继承，不含虚函数）"></a>普通类(不继承，不含虚函数）</h3><p>跟struct的原理一致，内存对齐原则，但静态变量不占用内存，原因是编译器将其放在了全局变量区。</p><h3 id="含有虚函数的类"><a href="#含有虚函数的类" class="headerlink" title="含有虚函数的类"></a>含有虚函数的类</h3><p>c++类中有虚函数的时候有一个指向虚函数的指针(vptr),因此此指针要占用字节空间，<strong>虚函数个数和大小无关。</strong></p><h3 id="继承的类"><a href="#继承的类" class="headerlink" title="继承的类"></a>继承的类</h3><p>子类的大小是本身成员变量的大小加上父类的大小，若父类本身就含有虚函数，则子类无论有没有虚函数都不能算上。<br><strong>当继承空类时，不加上空类的大小，而是只算本身子类的大小。</strong></p><h3 id="实例（注：笔者是在64位操作系统下操作得出的结果"><a href="#实例（注：笔者是在64位操作系统下操作得出的结果" class="headerlink" title="实例（注：笔者是在64位操作系统下操作得出的结果"></a>实例（注：笔者是在64位操作系统下操作得出的结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line">#include&lt;stdlib.h&gt;</div><div class="line">#include&lt;stdio.h&gt;</div><div class="line">class cBase</div><div class="line">&#123;</div><div class="line"></div><div class="line">&#125;; //标识存在为1</div><div class="line">class cBase1</div><div class="line">&#123;</div><div class="line">    int a;</div><div class="line">    char p;</div><div class="line">&#125;;//内存对齐，4个字节和1个字节，1字节按4字节算</div><div class="line">class cBase2</div><div class="line">&#123;</div><div class="line">  public:</div><div class="line">      cBase2();</div><div class="line">      virtual ~cBase2();//virtual开辟一块指针，因此为8</div><div class="line">  private:</div><div class="line">     int a;//4，因内存对齐则为8</div><div class="line">    char *p;//8</div><div class="line">&#125;;</div><div class="line">class c:public cBase</div><div class="line">&#123;</div><div class="line">   virtual void fun() = 0;//纯虚函数</div><div class="line">&#125;;</div><div class="line">class b&#123;&#125;;</div><div class="line">class d:public b,public c&#123;&#125;;//共享虚函数的指针</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    cout &lt;&lt; &quot;cBase类的大小:&quot; &lt;&lt; sizeof(cBase) &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; &quot;cBase1类的大小:&quot; &lt;&lt; sizeof(cBase1) &lt;&lt; endl;</div><div class="line">    cout&lt;&lt; &quot;cBase2类的大小:&quot; &lt;&lt; sizeof(cBase2) &lt;&lt; endl; </div><div class="line">    cout&lt;&lt; &quot;c类的大小:&quot; &lt;&lt; sizeof(c) &lt;&lt;endl; </div><div class="line">    cout &lt;&lt; &quot;d类的大小:&quot; &lt;&lt; sizeof(d) &lt;&lt;endl;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>结果为：<br><br>cBase类的大小：1<br><br>cBase1类的大小：8<br><br>cBase2类的大小：24<br><br>c类的大小：8<br><br>d类的大小：8<br></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;&lt;em&gt; 类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。 &lt;/em&gt;&lt;/stro
+      
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://zy943453722.ink/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="c++" scheme="http://zy943453722.ink/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>线程同步机制之互斥锁和条件变量</title>
@@ -249,9 +274,9 @@
       <category term="编程语言" scheme="http://zy943453722.ink/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="c" scheme="http://zy943453722.ink/tags/c/"/>
-    
       <category term="c++" scheme="http://zy943453722.ink/tags/c/"/>
+    
+      <category term="c" scheme="http://zy943453722.ink/tags/c/"/>
     
   </entry>
   
@@ -276,9 +301,9 @@
       <category term="编程语言" scheme="http://zy943453722.ink/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="c" scheme="http://zy943453722.ink/tags/c/"/>
-    
       <category term="c++" scheme="http://zy943453722.ink/tags/c/"/>
+    
+      <category term="c" scheme="http://zy943453722.ink/tags/c/"/>
     
   </entry>
   
