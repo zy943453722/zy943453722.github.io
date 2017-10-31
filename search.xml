@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[结构体变量malloc的故事]]></title>
+    <url>%2F%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%98%E9%87%8Fmalloc%E7%9A%84%E6%95%85%E4%BA%8B%2F</url>
+    <content type="text"><![CDATA[这是一个关于结构体通过malloc初始化的悲伤的故事 背景因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 问题描述：但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ 代码实例：12345678910111213141516171819202122232425262728/*这仅仅是个用数组动态创建栈的初始化过程*/#include&lt;stdlib.h&gt;#include&lt;stdio.h&gt;typedef struct stack&#123; int top; int count; int array[];//柔性数组，也可以方括号内定义为0，也可以定义为数组指针&#125;Stack;void Init(Stack *s,int n)&#123; s = (Stack*)malloc(sizeof(Stack) + n * sizeof(int)); s-&gt;top = -1; s-&gt;count = n;&#125;void Destroy(Stack **s)&#123; free(*s); *s = NULL;&#125;int main()&#123; Stack s; Stack *q = &amp;s; Init(q); Destroy(&amp;q); return 0;&#125; gdb调试显示结果：由图中可以看出原本传入Init函数的stack的地址为0x7fffffffde00，但malloc出来的新地址为0x602830,改变malloc出来地址上的内容，函数返回时自然而然没有保存下来。再次打印s的地址，果然还是原地址，相应数据也没有保存下来 解决方案：思路: 既然一级指针会在init函数中被重新malloc，之后返回后保存不下来，那么可以启用2级指针，之后，让malloc出来的指针和原指针的地址相同(即2级指针也指向malloc出来的指针)这样返回时才能真正将malloc出来的指针保存下来。具体解决方法重写init方法:1234567void Init(Stack **s,int n)&#123; Stack *p = (Stack *)malloc(sizeof(Stack) + n * sizeof(int));//新malloc出一块地址指向原来的结构体 *s = p; //将新malloc出来的地址赋值给原地址，让两个变成同一地址 p-&gt;top = -1; p-&gt;count = n;&#125; 图解： 此时再次调用gdb调试：可以看出当从init函数返回后q指针已经变为malloc出来的地址，由此数据也被保存了下来。]]></content>
+      <categories>
+        <category>编程语言，内存结构</category>
+      </categories>
+      <tags>
+        <tag>c</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[c++中类的大小]]></title>
     <url>%2Fc%2B%2B%E4%B8%AD%E7%B1%BB%E7%9A%84%E5%A4%A7%E5%B0%8F%2F</url>
     <content type="text"><![CDATA[类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。 空类空类的大小为1： 目的标示这个类，c++要求每个实例在内存中都具有独一无二的地址。 普通类(不继承，不含虚函数）跟struct的原理一致，内存对齐原则，但静态变量不占用内存，原因是编译器将其放在了全局变量区。 含有虚函数的类c++类中有虚函数的时候有一个指向虚函数的指针(vptr),因此此指针要占用字节空间，虚函数个数和大小无关。 继承的类子类的大小是本身成员变量的大小加上父类的大小，若父类本身就含有虚函数，则子类无论有没有虚函数都不能算上。当继承空类时，不加上空类的大小，而是只算本身子类的大小。 实例（注：笔者是在64位操作系统下操作得出的结果12345678910111213141516171819202122232425262728293031323334353637#include&lt;iostream&gt;using namespace std;#include&lt;stdlib.h&gt;#include&lt;stdio.h&gt;class cBase&#123;&#125;; //标识存在为1class cBase1&#123; int a; char p;&#125;;//内存对齐，4个字节和1个字节，1字节按4字节算class cBase2&#123; public: cBase2(); virtual ~cBase2();//virtual开辟一块指针，因此为8 private: int a;//4，因内存对齐则为8 char *p;//8&#125;;class c:public cBase&#123; virtual void fun() = 0;//纯虚函数&#125;;class b&#123;&#125;;class d:public b,public c&#123;&#125;;//共享虚函数的指针int main()&#123; cout &lt;&lt; &quot;cBase类的大小:&quot; &lt;&lt; sizeof(cBase) &lt;&lt; endl; cout &lt;&lt; &quot;cBase1类的大小:&quot; &lt;&lt; sizeof(cBase1) &lt;&lt; endl; cout&lt;&lt; &quot;cBase2类的大小:&quot; &lt;&lt; sizeof(cBase2) &lt;&lt; endl; cout&lt;&lt; &quot;c类的大小:&quot; &lt;&lt; sizeof(c) &lt;&lt;endl; cout &lt;&lt; &quot;d类的大小:&quot; &lt;&lt; sizeof(d) &lt;&lt;endl; return 0;&#125; 结果为：cBase类的大小：1cBase1类的大小：8cBase2类的大小：24c类的大小：8d类的大小：8]]></content>

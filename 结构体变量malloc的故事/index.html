@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c,多线程，linux网络编程," />
+  <meta name="keywords" content="c," />
 
 
 
@@ -115,21 +115,24 @@
 
 
 
-<meta name="description" content="多线程并发   众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。    微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。    多线程并发指的是在同一个进程中执行多个线程。有操作系统相关知识的应该知道，线程是轻量级的进程，每个线程可以独立的运行不同的指令序列">
-<meta name="keywords" content="c,多线程，linux网络编程">
+<meta name="description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 背景因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 问题描述：但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ 代码实例：12">
+<meta name="keywords" content="c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅析多线程并发及写微信红包遇到的问题">
-<meta property="og:url" content="http://zy943453722.ink/浅析多线程并发及写微信红包遇到的问题/index.html">
+<meta property="og:title" content="结构体变量malloc的故事">
+<meta property="og:url" content="http://zy943453722.ink/结构体变量malloc的故事/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="多线程并发   众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。    微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。    多线程并发指的是在同一个进程中执行多个线程。有操作系统相关知识的应该知道，线程是轻量级的进程，每个线程可以独立的运行不同的指令序列">
+<meta property="og:description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 背景因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 问题描述：但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ 代码实例：12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://zy943453722.ink/浅析多线程并发及写微信红包遇到的问题/3.png">
-<meta property="og:image" content="http://zy943453722.ink/浅析多线程并发及写微信红包遇到的问题/4.png">
-<meta property="og:updated_time" content="2017-09-25T12:59:24.736Z">
+<meta property="og:image" content="http://zy943453722.ink/结构体变量malloc的故事/3.png">
+<meta property="og:image" content="http://zy943453722.ink/结构体变量malloc的故事/4.png">
+<meta property="og:image" content="http://zy943453722.ink/结构体变量malloc的故事/zy.png">
+<meta property="og:image" content="http://zy943453722.ink/结构体变量malloc的故事/5.png">
+<meta property="og:image" content="http://zy943453722.ink/结构体变量malloc的故事/6.png">
+<meta property="og:updated_time" content="2017-10-31T09:19:32.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅析多线程并发及写微信红包遇到的问题">
-<meta name="twitter:description" content="多线程并发   众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。    微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。    多线程并发指的是在同一个进程中执行多个线程。有操作系统相关知识的应该知道，线程是轻量级的进程，每个线程可以独立的运行不同的指令序列">
-<meta name="twitter:image" content="http://zy943453722.ink/浅析多线程并发及写微信红包遇到的问题/3.png">
+<meta name="twitter:title" content="结构体变量malloc的故事">
+<meta name="twitter:description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 背景因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 问题描述：但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ 代码实例：12">
+<meta name="twitter:image" content="http://zy943453722.ink/结构体变量malloc的故事/3.png">
 
 
 
@@ -159,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="http://zy943453722.ink/浅析多线程并发及写微信红包遇到的问题/"/>
+  <link rel="canonical" href="http://zy943453722.ink/结构体变量malloc的故事/"/>
 
 
 
 
 
-  <title>浅析多线程并发及写微信红包遇到的问题 | 悲伤逆流</title>
+  <title>结构体变量malloc的故事 | 悲伤逆流</title>
   
 
 
@@ -346,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/浅析多线程并发及写微信红包遇到的问题/">
+    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/结构体变量malloc的故事/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张越">
@@ -363,7 +366,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅析多线程并发及写微信红包遇到的问题</h1>
+          <h1 class="post-title" itemprop="name headline">结构体变量malloc的故事</h1>
         
 
         <div class="post-meta">
@@ -375,8 +378,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-25T06:35:11+08:00">
-                2017-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-28T07:01:28+08:00">
+                2017-10-27
               </time>
             
 
@@ -398,8 +401,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络编程/" itemprop="url" rel="index">
-                    <span itemprop="name">网络编程</span>
+                  <a href="/categories/编程语言，内存结构/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言，内存结构</span>
                   </a>
                 </span>
 
@@ -415,7 +418,7 @@
 
           
           
-             <span id="/浅析多线程并发及写微信红包遇到的问题/" class="leancloud_visitors" data-flag-title="浅析多线程并发及写微信红包遇到的问题">
+             <span id="/结构体变量malloc的故事/" class="leancloud_visitors" data-flag-title="结构体变量malloc的故事">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,42 +450,15 @@
       
 
       
-        <h2 id="多线程并发"><a href="#多线程并发" class="headerlink" title="多线程并发"></a>多线程并发</h2><p>   众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。</p>
-<p>   微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。</p>
-<p>   多线程并发指的是在同一个进程中执行多个线程。有操作系统相关知识的应该知道，线程是轻量级的进程，每个线程可以独立的运行不同的指令序列，但是线程不独立的拥有资源，依赖于创建它的进程而存在。也就是说，同一进程中的多个线程共享相同的地址空间，可以访问进程中的大部分数据，指针和引用可以在线程间进行传递。这样，同一进程内的多个线程能够很方便的进行数据共享以及通信，也就比进程更适用于并发操作。由于缺少操作系统提供的保护机制，在多线程共享数据及通信时，就需要程序员做更多的工作以保证对共享数据段的操作是以预想的操作顺序进行的，并且要极力的避免死锁(deadlock)。</p>
-<h2 id="微信红包程序"><a href="#微信红包程序" class="headerlink" title="微信红包程序"></a>微信红包程序</h2><p>   <strong>思路：</strong></p>
-<ol>
-<li>创建抢红包人员的结构体，分别给定名字，所抢金额，以及是否已抢过字段。</li>
-<li>创建生产者线程，用于产生红包，红包金额和红包数目从标注输入读入，并对生产者回调函数进行加锁操作。</li>
-<li>创建多个消费者线程，用于多人抢红包操作，其中消费者回调函数进行红包的随机分配算法，并进行加锁操作。</li>
-</ol>
-<p><strong><em>下面是部分代码示例：</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"> /*结构体部分*/</div><div class="line">  typedef struct person</div><div class="line">  &#123;</div><div class="line">      int id;</div><div class="line">      char name[20];</div><div class="line">      int flag;</div><div class="line">       int money;</div><div class="line">   &#125;Person;</div><div class="line"></div><div class="line">/* 生产者回调函数*/</div><div class="line">   void *producer(void* value)//生产者只负责产生红包金  额和红包个数</div><div class="line">   &#123;</div><div class="line">      double n = *(double*)value;</div><div class="line">       pthread_mutex_lock(&amp;lock);</div><div class="line">       money = n;</div><div class="line">       pthread_mutex_unlock(&amp;lock);</div><div class="line">       pthread_exit(NULL);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">/*消费者回调函数*/</div><div class="line">  void *consumer(void *n)//消费者用于随机获取红包个数</div><div class="line">  &#123;</div><div class="line">      int nn = *(int*)n;</div><div class="line">      pthread_mutex_lock(&amp;lock);</div><div class="line">      printf(&quot;number%d\n&quot;,nn);</div><div class="line">      if(money &gt; 0 &amp;&amp; per[nn].flag == 0)//还没抢过</div><div class="line">      &#123;</div><div class="line">         if(num &gt; 1)</div><div class="line">         &#123;</div><div class="line">            srand((unsigned)time(NULL));//初始化随机数种子       </div><div class="line">            double avg = money / num;//获取平均值</div><div class="line">            double t = avg*2;</div><div class="line">            double randmoney = (rand()%(int)(t*100) + (int)MIN*100)/100.00 + MIN;//初始化随机数</div><div class="line">            money-=randmoney;</div><div class="line">            printf(&quot;%s取走%.2lf元\n&quot;,per[nn].name,randmoney);</div><div class="line">            printf(&quot;剩余%.2lf元\n&quot;,money);</div><div class="line">            per[nn].id = nn;</div><div class="line">            per[nn].money = randmoney;</div><div class="line">            per[nn].flag = 1;</div><div class="line">            num--;</div><div class="line">           &#125;</div><div class="line">           else</div><div class="line">           &#123;</div><div class="line">               printf(&quot;%s取走%.2lf元\n&quot;,per[nn].name,money);</div><div class="line">               printf(&quot;剩余0元\n&quot;);</div><div class="line">               money = 0;</div><div class="line">               per[nn].id = nn;</div><div class="line">               per[nn].money = money;</div><div class="line">               per[nn].flag = 1;</div><div class="line">               num--;</div><div class="line">            &#125;</div><div class="line">         &#125;</div><div class="line">       pthread_mutex_unlock(&amp;lock);</div><div class="line">       pthread_cancel(pthread_self());</div><div class="line">   &#125;</div><div class="line"></div><div class="line">/*主函数中主要线程API使用部分*/</div><div class="line"></div><div class="line">    pthread_t th_a,th_b[Total];</div><div class="line">     pthread_mutex_init(&amp;lock,0);</div><div class="line">     pthread_create(&amp;th_a,NULL,producer,(void*)&amp;value);</div><div class="line">     pthread_join(th_a,NULL);</div><div class="line">     int args[Total];</div><div class="line">     for(i = 0; i &lt; Total;i++)</div><div class="line">     &#123; </div><div class="line">         args[i] = i;</div><div class="line">         if(per[i].flag == 0)</div><div class="line">         &#123;</div><div class="line">             pthread_create(&amp;th_b[i],NULL,consumer,(void*)&amp;args[i]);</div><div class="line">             // usleep(100);</div><div class="line">             printf(&quot;i = %d\n&quot;,i);</div><div class="line">         &#125;</div><div class="line">      &#125;</div><div class="line">     for(i = 0; i &lt; Total; i++)</div><div class="line">     &#123;</div><div class="line">         pthread_join(th_b[i],NULL);</div><div class="line">     &#125;</div><div class="line">     pthread_mutex_destroy(&amp;lock);</div><div class="line"></div><div class="line">/* 全局变量声明*/</div><div class="line">     #define Total 20//线程个数</div><div class="line">     Person per[Total];</div><div class="line">     double money = 0.0;//初始金额</div><div class="line">     int num = 0;//初始红包个数</div><div class="line">     pthread_mutex_t lock;//创建锁</div></pre></td></tr></table></figure>
-<p><strong><em>这是笔者在经过对线程的更深入理解后写好的版本。</em></strong></p>
-<p>在最初的版本中，代码的<strong>69行</strong>的最后一个参数传的是(void*)&amp;i,但程序运行后时而成功时而失败，失败时如下图：</p>
-<p><img src="/浅析多线程并发及写微信红包遇到的问题/3.png" alt="图1"></p>
-<p><img src="/浅析多线程并发及写微信红包遇到的问题/4.png" alt="图2"></p>
-<p><strong><em>由运行结果可以看出20个线程全部都已创建出，但是却出现了红包抢不完的情况，而且观察发现，抢红包的顺序是乱序，且出现了同一个number的线程抢了好几次红包。</em></strong></p>
-<h3 id="因此总结为以下几个问题被给出解答："><a href="#因此总结为以下几个问题被给出解答：" class="headerlink" title="因此总结为以下几个问题被给出解答："></a>因此总结为以下几个问题被给出解答：</h3><p><strong> 1. 为什么创建线程是for循环控制，而抢红包是乱序？</strong></p>
-<p><strong><em>答：</em></strong><br>   <font color="red"><br>   这是因为存在资源抢占现象，创建线程的顺序是有for循环控制的，但创建好线程之后，谁先调用回调函数顺序是不定的，谁的抢到cpu资源，谁就先进入回调函数，谁就先抢红包。<br>   </font></p>
-<p><strong> 2. 为什么看似是同一个线程抢了多次红包？</strong></p>
-<p><strong><em>答：</em></strong></p>
-<font color="blue"><br>这是因为i++操作是三条指令，分别是找到i将其放入寄存器，而后+1，最后回赋。而在运行结果中出现多次number7的情况却并不是同一个线程抢红包多次。<strong>因为可能有某几个线程在执行回调函数时，i的值还没有进行回赋操作，就被剥夺了cpu，而pthread_create函数最后一个参数原本传的是i的地址，即从地址中取i的值，但此时i还是原来的值。</strong> 因此看似是同一个线程抢了多次红包，实则不同线程执行同一个i的回调函数。<br></font>
-
-<p><strong> 3. 为什么经过修改用数组存i值可以，但最初版本用i时不可以？</strong></p>
-<p><strong><em>答：</em></strong></p>
-<font color="green"><br>这是因为pthread_create函数最后一个参数存的是地址。<br><br>当存的是i的地址时，即i变一次，地址中的内容变一次，当创建出线程而不是立即调用回调函数，而是被剥夺cpu资源时，i值就随for循环变化而变化，因此当回调函数有了cpu资源后，i的地址中存的就不是当时地址中的内容了。<br><br>当用数组存i值时，数组共有Total个地址，创建线程时，当对应的i存到对应的地址，某个数组下表元素的地址只存其当时的值，因此即使不立即调用回调函数，之后拿到的也是当时参数地址中的值，这个值未发生变化。<br></font>
-
-<p><strong> 4. 为什么67行有flag控制，而同一个i还能进去呢？</strong></p>
-<p><strong><em>答：</em></strong></p>
-<font color="yellow"><br>**这个if判断由外部for循环控制，for循环是满足条件后进入，结束一次循环后i++，因此每次进入if后的i值都不同，至于说number7打印好多次，好像线程也创建了多次是错误的，是回调函数导致此原因，同问题2，在此就不赘述。<br></font>
-
-<p><strong> 5. 为什么在for循环中加上sleep类的函数就可以正确抢红包，但是是顺序抢？</strong></p>
-<p><strong><em>答：</em></strong></p>
-<font color="cyan"><br>这是因为usleep函数和sleep函数的作用是挂起当前线程，即挂起当前运行的主线程。在线程创建之后，即挂起主线程，只能进入子线程调用回调函数，回调函数又加了互斥锁，因此直到解锁才能释放cpu资源，即抢红包过程是顺序的。<br></font>
-
-<p><strong>6.为什么在number8后会出现number7？（即为什么8号线程后才出现7号线程？</strong></p>
-<p><strong><em>答：</em></strong><br>这其实还是存在资源抢占问题，7线程创建后，没进入回调函数就被其他线程剥夺了cpu，因此当轮到其执行回调函数时，已经过去了很久。</p>
+        <p><strong><em>这是一个关于结构体通过malloc初始化的悲伤的故事</em></strong></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。</p>
+<h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p>但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？</p>
+<h3 id="代码实例："><a href="#代码实例：" class="headerlink" title="代码实例："></a>代码实例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/*这仅仅是个用数组动态创建栈的初始化过程*/</div><div class="line">#include&lt;stdlib.h&gt;</div><div class="line">#include&lt;stdio.h&gt;</div><div class="line">typedef struct stack</div><div class="line">&#123;</div><div class="line">      int top;</div><div class="line">      int count;</div><div class="line">      int array[];//柔性数组，也可以方括号内定义为0，也可以定义为数组指针</div><div class="line">&#125;Stack;</div><div class="line">void Init(Stack *s,int n)</div><div class="line">&#123;</div><div class="line">    s = (Stack*)malloc(sizeof(Stack) + n * sizeof(int));</div><div class="line">   s-&gt;top = -1;</div><div class="line">   s-&gt;count = n;</div><div class="line">&#125;</div><div class="line">void Destroy(Stack **s)</div><div class="line">&#123;</div><div class="line">      free(*s);</div><div class="line">      *s = NULL;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">   Stack s;</div><div class="line">   Stack *q = &amp;s;</div><div class="line">   Init(q);</div><div class="line">   Destroy(&amp;q);</div><div class="line">   return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="gdb调试显示结果："><a href="#gdb调试显示结果：" class="headerlink" title="gdb调试显示结果："></a>gdb调试显示结果：</h3><p><img src="/结构体变量malloc的故事/3.png" alt="图2"><br><img src="/结构体变量malloc的故事/4.png" alt="图3"><br><strong><em>由图中可以看出原本传入Init函数的stack</em>的地址为0x7fffffffde00，但malloc出来的新地址为0x602830,改变malloc出来地址上的内容，函数返回时自然而然没有保存下来。<br>再次打印s的地址，<font color="blue">果然还是原地址，相应数据也没有保存下来</font></strong></p>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>思路: </p>
+<p>   既然一级指针会在init函数中被重新malloc，之后返回后保存不下来，那么可以启用2级指针，之后，让malloc出来的指针和原指针的地址相同(即2级指针也指向malloc出来的指针)这样返回时才能真正将malloc出来的指针保存下来。<br>具体解决方法<br>重写init方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">void Init(Stack **s,int n)</div><div class="line">&#123;</div><div class="line">  Stack *p = (Stack *)malloc(sizeof(Stack) + n * sizeof(int));//新malloc出一块地址指向原来的结构体</div><div class="line">  *s = p; //将新malloc出来的地址赋值给原地址，让两个变成同一地址</div><div class="line">  p-&gt;top = -1;</div><div class="line">  p-&gt;count = n;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="图解："><a href="#图解：" class="headerlink" title="图解："></a>图解：</h3><p><img src="/结构体变量malloc的故事/zy.png" alt="图1"></p>
+<p><strong>此时再次调用gdb调试：<br></strong><br><img src="/结构体变量malloc的故事/5.png" alt="图4"><br><img src="/结构体变量malloc的故事/6.png" alt="图5"><br>可以看出当从init函数返回后q指针已经变为malloc出来的地址，由此数据也被保存了下来。</p>
 
       
     </div>
@@ -541,8 +517,6 @@
           
             <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c</a>
           
-            <a href="/tags/多线程，linux网络编程/" rel="tag"><i class= "fa fa-tag"></i> 多线程，linux网络编程</a>
-          
         </div>
       
 
@@ -554,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/浅析select函数及FD宏/" rel="next" title="浅析select函数及FD宏">
-                <i class="fa fa-chevron-left"></i> 浅析select函数及FD宏
+              <a href="/c++中类的大小/" rel="next" title="c++中类的大小">
+                <i class="fa fa-chevron-left"></i> c++中类的大小
               </a>
             
           </div>
@@ -563,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/线程同步机制之互斥锁和条件变量/" rel="prev" title="线程同步机制之互斥锁和条件变量">
-                线程同步机制之互斥锁和条件变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -761,7 +731,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程并发"><span class="nav-number">1.</span> <span class="nav-text">多线程并发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信红包程序"><span class="nav-number">2.</span> <span class="nav-text">微信红包程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#因此总结为以下几个问题被给出解答："><span class="nav-number">2.1.</span> <span class="nav-text">因此总结为以下几个问题被给出解答：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述："><span class="nav-number">2.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实例："><span class="nav-number">3.</span> <span class="nav-text">代码实例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gdb调试显示结果："><span class="nav-number">4.</span> <span class="nav-text">gdb调试显示结果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案："><span class="nav-number">5.</span> <span class="nav-text">解决方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图解："><span class="nav-number">6.</span> <span class="nav-text">图解：</span></a></li></ol></div>
             
 
           </div>
