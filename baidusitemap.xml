@@ -4,8 +4,54 @@
 
     
   <url>
+    <loc>http://zy943453722.ink/I-O%E5%A4%8D%E7%94%A83%E4%B8%AA%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83/</loc>
+    <lastmod>2017-11-16T09:22:02.048Z</lastmod>
+    <data>
+        <display>
+        <title>I/O复用3个模型的比较</title>
+        <pubTime>2017-11-16T16:25:40.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>网络编程</tag>
+         
+         
+           
+             
+              <breadCrumb title="IPC进程通信" url="http://zy943453722.ink/categories/IPC%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zy943453722.ink/I-O%E5%A4%8D%E7%94%A8%E4%B9%8Bpoll%E5%92%8Cepoll/</loc>
+    <lastmod>2017-11-16T08:08:42.586Z</lastmod>
+    <data>
+        <display>
+        <title>I/O复用之poll和epoll</title>
+        <pubTime>2017-11-12T21:59:25.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>网络编程</tag>
+         
+        <tag>c</tag>
+         
+         
+           
+             
+              <breadCrumb title="IPC进程通信" url="http://zy943453722.ink/categories/IPC%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zy943453722.ink/%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%98%E9%87%8Fmalloc%E7%9A%84%E6%95%85%E4%BA%8B/</loc>
-    <lastmod>2017-10-31T09:19:32.405Z</lastmod>
+    <lastmod>2017-11-12T14:00:50.939Z</lastmod>
     <data>
         <display>
         <title>结构体变量malloc的故事</title>
@@ -16,7 +62,7 @@
          
            
              
-              <breadCrumb title="编程语言，内存结构" url="http://zy943453722.ink/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%EF%BC%8C%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/"/>
+              <breadCrumb title="编程语言" url="http://zy943453722.ink/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
           
         </display>
     </data>
@@ -223,9 +269,9 @@
         <title>c语言中struct大小计算</title>
         <pubTime>2017-05-15T21:12:29.000Z</pubTime>
         
-        <tag>c++</tag>
-         
         <tag>c</tag>
+         
+        <tag>c++</tag>
          
          
            
@@ -245,9 +291,9 @@
         <title>const只读变量的内存分配</title>
         <pubTime>2017-05-15T17:51:50.000Z</pubTime>
         
-        <tag>c++</tag>
-         
         <tag>c</tag>
+         
+        <tag>c++</tag>
          
          
            

@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c,c++," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -115,18 +115,16 @@
 
 
 
-<meta name="description" content="const只读变量与#define宏定义的常量的内存分配的区别编译器通常不为普通 const 只读变量分配存储空间,而是将它们保存在符号表中,这使得它成为一个编译期间的值,没有了存储与读内存的操作,使得它的效率也很高。 例如： 1234567#define M 3//宏常量const int N=5;//此时并未将 N 放入内存中......int i=N;//此时为 N 分配内存,以后不再分配i">
-<meta name="keywords" content="c,c++">
-<meta property="og:type" content="article">
-<meta property="og:title" content="const只读变量的内存分配">
-<meta property="og:url" content="http://zy943453722.ink/const只读变量的内存分配/index.html">
+<meta name="description" content="有志者，事竟成">
+<meta property="og:type" content="website">
+<meta property="og:title" content="悲伤逆流">
+<meta property="og:url" content="http://zy943453722.ink/archives/2017/11/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="const只读变量与#define宏定义的常量的内存分配的区别编译器通常不为普通 const 只读变量分配存储空间,而是将它们保存在符号表中,这使得它成为一个编译期间的值,没有了存储与读内存的操作,使得它的效率也很高。 例如： 1234567#define M 3//宏常量const int N=5;//此时并未将 N 放入内存中......int i=N;//此时为 N 分配内存,以后不再分配i">
+<meta property="og:description" content="有志者，事竟成">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-17T13:56:58.787Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="const只读变量的内存分配">
-<meta name="twitter:description" content="const只读变量与#define宏定义的常量的内存分配的区别编译器通常不为普通 const 只读变量分配存储空间,而是将它们保存在符号表中,这使得它成为一个编译期间的值,没有了存储与读内存的操作,使得它的效率也很高。 例如： 1234567#define M 3//宏常量const int N=5;//此时并未将 N 放入内存中......int i=N;//此时为 N 分配内存,以后不再分配i">
+<meta name="twitter:title" content="悲伤逆流">
+<meta name="twitter:description" content="有志者，事竟成">
 
 
 
@@ -156,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://zy943453722.ink/const只读变量的内存分配/"/>
+  <link rel="canonical" href="http://zy943453722.ink/archives/2017/11/"/>
 
 
 
 
 
-  <title>const只读变量的内存分配 | 悲伤逆流</title>
+  <title>归档 | 悲伤逆流</title>
   
 
 
@@ -181,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
     <a href="https://github.com/zy943453722"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -329,257 +327,111 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 15 篇日志。 继续努力。
+      </span>
 
-  
-  
-  
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2017">2017</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/const只读变量的内存分配/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/boys.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="悲伤逆流">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/I-O复用3个模型的比较/" itemprop="url">
+              
+                <span itemprop="name">I/O复用3个模型的比较</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">const只读变量的内存分配</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T01:51:50+08:00">
-                2017-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">编程语言</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/const只读变量的内存分配/" class="leancloud_visitors" data-flag-title="const只读变量的内存分配">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-             <span>℃</span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="const只读变量与-define宏定义的常量的内存分配的区别"><a href="#const只读变量与-define宏定义的常量的内存分配的区别" class="headerlink" title="const只读变量与#define宏定义的常量的内存分配的区别"></a>const只读变量与#define宏定义的常量的内存分配的区别</h1><p>编译器通常不为普通 const 只读变量分配存储空间,而是将它们保存在符号表中,这使<br>得它成为一个编译期间的值,没有了存储与读内存的操作,使得它的效率也很高。</p>
-<p><strong>例如：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#define M 3//宏常量</div><div class="line">const int N=5;//此时并未将 N 放入内存中</div><div class="line">......</div><div class="line">int i=N;//此时为 N 分配内存,以后不再分配</div><div class="line">int I=M;//预编译期间进行宏替换,分配内存</div><div class="line">int j=N;//没有内存分配</div><div class="line">int J=M;//再进行宏替换,又一次分配内存</div></pre></td></tr></table></figure>
-<p>const 定义的只读变量从汇编的角度来看,只是给出了对应的内存地址,而不是象#define<br>一样给出的是立即数,所以,const 定义的只读变量在程序运行过程中只有一份拷贝(因为它是全局的只读变量,存放在静态区),而#define 定义的宏常量在内存中有若干个拷贝。</p>
-<p>#define 宏是在预编译阶段进行替换,而 const 修饰的只读变量是在编译的时候确定其值。</p>
-<p>#define 宏没有类型,而 const 修饰的只读变量具有特定的类型。</p>
-
-      
-    </div>
-    
-    
-    
-
-    <div>
-  
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-
-  
-   </div>
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付"/>
-        <p>微信支付</p>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-16T16:25:40Z"
+              content="2017-11-16" >
+          11-16
+        </time>
       </div>
-    
 
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c</a>
-          
-            <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c++</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/git与github基本操作/" rel="next" title="git与github基本操作">
-                <i class="fa fa-chevron-left"></i> git与github基本操作
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/c语言中struct大小计算/" rel="prev" title="c语言中struct大小计算">
-                c语言中struct大小计算 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-<span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
-<a class="jiathis_button_copy">复制网址</a>
-<a class="jiathis_button_email">邮件</a>
-<a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微博</a>
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_share">一键分享</a>
 
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-var jiathis_config={
-  data_track_clickback:true,
-  summary:"",
-  shortUrl:false,
-  hideMore:false
-}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
-<!-- JiaThis Button END -->
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/I-O复用之poll和epoll/" itemprop="url">
+              
+                <span itemprop="name">I/O复用之poll和epoll</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-12T21:59:25Z"
+              content="2017-11-12" >
+          11-12
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
       
+
     </div>
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -587,12 +439,6 @@ var jiathis_config={
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTI4Ni83ODM1"></div>
-    
-  </div>
-
 
         </div>
         
@@ -613,17 +459,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -718,22 +555,6 @@ var jiathis_config={
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#const只读变量与-define宏定义的常量的内存分配的区别"><span class="nav-number">1.</span> <span class="nav-text">const只读变量与#define宏定义的常量的内存分配的区别</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -876,10 +697,6 @@ var jiathis_config={
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-
 
   
 
@@ -908,17 +725,6 @@ var jiathis_config={
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 

@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[I/O复用3个模型的比较]]></title>
+    <url>%2FI-O%E5%A4%8D%E7%94%A83%E4%B8%AA%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83%2F</url>
+    <content type="text"><![CDATA[前言：前面分析了I/O复用的3种模型，分别是select，poll，epoll，它们各有优缺点，并且应用广泛，今天就来分析一下他们的异同。 开场：分析之前还是讲一讲I/O复用在网络程序下的适用场合： 服务器同时监听socket和连接socket。 服务器端同时处理多个socket。 客户端程序同时处理用户输入和网络连接。 服务器同时处理TCP和UDP请求。 服务器监听多个端口，或者处理多个服务。I/O复用函数本身是阻塞的，它们必须顺序处理每个就绪的文件描述符，要想实现并发执行，要用到多线程/多进程编程。但I/O复用的优势也是在此,不必创建大量进程或者线程，也不必去维护它们，大大节约系统资源。 渐进：三者的共同点： 这3种模型都能同时监听多个文件描述符，他们等待由timeout参数指定的超时时间，直到一个或者多个文件描述符上有时间就绪时返回，返回就绪的数量。 3者都是同步I/O模型，即在监听事件就绪后也需要自己来负责读写。 3者都通过某种结构体变量来告知内核监听哪些文件描述符上的哪些事件，并使用该结构体类型的参数来获取内核处理的结果。 高潮：三者的区别： poll、select是有事件就绪后就轮询所有的结构体数组中的文件描述符，看是否发生了感兴趣的事件。而epoll是有事件就绪后内核事件表将就绪事件放到一个结构体数组中，仅仅轮询这些就绪事件。 select参数类型fd_set 没有将文件描述符和事件进行绑定，它仅仅是一个文件描述符集合。而epoll、poll是将文件描述符和事件放入一个结构体中，实现了绑定。 epoll最大的区别是实现了用户注册事件和内核检测就绪事件的分离，轮询只需要轮询就绪事件。而select、poll需要轮询所有文件描述符或者其一一对应的注册事件。]]></content>
+      <categories>
+        <category>IPC进程通信</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>网络编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[I/O复用之poll和epoll]]></title>
+    <url>%2FI-O%E5%A4%8D%E7%94%A8%E4%B9%8Bpoll%E5%92%8Cepoll%2F</url>
+    <content type="text"><![CDATA[poll函数poll函数的定义：12345678910#include&lt;poll.h&gt;int poll(struct pollfd* fds,nfds_t nfds,int timeout)typedef unsigned long int nfds_t;struct pollfd&#123; int fd; short events;//注册的事件 short revents;//实际发生的事件，有内核填充&#125;;timeout为0时，poll调用后立即返回，不阻塞 为-1时，poll调用将永远阻塞，直至某个事件发生。 poll函数实现监视的过程： 调用poll函数实现对感兴趣的文件描述符的某个事件的监听。 而后读取返回值，若返回值大于0，则轮询创建好的pollfd结构体数组，看每一个注册的事件是否发生感兴趣的事件。 epoll函数epoll函数的定义：epoll函数不同于poll和select，它是由一组函数组成的。1. epoll创建函数：12#include&lt;sys/epoll.h&gt;int epoll_create(int size)//参数指定内核事件表的大小,返回一个指向内核事件表的fd：epollfd 2. epoll执行注册函数：1234/*第一个参数为内核事件表的文件描述符，第二个参数为指定的操作类型,第三个为要操作的文件描述符，第4个为注册的事件*///返回0为成功，-1为失败int epoll_ctl(int epollfd,int op,int fd,struct epoll_event *event) 对于op操作类型，大体有3种： EPOLL_CTL_ADD:往内核事件表注册事件结构体 EPOLL_CTL_MOD:修改fd上的注册事件 EPOLL_CTL_DEL:删除fd上的注册事件对于epoll_event结构体：12345678910typedef union epoll_data&#123; void *ptr; int fd;//注册事件的文件描述符 uint32_t u32; uint64_t u64;&#125;epoll_data_t; struct epoll_event&#123; __uint32_t events;//epoll事件 epoll_data_t data;//用户的数据&#125;;//一般是将事件和epoll_data_t用户数据绑定 3. epoll等待就绪函数：1234/*第一个参数指定内核事件表，第二个参数指定从内核事件表拷贝的就绪事件数组，第三个参数指定最多监听的事件个数，最后一个是设置超时时间同epoll*///该函数成功时返回就绪事件个数，与文件描述符无关，失败返回-1int epoll_wait(int epollfd,struct epoll_event* events, int max,int timeout) 4.epoll的事件类型 EPOLLIN ：数据可读（包括一般和优先数据） EPOLLOUT ：数据可写（包括一般和优先数据） EPOLLERR ：数据错误 EPOLLET ：epoll的边沿触发模式事件 EPOLLONESHOT ：该文件描述符上的可读、可写、错误事件最多触发其中一个且只触发一次最后两个是epoll特有的，前三个去掉’E’即为poll的事件类型5.epoll的模式：epoll中有两种模式，一种是LT模式，一种是ET模式。 LT模式：所谓LT模式，就是指电平触发，这是epoll默认的工作方式，要想改变可以通过上面的EPOLLET事件。这种模式下的epoll相当于一个效率较高的poll。这个模式下epoll_wait检测到有事件就绪后，应用程序可以不立即处理，那么下次调用epoll_wait仍会通告该事件，直至被处理。意味着每次epoll_wait()返回后，事件处理后，如果之后还有数据，会不断触发，也就是说，一个套接字上一次完整的数据，epoll_wait()可能会返回多次，直到没有数据为止。这个模式下文件描述符可阻塞可不阻塞。该模式下只要在可读/可写 状态下epoll_wait都能检测到，因此可以不一次处理完。 ET模式 :所谓ET模式，就是指边沿触发，当某个文件描述符注册EPOLLET事件时，eopll将使用ET模式操作该文件描述符。有数据过来后，epoll_wait()会返回一次，一段时间内，该套接字就算有数据源源不断地过来，epoll_wait()也不会返回了。（即只会读出其中第一次的内容，再来数据是读不到的，但若是缓冲区不够的话，也会读到结束的）这里注意，是一段时间，不代表这个套接字上有数据就只触发一次。时间过长，还是会返回多次的。该模式与LT的最大区别就是当epoll_wait检测到事件就绪时，必须立即处理，后序再遇到epoll_wait不会在通告该事件，这样大大降低了同一个epoll事件被触发的次数。该模式下文件描述符必须使用非阻塞。这种模式下发送多次否则，会因为缓冲区的不足造成发送或接收不到所有的数据。直到errno为EAGAIN时才算读(写)取完毕无数据可读(写）另外，该模式只有当某文件描述符由不可读/不可写 状态变为 可读/可写 状态时才能触发因此，ET模式是高速工作模式，LT是缺省工作模式。6.网络事件EAGIN在一个非阻塞的socket上调用read/write函数, 返回EAGAIN或者EWOULDBLOCK。若遇到能read时，读缓冲区没有数据，或者write时，写缓冲区满了。这种情况下，如果是阻塞socket，read/write就要阻塞掉。而如果是非阻塞socket，read/write立即返回-1， 同时errno设置为EAGAIN。因此，对于non-blocking的socket，正确的读写操作为:读：忽略掉errno = EAGAIN的错误，下次可继续读写：忽略掉errno = EAGAIN的错误，下次可继续写因此ET模式使用非阻塞IO模型下需要用EAGAIN这个标志来判断接受的数据是否读完。]]></content>
+      <categories>
+        <category>IPC进程通信</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>网络编程</tag>
+        <tag>c</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[结构体变量malloc的故事]]></title>
     <url>%2F%E7%BB%93%E6%9E%84%E4%BD%93%E5%8F%98%E9%87%8Fmalloc%E7%9A%84%E6%95%85%E4%BA%8B%2F</url>
     <content type="text"><![CDATA[这是一个关于结构体通过malloc初始化的悲伤的故事 背景因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 问题描述：但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ 代码实例：12345678910111213141516171819202122232425262728/*这仅仅是个用数组动态创建栈的初始化过程*/#include&lt;stdlib.h&gt;#include&lt;stdio.h&gt;typedef struct stack&#123; int top; int count; int array[];//柔性数组，也可以方括号内定义为0，也可以定义为数组指针&#125;Stack;void Init(Stack *s,int n)&#123; s = (Stack*)malloc(sizeof(Stack) + n * sizeof(int)); s-&gt;top = -1; s-&gt;count = n;&#125;void Destroy(Stack **s)&#123; free(*s); *s = NULL;&#125;int main()&#123; Stack s; Stack *q = &amp;s; Init(q); Destroy(&amp;q); return 0;&#125; gdb调试显示结果：由图中可以看出原本传入Init函数的stack的地址为0x7fffffffde00，但malloc出来的新地址为0x602830,改变malloc出来地址上的内容，函数返回时自然而然没有保存下来。再次打印s的地址，果然还是原地址，相应数据也没有保存下来 解决方案：思路: 既然一级指针会在init函数中被重新malloc，之后返回后保存不下来，那么可以启用2级指针，之后，让malloc出来的指针和原指针的地址相同(即2级指针也指向malloc出来的指针)这样返回时才能真正将malloc出来的指针保存下来。具体解决方法重写init方法:1234567void Init(Stack **s,int n)&#123; Stack *p = (Stack *)malloc(sizeof(Stack) + n * sizeof(int));//新malloc出一块地址指向原来的结构体 *s = p; //将新malloc出来的地址赋值给原地址，让两个变成同一地址 p-&gt;top = -1; p-&gt;count = n;&#125; 图解： 此时再次调用gdb调试：可以看出当从init函数返回后q指针已经变为malloc出来的地址，由此数据也被保存了下来。]]></content>
       <categories>
-        <category>编程语言，内存结构</category>
+        <category>编程语言</category>
       </categories>
       <tags>
         <tag>c</tag>
@@ -123,8 +148,8 @@
         <category>编程语言</category>
       </categories>
       <tags>
-        <tag>c++</tag>
         <tag>c</tag>
+        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
@@ -135,8 +160,8 @@
         <category>编程语言</category>
       </categories>
       <tags>
-        <tag>c++</tag>
         <tag>c</tag>
+        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
