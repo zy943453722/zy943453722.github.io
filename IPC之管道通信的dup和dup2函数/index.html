@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux,网络编程," />
+  <meta name="keywords" content="linux,网络编程,c," />
 
 
 
@@ -115,20 +115,20 @@
 
 
 
-<meta name="description" content="前言：前面分析了I/O复用的3种模型，分别是select，poll，epoll，它们各有优缺点，并且应用广泛，今天就来分析一下他们的异同。 开场：分析之前还是讲一讲I/O复用在网络程序下的适用场合：  服务器同时监听socket和连接socket。 服务器端同时处理多个socket。 客户端程序同时处理用户输入和网络连接。 服务器同时处理TCP和UDP请求。 服务器监听多个端口，或者处理多个服务。">
-<meta name="keywords" content="linux,网络编程">
+<meta name="description" content="前言：前面笔者详细分析了网络编程中重要的通信技术：I/O复用技术,接下来的几篇文章，我将重点来分析一下网络编程中另外一个重要的技术，即：管道通信技术。 dup、dup2函数基础由于利用管道实现进程间通信，是通过创建2个文件描述符，但是初始化文件描述符都是随机的，或者说是从可用的文件描述符中去除，并与相对应的文件建立映射关系，如果我们想要将管道的两头与其他流相关，或者说重定向一个文件描述符，那么，我">
+<meta name="keywords" content="linux,网络编程,c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="I&#x2F;O复用3个模型的比较">
-<meta property="og:url" content="http://zy943453722.ink/I-O复用3个模型的比较/index.html">
+<meta property="og:title" content="IPC之管道通信的dup和dup2函数">
+<meta property="og:url" content="http://zy943453722.ink/IPC之管道通信的dup和dup2函数/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="前言：前面分析了I/O复用的3种模型，分别是select，poll，epoll，它们各有优缺点，并且应用广泛，今天就来分析一下他们的异同。 开场：分析之前还是讲一讲I/O复用在网络程序下的适用场合：  服务器同时监听socket和连接socket。 服务器端同时处理多个socket。 客户端程序同时处理用户输入和网络连接。 服务器同时处理TCP和UDP请求。 服务器监听多个端口，或者处理多个服务。">
+<meta property="og:description" content="前言：前面笔者详细分析了网络编程中重要的通信技术：I/O复用技术,接下来的几篇文章，我将重点来分析一下网络编程中另外一个重要的技术，即：管道通信技术。 dup、dup2函数基础由于利用管道实现进程间通信，是通过创建2个文件描述符，但是初始化文件描述符都是随机的，或者说是从可用的文件描述符中去除，并与相对应的文件建立映射关系，如果我们想要将管道的两头与其他流相关，或者说重定向一个文件描述符，那么，我">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://zy943453722.ink/I-O复用3个模型的比较/1.png">
-<meta property="og:updated_time" content="2017-11-25T14:09:08.673Z">
+<meta property="og:image" content="http://zy943453722.ink/IPC之管道通信的dup和dup2函数/file.png">
+<meta property="og:updated_time" content="2017-12-12T08:33:26.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="I&#x2F;O复用3个模型的比较">
-<meta name="twitter:description" content="前言：前面分析了I/O复用的3种模型，分别是select，poll，epoll，它们各有优缺点，并且应用广泛，今天就来分析一下他们的异同。 开场：分析之前还是讲一讲I/O复用在网络程序下的适用场合：  服务器同时监听socket和连接socket。 服务器端同时处理多个socket。 客户端程序同时处理用户输入和网络连接。 服务器同时处理TCP和UDP请求。 服务器监听多个端口，或者处理多个服务。">
-<meta name="twitter:image" content="http://zy943453722.ink/I-O复用3个模型的比较/1.png">
+<meta name="twitter:title" content="IPC之管道通信的dup和dup2函数">
+<meta name="twitter:description" content="前言：前面笔者详细分析了网络编程中重要的通信技术：I/O复用技术,接下来的几篇文章，我将重点来分析一下网络编程中另外一个重要的技术，即：管道通信技术。 dup、dup2函数基础由于利用管道实现进程间通信，是通过创建2个文件描述符，但是初始化文件描述符都是随机的，或者说是从可用的文件描述符中去除，并与相对应的文件建立映射关系，如果我们想要将管道的两头与其他流相关，或者说重定向一个文件描述符，那么，我">
+<meta name="twitter:image" content="http://zy943453722.ink/IPC之管道通信的dup和dup2函数/file.png">
 
 
 
@@ -158,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="http://zy943453722.ink/I-O复用3个模型的比较/"/>
+  <link rel="canonical" href="http://zy943453722.ink/IPC之管道通信的dup和dup2函数/"/>
 
 
 
 
 
-  <title>I/O复用3个模型的比较 | 悲伤逆流</title>
+  <title>IPC之管道通信的dup和dup2函数 | 悲伤逆流</title>
   
 
 
@@ -345,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/I-O复用3个模型的比较/">
+    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/IPC之管道通信的dup和dup2函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张越">
@@ -362,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">I/O复用3个模型的比较</h1>
+          <h1 class="post-title" itemprop="name headline">IPC之管道通信的dup和dup2函数</h1>
         
 
         <div class="post-meta">
@@ -374,8 +374,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-17T00:25:40+08:00">
-                2017-11-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T22:56:51+08:00">
+                2017-12-06
               </time>
             
 
@@ -414,7 +414,7 @@
 
           
           
-             <span id="/I-O复用3个模型的比较/" class="leancloud_visitors" data-flag-title="I/O复用3个模型的比较">
+             <span id="/IPC之管道通信的dup和dup2函数/" class="leancloud_visitors" data-flag-title="IPC之管道通信的dup和dup2函数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -446,31 +446,23 @@
       
 
       
-        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p><strong><em>前面分析了I/O复用的3种模型，分别是select，poll，epoll，它们各有优缺点，并且应用广泛，今天就来分析一下他们的异同。</em></strong></p>
-<h3 id="开场："><a href="#开场：" class="headerlink" title="开场："></a>开场：</h3><p><strong>分析之前还是讲一讲I/O复用在网络程序下的适用场合：</strong></p>
-<ol>
-<li>服务器同时监听socket和连接socket。</li>
-<li>服务器端同时处理多个socket。</li>
-<li>客户端程序同时处理用户输入和网络连接。</li>
-<li>服务器同时处理TCP和UDP请求。</li>
-<li>服务器监听多个端口，或者处理多个服务。<br><strong><br>I/O复用函数本身是阻塞的，它们必须顺序处理每个就绪的文件描述符，要想实现并发执行，要用到多线程/多进程编程。<font color="red">但I/O复用的优势也是在此,不必创建大量进程或者线程，也不必去维护它们，大大节约系统资源。</font></strong></li>
-</ol>
-<h3 id="渐进："><a href="#渐进：" class="headerlink" title="渐进："></a>渐进：</h3><p><strong><em><font color="blue" size="4">三者的共同点：</font></em></strong></p>
+        <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p><strong>前面笔者详细分析了网络编程中重要的通信技术：<font color="red">I/O复用技术</font>,接下来的几篇文章，我将重点来分析一下网络编程中另外一个重要的技术，即：<font color="blue">管道通信技术</font>。</strong></p>
+<h2 id="dup、dup2函数基础"><a href="#dup、dup2函数基础" class="headerlink" title="dup、dup2函数基础"></a>dup、dup2函数基础</h2><p>由于利用管道实现进程间通信，是通过创建2个文件描述符，但是初始化文件描述符都是随机的，或者说是从可用的文件描述符中去除，并与相对应的文件建立映射关系，如果我们想要将管道的两头与其他流相关，或者说重定向一个文件描述符，那么，我们就需要dup和dup2函数。</p>
+<p>可以说，这两个函数的作用就是：<br><br><strong><em>1.重定向文件描述符</em></strong><br><strong><em>2.复制文件描述符</em></strong></p>
+<h3 id="dup函数："><a href="#dup函数：" class="headerlink" title="dup函数："></a>dup函数：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#include&lt;unistd.h&gt;</div><div class="line">int dup(int fd);//fd为文件描述符，失败返回-1</div></pre></td></tr></table></figure>
+<p><strong>dup函数创建一个新的文件描述符，该文件描述符和原有文件描述符指向相同的文件、管道或者网络链接，并且此fd总是系统当前可用的最小的文件描述符。</strong></p>
+<h3 id="dup2函数："><a href="#dup2函数：" class="headerlink" title="dup2函数："></a>dup2函数：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#include&lt;unistd.h&gt;</div><div class="line">int dup2(int fd1, int fd2);</div><div class="line">//fd1是指需要重定向的文件描述符，fd2是定向到的文件描述符。失败返回-1</div></pre></td></tr></table></figure>
+<p><strong>dup2函数中fd2不做原本的工作，而改做fd1的工作，若此fd2文件描述符已经存在，则需要关闭他，再执行。</strong></p>
+<p><font size="3" color="green">需要注意的是：这两个函数创建的文件描述符并不继承原有的文件描述符的属性(ex：close_on_exec,non-blocking等)，因为每个文件描述符都有一套文件描述符标志，新描述符执行时关闭(close_on_exec)标志总是由dup和dup2函数执行。只继承他的同一文件状态标志(读、写、添加等)。</font><br><br><br>其实对于文件描述符在内核中的存储有必要提一下：</p>
 <ul>
-<li>这3种模型都能同时监听多个文件描述符，他们等待由timeout参数指定的超时时间，直到一个或者多个文件描述符上有时间就绪时返回，返回就绪的数量。</li>
-<li>3者都是同步I/O模型，即在监听事件就绪后也需要自己来负责读写。</li>
-<li>3者都通过某种结构体变量来告知内核监听哪些文件描述符上的哪些事件，并使用该结构体类型的参数来获取内核处理的结果。</li>
+<li>每个进程在进程表中都有一个记录项，每个记录项中有一张打开文件描述符表，可将视为一个矢量，每个描述符占用一项。与每个文件描述符相关联的是：<br> <br>(1) 文件描述符标志(close_on_exec,close_on_exec是一个进程所有文件描述符的标记位图，每个比特位代表一个打开的文件描述符，用于确定在系统调用execve()时需要关闭的文件句柄)。<br> <br>(2) 指向一个文件表项的指针。</li>
+<li>内核为所有打开文件维持一张文件表。每个文件表项包含：<br> <br>(a) 文件状态标志(读、写、增写、同步、非阻塞等)。<br> <br>(b) 当前文件位移量。<br> <br>(c) 指向该文件v节点表项的指针。</li>
+<li>节点表项。每个打开的文件都有一个v-node结构，v-node中包含了文件类型和对此文件进行各种操作函数的指针。对于大多数文件，V-node中还包含了文件inode节点信息，这些信息是打开文件时从磁盘上读入内存的，所以文件所有信息都是随时可用的。<br><br> 1. v节点的信息<br><br> 2. 当前文件的长度<br><br> 3. i节点的信息<br> <br><strong>也就是对应下图。<br><br></strong>图解过程：<strong><br>
+</strong>假设执行了dup(1)函数，下一个可用的文件描述符是3。两个文件描述符指向同一文件表项。因此文件状态标志、当前文件位移量、指向文件的v节点表项指针共享。**<br><br><img src="/IPC之管道通信的dup和dup2函数/file.png" alt="图1"></li>
 </ul>
-<h3 id="高潮："><a href="#高潮：" class="headerlink" title="高潮："></a>高潮：</h3><p><strong><em><font color="blue" size="4">三者的区别：</font></em></strong></p>
-<ul>
-<li>poll、select是有事件就绪后就轮询所有的结构体数组中的文件描述符，看是否发生了感兴趣的事件。并将其中就绪的文件描述符返回给用户程序<strong>而epoll是有事件就绪后内核事件表将就绪事件放到一个结构体数组中，仅仅轮询这些就绪事件。即epoll_wait采用回调的方式，内核检测到就绪的文件描述符后，就触发回调函数，回调函数就将该文件描述符上对应的事件插入内核就绪事件队列。最后在适当时间将内容拷贝到用户空间。</strong></li>
-<li>select参数类型fd_set 没有将文件描述符和事件进行绑定，它仅仅是一个文件描述符集合。而epoll、poll是将文件描述符和事件放入一个结构体中，实现了绑定。</li>
-<li>epoll最大的区别是实现了用户注册事件和内核检测就绪事件的分离，搜索就绪事件只搜索返回的就绪事件。epoll是通过内核与用户空间mmap同一块内存实现的。而select、poll需要轮询所有文件描述符或者其一一对应的注册事件。</li>
-<li>epoll适用于连接数量多，但活跃链接少的情况。select适用于并发量不高，且活跃链接多的情况。</li>
-<li><p>另外还有几个小区别，请看下表：<br><br><img src="/I-O复用3个模型的比较/1.png" alt="图1"></p>
-<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p><strong><em><font color="green" size="4">浅析三者的工作流程：</font></em></strong></p>
-</li>
-</ul>
+<h2 id="函数的简单实例："><a href="#函数的简单实例：" class="headerlink" title="函数的简单实例："></a>函数的简单实例：</h2><p>下面的例子便是运用dup函数或者dup2函数，将新建的文件描述符指向之前建立好的网络连接，因为关闭了标准输出，因此文件描述符1空闲下来，可以使用，即相当于将标准输出定向到了网络连接中，实现CGI服务器功能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">int main(int argc, char* argv[])</div><div class="line">&#123;</div><div class="line">   if(argc &lt;= 2)</div><div class="line">    &#123;</div><div class="line">        printf(&quot;error\n&quot;);</div><div class="line">        return 1;</div><div class="line">    &#125;</div><div class="line">    const char* ip = argv[1];</div><div class="line">    int port = atoi(argv[2]);</div><div class="line"></div><div class="line">    struct sockaddr_in address;</div><div class="line">    bzero(&amp;address,sizeof(address));</div><div class="line">    address.sin_family = AF_INET;</div><div class="line">    inet_pton(AF_INET,ip,&amp;address.sin_addr);</div><div class="line">    address.sin_port = htons(port);</div><div class="line"></div><div class="line">    int sock = socket(PF_INET,SOCK_STREAM,0);</div><div class="line">    assert(sock &gt;= 0);</div><div class="line"></div><div class="line">    int ret = bind(sock,(struct sockaddr*)&amp;address,sizeof(address));</div><div class="line">    assert(ret != -1);</div><div class="line"></div><div class="line">    ret = listen(sock,5);</div><div class="line">    assert(ret != -1);</div><div class="line"></div><div class="line">    struct sockaddr_in client;</div><div class="line">    socklen_t client_addrlength = sizeof(client);</div><div class="line">    int connfd = accept(sock,(struct sockaddr*)&amp;client,&amp;client_addrlength);</div><div class="line">    if(connfd &lt; 0)</div><div class="line">    &#123;</div><div class="line">        printf(&quot;errno is %d\n&quot;,errno);</div><div class="line">    &#125;</div><div class="line">    else</div><div class="line">    &#123;</div><div class="line">        close(STDOUT_FILENO);</div><div class="line">        dup(connfd);//自动寻找最小的文件描述符</div><div class="line">        //dup2(connfd,1);//自己指定文件描述符，若已存在，则返回一个大于指定文件描述符的最小值</div><div class="line">        printf(&quot;abcd\n&quot;);</div><div class="line">        close(connfd);</div><div class="line">    &#125;</div><div class="line">    close(sock);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>利用telnet模拟客户端可以看出，的确本应该输出到标准输出的字符，送到了客户端，而没有打印到终端。实现了重定向功能。</p>
 
       
     </div>
@@ -531,6 +523,8 @@
           
             <a href="/tags/网络编程/" rel="tag"><i class= "fa fa-tag"></i> 网络编程</a>
           
+            <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c</a>
+          
         </div>
       
 
@@ -542,8 +536,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/I-O复用之poll和epoll/" rel="next" title="I/O复用之poll和epoll">
-                <i class="fa fa-chevron-left"></i> I/O复用之poll和epoll
+              <a href="/I-O复用3个模型的比较/" rel="next" title="I/O复用3个模型的比较">
+                <i class="fa fa-chevron-left"></i> I/O复用3个模型的比较
               </a>
             
           </div>
@@ -551,10 +545,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/IPC之管道通信的dup和dup2函数/" rel="prev" title="IPC之管道通信的dup和dup2函数">
-                IPC之管道通信的dup和dup2函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -749,7 +739,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开场："><span class="nav-number">2.</span> <span class="nav-text">开场：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐进："><span class="nav-number">3.</span> <span class="nav-text">渐进：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高潮："><span class="nav-number">4.</span> <span class="nav-text">高潮：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尾声"><span class="nav-number"></span> <span class="nav-text">尾声</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dup、dup2函数基础"><span class="nav-number">2.</span> <span class="nav-text">dup、dup2函数基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dup函数："><span class="nav-number">2.1.</span> <span class="nav-text">dup函数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dup2函数："><span class="nav-number">2.2.</span> <span class="nav-text">dup2函数：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的简单实例："><span class="nav-number">3.</span> <span class="nav-text">函数的简单实例：</span></a></li></ol></div>
             
 
           </div>
