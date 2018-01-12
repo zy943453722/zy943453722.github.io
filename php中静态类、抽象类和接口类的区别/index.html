@@ -97,7 +97,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c++," />
+  <meta name="keywords" content="php基本语法," />
 
 
 
@@ -115,18 +115,18 @@
 
 
 
-<meta name="description" content="成员函数被重载（overload）的特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 1234567class A&amp;#123;  private:      int a  public：      void print();      void print(int aa);  &amp;#125;; 覆盖（override）的特征 不同的范围（分别于派生类和基类） 函">
-<meta name="keywords" content="c++">
+<meta name="description" content="前言最近笔者学习了php的基本知识，其基本语法像极了c语言，但是取消了指针等特性，且操作起来更加简便。下面就浅析一下php面向对象中的特性：静态类、抽象类和接口以及很好用的代码复用技术trait。 静态类静态类定义：   类中含有static修饰的方法或者属性的类。 静态类的特性和易错点 静态类中的成员不用实例化对象访问。用类名：：属性名/方法名 访问。 实例化的对象只能访问静态方法，不可访问静态">
+<meta name="keywords" content="php基本语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c++重载覆盖隐藏的区别和执行方式">
-<meta property="og:url" content="http://zy943453722.ink/c-重载覆盖隐藏的区别和执行方式/index.html">
+<meta property="og:title" content="php中静态类、抽象类和接口类的区别">
+<meta property="og:url" content="http://zy943453722.ink/php中静态类、抽象类和接口类的区别/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="成员函数被重载（overload）的特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 1234567class A&amp;#123;  private:      int a  public：      void print();      void print(int aa);  &amp;#125;; 覆盖（override）的特征 不同的范围（分别于派生类和基类） 函">
+<meta property="og:description" content="前言最近笔者学习了php的基本知识，其基本语法像极了c语言，但是取消了指针等特性，且操作起来更加简便。下面就浅析一下php面向对象中的特性：静态类、抽象类和接口以及很好用的代码复用技术trait。 静态类静态类定义：   类中含有static修饰的方法或者属性的类。 静态类的特性和易错点 静态类中的成员不用实例化对象访问。用类名：：属性名/方法名 访问。 实例化的对象只能访问静态方法，不可访问静态">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-22T14:11:58.515Z">
+<meta property="og:updated_time" content="2018-01-12T02:54:31.503Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c++重载覆盖隐藏的区别和执行方式">
-<meta name="twitter:description" content="成员函数被重载（overload）的特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 1234567class A&amp;#123;  private:      int a  public：      void print();      void print(int aa);  &amp;#125;; 覆盖（override）的特征 不同的范围（分别于派生类和基类） 函">
+<meta name="twitter:title" content="php中静态类、抽象类和接口类的区别">
+<meta name="twitter:description" content="前言最近笔者学习了php的基本知识，其基本语法像极了c语言，但是取消了指针等特性，且操作起来更加简便。下面就浅析一下php面向对象中的特性：静态类、抽象类和接口以及很好用的代码复用技术trait。 静态类静态类定义：   类中含有static修饰的方法或者属性的类。 静态类的特性和易错点 静态类中的成员不用实例化对象访问。用类名：：属性名/方法名 访问。 实例化的对象只能访问静态方法，不可访问静态">
 
 
 
@@ -156,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://zy943453722.ink/c-重载覆盖隐藏的区别和执行方式/"/>
+  <link rel="canonical" href="http://zy943453722.ink/php中静态类、抽象类和接口类的区别/"/>
 
 
 
 
 
-  <title>c++重载覆盖隐藏的区别和执行方式 | 悲伤逆流</title>
+  <title>php中静态类、抽象类和接口类的区别 | 悲伤逆流</title>
   
 
 
@@ -343,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/c-重载覆盖隐藏的区别和执行方式/">
+    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/php中静态类、抽象类和接口类的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张越">
@@ -360,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c++重载覆盖隐藏的区别和执行方式</h1>
+          <h1 class="post-title" itemprop="name headline">php中静态类、抽象类和接口类的区别</h1>
         
 
         <div class="post-meta">
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T06:53:03+08:00">
-                2017-09-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T14:30:20Z">
+                2018-01-11
               </time>
             
 
@@ -395,8 +395,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/categories/编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
                   </a>
                 </span>
 
@@ -412,7 +412,7 @@
 
           
           
-             <span id="/c-重载覆盖隐藏的区别和执行方式/" class="leancloud_visitors" data-flag-title="c++重载覆盖隐藏的区别和执行方式">
+             <span id="/php中静态类、抽象类和接口类的区别/" class="leancloud_visitors" data-flag-title="php中静态类、抽象类和接口类的区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -444,34 +444,101 @@
       
 
       
-        <h2 id="成员函数被重载（overload）的特征"><a href="#成员函数被重载（overload）的特征" class="headerlink" title="成员函数被重载（overload）的特征"></a>成员函数被重载（overload）的特征</h2><ul>
-<li>相同的范围（在同一个类中）</li>
-<li>函数名字相同</li>
-<li>参数不同</li>
-<li><p>virtual关键字可有可无</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">  private: </div><div class="line">     int a</div><div class="line">  public：</div><div class="line">      void print();</div><div class="line">      void print(int aa);</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
-<h2 id="覆盖（override）的特征"><a href="#覆盖（override）的特征" class="headerlink" title="覆盖（override）的特征"></a>覆盖（override）的特征</h2><ul>
-<li>不同的范围（分别于派生类和基类）</li>
-<li>函数名字相同</li>
-<li>参数相同</li>
-<li>基类函数必须有virtual关键字</li>
-</ul>
-<p><strong><em>覆盖是指派生类函数覆盖基类函数</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">  public:</div><div class="line">    virtual void print();</div><div class="line"> &#125;;</div><div class="line"> class B:public A</div><div class="line"> &#123;</div><div class="line">    public:</div><div class="line">      void print();</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
-<h2 id="隐藏（redefining）的规则"><a href="#隐藏（redefining）的规则" class="headerlink" title="隐藏（redefining）的规则"></a>隐藏（redefining）的规则</h2><ul>
-<li>派生类函数与基类函数同名，但是参数不同，此时，不论有无virtual关键字，基类的函数都会被隐藏。</li>
-<li><p>若派生类函数与基类函数同名且参数相同，但是基类函数没有virtual，基类的函数会被隐藏。</p>
-<p><strong><em>隐藏是指派生类的函数屏蔽了与其同名的基类函数。</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">public:</div><div class="line">  void print();</div><div class="line"> &#125;;</div><div class="line"> class B:public A&#123;</div><div class="line"> private:</div><div class="line">  int a;</div><div class="line"> public:</div><div class="line">   void print(int aa);</div><div class="line">   &#125;;</div><div class="line">   -----------------------------------------------------</div><div class="line">   class A&#123;</div><div class="line">   public:</div><div class="line">     void print();</div><div class="line">  &#125;;</div><div class="line">  class B:public A&#123;</div><div class="line">  public:</div><div class="line">    void print();</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
-<h2 id="3种情况怎么执行"><a href="#3种情况怎么执行" class="headerlink" title="3种情况怎么执行"></a>3种情况怎么执行</h2><ol>
-<li>重载：看参数</li>
-<li>隐藏：看指针类型</li>
-<li>覆盖：看实体对象类型</li>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>最近笔者学习了php的基本知识，其基本语法像极了c语言，但是取消了指针等特性，且操作起来更加简便。下面就浅析一下php面向对象中的特性：静态类、抽象类和接口以及很好用的代码复用技术trait。</strong></p>
+<h2 id="静态类"><a href="#静态类" class="headerlink" title="静态类"></a>静态类</h2><h3 id="静态类定义："><a href="#静态类定义：" class="headerlink" title="静态类定义："></a>静态类定义：</h3><p>   <strong><em>类中含有static修饰的方法或者属性的类。</em></strong></p>
+<h3 id="静态类的特性和易错点"><a href="#静态类的特性和易错点" class="headerlink" title="静态类的特性和易错点"></a>静态类的特性和易错点</h3><ol>
+<li>静态类中的成员不用实例化对象访问。用类名：：属性名/方法名 访问。</li>
+<li>实例化的对象只能访问静态方法，不可访问静态属性。</li>
+<li>继承时子类可以继承父类的公有和受保护的方法和属性。</li>
+<li>可以说静态方法和属性不属于这个类，所以不能用自引用指针$this去引用，但却可以通过self或者parent访问。</li>
 </ol>
-</li>
-</ul>
-</li>
-</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">class Foo&#123;</div><div class="line">    public $my = &quot;zy&quot;;</div><div class="line">    public static $my_static = &apos;foo&apos;;//初始化附常量</div><div class="line">    public function staticValue()</div><div class="line">    &#123;</div><div class="line">        echo $this-&gt;my;</div><div class="line">        //echo $this-&gt;my_static;这些属性不属于类</div><div class="line">        return self::$my_static;</div><div class="line">    &#125;</div><div class="line">    public static function handle()</div><div class="line">    &#123;</div><div class="line">        //$this-&gt;$my_static;静态方法中没有$this这个伪变量</div><div class="line">        echo &quot;这是静态变量\n&quot;;</div><div class="line">    &#125;</div><div class="line">    protected static function func()</div><div class="line">    &#123;</div><div class="line">       echo &quot;protected static\n&quot;;   </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">class Bar extends Foo&#123;</div><div class="line">    public function fooStatic()&#123;</div><div class="line">        return parent::$my_static;       </div><div class="line">    &#125;</div><div class="line">    public function funn()</div><div class="line">    &#123;</div><div class="line">        echo self::func().&quot;\n&quot;;//继承了</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">echo Foo::$my_static.&quot;\n&quot;;</div><div class="line">echo Foo::handle().&quot;\n&quot;;</div><div class="line">$foo = new Foo();</div><div class="line">//echo $foo-&gt;$my_static.&quot;\n&quot;;//不可用对象直接访问静态属性</div><div class="line">echo $foo-&gt;handle().&quot;\n&quot;;//用对象可直接访问静态方法</div><div class="line">echo $foo-&gt;staticValue().&quot;\n&quot;;</div><div class="line">echo Bar::$my_static.&quot;\n&quot;;</div><div class="line">$bar = new Bar();</div><div class="line">echo $bar-&gt;fooStatic().&quot;\n&quot;;</div><div class="line">echo $bar-&gt;handle();</div><div class="line">$bar-&gt;funn();</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><h3 id="抽象类的定义"><a href="#抽象类的定义" class="headerlink" title="抽象类的定义"></a>抽象类的定义</h3><p><strong><em> 被abstract修饰的类。</em></strong></p>
+<h3 id="抽象类的特性和易错点"><a href="#抽象类的特性和易错点" class="headerlink" title="抽象类的特性和易错点"></a>抽象类的特性和易错点</h3><ol>
+<li>抽象类不可被实例化</li>
+<li>任何一个类，若其中至少有一个抽象方法，那么该类就必须定义为抽象类，类中可以有非抽象的方法或属性。</li>
+<li>抽象方法只声明其调用方式，不定义具体功能。</li>
+<li>继承某个抽象类后，其子类必须实现所有的抽象方法，且不论函数名、参数都不能改变，但是继承访问控制可以一致或更宽松。</li>
+<li>若子类继承的父类抽象方法中参数列表是可选参数，那么也可以与父类参数个数不一致，即子类可以有个默认参数列表。</li>
+</ol>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">abstract class AbstractClass&#123;//此类不可实例化对象</div><div class="line">    abstract protected function getValue();</div><div class="line">    abstract protected function prefixValue($prefix);//只声明，不作具体实现</div><div class="line">    abstract public function pre($han);</div><div class="line">    const i = 12;</div><div class="line">    public $a = 13;</div><div class="line">    public function printOut()</div><div class="line">    &#123;</div><div class="line">        echo $this-&gt;a.&quot;\n&quot;;</div><div class="line">        echo $this-&gt;getValue().&quot;\n&quot;;</div><div class="line">    &#125;</div><div class="line">&#125; </div><div class="line">class ConcreteClass1 extends AbstractClass</div><div class="line">&#123;</div><div class="line">    protected function getValue() &#123;</div><div class="line">        return &quot;ConcreteClass1&quot;;//实现具体实现，必须保持一致</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public function prefixValue($prefix) &#123;</div><div class="line">        return &quot;$prefix.ConcreteClass1&quot;;</div><div class="line">    &#125;</div><div class="line">    public function pre($han,$ren = &apos;a&apos;)</div><div class="line">    &#123;</div><div class="line">       echo $han.$ren.&quot;\n&quot;;       </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class ConcreteClass2 extends AbstractClass</div><div class="line">&#123;</div><div class="line">    public function getValue() &#123;</div><div class="line">        return &quot;ConcreteClass2&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public function prefixValue($prefix) &#123;</div><div class="line">        return &quot;&#123;$prefix&#125;ConcreteClass2&quot;;</div><div class="line">    &#125;</div><div class="line">    public function pre($han,$ren = &apos;a&apos;)</div><div class="line">    &#123;</div><div class="line">       echo $han.$ren.&quot;\n&quot;;       </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$class1 = new ConcreteClass1;//继承抽象类的类才可以实例化</div><div class="line">$class1-&gt;printOut();</div><div class="line">echo $class1-&gt;prefixValue(&apos;FOO_&apos;) .&quot;\n&quot;;</div><div class="line">$class1-&gt;pre(&quot;zy&quot;);//可以打印出默认的参数</div><div class="line">$class2 = new ConcreteClass2;</div><div class="line">$class2-&gt;printOut();</div><div class="line">echo $class2-&gt;prefixValue(&apos;FOO_&apos;) .&quot;\n&quot;;</div><div class="line">echo AbstractClass::i;//同样可以输出常量，无法输出变量</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h3><p><strong><em> interface修饰的一个特殊的抽象类，但不是类。</em></strong></p>
+<h3 id="接口特性和易错点"><a href="#接口特性和易错点" class="headerlink" title="接口特性和易错点"></a>接口特性和易错点</h3><ol>
+<li>接口定义的所有方法都是空的</li>
+<li>接口中的所有方法都是公有的，这是接口的特性 </li>
+<li>接口的定义使用interface，但是接口的实现就要用到implements,实现接口的实际是类</li>
+<li>接口实现过程中要实现全部定义的接口 </li>
+<li>接口可以继承，用extends实现，与接口的实现不是一个意思,继承之后用类实现时要全部实现</li>
+<li>接口中可以声明常量但是不可声明变量</li>
+<li>可以说接口是特殊的抽象类，他里面的方法也是不实现功能的抽象类但是为了方便，不写abstract还有定义成interface而非类</li>
+<li>一个类虽然是单继承的，但是一个类可以实现多个接口,多个接口之间用逗号隔开</li>
+</ol>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">interface iTemplate</div><div class="line">  &#123;</div><div class="line">      const name = &quot;ha&quot;;</div><div class="line">      public function setVariable($name,$var);//必须是公有的方法</div><div class="line">      public function getHtml($template);</div><div class="line">  &#125;</div><div class="line">  interface inTel&#123;</div><div class="line">    public function handle();   </div><div class="line">  &#125;</div><div class="line">  //一个接口类可以实现多个定义的接口</div><div class="line">  class Template implements iTemplate,inTel&#123;</div><div class="line">      private $vars = array();</div><div class="line">      public function setVariable($name,$var)</div><div class="line">      &#123;</div><div class="line">          $this-&gt;vars[$name] = $var;</div><div class="line">      &#125;</div><div class="line">      public function getHtml($template)</div><div class="line">      &#123;</div><div class="line">          foreach($this-&gt;vars as $name =&gt; $value)</div><div class="line">          &#123;</div><div class="line">              $template = str_replace($name,$value,$template);//把字符串template中的name字符换成value</div><div class="line">          &#125;</div><div class="line">          return $template;</div><div class="line">      &#125;</div><div class="line">      public function handle()</div><div class="line">      &#123;</div><div class="line">          echo &quot;handle things\n&quot;;</div><div class="line">      &#125;</div><div class="line">  &#125;//用一个类去实现接口  </div><div class="line">    //$te = new iTemplate();因为是一种特殊的抽象类，因此也是不能实例化对象的</div><div class="line">    $tel = new Template();</div><div class="line">    $tel-&gt;setVariable(&apos;zy&apos;,&apos;人才&apos;);</div><div class="line">    echo $tel-&gt;getHtml(&apos;zyzsddw&apos;).&quot;\n&quot;;</div><div class="line">    $tel-&gt;handle();</div><div class="line">    echo iTemplate::name;//输出接口中定义的常量</div><div class="line">  ?&gt;</div></pre></td></tr></table></figure>
+<h2 id="trait"><a href="#trait" class="headerlink" title="trait"></a>trait</h2><h3 id="trait的定义"><a href="#trait的定义" class="headerlink" title="trait的定义"></a>trait的定义</h3><p><strong><em>Trait 是为类似 PHP 的单继承语言而准备的一种代码复用机制</em></strong></p>
+<h3 id="trait的特性和易错点"><a href="#trait的特性和易错点" class="headerlink" title="trait的特性和易错点"></a>trait的特性和易错点</h3><ol>
+<li>trait是一种代码复用技术，相当于一种池技术，把好多功能(方法)写在其中，用的时候调用即可。可代替继承技术</li>
+<li>他的调用优先级高于继承后的同名方法的优先级</li>
+<li>它本身无法进行实例化</li>
+<li>可以同时有多个trait，类中use声明时用逗号隔开</li>
+<li>trait也可以使用多个trait作为成员</li>
+<li>不可以声明静态成员，可在方法中定义静态变量</li>
+</ol>
+<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">class Base&#123;</div><div class="line">    public function sayHello()&#123;</div><div class="line">        echo &apos;hello&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">trait mysay&#123;</div><div class="line">    public function mysays()</div><div class="line">    &#123;</div><div class="line">        echo &quot;this is my says\n&quot;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">trait SayWorld&#123;//声明方式相当于一个类</div><div class="line">    //static public $c = 1;除非定义在方法中</div><div class="line">    public $name = &quot;zy&quot;;</div><div class="line">    public function sayHello()&#123;</div><div class="line">      parent::sayHello();</div><div class="line">      echo &quot;World\n&quot;;</div><div class="line">   &#125;  </div><div class="line">   public function says()&#123;</div><div class="line">       echo &quot;zwdfw\n&quot;;</div><div class="line">   &#125;</div><div class="line">   public static function func()</div><div class="line">   &#123;</div><div class="line">       static $c = 1;</div><div class="line">       echo &quot;$c.this is static\n&quot;;</div><div class="line">   &#125;</div><div class="line">   protected function sayno()</div><div class="line">   &#123;</div><div class="line">       echo &quot;sayno&quot;.&quot;\n&quot;;</div><div class="line">   &#125; </div><div class="line">   abstract public function getworld();//允许定义抽象方法</div><div class="line">&#125;</div><div class="line">class Myhello extends Base&#123;</div><div class="line">   use SayWorld,mysay;//用这种方式调用trait,相当于把所有的方法都继承到了  </div><div class="line">   public function getworld()</div><div class="line">   &#123;</div><div class="line">       echo &quot;nihao world\n&quot;;//使用了trait就要实现抽象方法</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">$foo = new Myhello();</div><div class="line">$foo-&gt;sayHello();//优先级高于继承来的同名方法</div><div class="line">$foo-&gt;says();//随意调用其中的方法</div><div class="line">//$foo-&gt;sayno();//私有方法和受保护的方法无法从trait中获取</div><div class="line">$foo-&gt;func();</div><div class="line">$foo-&gt;mysays();</div><div class="line">mysay::mysays();//无法实例化trait的对象访问，可以用trait名::方法/变量的形式访问</div><div class="line">echo $foo-&gt;name.&quot;\n&quot;;</div><div class="line">//echo $foo-&gt;c.&quot;\n&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h2 id="这四种php中oo特性的代表的区别"><a href="#这四种php中oo特性的代表的区别" class="headerlink" title="这四种php中oo特性的代表的区别"></a>这四种php中oo特性的代表的区别</h2><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">静态类</th>
+<th style="text-align:center">抽象类</th>
+<th style="text-align:center">接口</th>
+<th style="text-align:center">trait</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否可以实例化对象</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td>类外访问方式</td>
+<td style="text-align:center">1.类名::属性/方法 <br>   2.对象名-&gt;方法</td>
+<td style="text-align:center">子类继承实现，<br>实例化子类，<br>子类对象调用属性/方法</td>
+<td style="text-align:center">子类implements实现，子类实例化对象调用属性/方法</td>
+<td style="text-align:center">类中use实现，类外实例化对象调用属性/方法</td>
+</tr>
+<tr>
+<td>方法是否立即实现</td>
+<td style="text-align:center">类内外都可以</td>
+<td style="text-align:center">子类实现</td>
+<td style="text-align:center">子类实现</td>
+<td style="text-align:center">类内外都可以</td>
+</tr>
+<tr>
+<td>方法的访问控制</td>
+<td style="text-align:center">都可以</td>
+<td style="text-align:center">抽象方法公有或者受保护，普通方法都可以</td>
+<td style="text-align:center">均为公有</td>
+<td style="text-align:center">都可以</td>
+</tr>
+<tr>
+<td>实现方式</td>
+<td style="text-align:center">类内类外都可以</td>
+<td style="text-align:center">子类继承实现</td>
+<td style="text-align:center">子类继承实现</td>
+<td style="text-align:center">内部实现</td>
+</tr>
+<tr>
+<td>是否可以声明常量/变量</td>
+<td style="text-align:center">都可以</td>
+<td style="text-align:center">都可以，但变量无法类外访问</td>
+<td style="text-align:center">常量可以，变量不可以</td>
+<td style="text-align:center">都可以</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -528,7 +595,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/c/" rel="tag"><i class= "fa fa-tag"></i> c++</a>
+            <a href="/tags/php基本语法/" rel="tag"><i class= "fa fa-tag"></i> php基本语法</a>
           
         </div>
       
@@ -541,8 +608,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/using关键字在c#中的使用/" rel="next" title="using关键字在c#中的使用">
-                <i class="fa fa-chevron-left"></i> using关键字在c#中的使用
+              <a href="/IPC之管道通信的dup和dup2函数/" rel="next" title="IPC之管道通信的dup和dup2函数">
+                <i class="fa fa-chevron-left"></i> IPC之管道通信的dup和dup2函数
               </a>
             
           </div>
@@ -550,10 +617,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/浅析select函数及FD宏/" rel="prev" title="浅析select函数及FD宏">
-                浅析select函数及FD宏 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -748,7 +811,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#成员函数被重载（overload）的特征"><span class="nav-number">1.</span> <span class="nav-text">成员函数被重载（overload）的特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#覆盖（override）的特征"><span class="nav-number">2.</span> <span class="nav-text">覆盖（override）的特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏（redefining）的规则"><span class="nav-number">3.</span> <span class="nav-text">隐藏（redefining）的规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3种情况怎么执行"><span class="nav-number">4.</span> <span class="nav-text">3种情况怎么执行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态类"><span class="nav-number">2.</span> <span class="nav-text">静态类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态类定义："><span class="nav-number">2.1.</span> <span class="nav-text">静态类定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态类的特性和易错点"><span class="nav-number">2.2.</span> <span class="nav-text">静态类的特性和易错点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">2.3.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类"><span class="nav-number">3.</span> <span class="nav-text">抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象类的定义"><span class="nav-number">3.1.</span> <span class="nav-text">抽象类的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象类的特性和易错点"><span class="nav-number">3.2.</span> <span class="nav-text">抽象类的特性和易错点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例："><span class="nav-number">3.3.</span> <span class="nav-text">实例：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">4.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#接口的定义"><span class="nav-number">4.1.</span> <span class="nav-text">接口的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口特性和易错点"><span class="nav-number">4.2.</span> <span class="nav-text">接口特性和易错点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-1"><span class="nav-number">4.3.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trait"><span class="nav-number">5.</span> <span class="nav-text">trait</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#trait的定义"><span class="nav-number">5.1.</span> <span class="nav-text">trait的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#trait的特性和易错点"><span class="nav-number">5.2.</span> <span class="nav-text">trait的特性和易错点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-2"><span class="nav-number">5.3.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这四种php中oo特性的代表的区别"><span class="nav-number">6.</span> <span class="nav-text">这四种php中oo特性的代表的区别</span></a></li></ol></div>
             
 
           </div>
