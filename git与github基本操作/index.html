@@ -115,18 +115,18 @@
 
 
 
-<meta name="description" content="git与github的基本操作一、准备：1、git config –global user.name “Firstname Lastname” 2、git config –global user.email”your_email@example.com“ 3、ssh-keygen -t rsa -C “your_email@example.com“添加ssh，一路回车略过 4、id_rsa.pub">
+<meta name="description" content="git与github的基本操作 ¶一、准备： 1、git config --global user.name “Firstname Lastname” 2、git config --global user.email&amp;quot;your_email@example.com&amp;quot; 3、ssh-keygen -t rsa -C &amp;quot;your_email@example.com&amp;quot;">
 <meta name="keywords" content="git,github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git与github基本操作">
 <meta property="og:url" content="http://zy943453722.ink/git与github基本操作/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="git与github的基本操作一、准备：1、git config –global user.name “Firstname Lastname” 2、git config –global user.email”your_email@example.com“ 3、ssh-keygen -t rsa -C “your_email@example.com“添加ssh，一路回车略过 4、id_rsa.pub">
+<meta property="og:description" content="git与github的基本操作 ¶一、准备： 1、git config --global user.name “Firstname Lastname” 2、git config --global user.email&amp;quot;your_email@example.com&amp;quot; 3、ssh-keygen -t rsa -C &amp;quot;your_email@example.com&amp;quot;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-09-17T05:57:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git与github基本操作">
-<meta name="twitter:description" content="git与github的基本操作一、准备：1、git config –global user.name “Firstname Lastname” 2、git config –global user.email”your_email@example.com“ 3、ssh-keygen -t rsa -C “your_email@example.com“添加ssh，一路回车略过 4、id_rsa.pub">
+<meta name="twitter:description" content="git与github的基本操作 ¶一、准备： 1、git config --global user.name “Firstname Lastname” 2、git config --global user.email&amp;quot;your_email@example.com&amp;quot; 3、ssh-keygen -t rsa -C &amp;quot;your_email@example.com&amp;quot;">
 
 
 
@@ -168,6 +168,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -267,6 +277,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -344,7 +364,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/git与github基本操作/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -442,19 +462,23 @@
       
 
       
-        <h1 id="git与github的基本操作"><a href="#git与github的基本操作" class="headerlink" title="git与github的基本操作"></a>git与github的基本操作</h1><h2 id="一、准备："><a href="#一、准备：" class="headerlink" title="一、准备："></a>一、准备：</h2><p>1、git config –global user.name “Firstname Lastname”</p>
-<p>2、git config –global user.email”<a href="mailto:your_email@example.com" target="_blank" rel="noopener">your_email@example.com</a>“</p>
-<p>3、ssh-keygen -t rsa -C “<a href="mailto:your_email@example.com" target="_blank" rel="noopener">your_email@example.com</a>“添加ssh，一路回车略过</p>
+        <h1>git与github的基本操作</h1>
+<h2 id="一-准备："><a class="header-anchor" href="#一-准备：">¶</a>一、准备：</h2>
+<p>1、git config --global <a href="http://user.name" target="_blank" rel="noopener">user.name</a> “Firstname Lastname”</p>
+<p>2、git config --global <a href="mailto:user.email%22your_email@example.com" target="_blank" rel="noopener">user.email&quot;your_email@example.com</a>&quot;</p>
+<p>3、ssh-keygen -t rsa -C <a href="mailto:%22your_email@example.com" target="_blank" rel="noopener">&quot;your_email@example.com</a>&quot;添加ssh，一路回车略过</p>
 <p>4、id_rsa.pub寻找公开公钥复制到github</p>
 <p>5、ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a> 测试ssh是否生效</p>
-<h2 id="二、向远程仓库提交本地文件："><a href="#二、向远程仓库提交本地文件：" class="headerlink" title="二、向远程仓库提交本地文件："></a>二、向远程仓库提交本地文件：</h2><p><strong>方法一：</strong></p>
+<h2 id="二-向远程仓库提交本地文件："><a class="header-anchor" href="#二-向远程仓库提交本地文件：">¶</a>二、向远程仓库提交本地文件：</h2>
+<p><strong>方法一：</strong></p>
 <p>1、git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:username/example.git</p>
 <p>2、cd example</p>
 <p>3、git add filename//将文件发到缓存区</p>
 <p>4、git diff HEAD//查看本次提交与之前提交的区别（可省略）</p>
 <p>5、git commit -m “contribtion”//提交文件</p>
 <p>6、git status//查看当前工作树情况（可省略）</p>
-<p>7、git log -p//查看提交日志，并可查看修改的情况（可省<br>略）</p>
+<p>7、git log -p//查看提交日志，并可查看修改的情况（可省<br>
+略）</p>
 <p>8、git push//直接提交到远程仓库</p>
 <p><strong>方法二：</strong></p>
 <p>1.git init</p>
@@ -466,8 +490,11 @@
 <p>7.git remote add origin</p>
 <p><a href="mailto:8.git@github.com" target="_blank" rel="noopener">8.git@github.com</a>:usrname/example.git//创建远程仓库</p>
 <p>9.git push -u origin master//把本地当前分支上的内容推送到远程origin库的master分支</p>
-<p><strong>-u参数可以在推送的同时,将 origin 仓库的 master 分<br>支设置为本地仓库当前分支的 upstream(上游)。添加了这个参数,将来<br>运行 git pull命令从远程仓库获取内容时,本地仓库的这个分支就可<br>以直接从 origin 的 master 分支获取内容,省去了另外添加参数的麻烦。</strong></p>
-<p><strong>工作树（当前文件夹） —-&gt; 暂存区 —–&gt;本地仓库 —–&gt;远程仓库</strong></p>
+<p><strong>-u参数可以在推送的同时,将 origin 仓库的 master 分<br>
+支设置为本地仓库当前分支的 upstream(上游)。添加了这个参数,将来<br>
+运行 git pull命令从远程仓库获取内容时,本地仓库的这个分支就可<br>
+以直接从 origin 的 master 分支获取内容,省去了另外添加参数的麻烦。</strong></p>
+<p><strong>工作树（当前文件夹） ----&gt; 暂存区 -----&gt;本地仓库 -----&gt;远程仓库</strong></p>
 
       
     </div>
@@ -498,14 +525,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -640,10 +667,10 @@ var jiathis_config={
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -702,15 +729,27 @@ var jiathis_config={
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -720,6 +759,20 @@ var jiathis_config={
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -740,7 +793,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git与github的基本操作"><span class="nav-number">1.</span> <span class="nav-text">git与github的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、准备："><span class="nav-number">1.1.</span> <span class="nav-text">一、准备：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、向远程仓库提交本地文件："><span class="nav-number">1.2.</span> <span class="nav-text">二、向远程仓库提交本地文件：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">git与github的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-准备："><span class="nav-number">1.1.</span> <span class="nav-text">¶一、准备：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-向远程仓库提交本地文件："><span class="nav-number">1.2.</span> <span class="nav-text">¶二、向远程仓库提交本地文件：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -763,12 +816,12 @@ var jiathis_config={
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -1392,6 +1445,28 @@ var jiathis_config={
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

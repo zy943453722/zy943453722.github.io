@@ -115,16 +115,16 @@
 
 
 
-<meta name="description" content="有志者，事竟成">
+<meta name="description" content="Where there is a will there is a way!">
 <meta property="og:type" content="website">
 <meta property="og:title" content="悲伤逆流">
 <meta property="og:url" content="http://zy943453722.ink/page/2/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="有志者，事竟成">
+<meta property="og:description" content="Where there is a will there is a way!">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="悲伤逆流">
-<meta name="twitter:description" content="有志者，事竟成">
+<meta name="twitter:description" content="Where there is a will there is a way!">
 
 
 
@@ -166,6 +166,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -266,6 +276,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -343,7 +363,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -445,8 +465,10 @@
       
         
           
-          线程同步Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。
-互斥锁1.互
+          ¶线程同步
+Pthread是POSIX threads 的简称，是POSIX的线程标准。
+Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。
+¶互斥锁
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -507,7 +529,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/浅析多线程并发及写微信红包遇到的问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -609,9 +631,10 @@
       
         
           
-          多线程并发   众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。
-   微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。
-   多线程并发指的是在同一个进程中
+          ¶多线程并发
+众所周知，多线程编程很容易遇上诸如丢失更新、脏读、死锁等烦人的线程冲突问题。多线程的问题一旦发生便很难定位和解决，所以要在编程的初始阶段就要注意避免多线程程序常见的错误。
+微信红包程序应用线程基础API，采用多线程并发的方式进行抢红包操作。
+多线程并发指的是在同一个进程中执行多个线程。
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -672,7 +695,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/浅析select函数及FD宏/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -774,8 +797,10 @@
       
         
           
-          select函数这个函数允许进程指示内核等待多个事件中的任一个发生，并仅在一个或者多个事件发生或经过某指定时间后才唤醒进程。
-函数原型：12345#include&lt;sys/select.h&gt;#include&lt;sys/time.h&gt;int select(int maxfdp1,
+          select函数
+这个函数允许进程指示内核等待多个事件中的任一个发生，并仅在一个或者多个事件发生或经过某指定时间后才唤醒进程。
+¶函数原型：###
+12345#include&lt;sys/select.h&gt;#include&lt;sys/time.h&gt;int select(int ma
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -836,7 +861,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/c-重载覆盖隐藏的区别和执行方式/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -938,12 +963,14 @@
       
         
           
-          成员函数被重载（overload）的特征
+          ¶成员函数被重载（overload）的特征
+
 相同的范围（在同一个类中）
 函数名字相同
 参数不同
 virtual关键字可有可无
-1234567class A&#123;  private:      int a  public：      void print();      void print(in
+
+1234567class A&#123;  private:      int a  public：      void print();      void print
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1004,7 +1031,7 @@ virtual关键字可有可无
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/c语言中return函数和exit函数的区别/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -1106,7 +1133,8 @@ virtual关键字可有可无
       
         
           
-          区别：exit函数在头文件stdlib.h中。
+          区别：
+exit函数在头文件stdlib.h中。
 
 exit（0）：正常运行程序并退出程序；
 exit（1）：非正常运行导致退出程序；
@@ -1114,7 +1142,7 @@ return（）：返回函数，若在main主函数中，则会退出函数并返�
 
 详细说：
 
-return返回函数值，是关
+return返回函数值，是
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1175,7 +1203,7 @@ return返回函数值，是关
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/using关键字在c#中的使用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -1277,11 +1305,13 @@ return返回函数值，是关
       
         
           
-          using关键字在C#中的3种用法using 关键字有两个主要用途：
-  (一).作为指令，用于为命名空间创建别名或导入其他命名空间中定义的类型。
-  (二).作为语句，用于定义一个范围，在此范围的末尾将释放对象。
-(一).作为指令1、用在命名空间里    
-using + 命名空间名字，这样可以在
+          using关键字在C#中的3种用法
+using 关键字有两个主要用途：
+(一).作为指令，用于为命名空间创建别名或导入其他命名空间中定义的类型。
+(二).作为语句，用于定义一个范围，在此范围的末尾将释放对象。
+¶(一).作为指令
+1、用在命名空间里
+using + 命名空间名字，这样可以在程序中直接
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1342,7 +1372,7 @@ using + 命名空间名字，这样可以在
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/ADO-NET与外部数据库连接及查询等基本操作/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -1444,14 +1474,18 @@ using + 命名空间名字，这样可以在
       
         
           
-          建立与数据库连接:需要连接字符串，用到System.Data.SqlClient类库。
+          ¶建立与数据库连接:
+需要连接字符串，用到System.Data.SqlClient类库。
 方法：
 
-使用一个类构建SQL Server 连接字符串-  创建SqlconnectionStringBuider实例
+
+使用一个类构建SQL Server 连接字符串
+-  创建SqlconnectionStringBuider实例
 - 根据需要设置其属性
 - 访问该对象的ConnectionString属性
 
-与SQL 
+
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1512,7 +1546,7 @@ using + 命名空间名字，这样可以在
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/SQL中的function自定义函数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -1615,6 +1649,7 @@ using + 命名空间名字，这样可以在
         
           
           SQL自定义函数
+
 产生背景（已经有了存储过程，为什么还要使用自定义函数）
 发展历史
 构成
@@ -1623,10 +1658,12 @@ using + 命名空间名字，这样可以在
 注意事项
 疑问
 
-内容产生背景（已经有了存储过程，为什么还要使用自定义函数）与存储过程的区别（存在的意义）：
+¶内容
+¶产生背景（已经有了存储过程，为什么还要使用自定义函数）
+与存储过程的区别（存在的意义）：
 
 能够在select等SQL语句中直接使用自定义函数，存储过程不行。
-自定义函数
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1687,7 +1724,7 @@ using + 命名空间名字，这样可以在
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/ubuntu下安装命令的区别/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -1789,8 +1826,9 @@ using + 命名空间名字，这样可以在
       
         
           
-          ubuntu下安装命令的区别（dpkg、apt-get、aptitude）dpkg绕过apt包管理数据库对软件包进行操作，所以你用dpkg安装过的软件包用apt可以再安装一遍，系统不知道之前安装过了，将会覆盖之前dpkg的安装。
-dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关心u
+          ubuntu下安装命令的区别（dpkg、apt-get、aptitude）
+dpkg绕过apt包管理数据库对软件包进行操作，所以你用dpkg安装过的软件包用apt可以再安装一遍，系统不知道之前安装过了，将会覆盖之前dpkg的安装。
+dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关心
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1851,7 +1889,7 @@ dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关�
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/c语言中struct大小计算/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -1953,7 +1991,8 @@ dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关�
       
         
           
-          struct 大小计算结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对
+          struct 大小计算
+结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2036,10 +2075,10 @@ dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关�
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -2098,15 +2137,27 @@ dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关�
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -2116,6 +2167,20 @@ dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关�
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -2143,12 +2208,12 @@ dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关�
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -2757,6 +2822,28 @@ dpkg是用来安装.deb文件,但不会解决模块的依赖关系,且不会关�
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

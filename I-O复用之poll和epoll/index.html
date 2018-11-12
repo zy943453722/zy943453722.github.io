@@ -115,18 +115,18 @@
 
 
 
-<meta name="description" content="poll函数poll函数的定义：12345678910#include&amp;lt;poll.h&amp;gt;int poll(struct pollfd* fds,nfds_t nfds,int timeout)typedef unsigned long int nfds_t;struct pollfd&amp;#123;   int fd;   short events;//注册的事件   short reven">
+<meta name="description" content="¶poll函数 poll函数的定义： 12345678910#include&amp;lt;poll.h&amp;gt;int poll(struct pollfd* fds,nfds_t nfds,int timeout)typedef unsigned long int nfds_t;struct pollfd&amp;#123;   int fd;   short events;//注册的事件   short re">
 <meta name="keywords" content="linux,网络编程,c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="I&#x2F;O复用之poll和epoll">
 <meta property="og:url" content="http://zy943453722.ink/I-O复用之poll和epoll/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="poll函数poll函数的定义：12345678910#include&amp;lt;poll.h&amp;gt;int poll(struct pollfd* fds,nfds_t nfds,int timeout)typedef unsigned long int nfds_t;struct pollfd&amp;#123;   int fd;   short events;//注册的事件   short reven">
+<meta property="og:description" content="¶poll函数 poll函数的定义： 12345678910#include&amp;lt;poll.h&amp;gt;int poll(struct pollfd* fds,nfds_t nfds,int timeout)typedef unsigned long int nfds_t;struct pollfd&amp;#123;   int fd;   short events;//注册的事件   short re">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-11-16T00:08:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I&#x2F;O复用之poll和epoll">
-<meta name="twitter:description" content="poll函数poll函数的定义：12345678910#include&amp;lt;poll.h&amp;gt;int poll(struct pollfd* fds,nfds_t nfds,int timeout)typedef unsigned long int nfds_t;struct pollfd&amp;#123;   int fd;   short events;//注册的事件   short reven">
+<meta name="twitter:description" content="¶poll函数 poll函数的定义： 12345678910#include&amp;lt;poll.h&amp;gt;int poll(struct pollfd* fds,nfds_t nfds,int timeout)typedef unsigned long int nfds_t;struct pollfd&amp;#123;   int fd;   short events;//注册的事件   short re">
 
 
 
@@ -168,6 +168,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -267,6 +277,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -344,7 +364,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/I-O复用之poll和epoll/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -442,31 +462,52 @@
       
 
       
-        <h2 id="poll函数"><a href="#poll函数" class="headerlink" title="poll函数"></a>poll函数</h2><p><strong><em>poll函数的定义：</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;poll.h&gt;</span><br><span class="line">int poll(struct pollfd* fds,nfds_t nfds,int timeout)</span><br><span class="line">typedef unsigned long int nfds_t;</span><br><span class="line">struct pollfd&#123;</span><br><span class="line">   int fd;</span><br><span class="line">   short events;//注册的事件</span><br><span class="line">   short revents;//实际发生的事件，有内核填充</span><br><span class="line">&#125;;</span><br><span class="line">timeout为0时，poll调用后立即返回，不阻塞</span><br><span class="line">       为-1时，poll调用将永远阻塞，直至某个事件发生。</span><br></pre></td></tr></table></figure></p>
+        <h2 id="poll函数"><a class="header-anchor" href="#poll函数">¶</a>poll函数</h2>
+<p><strong><em>poll函数的定义：</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;poll.h&gt;</span><br><span class="line">int poll(struct pollfd* fds,nfds_t nfds,int timeout)</span><br><span class="line">typedef unsigned long int nfds_t;</span><br><span class="line">struct pollfd&#123;</span><br><span class="line">   int fd;</span><br><span class="line">   short events;//注册的事件</span><br><span class="line">   short revents;//实际发生的事件，有内核填充</span><br><span class="line">&#125;;</span><br><span class="line">timeout为0时，poll调用后立即返回，不阻塞</span><br><span class="line">       为-1时，poll调用将永远阻塞，直至某个事件发生。</span><br></pre></td></tr></table></figure>
 <p><strong><em>poll函数实现监视的过程：</em></strong></p>
 <ul>
 <li>调用poll函数实现对感兴趣的文件描述符的某个事件的监听。</li>
 <li>而后读取返回值，若返回值大于0，则轮询创建好的pollfd结构体数组，看每一个注册的事件是否发生感兴趣的事件。</li>
 </ul>
-<h2 id="epoll函数"><a href="#epoll函数" class="headerlink" title="epoll函数"></a>epoll函数</h2><h3 id="epoll函数的定义："><a href="#epoll函数的定义：" class="headerlink" title="epoll函数的定义："></a>epoll函数的定义：</h3><p><strong><br>epoll函数不同于poll和select，它是由一组函数组成的。</strong><br><strong><em><br>1. epoll创建函数：</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;sys/epoll.h&gt;</span><br><span class="line">int epoll_create(int size)//参数指定内核事件表的大小,返回一个指向内核事件表的fd：epollfd</span><br></pre></td></tr></table></figure></p>
-<p><strong><em><br>2. epoll执行注册函数：</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*第一个参数为内核事件表的文件描述符，第二个参数为指定的操作类型,</span><br><span class="line">第三个为要操作的文件描述符，第4个为注册的事件*/</span><br><span class="line">//返回0为成功，-1为失败</span><br><span class="line">int epoll_ctl(int epollfd,int op,int fd,struct epoll_event *event)</span><br></pre></td></tr></table></figure></p>
+<h2 id="epoll函数"><a class="header-anchor" href="#epoll函数">¶</a>epoll函数</h2>
+<h3 id="epoll函数的定义："><a class="header-anchor" href="#epoll函数的定义：">¶</a>epoll函数的定义：</h3>
+<p><strong><br>epoll函数不同于poll和select，它是由一组函数组成的。</strong><br>
+<strong><em><br>1. epoll创建函数：</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;sys/epoll.h&gt;</span><br><span class="line">int epoll_create(int size)//参数指定内核事件表的大小,返回一个指向内核事件表的fd：epollfd</span><br></pre></td></tr></table></figure>
+<p><strong><em><br>2. epoll执行注册函数：</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*第一个参数为内核事件表的文件描述符，第二个参数为指定的操作类型,</span><br><span class="line">第三个为要操作的文件描述符，第4个为注册的事件*/</span><br><span class="line">//返回0为成功，-1为失败</span><br><span class="line">int epoll_ctl(int epollfd,int op,int fd,struct epoll_event *event)</span><br></pre></td></tr></table></figure>
 <p><strong>对于op操作类型，大体有3种：</strong></p>
 <ul>
 <li>EPOLL_CTL_ADD:往内核事件表注册事件结构体</li>
 <li>EPOLL_CTL_MOD:修改fd上的注册事件</li>
-<li>EPOLL_CTL_DEL:删除fd上的注册事件<br><strong><br>对于epoll_event结构体：</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typedef union epoll_data&#123;</span><br><span class="line">   void *ptr;</span><br><span class="line">   int fd;//注册事件的文件描述符</span><br><span class="line">   uint32_t u32;</span><br><span class="line">   uint64_t u64;</span><br><span class="line">&#125;epoll_data_t;</span><br><span class="line">  struct epoll_event&#123;</span><br><span class="line">   __uint32_t events;//epoll事件</span><br><span class="line">   epoll_data_t data;//用户的数据</span><br><span class="line">&#125;;//一般是将事件和epoll_data_t用户数据绑定</span><br></pre></td></tr></table></figure>
-</li>
+<li>EPOLL_CTL_DEL:删除fd上的注册事件<br>
+<strong><br>对于epoll_event结构体：</strong></li>
 </ul>
-<p><strong><em><br>3. epoll等待就绪函数：</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*第一个参数指定内核事件表，第二个参数指定从内核事件表拷贝的就绪事件数组，</span><br><span class="line">第三个参数指定最多监听的事件个数，最后一个是设置超时时间同epoll*/</span><br><span class="line">//该函数成功时返回就绪事件个数，与文件描述符无关，失败返回-1</span><br><span class="line">int epoll_wait(int epollfd,struct epoll_event* events, int max,int timeout)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typedef union epoll_data&#123;</span><br><span class="line">   void *ptr;</span><br><span class="line">   int fd;//注册事件的文件描述符</span><br><span class="line">   uint32_t u32;</span><br><span class="line">   uint64_t u64;</span><br><span class="line">&#125;epoll_data_t;</span><br><span class="line">  struct epoll_event&#123;</span><br><span class="line">   __uint32_t events;//epoll事件</span><br><span class="line">   epoll_data_t data;//用户的数据</span><br><span class="line">&#125;;//一般是将事件和epoll_data_t用户数据绑定</span><br></pre></td></tr></table></figure>
+<p><strong><em><br>3. epoll等待就绪函数：</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*第一个参数指定内核事件表，第二个参数指定从内核事件表拷贝的就绪事件数组，</span><br><span class="line">第三个参数指定最多监听的事件个数，最后一个是设置超时时间同epoll*/</span><br><span class="line">//该函数成功时返回就绪事件个数，与文件描述符无关，失败返回-1</span><br><span class="line">int epoll_wait(int epollfd,struct epoll_event* events, int max,int timeout)</span><br></pre></td></tr></table></figure>
 <p><strong><em><br>4.epoll的事件类型</em></strong></p>
 <ul>
 <li>EPOLLIN   ：数据可读（包括一般和优先数据）</li>
 <li>EPOLLOUT  ：数据可写（包括一般和优先数据）</li>
 <li>EPOLLERR ：数据错误</li>
 <li>EPOLLET ：epoll的边沿触发模式事件</li>
-<li>EPOLLONESHOT ：该文件描述符上的可读、可写、错误事件最多触发其中一个且只触发一次<br><strong><br>最后两个是epoll特有的，前三个去掉’E’即为poll的事件类型</strong><br><strong><em><br>5.epoll的模式：</em></strong><br><br>epoll中有两种模式，一种是LT模式，一种是ET模式。</li>
-<li>LT模式：<br><br><font color="red" size="3">所谓LT模式，就是指电平触发，这是epoll默认的工作方式，要想改变可以通过上面的EPOLLET事件。这种模式下的epoll相当于一个效率较高的poll。<br><br><strong>这个模式下epoll_wait检测到有事件就绪后，应用程序可以不立即处理，那么下次调用epoll_wait仍会通告该事件，直至被处理。意味着每次epoll_wait()返回后，事件处理后，如果之后还有数据，会不断触发，也就是说，一个套接字上一次完整的数据，epoll_wait()可能会返回多次，直到没有数据为止。</strong>这个模式下文件描述符可阻塞可不阻塞。<br>该模式下只要在可读/可写 状态下epoll_wait都能检测到，因此可以不一次处理完。</font></li>
-<li>ET模式  :<br><br><font color="blue" size="3">所谓ET模式，就是指边沿触发，当某个文件描述符注册EPOLLET事件时，eopll将使用ET模式操作该文件描述符。<br>有数据过来后，epoll_wait()会返回一次，<strong>一段时间内，</strong>该套接字就算有数据源源不断地过来，epoll_wait()也不会返回了。（即只会读出其中第一次的内容，再来数据是读不到的，但若是缓冲区不够的话，也会读到结束的）这里注意，是一段时间，不代表这个套接字上有数据就只触发一次。时间过长，还是会返回多次的。<strong><br>该模式与LT的最大区别就是当epoll_wait检测到事件就绪时，必须立即处理，后序再遇到epoll_wait不会在通告该事件，这样大大降低了同一个epoll事件被触发的次数。</strong>该模式下文件描述符必须使用非阻塞。<strong>这种模式下发送多次否则，会因为缓冲区的不足造成发送或接收不到所有的数据。直到errno为EAGAIN时才算读(写)取完毕无数据可读(写）</strong><br>另外，该模式只有当某文件描述符由不可读/不可写 状态变为 可读/可写 状态时才能触发</font><br><font size="5" color="green"><br>因此，ET模式是高速工作模式，LT是缺省工作模式。</font><br><strong><em><br>6.网络事件EAGIN</em></strong><br><br>在一个非阻塞的socket上调用read/write函数, 返回EAGAIN或者EWOULDBLOCK。若遇到能read时，读缓冲区没有数据，或者write时，写缓冲区满了。这种情况下，如果是阻塞socket，read/write就要阻塞掉。而如果是非阻塞socket，read/write立即返回-1， 同时errno设置为EAGAIN。<br><br>因此，对于non-blocking的socket，正确的读写操作为:<br><br>读：忽略掉errno = EAGAIN的错误，下次可继续读<br><br>写：忽略掉errno = EAGAIN的错误，下次可继续写<br><br>因此ET模式使用非阻塞IO模型下需要用EAGAIN这个标志来判断接受的数据是否读完。</li>
+<li>EPOLLONESHOT ：该文件描述符上的可读、可写、错误事件最多触发其中一个且只触发一次<br>
+<strong><br>最后两个是epoll特有的，前三个去掉’E’即为poll的事件类型</strong><br>
+<strong><em><br>5.epoll的模式：</em></strong><br>
+<br>epoll中有两种模式，一种是LT模式，一种是ET模式。</li>
+<li>LT模式：<br>
+<br><font color="red" size="3">所谓LT模式，就是指电平触发，这是epoll默认的工作方式，要想改变可以通过上面的EPOLLET事件。这种模式下的epoll相当于一个效率较高的poll。<br><br>**这个模式下epoll_wait检测到有事件就绪后，应用程序可以不立即处理，那么下次调用epoll_wait仍会通告该事件，直至被处理。意味着每次epoll_wait()返回后，事件处理后，如果之后还有数据，会不断触发，也就是说，一个套接字上一次完整的数据，epoll_wait()可能会返回多次，直到没有数据为止。**这个模式下文件描述符可阻塞可不阻塞。<br>该模式下只要在可读/可写 状态下epoll_wait都能检测到，因此可以不一次处理完。</font></li>
+<li>ET模式  :<br>
+<br><font color="blue" size="3">所谓ET模式，就是指边沿触发，当某个文件描述符注册EPOLLET事件时，eopll将使用ET模式操作该文件描述符。<br>有数据过来后，epoll_wait()会返回一次，**一段时间内，<strong>该套接字就算有数据源源不断地过来，epoll_wait()也不会返回了。（即只会读出其中第一次的内容，再来数据是读不到的，但若是缓冲区不够的话，也会读到结束的）这里注意，是一段时间，不代表这个套接字上有数据就只触发一次。时间过长，还是会返回多次的。</strong><br>该模式与LT的最大区别就是当epoll_wait检测到事件就绪时，必须立即处理，后序再遇到epoll_wait不会在通告该事件，这样大大降低了同一个epoll事件被触发的次数。**该模式下文件描述符必须使用非阻塞。<strong>这种模式下发送多次否则，会因为缓冲区的不足造成发送或接收不到所有的数据。直到errno为EAGAIN时才算读(写)取完毕无数据可读(写）</strong><br>另外，该模式只有当某文件描述符由不可读/不可写 状态变为 可读/可写 状态时才能触发</font><br>
+<font size="5" color="green"><br>因此，ET模式是高速工作模式，LT是缺省工作模式。</font><br>
+<strong><em><br>6.网络事件EAGIN</em></strong><br>
+<br>在一个非阻塞的socket上调用read/write函数, 返回EAGAIN或者EWOULDBLOCK。若遇到能read时，读缓冲区没有数据，或者write时，写缓冲区满了。这种情况下，如果是阻塞socket，read/write就要阻塞掉。而如果是非阻塞socket，read/write立即返回-1， 同时errno设置为EAGAIN。<br>
+<br>因此，对于non-blocking的socket，正确的读写操作为:<br>
+<br>读：忽略掉errno = EAGAIN的错误，下次可继续读<br>
+<br>写：忽略掉errno = EAGAIN的错误，下次可继续写<br>
+<br>因此ET模式使用非阻塞IO模型下需要用EAGAIN这个标志来判断接受的数据是否读完。</li>
 </ul>
 
       
@@ -498,14 +539,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -646,10 +687,10 @@ var jiathis_config={
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -708,15 +749,27 @@ var jiathis_config={
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -726,6 +779,20 @@ var jiathis_config={
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -746,7 +813,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#poll函数"><span class="nav-number">1.</span> <span class="nav-text">poll函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#epoll函数"><span class="nav-number">2.</span> <span class="nav-text">epoll函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll函数的定义："><span class="nav-number">2.1.</span> <span class="nav-text">epoll函数的定义：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#poll函数"><span class="nav-number">1.</span> <span class="nav-text">¶poll函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#epoll函数"><span class="nav-number">2.</span> <span class="nav-text">¶epoll函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll函数的定义："><span class="nav-number">2.1.</span> <span class="nav-text">¶epoll函数的定义：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -769,12 +836,12 @@ var jiathis_config={
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -1398,6 +1465,28 @@ var jiathis_config={
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

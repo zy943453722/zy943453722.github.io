@@ -115,18 +115,18 @@
 
 
 
-<meta name="description" content="区别：exit函数在头文件stdlib.h中。  exit（0）：正常运行程序并退出程序； exit（1）：非正常运行导致退出程序； return（）：返回函数，若在main主函数中，则会退出函数并返回一值，可以写为return（0），或return 0。  详细说：  return返回函数值，是关键字；exit是一个函数。 return是语言级别的，它表示了调用堆栈的返回；而exit是系统调用级">
+<meta name="description" content="区别： exit函数在头文件stdlib.h中。  exit（0）：正常运行程序并退出程序； exit（1）：非正常运行导致退出程序； return（）：返回函数，若在main主函数中，则会退出函数并返回一值，可以写为return（0），或return 0。  详细说：  return返回函数值，是关键字；exit是一个函数。 return是语言级别的，它表示了调用堆栈的返回；而exit是系统调用">
 <meta name="keywords" content="c,基础语法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c语言中return函数和exit函数的区别">
 <meta property="og:url" content="http://zy943453722.ink/c语言中return函数和exit函数的区别/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="区别：exit函数在头文件stdlib.h中。  exit（0）：正常运行程序并退出程序； exit（1）：非正常运行导致退出程序； return（）：返回函数，若在main主函数中，则会退出函数并返回一值，可以写为return（0），或return 0。  详细说：  return返回函数值，是关键字；exit是一个函数。 return是语言级别的，它表示了调用堆栈的返回；而exit是系统调用级">
+<meta property="og:description" content="区别： exit函数在头文件stdlib.h中。  exit（0）：正常运行程序并退出程序； exit（1）：非正常运行导致退出程序； return（）：返回函数，若在main主函数中，则会退出函数并返回一值，可以写为return（0），或return 0。  详细说：  return返回函数值，是关键字；exit是一个函数。 return是语言级别的，它表示了调用堆栈的返回；而exit是系统调用">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-01-31T18:16:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c语言中return函数和exit函数的区别">
-<meta name="twitter:description" content="区别：exit函数在头文件stdlib.h中。  exit（0）：正常运行程序并退出程序； exit（1）：非正常运行导致退出程序； return（）：返回函数，若在main主函数中，则会退出函数并返回一值，可以写为return（0），或return 0。  详细说：  return返回函数值，是关键字；exit是一个函数。 return是语言级别的，它表示了调用堆栈的返回；而exit是系统调用级">
+<meta name="twitter:description" content="区别： exit函数在头文件stdlib.h中。  exit（0）：正常运行程序并退出程序； exit（1）：非正常运行导致退出程序； return（）：返回函数，若在main主函数中，则会退出函数并返回一值，可以写为return（0），或return 0。  详细说：  return返回函数值，是关键字；exit是一个函数。 return是语言级别的，它表示了调用堆栈的返回；而exit是系统调用">
 
 
 
@@ -168,6 +168,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -267,6 +277,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -344,7 +364,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/c语言中return函数和exit函数的区别/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -442,7 +462,8 @@
       
 
       
-        <p><strong>区别：</strong><br><br>exit函数在头文件stdlib.h中。</p>
+        <p><strong>区别：</strong><br><br>
+exit函数在头文件stdlib.h中。</p>
 <ul>
 <li>exit（0）：正常运行程序并退出程序；</li>
 <li>exit（1）：非正常运行导致退出程序；</li>
@@ -457,12 +478,21 @@
 <li>return用于结束一个函数的执行，将函数的执行信息传出个其他调用函数使用；exit函数是退出应用程序，删除进程使用的内存空间，并将应用程序的一 个状态返回给OS，这个状态标识了应用程序的一些运行信息，这个信息和机器和操作系统有关，一般是 0 为正常退出，非0 为非正常退出。</li>
 <li>非主函数中调用return和exit效果很明显，但是在main函数中调用return和exit的现象就很模糊，多数情况下现象都是一致的。</li>
 </ol>
-<p><strong>当在vfork函数中调用exit函数和return函数时需要特别注意！</strong><br><br>vfork函数父子进程共享物理内存，因此若在子进程用return函数的话，父进程子进程的栈都会被修改，导致父进程再次return 0 时会出现段错误。<br><br>再回到 return 和 exit，return会释放局部变量，并弹栈，回到上级函数执行。exit直接退掉。如果你用c++ 你就知道，return会调用局部对象的析构函数，exit不会。（注：exit不是系统调用，是glibc对系统调用 _exit()或_exitgroup()的封装）。<br><br>可见，子进程调用exit() 没有修改函数栈，所以，父进程得以顺利执行。</p>
-<p><strong>另外网上大牛还有另外一种解释：<br></strong><br>实际上子进程return只会导致子进程自己的相关寄存器（特别是esp、ebp）被更改，不会对共享的栈内存空间的内容产生影响。而子进程修改自己的寄存器并不影响父进程的寄存器，所以本来return是不会导致问题的。问题出在当子进程return返回到main()函数的调用点之后，接下来的语句中会有一些别的函数调用，这个时候main()原来的栈内存空间内容被覆盖（主要是返回地址），导致了程序的不确定行为。<br>链接：<a href="https://www.zhihu.com/question/26591968/answer/33867796" target="_blank" rel="noopener">https://www.zhihu.com/question/26591968/answer/33867796</a></p>
+<p><strong>当在vfork函数中调用exit函数和return函数时需要特别注意！</strong><br><br>
+vfork函数父子进程共享物理内存，因此若在子进程用return函数的话，父进程子进程的栈都会被修改，导致父进程再次return 0 时会出现段错误。<br><br>
+再回到 return 和 exit，return会释放局部变量，并弹栈，回到上级函数执行。exit直接退掉。如果你用c++ 你就知道，return会调用局部对象的析构函数，exit不会。（注：exit不是系统调用，是glibc对系统调用 _exit()或_exitgroup()的封装）。<br><br>
+可见，子进程调用exit() 没有修改函数栈，所以，父进程得以顺利执行。</p>
+<p><strong>另外网上大牛还有另外一种解释：<br></strong><br>
+实际上子进程return只会导致子进程自己的相关寄存器（特别是esp、ebp）被更改，不会对共享的栈内存空间的内容产生影响。而子进程修改自己的寄存器并不影响父进程的寄存器，所以本来return是不会导致问题的。问题出在当子进程return返回到main()函数的调用点之后，接下来的语句中会有一些别的函数调用，这个时候main()原来的栈内存空间内容被覆盖（主要是返回地址），导致了程序的不确定行为。<br>
+链接：<a href="https://www.zhihu.com/question/26591968/answer/33867796" target="_blank" rel="noopener">https://www.zhihu.com/question/26591968/answer/33867796</a></p>
 <p><strong><em>另外还想说一下return在子函数中的返回机制：</em></strong></p>
 <ol>
-<li>函数中定义的局部变量：<br><br>  Linux等的C语言中return返回值的机制为：将返回值存入eax寄存器中，然后系统再将eax中的值赋给变量(i)。</li>
-<li>函数内部返回局部指针（或数组）的过程：<br><br> 在执行return语句时，首先将return后面的地址值返回存入到比如eax寄存器中，然后系统再将eax中的地址值给接收函数返回地址的指针变量。这看起来都没什么问题，但问题在于两个方面：<br><br>[1]接收函数返回地址值的指针变量要访问此地址中的内容。<br><br>[2]子函数运行结束后，一切有关于局部变量的内存都已经释放回收。那么在用这个地址来操作就很危险:地址中没有内容。</li>
+<li>函数中定义的局部变量：<br><br>
+Linux等的C语言中return返回值的机制为：将返回值存入eax寄存器中，然后系统再将eax中的值赋给变量(i)。</li>
+<li>函数内部返回局部指针（或数组）的过程：<br><br>
+在执行return语句时，首先将return后面的地址值返回存入到比如eax寄存器中，然后系统再将eax中的地址值给接收函数返回地址的指针变量。这看起来都没什么问题，但问题在于两个方面：<br><br>
+[1]接收函数返回地址值的指针变量要访问此地址中的内容。<br><br>
+[2]子函数运行结束后，一切有关于局部变量的内存都已经释放回收。那么在用这个地址来操作就很危险:地址中没有内容。</li>
 </ol>
 
       
@@ -494,14 +524,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -631,10 +661,10 @@ var jiathis_config={
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -693,15 +723,27 @@ var jiathis_config={
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -711,6 +753,20 @@ var jiathis_config={
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -738,12 +794,12 @@ var jiathis_config={
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -1367,6 +1423,28 @@ var jiathis_config={
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

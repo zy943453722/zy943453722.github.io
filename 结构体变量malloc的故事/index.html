@@ -115,13 +115,13 @@
 
 
 
-<meta name="description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 背景因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 问题描述：但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ 代码实例：12">
+<meta name="description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 ¶背景 因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 ¶问题描述： 但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ ¶代码">
 <meta name="keywords" content="c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="结构体变量malloc的故事">
 <meta property="og:url" content="http://zy943453722.ink/结构体变量malloc的故事/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 背景因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 问题描述：但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ 代码实例：12">
+<meta property="og:description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 ¶背景 因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 ¶问题描述： 但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ ¶代码">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://zy943453722.ink/结构体变量malloc的故事/3.png">
 <meta property="og:image" content="http://zy943453722.ink/结构体变量malloc的故事/4.png">
@@ -131,7 +131,7 @@
 <meta property="og:updated_time" content="2017-11-12T06:00:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="结构体变量malloc的故事">
-<meta name="twitter:description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 背景因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 问题描述：但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ 代码实例：12">
+<meta name="twitter:description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 ¶背景 因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 ¶问题描述： 但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ ¶代码">
 <meta name="twitter:image" content="http://zy943453722.ink/结构体变量malloc的故事/3.png">
 
 
@@ -174,6 +174,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -273,6 +283,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -350,7 +370,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/结构体变量malloc的故事/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -449,14 +469,29 @@
 
       
         <p><strong><em>这是一个关于结构体通过malloc初始化的悲伤的故事</em></strong></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。</p>
-<h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p>但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？</p>
-<h3 id="代码实例："><a href="#代码实例：" class="headerlink" title="代码实例："></a>代码实例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/*这仅仅是个用数组动态创建栈的初始化过程*/</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">typedef struct stack</span><br><span class="line">&#123;</span><br><span class="line">      int top;</span><br><span class="line">      int count;</span><br><span class="line">      int array[];//柔性数组，也可以方括号内定义为0，也可以定义为数组指针</span><br><span class="line">&#125;Stack;</span><br><span class="line">void Init(Stack *s,int n)</span><br><span class="line">&#123;</span><br><span class="line">    s = (Stack*)malloc(sizeof(Stack) + n * sizeof(int));</span><br><span class="line">   s-&gt;top = -1;</span><br><span class="line">   s-&gt;count = n;</span><br><span class="line">&#125;</span><br><span class="line">void Destroy(Stack **s)</span><br><span class="line">&#123;</span><br><span class="line">      free(*s);</span><br><span class="line">      *s = NULL;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   Stack s;</span><br><span class="line">   Stack *q = &amp;s;</span><br><span class="line">   Init(q);</span><br><span class="line">   Destroy(&amp;q);</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="gdb调试显示结果："><a href="#gdb调试显示结果：" class="headerlink" title="gdb调试显示结果："></a>gdb调试显示结果：</h3><p><img src="/结构体变量malloc的故事/3.png" alt="图2"><br><img src="/结构体变量malloc的故事/4.png" alt="图3"><br><strong><em>由图中可以看出原本传入Init函数的stack</em>的地址为0x7fffffffde00，但malloc出来的新地址为0x602830,改变malloc出来地址上的内容，函数返回时自然而然没有保存下来。<br>再次打印s的地址，<font color="blue">果然还是原地址，相应数据也没有保存下来</font></strong></p>
-<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>思路: </p>
-<p>   既然一级指针会在init函数中被重新malloc，之后返回后保存不下来，那么可以启用2级指针，之后，让malloc出来的指针和原指针的地址相同(即2级指针也指向malloc出来的指针)这样返回时才能真正将malloc出来的指针保存下来。<br>具体解决方法<br>重写init方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void Init(Stack **s,int n)</span><br><span class="line">&#123;</span><br><span class="line">  Stack *p = (Stack *)malloc(sizeof(Stack) + n * sizeof(int));//新malloc出一块地址指向原来的结构体</span><br><span class="line">  *s = p; //将新malloc出来的地址赋值给原地址，让两个变成同一地址</span><br><span class="line">  p-&gt;top = -1;</span><br><span class="line">  p-&gt;count = n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="图解："><a href="#图解：" class="headerlink" title="图解："></a>图解：</h3><p><img src="/结构体变量malloc的故事/zy.png" alt="图1"></p>
-<p><strong>此时再次调用gdb调试：<br></strong><br><img src="/结构体变量malloc的故事/5.png" alt="图4"><br><img src="/结构体变量malloc的故事/6.png" alt="图5"><br>可以看出当从init函数返回后q指针已经变为malloc出来的地址，由此数据也被保存了下来。</p>
+<h3 id="背景"><a class="header-anchor" href="#背景">¶</a>背景</h3>
+<p>因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。</p>
+<h3 id="问题描述："><a class="header-anchor" href="#问题描述：">¶</a>问题描述：</h3>
+<p>但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？</p>
+<h3 id="代码实例："><a class="header-anchor" href="#代码实例：">¶</a>代码实例：</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/*这仅仅是个用数组动态创建栈的初始化过程*/</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">typedef struct stack</span><br><span class="line">&#123;</span><br><span class="line">      int top;</span><br><span class="line">      int count;</span><br><span class="line">      int array[];//柔性数组，也可以方括号内定义为0，也可以定义为数组指针</span><br><span class="line">&#125;Stack;</span><br><span class="line">void Init(Stack *s,int n)</span><br><span class="line">&#123;</span><br><span class="line">    s = (Stack*)malloc(sizeof(Stack) + n * sizeof(int));</span><br><span class="line">   s-&gt;top = -1;</span><br><span class="line">   s-&gt;count = n;</span><br><span class="line">&#125;</span><br><span class="line">void Destroy(Stack **s)</span><br><span class="line">&#123;</span><br><span class="line">      free(*s);</span><br><span class="line">      *s = NULL;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   Stack s;</span><br><span class="line">   Stack *q = &amp;s;</span><br><span class="line">   Init(q);</span><br><span class="line">   Destroy(&amp;q);</span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="gdb调试显示结果："><a class="header-anchor" href="#gdb调试显示结果：">¶</a>gdb调试显示结果：</h3>
+<p><img src="/结构体变量malloc的故事/3.png" alt="图2"><br>
+<img src="/结构体变量malloc的故事/4.png" alt="图3"><br>
+<strong><em>由图中可以看出原本传入Init函数的stack</em>的地址为0x7fffffffde00，但malloc出来的新地址为0x602830,改变malloc出来地址上的内容，函数返回时自然而然没有保存下来。<br>
+再次打印s的地址，<font color="blue">果然还是原地址，相应数据也没有保存下来</font></strong></p>
+<h3 id="解决方案："><a class="header-anchor" href="#解决方案：">¶</a>解决方案：</h3>
+<p>思路:</p>
+<p>既然一级指针会在init函数中被重新malloc，之后返回后保存不下来，那么可以启用2级指针，之后，让malloc出来的指针和原指针的地址相同(即2级指针也指向malloc出来的指针)这样返回时才能真正将malloc出来的指针保存下来。<br>
+具体解决方法<br>
+重写init方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void Init(Stack **s,int n)</span><br><span class="line">&#123;</span><br><span class="line">  Stack *p = (Stack *)malloc(sizeof(Stack) + n * sizeof(int));//新malloc出一块地址指向原来的结构体</span><br><span class="line">  *s = p; //将新malloc出来的地址赋值给原地址，让两个变成同一地址</span><br><span class="line">  p-&gt;top = -1;</span><br><span class="line">  p-&gt;count = n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="图解："><a class="header-anchor" href="#图解：">¶</a>图解：</h3>
+<p><img src="/结构体变量malloc的故事/zy.png" alt="图1"></p>
+<p><strong>此时再次调用gdb调试：<br></strong><br>
+<img src="/结构体变量malloc的故事/5.png" alt="图4"><br>
+<img src="/结构体变量malloc的故事/6.png" alt="图5"><br>
+可以看出当从init函数返回后q指针已经变为malloc出来的地址，由此数据也被保存了下来。</p>
 
       
     </div>
@@ -487,14 +522,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -631,10 +666,10 @@ var jiathis_config={
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -693,15 +728,27 @@ var jiathis_config={
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -711,6 +758,20 @@ var jiathis_config={
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -731,7 +792,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述："><span class="nav-number">2.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实例："><span class="nav-number">3.</span> <span class="nav-text">代码实例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gdb调试显示结果："><span class="nav-number">4.</span> <span class="nav-text">gdb调试显示结果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案："><span class="nav-number">5.</span> <span class="nav-text">解决方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图解："><span class="nav-number">6.</span> <span class="nav-text">图解：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">¶背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述："><span class="nav-number">2.</span> <span class="nav-text">¶问题描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实例："><span class="nav-number">3.</span> <span class="nav-text">¶代码实例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gdb调试显示结果："><span class="nav-number">4.</span> <span class="nav-text">¶gdb调试显示结果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案："><span class="nav-number">5.</span> <span class="nav-text">¶解决方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图解："><span class="nav-number">6.</span> <span class="nav-text">¶图解：</span></a></li></ol></div>
             
 
           </div>
@@ -754,12 +815,12 @@ var jiathis_config={
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -1383,6 +1444,28 @@ var jiathis_config={
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

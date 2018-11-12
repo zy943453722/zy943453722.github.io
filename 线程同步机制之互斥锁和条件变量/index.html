@@ -115,20 +115,20 @@
 
 
 
-<meta name="description" content="线程同步Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。 互斥锁1.互斥量：  互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互斥量对应">
+<meta name="description" content="¶线程同步 Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。 ¶互斥锁 ¶1.互斥量： 互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互">
 <meta name="keywords" content="c,linux网络编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线程同步机制之互斥锁和条件变量">
 <meta property="og:url" content="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="线程同步Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。 互斥锁1.互斥量：  互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互斥量对应">
+<meta property="og:description" content="¶线程同步 Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。 ¶互斥锁 ¶1.互斥量： 互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/1.png">
 <meta property="og:image" content="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/2.png">
 <meta property="og:updated_time" content="2017-10-12T07:00:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线程同步机制之互斥锁和条件变量">
-<meta name="twitter:description" content="线程同步Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。 互斥锁1.互斥量：  互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互斥量对应">
+<meta name="twitter:description" content="¶线程同步 Pthread是POSIX threads 的简称，是POSIX的线程标准。 Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。 ¶互斥锁 ¶1.互斥量： 互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互">
 <meta name="twitter:image" content="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/1.png">
 
 
@@ -171,6 +171,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -270,6 +280,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -347,7 +367,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/线程同步机制之互斥锁和条件变量/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -445,47 +465,85 @@
       
 
       
-        <h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p><strong>Pthread是POSIX threads 的简称，是POSIX的线程标准。</strong><br> Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。</p>
-<h2 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h2><h3 id="1-互斥量："><a href="#1-互斥量：" class="headerlink" title="1.互斥量："></a>1.互斥量：</h3><p>  互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互斥量对应一个共享资源，互斥量状态：<strong><em>1.解锁状态意味着共享资源可用，2.加锁状态意味着共享资源不可用。</em></strong></p>
-<p>  一个线程需要使用共享资源时，使用thread_mutex_lock申请：1.当互斥量为解锁状态，则占用互斥量，并给互斥量加锁，占用资源（互斥量为加锁状态，其他线程不能使用互斥量并等待互斥量变为解锁状态），2.如果互斥量为加锁状态，则线程等待，直到互斥量为解锁状态（其他线程使用完共享资源后会解锁互斥量，释放资源）。</p>
-<h3 id="2-临界区："><a href="#2-临界区：" class="headerlink" title="2.临界区："></a>2.临界区：</h3><p>临界区指的是一个访问共用资源的程序片断。通常由定义一个互斥量并加锁来保护这段临界区代码。</p>
-<h3 id="3-互斥量的相关函数："><a href="#3-互斥量的相关函数：" class="headerlink" title="3.互斥量的相关函数："></a>3.互斥量的相关函数：</h3><p><strong><em>首先定义互斥量的结构体pthread_mutex_t。</em></strong></p>
-<p><strong>1). 互斥量初始化函数：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_init(pthread_mutex_t *mutex,const pthread_mutexattr_t *mutexattr)</span><br></pre></td></tr></table></figure></p>
+        <h2 id="线程同步"><a class="header-anchor" href="#线程同步">¶</a>线程同步</h2>
+<p><strong>Pthread是POSIX threads 的简称，是POSIX的线程标准。</strong><br>
+Pthread线程同步指多个线程协调地，有序地同步使用共享资源。多线程共享进程资源，一个线程访问共享资源需要一段完整的时间才能完成其读写操作，如果在这段时间被其他线程打断，就会产生诸多不可预知的错误。</p>
+<h2 id="互斥锁"><a class="header-anchor" href="#互斥锁">¶</a>互斥锁</h2>
+<h3 id="1-互斥量："><a class="header-anchor" href="#1-互斥量：">¶</a>1.互斥量：</h3>
+<p>互斥量是一种线程同步对象，“互斥”的含义是同一时刻只能有一个线程获得互斥量。一个互斥量对应一个共享资源，互斥量状态：<strong><em>1.解锁状态意味着共享资源可用，2.加锁状态意味着共享资源不可用。</em></strong></p>
+<p>一个线程需要使用共享资源时，使用thread_mutex_lock申请：1.当互斥量为解锁状态，则占用互斥量，并给互斥量加锁，占用资源（互斥量为加锁状态，其他线程不能使用互斥量并等待互斥量变为解锁状态），2.如果互斥量为加锁状态，则线程等待，直到互斥量为解锁状态（其他线程使用完共享资源后会解锁互斥量，释放资源）。</p>
+<h3 id="2-临界区："><a class="header-anchor" href="#2-临界区：">¶</a>2.临界区：</h3>
+<p>临界区指的是一个访问共用资源的程序片断。通常由定义一个互斥量并加锁来保护这段临界区代码。</p>
+<h3 id="3-互斥量的相关函数："><a class="header-anchor" href="#3-互斥量的相关函数：">¶</a>3.互斥量的相关函数：</h3>
+<p><strong><em>首先定义互斥量的结构体pthread_mutex_t。</em></strong></p>
+<p><strong>1). 互斥量初始化函数：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_init(pthread_mutex_t *mutex,const pthread_mutexattr_t *mutexattr)</span><br></pre></td></tr></table></figure>
 <p>第一个参数即互斥量结构体的指针，第二个变量则是互斥量的属性（当为NULL时是默认属性）。成功返回0，失败返回错误码。</p>
-<p><strong>2). 互斥量上锁函数：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_lock(pthread_mutex_t *mutex)</span><br></pre></td></tr></table></figure></p>
-<p>此函数参数即互斥量结构体，返回成功为0，失败返回错误码。<br>是阻塞的上锁函数。</p>
-<p><strong>3). 互斥量解锁函数：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_unlock(pthread_mutex_t *mutex)</span><br></pre></td></tr></table></figure></p>
+<p><strong>2). 互斥量上锁函数：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_lock(pthread_mutex_t *mutex)</span><br></pre></td></tr></table></figure>
+<p>此函数参数即互斥量结构体，返回成功为0，失败返回错误码。<br>
+是阻塞的上锁函数。</p>
+<p><strong>3). 互斥量解锁函数：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_unlock(pthread_mutex_t *mutex)</span><br></pre></td></tr></table></figure>
 <p>参数和返回值同上锁函数。</p>
-<p><strong>4). 互斥量的另一种上锁函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_trylock(pthread_mutex_t *mutex)</span><br></pre></td></tr></table></figure></p>
+<p><strong>4). 互斥量的另一种上锁函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_trylock(pthread_mutex_t *mutex)</span><br></pre></td></tr></table></figure>
 <p>这是上锁函数的非阻塞版本。若已经上锁，返回EBUSY。</p>
-<p><strong>5). 互斥量的销毁函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_destroy(pthread_mutex_t *mutex)</span><br></pre></td></tr></table></figure></p>
+<p><strong>5). 互斥量的销毁函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_mutex_destroy(pthread_mutex_t *mutex)</span><br></pre></td></tr></table></figure>
 <p>参数和返回值同上锁函数。</p>
-<h2 id="条件变量"><a href="#条件变量" class="headerlink" title="条件变量"></a>条件变量</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>条件变量通过允许线程阻塞和等待另一个线程发送信号的方法弥补了互斥锁的不足，它常和互斥锁一起使用。使用时，条件变量被用来阻塞一个线程，当条件不满足时，线程往往解开相应的互斥锁并等待条件发生变化。一旦其它的某个线程改变了条件变量，它将通知相应的条件变量唤醒一个或多个正被此条件变量阻塞的线程。这些线程将重新锁定互斥锁并重新测试条件是否满足。</p>
-<h3 id="2-条件变量的相关函数"><a href="#2-条件变量的相关函数" class="headerlink" title="2.条件变量的相关函数"></a>2.条件变量的相关函数</h3><p><strong><em>首先定义条件变量结构体pthread_cond_t</em></strong></p>
-<p><strong>1). 条件变量初始化函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_init(pthread_cond_t *cond,pthread_condattr_t *cond_attr)</span><br></pre></td></tr></table></figure></p>
+<h2 id="条件变量"><a class="header-anchor" href="#条件变量">¶</a>条件变量</h2>
+<h3 id="1-概念"><a class="header-anchor" href="#1-概念">¶</a>1.概念</h3>
+<p>条件变量通过允许线程阻塞和等待另一个线程发送信号的方法弥补了互斥锁的不足，它常和互斥锁一起使用。使用时，条件变量被用来阻塞一个线程，当条件不满足时，线程往往解开相应的互斥锁并等待条件发生变化。一旦其它的某个线程改变了条件变量，它将通知相应的条件变量唤醒一个或多个正被此条件变量阻塞的线程。这些线程将重新锁定互斥锁并重新测试条件是否满足。</p>
+<h3 id="2-条件变量的相关函数"><a class="header-anchor" href="#2-条件变量的相关函数">¶</a>2.条件变量的相关函数</h3>
+<p><strong><em>首先定义条件变量结构体pthread_cond_t</em></strong></p>
+<p><strong>1). 条件变量初始化函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_init(pthread_cond_t *cond,pthread_condattr_t *cond_attr)</span><br></pre></td></tr></table></figure>
 <p>第一个参数即条件变量结构体指针，第二个变量即条件变量的属性（如果为NULL，则是默认属性）。成功返回0，失败返回错误码。</p>
-<p><strong>2).条件变量的销毁函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_destroy(pthread_cond_t *cond)</span><br></pre></td></tr></table></figure></p>
+<p><strong>2).条件变量的销毁函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_destroy(pthread_cond_t *cond)</span><br></pre></td></tr></table></figure>
 <p>第一个参数即条件变量结构体指针。返回值同初始化函数。</p>
-<p><strong>3). 条件变量的广播函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_broadcast(pthread_cond_t *cond)</span><br></pre></td></tr></table></figure></p>
-<p>参数和返回值同销毁函数。<br>此函数以广播的方式唤醒所有等待目标条件变量的线程。</p>
-<p><strong>4). 条件变量的信号函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_signal(pthread_cond_t *cond)</span><br></pre></td></tr></table></figure></p>
-<p>参数返回值同销毁函数<br>此函数用于唤醒一个等待目标变量的线程。至于哪个线程被唤醒，则取决于线程的优先级和调度策略。</p>
-<p><strong>5). 条件变量的等待函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_wait(pthread_cond_t *cond)</span><br></pre></td></tr></table></figure></p>
-<p>参数和返回值同销毁函数。<br><strong>在调用此函数之前必须保证互斥量已经加锁。</strong></p>
-<font color="blue"> <strong>重点：模拟等待函数（pthread_cond_wait)调用前后的过程</strong></font>
-
-<p>第一个线程首先调用：<br>    pthread_mutex_lock(&amp;mymutex);</p>
-<p>然后，它检查了列表。没有找到感兴趣的东西，于是它调用：<br>    pthread_cond_wait(&amp;mycond, &amp;mymutex);</p>
-<p>然后，pthread_cond_wait() 调用在返回前执行许多操作：<br>    pthread_mutex_unlock(&amp;mymutex);</p>
-<p>它对 mymutex 解锁，然后进入睡眠状态，等待 mycond 以接收 POSIX 线程“信号”。一旦接收到“信号”（加引号是因为我们并不是在讨论传统的 UNIX 信号，而是来自 pthread_cond_signal() 或 pthread_cond_broadcast() 调用的信号），它就会苏醒。但 pthread_cond_wait() 没有立即返回——它还要做一件事：重新锁定 mutex：<br>    pthread_mutex_lock(&amp;mymutex);</p>
+<p><strong>3). 条件变量的广播函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_broadcast(pthread_cond_t *cond)</span><br></pre></td></tr></table></figure>
+<p>参数和返回值同销毁函数。<br>
+此函数以广播的方式唤醒所有等待目标条件变量的线程。</p>
+<p><strong>4). 条件变量的信号函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_signal(pthread_cond_t *cond)</span><br></pre></td></tr></table></figure>
+<p>参数返回值同销毁函数<br>
+此函数用于唤醒一个等待目标变量的线程。至于哪个线程被唤醒，则取决于线程的优先级和调度策略。</p>
+<p><strong>5). 条件变量的等待函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">int pthread_cond_wait(pthread_cond_t *cond)</span><br></pre></td></tr></table></figure>
+<p>参数和返回值同销毁函数。<br>
+<strong>在调用此函数之前必须保证互斥量已经加锁。</strong></p>
+<p><font color="blue"> <strong>重点：模拟等待函数（pthread_cond_wait)调用前后的过程</strong></font></p>
+<p>第一个线程首先调用：<br>
+pthread_mutex_lock(&amp;mymutex);</p>
+<p>然后，它检查了列表。没有找到感兴趣的东西，于是它调用：<br>
+pthread_cond_wait(&amp;mycond, &amp;mymutex);</p>
+<p>然后，pthread_cond_wait() 调用在返回前执行许多操作：<br>
+pthread_mutex_unlock(&amp;mymutex);</p>
+<p>它对 mymutex 解锁，然后进入睡眠状态，等待 mycond 以接收 POSIX 线程“信号”。一旦接收到“信号”（加引号是因为我们并不是在讨论传统的 UNIX 信号，而是来自 pthread_cond_signal() 或 pthread_cond_broadcast() 调用的信号），它就会苏醒。但 pthread_cond_wait() 没有立即返回——它还要做一件事：重新锁定 mutex：<br>
+pthread_mutex_lock(&amp;mymutex);</p>
 <p>pthread_cond_wait() 知道我们在查找 mymutex “背后”的变化，因此它继续操作，为我们锁定互斥对象，然后才返回。</p>
-<h3 id="3-代码示例（互斥锁和条件变量一起用实现线程同步）"><a href="#3-代码示例（互斥锁和条件变量一起用实现线程同步）" class="headerlink" title="3.代码示例（互斥锁和条件变量一起用实现线程同步）"></a>3.代码示例（互斥锁和条件变量一起用实现线程同步）</h3><ul>
-<li><strong>程序思路：</strong><br>在这里利用多线程技术实现生产者和消费者问题，生产者线程向一缓冲区中写数据，消费<br>者线程从缓冲区中读取数据，由于生产者线程和消费者线程共享同一缓冲区，为了正确读<br>写数据，在使用缓冲队列时必须保持互斥。生产者线程和消费者线程必须满足：生产者写<br>入缓冲区的数目不能超过缓冲区容量，消费者读取的数目不能超过生产者写入的数目。<br>在程序中使用了一个小技巧来判断缓冲区是空还是满。在初始化时读指针和写指针为0;<br>如果读指针等于写指针,则缓冲区是空的;如果(写指针+ 1) % N 等于读指针,则缓冲区是满的,<br>%表示取余数,这时实际上有一个单元空出未用。下面是完整的程序段和注释。</li>
+<h3 id="3-代码示例-互斥锁和条件变量一起用实现线程同步"><a class="header-anchor" href="#3-代码示例-互斥锁和条件变量一起用实现线程同步">¶</a>3.代码示例（互斥锁和条件变量一起用实现线程同步）</h3>
+<ul>
+<li><strong>程序思路：</strong><br>
+在这里利用多线程技术实现生产者和消费者问题，生产者线程向一缓冲区中写数据，消费<br>
+者线程从缓冲区中读取数据，由于生产者线程和消费者线程共享同一缓冲区，为了正确读<br>
+写数据，在使用缓冲队列时必须保持互斥。生产者线程和消费者线程必须满足：生产者写<br>
+入缓冲区的数目不能超过缓冲区容量，消费者读取的数目不能超过生产者写入的数目。<br>
+在程序中使用了一个小技巧来判断缓冲区是空还是满。在初始化时读指针和写指针为0;<br>
+如果读指针等于写指针,则缓冲区是空的;如果(写指针+ 1) % N 等于读指针,则缓冲区是满的,<br>
+%表示取余数,这时实际上有一个单元空出未用。下面是完整的程序段和注释。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;pthread.h&gt; </span><br><span class="line">#include&lt;time.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;pthread.h&gt;</span><br><span class="line">#include&lt;unistd.h&gt;</span><br><span class="line">#define BUFFER_SIZE 8 </span><br><span class="line">#define OVER (-1)</span><br><span class="line">#if 0</span><br><span class="line"></span><br><span class="line">//互斥量和条件变量综合的结构体</span><br><span class="line">struct prodcons &#123;</span><br><span class="line">    int buffer[BUFFER_SIZE]; </span><br><span class="line">    pthread_mutex_t lock;      //互斥LOCK</span><br><span class="line">    int readpos , writepos;    //定义写和读的位置</span><br><span class="line">    pthread_cond_t notempty;   //缓冲区非空条件判断</span><br><span class="line">    pthread_cond_t notfull;    //缓冲区未满条件判断</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//获取时间的函数</span><br><span class="line">char * get_time(void)&#123;</span><br><span class="line">    time_t rawtime;</span><br><span class="line">    struct tm * timeinfo;</span><br><span class="line">    time(&amp;rawtime);</span><br><span class="line">    return asctime(localtime(&amp;rawtime));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//对结构体初始化函数</span><br><span class="line">void init(struct prodcons * b)&#123;</span><br><span class="line">    pthread_mutex_init(&amp;b-&gt;lock,NULL);</span><br><span class="line">    pthread_cond_init(&amp;b-&gt;notempty,NULL);</span><br><span class="line">    pthread_cond_init(&amp;b-&gt;notfull,NULL);</span><br><span class="line"></span><br><span class="line">    b-&gt;readpos=0;</span><br><span class="line">    b-&gt;writepos=0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//放数据的函数</span><br><span class="line">void put(struct prodcons* b,int data)&#123;</span><br><span class="line">    pthread_mutex_lock(&amp;b-&gt;lock);</span><br><span class="line">    if((b-&gt;writepos + 1) % BUFFER_SIZE == b-&gt;readpos)//这是缓冲区满了的情况，留一个空用于发送-1这个信号</span><br><span class="line">    &#123;</span><br><span class="line">        pthread_cond_wait(&amp;b-&gt;notfull, &amp;b-&gt;lock);</span><br><span class="line">    &#125;</span><br><span class="line">//    pthread_mutex_lock(&amp;b-&gt;lock);</span><br><span class="line">//    大家仔细理解互斥锁的位置，以及pthread_cond_wait函数的内核实现（解锁，休眠让出cpu，条件满足后被内核唤醒，上锁，形成临界区，保护资源）</span><br><span class="line">    b-&gt;buffer[b-&gt;writepos]=data;</span><br><span class="line">    b-&gt;writepos++;</span><br><span class="line">    if(b-&gt;writepos &gt;= BUFFER_SIZE)</span><br><span class="line">        b-&gt;writepos=0;</span><br><span class="line">    printf(&quot;put %d at %s \n&quot;, data, get_time());</span><br><span class="line">    pthread_mutex_unlock(&amp;b-&gt;lock);</span><br><span class="line">    pthread_cond_signal(&amp;b-&gt;notempty);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//取数据的函数</span><br><span class="line">int get(struct prodcons *b)&#123;</span><br><span class="line">    int data;</span><br><span class="line"></span><br><span class="line">    pthread_mutex_lock(&amp;b-&gt;lock);</span><br><span class="line">    if(b-&gt;writepos == b-&gt;readpos)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;0 == 0\n&quot;);</span><br><span class="line">        pthread_cond_wait(&amp;b-&gt;notempty, &amp;b-&gt;lock);</span><br><span class="line">        printf(&quot;start read \n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    data = b-&gt;buffer[b-&gt;readpos];</span><br><span class="line">    b-&gt;readpos++;</span><br><span class="line">    if(b-&gt;readpos &gt;= BUFFER_SIZE)</span><br><span class="line">        b-&gt;readpos=0;</span><br><span class="line">    printf(&quot;get the data is : %d\n&quot;, data);</span><br><span class="line">    pthread_cond_signal(&amp;b-&gt;notfull);</span><br><span class="line">    pthread_mutex_unlock(&amp;b-&gt;lock);</span><br><span class="line">    return data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//定义全局结构体对象</span><br><span class="line">struct prodcons buffer;</span><br><span class="line"></span><br><span class="line">//生产者回调函数</span><br><span class="line">void *producer(void *data)</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    </span><br><span class="line">    for(n = 0; n &lt; 10; n++)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;before produce %d \n&quot;, n) ;</span><br><span class="line">        put(&amp;buffer, n);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    put(&amp;buffer, OVER);//发信号说-1已经放进去了，说明没内容写了</span><br><span class="line">    </span><br><span class="line">    return NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//消费者回调函数</span><br><span class="line">void *consumer(void * data)</span><br><span class="line">&#123;</span><br><span class="line">    int d;</span><br><span class="line">    while(1)</span><br><span class="line">    &#123;</span><br><span class="line">        d = get(&amp;buffer);</span><br><span class="line">        if(d == OVER)//说明生产者已经写完</span><br><span class="line">            break;</span><br><span class="line">        printf(&quot;consumerd the num is %d\n&quot;, d);</span><br><span class="line">    &#125;</span><br><span class="line">    return NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//主函数</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    pthread_t th_a, th_b;</span><br><span class="line">    pthread_attr_t attr;</span><br><span class="line">    void *retval;</span><br><span class="line">    pthread_attr_init(&amp;attr);</span><br><span class="line">    init(&amp;buffer);</span><br><span class="line">    pthread_attr_setdetachstate(&amp;attr, PTHREAD_CREATE_DETACHED);</span><br><span class="line">//    pthread_create(&amp;th_b, &amp;attr, consumer, 0);</span><br><span class="line">    pthread_create(&amp;th_b, NULL, consumer, 0);</span><br><span class="line">    sleep(3);</span><br><span class="line">    pthread_create(&amp;th_a, NULL, producer, 0);</span><br><span class="line">    pthread_join(th_a, &amp;retval);</span><br><span class="line">    pthread_join(th_b, &amp;retval);</span><br><span class="line">    sleep(100);</span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="/线程同步机制之互斥锁和条件变量/1.png" alt="图1"><br>  <img src="/线程同步机制之互斥锁和条件变量/2.png" alt="图2"><br>  由图中可以看出，当条件变量不空不满足条件时，调用了等待函数使得此线程睡眠，让出cpu，进行其他操作，但是当条件满足时并不是直接回到原线程进行到的地方，而是重新加锁，在读。</p>
+<p><img src="/线程同步机制之互斥锁和条件变量/1.png" alt="图1"><br>
+<img src="/线程同步机制之互斥锁和条件变量/2.png" alt="图2"><br>
+由图中可以看出，当条件变量不空不满足条件时，调用了等待函数使得此线程睡眠，让出cpu，进行其他操作，但是当条件满足时并不是直接回到原线程进行到的地方，而是重新加锁，在读。</p>
 <p>参考资料：</p>
-<p><a href="http://blog.csdn.net/shanshanpt/article/details/" target="_blank" rel="noopener">http://blog.csdn.net/shanshanpt/article/details/</a><br><a href="http://blog.csdn.net/lovecodeless/article/details/24885127" target="_blank" rel="noopener">http://blog.csdn.net/lovecodeless/article/details/24885127</a><br><a href="http://blog.sina.com.cn/s/blog_590be5290100ikh5.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_590be5290100ikh5.html</a></p>
+<p><a href="http://blog.csdn.net/shanshanpt/article/details/" target="_blank" rel="noopener">http://blog.csdn.net/shanshanpt/article/details/</a><br>
+<a href="http://blog.csdn.net/lovecodeless/article/details/24885127" target="_blank" rel="noopener">http://blog.csdn.net/lovecodeless/article/details/24885127</a><br>
+<a href="http://blog.sina.com.cn/s/blog_590be5290100ikh5.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_590be5290100ikh5.html</a></p>
 
       
     </div>
@@ -516,14 +574,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -662,10 +720,10 @@ var jiathis_config={
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -724,15 +782,27 @@ var jiathis_config={
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -742,6 +812,20 @@ var jiathis_config={
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -762,7 +846,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程同步"><span class="nav-number">1.</span> <span class="nav-text">线程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互斥锁"><span class="nav-number">2.</span> <span class="nav-text">互斥锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-互斥量："><span class="nav-number">2.1.</span> <span class="nav-text">1.互斥量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-临界区："><span class="nav-number">2.2.</span> <span class="nav-text">2.临界区：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-互斥量的相关函数："><span class="nav-number">2.3.</span> <span class="nav-text">3.互斥量的相关函数：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件变量"><span class="nav-number">3.</span> <span class="nav-text">条件变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概念"><span class="nav-number">3.1.</span> <span class="nav-text">1.概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-条件变量的相关函数"><span class="nav-number">3.2.</span> <span class="nav-text">2.条件变量的相关函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-代码示例（互斥锁和条件变量一起用实现线程同步）"><span class="nav-number">3.3.</span> <span class="nav-text">3.代码示例（互斥锁和条件变量一起用实现线程同步）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程同步"><span class="nav-number">1.</span> <span class="nav-text">¶线程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互斥锁"><span class="nav-number">2.</span> <span class="nav-text">¶互斥锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-互斥量："><span class="nav-number">2.1.</span> <span class="nav-text">¶1.互斥量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-临界区："><span class="nav-number">2.2.</span> <span class="nav-text">¶2.临界区：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-互斥量的相关函数："><span class="nav-number">2.3.</span> <span class="nav-text">¶3.互斥量的相关函数：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件变量"><span class="nav-number">3.</span> <span class="nav-text">¶条件变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概念"><span class="nav-number">3.1.</span> <span class="nav-text">¶1.概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-条件变量的相关函数"><span class="nav-number">3.2.</span> <span class="nav-text">¶2.条件变量的相关函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-代码示例-互斥锁和条件变量一起用实现线程同步"><span class="nav-number">3.3.</span> <span class="nav-text">¶3.代码示例（互斥锁和条件变量一起用实现线程同步）</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -785,12 +869,12 @@ var jiathis_config={
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -1414,6 +1498,28 @@ var jiathis_config={
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

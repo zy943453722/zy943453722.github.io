@@ -115,22 +115,22 @@
 
 
 
-<meta name="description" content="前言笔者上一篇分享了tcp层可靠传输和流量控制的4种协议，这次来分享一下ip层的重要知识，也就是划分子网和构造超网。 前提在讲述划分子网和构造超网之前，让我们先来回忆一下ip地址的划分。1ip地址::=&amp;#123;&amp;lt;网络号&amp;gt;,&amp;lt;主机号&amp;gt;&amp;#125; ip地址的划分以下几个特点：  ip地址划分为A类、B类、C类、D类、E类5种 A、B、C类地址都是常用的单播地址，而D类是多">
+<meta name="description" content="¶前言 笔者上一篇分享了tcp层可靠传输和流量控制的4种协议，这次来分享一下ip层的重要知识，也就是划分子网和构造超网。 ¶前提 在讲述划分子网和构造超网之前，让我们先来回忆一下ip地址的划分。 1ip地址::=&amp;#123;&amp;lt;网络号&amp;gt;,&amp;lt;主机号&amp;gt;&amp;#125; ip地址的划分以下几个特点：  ip地址划分为A类、B类、C类、D类、E类5种 A、B、C类地址都是常用的单播地址，">
 <meta name="keywords" content="计算机网络,ip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="划分子网与构造超网">
 <meta property="og:url" content="http://zy943453722.ink/划分子网与构造超网/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="前言笔者上一篇分享了tcp层可靠传输和流量控制的4种协议，这次来分享一下ip层的重要知识，也就是划分子网和构造超网。 前提在讲述划分子网和构造超网之前，让我们先来回忆一下ip地址的划分。1ip地址::=&amp;#123;&amp;lt;网络号&amp;gt;,&amp;lt;主机号&amp;gt;&amp;#125; ip地址的划分以下几个特点：  ip地址划分为A类、B类、C类、D类、E类5种 A、B、C类地址都是常用的单播地址，而D类是多">
+<meta property="og:description" content="¶前言 笔者上一篇分享了tcp层可靠传输和流量控制的4种协议，这次来分享一下ip层的重要知识，也就是划分子网和构造超网。 ¶前提 在讲述划分子网和构造超网之前，让我们先来回忆一下ip地址的划分。 1ip地址::=&amp;#123;&amp;lt;网络号&amp;gt;,&amp;lt;主机号&amp;gt;&amp;#125; ip地址的划分以下几个特点：  ip地址划分为A类、B类、C类、D类、E类5种 A、B、C类地址都是常用的单播地址，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://zy943453722.ink/home/zy/zy/myblog/source/_posts/划分子网与构造超网/zz.png">
+<meta property="og:image" content="http://zy943453722.ink/home/zy/zy/myblog/source/_posts/%E5%88%92%E5%88%86%E5%AD%90%E7%BD%91%E4%B8%8E%E6%9E%84%E9%80%A0%E8%B6%85%E7%BD%91/zz.png">
 <meta property="og:image" content="http://zy943453722.ink/划分子网与构造超网/5.png">
 <meta property="og:image" content="http://zy943453722.ink/划分子网与构造超网/6.png">
 <meta property="og:updated_time" content="2018-03-06T23:15:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="划分子网与构造超网">
-<meta name="twitter:description" content="前言笔者上一篇分享了tcp层可靠传输和流量控制的4种协议，这次来分享一下ip层的重要知识，也就是划分子网和构造超网。 前提在讲述划分子网和构造超网之前，让我们先来回忆一下ip地址的划分。1ip地址::=&amp;#123;&amp;lt;网络号&amp;gt;,&amp;lt;主机号&amp;gt;&amp;#125; ip地址的划分以下几个特点：  ip地址划分为A类、B类、C类、D类、E类5种 A、B、C类地址都是常用的单播地址，而D类是多">
-<meta name="twitter:image" content="http://zy943453722.ink/home/zy/zy/myblog/source/_posts/划分子网与构造超网/zz.png">
+<meta name="twitter:description" content="¶前言 笔者上一篇分享了tcp层可靠传输和流量控制的4种协议，这次来分享一下ip层的重要知识，也就是划分子网和构造超网。 ¶前提 在讲述划分子网和构造超网之前，让我们先来回忆一下ip地址的划分。 1ip地址::=&amp;#123;&amp;lt;网络号&amp;gt;,&amp;lt;主机号&amp;gt;&amp;#125; ip地址的划分以下几个特点：  ip地址划分为A类、B类、C类、D类、E类5种 A、B、C类地址都是常用的单播地址，">
+<meta name="twitter:image" content="http://zy943453722.ink/home/zy/zy/myblog/source/_posts/%E5%88%92%E5%88%86%E5%AD%90%E7%BD%91%E4%B8%8E%E6%9E%84%E9%80%A0%E8%B6%85%E7%BD%91/zz.png">
 
 
 
@@ -172,6 +172,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -271,6 +281,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -348,7 +368,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/划分子网与构造超网/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -446,8 +466,11 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong><em>笔者上一篇分享了<a href="http://zy943453722.ink/tcp%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E5%92%8C%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E7%9A%844%E7%A7%8D%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%BC%94%E5%8F%98%E5%8F%B2/">tcp层可靠传输和流量控制的4种协议</a>，这次来分享一下ip层的重要知识，也就是划分子网和构造超网。</em></strong></p>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p><strong>在讲述划分子网和构造超网之前，让我们先来回忆一下ip地址的划分。</strong><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip地址::=&#123;&lt;网络号&gt;,&lt;主机号&gt;&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
+<p><strong><em>笔者上一篇分享了<a href="http://zy943453722.ink/tcp%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E5%92%8C%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E7%9A%844%E7%A7%8D%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%BC%94%E5%8F%98%E5%8F%B2/">tcp层可靠传输和流量控制的4种协议</a>，这次来分享一下ip层的重要知识，也就是划分子网和构造超网。</em></strong></p>
+<h2 id="前提"><a class="header-anchor" href="#前提">¶</a>前提</h2>
+<p><strong>在讲述划分子网和构造超网之前，让我们先来回忆一下ip地址的划分。</strong><br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip地址::=&#123;&lt;网络号&gt;,&lt;主机号&gt;&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>ip地址的划分以下几个特点：</strong></p>
 <ol>
 <li>ip地址划分为A类、B类、C类、D类、E类5种</li>
@@ -461,22 +484,55 @@
 <li>c类地址前24位为网络号，21位可用，但是21位全0(192.0.0.x)不指派，因此C类地址可以指派网络数为2^21-1</li>
 <li>C类地址主机号8位，全0，全1不指派，因此主机数为2^8-2</li>
 </ol>
-<p><strong><em>特殊的不使用的ip地址</em></strong><br><br><img src="/home/zy/zy/myblog/source/_posts/划分子网与构造超网/zz.png" alt="图1"></p>
-<h2 id="划分子网"><a href="#划分子网" class="headerlink" title="划分子网"></a>划分子网</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>由于ip地址空间利用率低，ip地址不够用等原因，急需要一种措施解决，因此出现了划分子网。</p>
-<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>一个拥有许多物理网络的单位，可将所属的物理网络划分为若干个子网，因此这个子网地址并不是真是网络通信中用到的外部地址，而是一个内部地址，因此这个单位对外仍表现为一个地址，即网关地址。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip地址 ::= &#123;&lt;网络号&gt;,&lt;子网号&gt;,&lt;主机号&gt;&#125;</span><br><span class="line">即从主机号拿出一部分作为子网号。</span><br></pre></td></tr></table></figure></p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>要想在路由转发时找到相应的子网，需要用到子网掩码。子网掩码是一个网络或一个子网的重要属性。<br>![图2](划分子网与构造超网/1.png<br><br><strong><em>子网划分举例：</em></strong><br></p>
-<h3 id="求网络地址"><a href="#求网络地址" class="headerlink" title="求网络地址"></a>求网络地址</h3><p><strong><em>网络地址:<br></em></strong><br>即网关地址，一个单位千千万万台主机对外的地址</p>
-<p><strong><em>求法:<br></em></strong><br>ip地址 和 子网掩码 相与。<br><br>ex:已知ip地址为141.14.72.24，子网掩码为255.255.192.0，求网络地址(即子网地址)？<br><br>解答：<br><br>将十进制转化成二进制，逐位相与。<br><br>ip十进制：141   .    14    .   72     .    24<br><br>ip二进制：10001101.    00001110  .  01001000.   00011000<br><br>子网掩码：11111111.    11111111  .      </p>
+<p><strong><em>特殊的不使用的ip地址</em></strong><br><br>
+<img src="/home/zy/zy/myblog/source/_posts/%E5%88%92%E5%88%86%E5%AD%90%E7%BD%91%E4%B8%8E%E6%9E%84%E9%80%A0%E8%B6%85%E7%BD%91/zz.png" alt="图1"></p>
+<h2 id="划分子网"><a class="header-anchor" href="#划分子网">¶</a>划分子网</h2>
+<h3 id="背景"><a class="header-anchor" href="#背景">¶</a>背景</h3>
+<p>由于ip地址空间利用率低，ip地址不够用等原因，急需要一种措施解决，因此出现了划分子网。</p>
+<h3 id="概念"><a class="header-anchor" href="#概念">¶</a>概念</h3>
+<p>一个拥有许多物理网络的单位，可将所属的物理网络划分为若干个子网，因此这个子网地址并不是真是网络通信中用到的外部地址，而是一个内部地址，因此这个单位对外仍表现为一个地址，即网关地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip地址 ::= &#123;&lt;网络号&gt;,&lt;子网号&gt;,&lt;主机号&gt;&#125;</span><br><span class="line">即从主机号拿出一部分作为子网号。</span><br></pre></td></tr></table></figure>
+<h3 id="实现"><a class="header-anchor" href="#实现">¶</a>实现</h3>
+<p>要想在路由转发时找到相应的子网，需要用到子网掩码。子网掩码是一个网络或一个子网的重要属性。<br>
+![图2](划分子网与构造超网/1.png<br>
+<br><strong><em>子网划分举例：</em></strong><br></p>
+<h3 id="求网络地址"><a class="header-anchor" href="#求网络地址">¶</a>求网络地址</h3>
+<p><strong><em>网络地址:<br></em></strong><br>
+即网关地址，一个单位千千万万台主机对外的地址</p>
+<p><strong><em>求法:<br></em></strong><br>
+ip地址 和 子网掩码 相与。<br><br>
+ex:已知ip地址为141.14.72.24，子网掩码为255.255.192.0，求网络地址(即子网地址)？<br>
+<br>解答：<br><br>
+将十进制转化成二进制，逐位相与。<br><br>
+ip十进制：141   .    14    .   72     .    24<br><br>
+ip二进制：10001101.    00001110  .  01001000.   00011000<br><br>
+子网掩码：11111111.    11111111  .</p>
 <ol start="11000000">
-<li>00000000<br><br>因此相与可得<br>网络地址二进制：10001101. 00001110. 01000000. 00000000<br><br>网络地址十进制：141.14.64.0<br><br><strong>求主机号：</strong><br></li>
+<li>00000000<br><br>
+因此相与可得<br>
+网络地址二进制：10001101. 00001110. 01000000. 00000000<br><br>
+网络地址十进制：141.14.64.0<br>
+<br><strong>求主机号：</strong><br></li>
 <li>首先观察子网掩码与默认子网掩码的区别，比如此题，这是B类的ip，子网掩码默认应为255.255.0.0，而实际为255.255.192.0，即拿出了一部分主机号作为子网号。</li>
 <li>从子网掩码二进制可以看出第三节前2位与默认子网掩码不同，那么也就是拿出了2位主机号作为子网号，子网号2位，主机号14位。</li>
-<li>由ip地址可以看出主机号为001000.00011000，再化成10进制。<h3 id="子网规划"><a href="#子网规划" class="headerlink" title="子网规划"></a>子网规划</h3><strong>例题</strong><br><br><img src="/划分子网与构造超网/5.png" alt="图5"><br><img src="/划分子网与构造超网/6.png" alt="图6"></li>
+<li>由ip地址可以看出主机号为001000.00011000，再化成10进制。</li>
 </ol>
-<h2 id="构造超网-无分类编址CIDR"><a href="#构造超网-无分类编址CIDR" class="headerlink" title="构造超网(无分类编址CIDR)"></a>构造超网(无分类编址CIDR)</h2><h3 id="背景-1"><a href="#背景-1" class="headerlink" title="背景"></a>背景</h3><p><strong><em>划分子网缓解了一定的困难，但是ipv4地址眼看就要耗尽，人们研究出了无分类域间路由选择CIDR。</em></strong></p>
-<h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>CIDR使ip地址从三级编址再次变为二级编址，但是无分类的二级编址，不分A.B.C类。记法为：<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IP地址 ::=&#123;&lt;网络前缀&gt;，&lt;主机号&gt;&#125;</span><br><span class="line">a.b.c.d/x  x为地址中网络部分的位数，32-x为主机位数。</span><br></pre></td></tr></table></figure></p>
+<h3 id="子网规划"><a class="header-anchor" href="#子网规划">¶</a>子网规划</h3>
+<p><strong>例题</strong><br><br>
+<img src="/划分子网与构造超网/5.png" alt="图5"><br>
+<img src="/划分子网与构造超网/6.png" alt="图6"></p>
+<h2 id="构造超网-无分类编址cidr"><a class="header-anchor" href="#构造超网-无分类编址cidr">¶</a>构造超网(无分类编址CIDR)</h2>
+<h3 id="背景-v2"><a class="header-anchor" href="#背景-v2">¶</a>背景</h3>
+<p><strong><em>划分子网缓解了一定的困难，但是ipv4地址眼看就要耗尽，人们研究出了无分类域间路由选择CIDR。</em></strong></p>
+<h3 id="概念-v2"><a class="header-anchor" href="#概念-v2">¶</a>概念</h3>
+<p>CIDR使ip地址从三级编址再次变为二级编址，但是无分类的二级编址，不分A.B.C类。记法为：<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IP地址 ::=&#123;&lt;网络前缀&gt;，&lt;主机号&gt;&#125;</span><br><span class="line">a.b.c.d/x  x为地址中网络部分的位数，32-x为主机位数。</span><br></pre></td></tr></table></figure>
 <p>此外，CIDR还采用斜线/记法,然后写上网络前缀所占的位数。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>由CIDR的某个IP地址可以看出子网掩码。<br><br>ex:128.14.35.7/20<br><br>隐含的指出子网掩码中有20个1，由观察可知此地址是B类地址，默认子网掩码为255.255.0.0，32-20=12位主机号，则4位主机号，因此子网掩码为255.255.240.0<br><br><br>使用CIDR地址块后，网络路由器中的路由表项可以表示很多个传统IP地址的路由信息，相当于把若干个网络合并为一个超网来进行路由，这种地址的聚合称为路由聚合，也称为构造超网.</p>
+<h2 id="应用"><a class="header-anchor" href="#应用">¶</a>应用</h2>
+<p>由CIDR的某个IP地址可以看出子网掩码。<br>
+<br>ex:128.14.35.7/20<br><br>
+隐含的指出子网掩码中有20个1，由观察可知此地址是B类地址，默认子网掩码为255.255.0.0，32-20=12位主机号，则4位主机号，因此子网掩码为255.255.240.0<br><br><br>
+使用CIDR地址块后，网络路由器中的路由表项可以表示很多个传统IP地址的路由信息，相当于把若干个网络合并为一个超网来进行路由，这种地址的聚合称为路由聚合，也称为构造超网.</p>
 
       
     </div>
@@ -507,14 +563,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -653,10 +709,10 @@ var jiathis_config={
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -715,15 +771,27 @@ var jiathis_config={
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -733,6 +801,20 @@ var jiathis_config={
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -753,7 +835,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前提"><span class="nav-number">2.</span> <span class="nav-text">前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#划分子网"><span class="nav-number">3.</span> <span class="nav-text">划分子网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">3.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">3.2.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">3.3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求网络地址"><span class="nav-number">3.4.</span> <span class="nav-text">求网络地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子网规划"><span class="nav-number">3.5.</span> <span class="nav-text">子网规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造超网-无分类编址CIDR"><span class="nav-number">4.</span> <span class="nav-text">构造超网(无分类编址CIDR)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景-1"><span class="nav-number">4.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1"><span class="nav-number">4.2.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">5.</span> <span class="nav-text">应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">¶前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前提"><span class="nav-number">2.</span> <span class="nav-text">¶前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#划分子网"><span class="nav-number">3.</span> <span class="nav-text">¶划分子网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">3.1.</span> <span class="nav-text">¶背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">3.2.</span> <span class="nav-text">¶概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">3.3.</span> <span class="nav-text">¶实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求网络地址"><span class="nav-number">3.4.</span> <span class="nav-text">¶求网络地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子网规划"><span class="nav-number">3.5.</span> <span class="nav-text">¶子网规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造超网-无分类编址cidr"><span class="nav-number">4.</span> <span class="nav-text">¶构造超网(无分类编址CIDR)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景-v2"><span class="nav-number">4.1.</span> <span class="nav-text">¶背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-v2"><span class="nav-number">4.2.</span> <span class="nav-text">¶概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">5.</span> <span class="nav-text">¶应用</span></a></li></ol></div>
             
 
           </div>
@@ -776,12 +858,12 @@ var jiathis_config={
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -1405,6 +1487,28 @@ var jiathis_config={
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

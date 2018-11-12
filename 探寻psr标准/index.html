@@ -115,19 +115,19 @@
 
 
 
-<meta name="description" content="前言笔者学习symfony框架，看源码之时，发现好多函数带有psr的后缀，心想这是个什么东东。。。于是乎google了一番，发现这正是“心仪已久”的PHP开发的标准规范啊！！！但是好多东西在对应的官方文档PSR标准规范文档都有，因此笔者在此只做代码的示范，用代码来表示规范。 简介PSR 是 PHP Standard Recommendations 的简写，由 PHP FIG 组织制定的 PHP 规">
+<meta name="description" content="¶前言 笔者学习symfony框架，看源码之时，发现好多函数带有psr的后缀，心想这是个什么东东。。。于是乎google了一番，发现这正是“心仪已久”的PHP开发的标准规范啊！！！ 但是好多东西在对应的官方文档PSR标准规范文档都有，因此笔者在此只做代码的示范，用代码来表示规范。 ¶简介 PSR 是 PHP Standard Recommendations 的简写，由 PHP FIG 组织制定的">
 <meta name="keywords" content="php,编程基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="探寻psr标准">
 <meta property="og:url" content="http://zy943453722.ink/探寻psr标准/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="前言笔者学习symfony框架，看源码之时，发现好多函数带有psr的后缀，心想这是个什么东东。。。于是乎google了一番，发现这正是“心仪已久”的PHP开发的标准规范啊！！！但是好多东西在对应的官方文档PSR标准规范文档都有，因此笔者在此只做代码的示范，用代码来表示规范。 简介PSR 是 PHP Standard Recommendations 的简写，由 PHP FIG 组织制定的 PHP 规">
+<meta property="og:description" content="¶前言 笔者学习symfony框架，看源码之时，发现好多函数带有psr的后缀，心想这是个什么东东。。。于是乎google了一番，发现这正是“心仪已久”的PHP开发的标准规范啊！！！ 但是好多东西在对应的官方文档PSR标准规范文档都有，因此笔者在此只做代码的示范，用代码来表示规范。 ¶简介 PSR 是 PHP Standard Recommendations 的简写，由 PHP FIG 组织制定的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://zy943453722.ink/探寻psr标准/1.png">
 <meta property="og:updated_time" content="2018-03-05T04:05:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探寻psr标准">
-<meta name="twitter:description" content="前言笔者学习symfony框架，看源码之时，发现好多函数带有psr的后缀，心想这是个什么东东。。。于是乎google了一番，发现这正是“心仪已久”的PHP开发的标准规范啊！！！但是好多东西在对应的官方文档PSR标准规范文档都有，因此笔者在此只做代码的示范，用代码来表示规范。 简介PSR 是 PHP Standard Recommendations 的简写，由 PHP FIG 组织制定的 PHP 规">
+<meta name="twitter:description" content="¶前言 笔者学习symfony框架，看源码之时，发现好多函数带有psr的后缀，心想这是个什么东东。。。于是乎google了一番，发现这正是“心仪已久”的PHP开发的标准规范啊！！！ 但是好多东西在对应的官方文档PSR标准规范文档都有，因此笔者在此只做代码的示范，用代码来表示规范。 ¶简介 PSR 是 PHP Standard Recommendations 的简写，由 PHP FIG 组织制定的">
 <meta name="twitter:image" content="http://zy943453722.ink/探寻psr标准/1.png">
 
 
@@ -170,6 +170,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -269,6 +279,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -346,7 +366,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/探寻psr标准/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -444,10 +464,19 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>笔者学习symfony框架，看源码之时，发现好多函数带有psr的后缀，心想这是个什么东东。。。于是乎google了一番，发现这正是“心仪已久”的PHP开发的标准规范啊！！！</strong><br><br>但是好多东西在对应的官方文档<a href="https://psr.phphub.org/" target="_blank" rel="noopener">PSR标准规范文档</a>都有，因此笔者在此只做代码的示范，用代码来表示规范。</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSR 是 PHP Standard Recommendations 的简写，由 PHP FIG 组织制定的 PHP 规范，是 PHP 开发的实践标准。<br><br>目前已表决通过了 6 套标准，已经得到大部分 PHP 框架的支持和认可。<br><br><strong>标准目录如下：<br></strong><br><img src="/探寻psr标准/1.png" alt="图1"></p>
-<h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><h3 id="基本代码规范和编程风格规范"><a href="#基本代码规范和编程风格规范" class="headerlink" title="基本代码规范和编程风格规范"></a>基本代码规范和编程风格规范</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">/**</span><br><span class="line"> * psr标准中的大部分语言规范</span><br><span class="line"> * </span><br><span class="line"> * @author zy</span><br><span class="line"> */</span><br><span class="line">//php代码文件必须以这个标签或者&lt;?= 开始</span><br><span class="line">//每行的字符数控制在80~120之间</span><br><span class="line">namespace Vender\Package;//命名空间块后都有一个空行，命名空间和子命名空间必须和相应的文件基目录(文件绝对路径)匹配。</span><br><span class="line">namespace Symfony\Component\Routing;//完整的类名必须有个顶级命名空间和一个或多个子命名空间，末尾的类名与对应的.php文件同名</span><br><span class="line"></span><br><span class="line">use Symfony\Component\Routing\Route;</span><br><span class="line">use FooInterface;//use语句后面也要有一行空行,use务必声明在namespace之后</span><br><span class="line"></span><br><span class="line">//类名必须遵循StudlyCaps大写驼峰命名法即多个单词组成名字每个单词首字母大写</span><br><span class="line">class FooFunction extends Bars implements FooInterface,</span><br><span class="line">    \ArrayAccess,</span><br><span class="line">    \Countable</span><br><span class="line">&#123;//多实现可以多行显示，但是要有缩进，且每个接口自成一行</span><br><span class="line"> //类的前后花括号均自成一行</span><br><span class="line">    public $superStar;//每个属性都要添加访问修饰符</span><br><span class="line">    public $commonPeople;//类的普通属性用哪种命名方式均可，但要统一</span><br><span class="line">    protected $files = null;//null,true,false这些关键字都小写</span><br><span class="line">    const MAX_COUNT = 120;//const定义的变量必须大写且单词间用下划线分隔</span><br><span class="line">    //方法名遵循camelCase式的小写驼峰命名法即多个单词组成名字时首单词小写，之后的每个单词首字母大写</span><br><span class="line">    public function sampleFunction($a, $b = null)</span><br><span class="line">    &#123;//方法的前后花括号也均自成一行</span><br><span class="line">        //缩进时不能使用tab要用4个空格进行缩进</span><br><span class="line">        if ($a === $b) &#123;</span><br><span class="line">            //控制结构诸如if-else，switch-case，while，for，foreach等等书写时这些关键字后要有一个空格</span><br><span class="line">            //前括号之前也要有一个空格，且前括号在关键字同一行，后括号自成一行</span><br><span class="line">            bar();</span><br><span class="line">        &#125; elseif ($a &gt; $b) &#123;//变量与运算符之间要有空格</span><br><span class="line">            $foo-&gt;bar($arg1);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            BazClass::bar($arg2, $arg3);//方法的参数每个逗号后必须要有一个空格，有默认值的放到参数列表末尾</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //参数列表可以单独一行,结束括号必须和方法前花括号自成一行,final、abstract必须在访问修饰符前面，static在访问修饰符之后</span><br><span class="line">    final public static function aVeryLongMethod(</span><br><span class="line">        ClassTypeHint $arg1,</span><br><span class="line">        &amp;$arg2,</span><br><span class="line">        array $arg3 = []</span><br><span class="line">    )&#123;</span><br><span class="line">        switch ($expr) &#123;//case相对switch要有缩进</span><br><span class="line">            case 0: </span><br><span class="line">                echo &apos;xxxxxxx&apos;;//执行语句相对case也要缩进</span><br><span class="line">                break;</span><br><span class="line">            case 1://遇到这种case没有break的直穿语句，要有no break的注明 </span><br><span class="line">                echo &apos;second&apos;;</span><br><span class="line">                //no break</span><br><span class="line">            case 2:</span><br><span class="line">            case 3:</span><br><span class="line">                echo &apos;third&apos;;</span><br><span class="line">                break;</span><br><span class="line">            default:</span><br><span class="line">                echo &quot;default case&quot;;</span><br><span class="line">                break;</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">    public function simpleFunction()</span><br><span class="line">    &#123;</span><br><span class="line">        while ($exp) &#123;//同样的诸如do-while，try-catch控制结构需要相同的结构</span><br><span class="line">            echo &apos;zzz&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        $clouseWith = function ($arg1, $arg2) use ($var1, $var2) &#123;</span><br><span class="line">            /*对于闭包函数也就是匿名函数，function后要有一个空格，use的前后都要有一个空格，并且前括号要和关键字在同一行，</span><br><span class="line">            但后括号单独成行*/</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">诸如此类产生副作用的操作，ex：</span><br><span class="line">                 生成输出</span><br><span class="line">                 直接的 require 或 include</span><br><span class="line">                 连接外部服务</span><br><span class="line">                 修改 ini 配置</span><br><span class="line">                 抛出错误或异常</span><br><span class="line">                 修改全局或静态变量</span><br><span class="line">                 读或写文件等</span><br><span class="line">的操作不能和声明类、函数等在同一个php文件下</span><br><span class="line">include &quot;file.php&quot;;</span><br><span class="line">echo &quot;&lt;html&gt;\n&quot;;</span><br><span class="line">ini_set(&apos;error_reporting&apos;,E_ALL);</span><br><span class="line">*/</span><br><span class="line">//纯php代码文件最后必须省略“?&gt;”标签</span><br><span class="line">//同时php文件最后必须要有一行空行作为结束</span><br></pre></td></tr></table></figure>
-<h3 id="其他规范"><a href="#其他规范" class="headerlink" title="其他规范"></a>其他规范</h3><p>其他规范都是在框架或者项目中需要用的诸如日志、自动加载、缓存规范。因此就不在此赘述，贴出官方的规范：<a href="https://psr.phphub.org/" target="_blank" rel="noopener">https://psr.phphub.org/</a></p>
+        <h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
+<p><strong>笔者学习symfony框架，看源码之时，发现好多函数带有psr的后缀，心想这是个什么东东。。。于是乎google了一番，发现这正是“心仪已久”的PHP开发的标准规范啊！！！</strong><br><br>
+但是好多东西在对应的官方文档<a href="https://psr.phphub.org/" target="_blank" rel="noopener">PSR标准规范文档</a>都有，因此笔者在此只做代码的示范，用代码来表示规范。</p>
+<h2 id="简介"><a class="header-anchor" href="#简介">¶</a>简介</h2>
+<p>PSR 是 PHP Standard Recommendations 的简写，由 PHP FIG 组织制定的 PHP 规范，是 PHP 开发的实践标准。<br><br>
+目前已表决通过了 6 套标准，已经得到大部分 PHP 框架的支持和认可。<br><br>
+<strong>标准目录如下：<br></strong><br>
+<img src="/探寻psr标准/1.png" alt="图1"></p>
+<h2 id="详解"><a class="header-anchor" href="#详解">¶</a>详解</h2>
+<h3 id="基本代码规范和编程风格规范"><a class="header-anchor" href="#基本代码规范和编程风格规范">¶</a>基本代码规范和编程风格规范</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">/**</span><br><span class="line"> * psr标准中的大部分语言规范</span><br><span class="line"> * </span><br><span class="line"> * @author zy</span><br><span class="line"> */</span><br><span class="line">//php代码文件必须以这个标签或者&lt;?= 开始</span><br><span class="line">//每行的字符数控制在80~120之间</span><br><span class="line">namespace Vender\Package;//命名空间块后都有一个空行，命名空间和子命名空间必须和相应的文件基目录(文件绝对路径)匹配。</span><br><span class="line">namespace Symfony\Component\Routing;//完整的类名必须有个顶级命名空间和一个或多个子命名空间，末尾的类名与对应的.php文件同名</span><br><span class="line"></span><br><span class="line">use Symfony\Component\Routing\Route;</span><br><span class="line">use FooInterface;//use语句后面也要有一行空行,use务必声明在namespace之后</span><br><span class="line"></span><br><span class="line">//类名必须遵循StudlyCaps大写驼峰命名法即多个单词组成名字每个单词首字母大写</span><br><span class="line">class FooFunction extends Bars implements FooInterface,</span><br><span class="line">    \ArrayAccess,</span><br><span class="line">    \Countable</span><br><span class="line">&#123;//多实现可以多行显示，但是要有缩进，且每个接口自成一行</span><br><span class="line"> //类的前后花括号均自成一行</span><br><span class="line">    public $superStar;//每个属性都要添加访问修饰符</span><br><span class="line">    public $commonPeople;//类的普通属性用哪种命名方式均可，但要统一</span><br><span class="line">    protected $files = null;//null,true,false这些关键字都小写</span><br><span class="line">    const MAX_COUNT = 120;//const定义的变量必须大写且单词间用下划线分隔</span><br><span class="line">    //方法名遵循camelCase式的小写驼峰命名法即多个单词组成名字时首单词小写，之后的每个单词首字母大写</span><br><span class="line">    public function sampleFunction($a, $b = null)</span><br><span class="line">    &#123;//方法的前后花括号也均自成一行</span><br><span class="line">        //缩进时不能使用tab要用4个空格进行缩进</span><br><span class="line">        if ($a === $b) &#123;</span><br><span class="line">            //控制结构诸如if-else，switch-case，while，for，foreach等等书写时这些关键字后要有一个空格</span><br><span class="line">            //前括号之前也要有一个空格，且前括号在关键字同一行，后括号自成一行</span><br><span class="line">            bar();</span><br><span class="line">        &#125; elseif ($a &gt; $b) &#123;//变量与运算符之间要有空格</span><br><span class="line">            $foo-&gt;bar($arg1);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            BazClass::bar($arg2, $arg3);//方法的参数每个逗号后必须要有一个空格，有默认值的放到参数列表末尾</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //参数列表可以单独一行,结束括号必须和方法前花括号自成一行,final、abstract必须在访问修饰符前面，static在访问修饰符之后</span><br><span class="line">    final public static function aVeryLongMethod(</span><br><span class="line">        ClassTypeHint $arg1,</span><br><span class="line">        &amp;$arg2,</span><br><span class="line">        array $arg3 = []</span><br><span class="line">    )&#123;</span><br><span class="line">        switch ($expr) &#123;//case相对switch要有缩进</span><br><span class="line">            case 0: </span><br><span class="line">                echo &apos;xxxxxxx&apos;;//执行语句相对case也要缩进</span><br><span class="line">                break;</span><br><span class="line">            case 1://遇到这种case没有break的直穿语句，要有no break的注明 </span><br><span class="line">                echo &apos;second&apos;;</span><br><span class="line">                //no break</span><br><span class="line">            case 2:</span><br><span class="line">            case 3:</span><br><span class="line">                echo &apos;third&apos;;</span><br><span class="line">                break;</span><br><span class="line">            default:</span><br><span class="line">                echo &quot;default case&quot;;</span><br><span class="line">                break;</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">    public function simpleFunction()</span><br><span class="line">    &#123;</span><br><span class="line">        while ($exp) &#123;//同样的诸如do-while，try-catch控制结构需要相同的结构</span><br><span class="line">            echo &apos;zzz&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        $clouseWith = function ($arg1, $arg2) use ($var1, $var2) &#123;</span><br><span class="line">            /*对于闭包函数也就是匿名函数，function后要有一个空格，use的前后都要有一个空格，并且前括号要和关键字在同一行，</span><br><span class="line">            但后括号单独成行*/</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">诸如此类产生副作用的操作，ex：</span><br><span class="line">                 生成输出</span><br><span class="line">                 直接的 require 或 include</span><br><span class="line">                 连接外部服务</span><br><span class="line">                 修改 ini 配置</span><br><span class="line">                 抛出错误或异常</span><br><span class="line">                 修改全局或静态变量</span><br><span class="line">                 读或写文件等</span><br><span class="line">的操作不能和声明类、函数等在同一个php文件下</span><br><span class="line">include &quot;file.php&quot;;</span><br><span class="line">echo &quot;&lt;html&gt;\n&quot;;</span><br><span class="line">ini_set(&apos;error_reporting&apos;,E_ALL);</span><br><span class="line">*/</span><br><span class="line">//纯php代码文件最后必须省略“?&gt;”标签</span><br><span class="line">//同时php文件最后必须要有一行空行作为结束</span><br></pre></td></tr></table></figure>
+<h3 id="其他规范"><a class="header-anchor" href="#其他规范">¶</a>其他规范</h3>
+<p>其他规范都是在框架或者项目中需要用的诸如日志、自动加载、缓存规范。因此就不在此赘述，贴出官方的规范：<a href="https://psr.phphub.org/" target="_blank" rel="noopener">https://psr.phphub.org/</a></p>
 
       
     </div>
@@ -478,14 +507,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -624,10 +653,10 @@ var jiathis_config={
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -686,15 +715,27 @@ var jiathis_config={
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -704,6 +745,20 @@ var jiathis_config={
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -724,7 +779,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详解"><span class="nav-number">3.</span> <span class="nav-text">详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本代码规范和编程风格规范"><span class="nav-number">3.1.</span> <span class="nav-text">基本代码规范和编程风格规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他规范"><span class="nav-number">3.2.</span> <span class="nav-text">其他规范</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">¶前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">¶简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详解"><span class="nav-number">3.</span> <span class="nav-text">¶详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本代码规范和编程风格规范"><span class="nav-number">3.1.</span> <span class="nav-text">¶基本代码规范和编程风格规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他规范"><span class="nav-number">3.2.</span> <span class="nav-text">¶其他规范</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -747,12 +802,12 @@ var jiathis_config={
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -1376,6 +1431,28 @@ var jiathis_config={
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

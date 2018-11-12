@@ -115,13 +115,13 @@
 
 
 
-<meta name="description" content="前言学习了计算机网络之后，发现很多基础知识其中的奥秘是经过前人一步步探索得来的，故而搜索了很多的资料，在这里用几篇博文进行总结。首先要说到的就是tcp可靠传输和流量控制的4种协议，这4种协议从无到有，从最初的单工停等协议(停止等待ARQ协议)到连续ARQ协议、选择重传ARQ协议，直到最终的滑动窗口协议，经过了一系列的演变过程。本博文就来浅析一下它们的区别和演变过程。 单工停等协议定义即发送方每次发">
+<meta name="description" content="¶前言 学习了计算机网络之后，发现很多基础知识其中的奥秘是经过前人一步步探索得来的，故而搜索了很多的资料，在这里用几篇博文进行总结。 首先要说到的就是tcp可靠传输和流量控制的4种协议，这4种协议从无到有，从最初的单工停等协议(停止等待ARQ协议)到连续ARQ协议、选择重传ARQ协议，直到最终的滑动窗口协议，经过了一系列的演变过程。本博文就来浅析一下它们的区别和演变过程。 ¶单工停等协议 ¶定义">
 <meta name="keywords" content="计算机网络,tcp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tcp可靠传输和流量控制的4种协议的演变史">
 <meta property="og:url" content="http://zy943453722.ink/tcp可靠传输和流量控制的4种协议的演变史/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="前言学习了计算机网络之后，发现很多基础知识其中的奥秘是经过前人一步步探索得来的，故而搜索了很多的资料，在这里用几篇博文进行总结。首先要说到的就是tcp可靠传输和流量控制的4种协议，这4种协议从无到有，从最初的单工停等协议(停止等待ARQ协议)到连续ARQ协议、选择重传ARQ协议，直到最终的滑动窗口协议，经过了一系列的演变过程。本博文就来浅析一下它们的区别和演变过程。 单工停等协议定义即发送方每次发">
+<meta property="og:description" content="¶前言 学习了计算机网络之后，发现很多基础知识其中的奥秘是经过前人一步步探索得来的，故而搜索了很多的资料，在这里用几篇博文进行总结。 首先要说到的就是tcp可靠传输和流量控制的4种协议，这4种协议从无到有，从最初的单工停等协议(停止等待ARQ协议)到连续ARQ协议、选择重传ARQ协议，直到最终的滑动窗口协议，经过了一系列的演变过程。本博文就来浅析一下它们的区别和演变过程。 ¶单工停等协议 ¶定义">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://zy943453722.ink/tcp可靠传输和流量控制的4种协议的演变史/1.png">
 <meta property="og:image" content="http://zy943453722.ink/tcp可靠传输和流量控制的4种协议的演变史/2.png">
@@ -133,7 +133,7 @@
 <meta property="og:updated_time" content="2018-01-29T23:59:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tcp可靠传输和流量控制的4种协议的演变史">
-<meta name="twitter:description" content="前言学习了计算机网络之后，发现很多基础知识其中的奥秘是经过前人一步步探索得来的，故而搜索了很多的资料，在这里用几篇博文进行总结。首先要说到的就是tcp可靠传输和流量控制的4种协议，这4种协议从无到有，从最初的单工停等协议(停止等待ARQ协议)到连续ARQ协议、选择重传ARQ协议，直到最终的滑动窗口协议，经过了一系列的演变过程。本博文就来浅析一下它们的区别和演变过程。 单工停等协议定义即发送方每次发">
+<meta name="twitter:description" content="¶前言 学习了计算机网络之后，发现很多基础知识其中的奥秘是经过前人一步步探索得来的，故而搜索了很多的资料，在这里用几篇博文进行总结。 首先要说到的就是tcp可靠传输和流量控制的4种协议，这4种协议从无到有，从最初的单工停等协议(停止等待ARQ协议)到连续ARQ协议、选择重传ARQ协议，直到最终的滑动窗口协议，经过了一系列的演变过程。本博文就来浅析一下它们的区别和演变过程。 ¶单工停等协议 ¶定义">
 <meta name="twitter:image" content="http://zy943453722.ink/tcp可靠传输和流量控制的4种协议的演变史/1.png">
 
 
@@ -176,6 +176,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -275,6 +285,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -352,7 +372,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/tcp可靠传输和流量控制的4种协议的演变史/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -450,42 +470,75 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong><em>学习了计算机网络之后，发现很多基础知识其中的奥秘是经过前人一步步探索得来的，故而搜索了很多的资料，在这里用几篇博文进行总结。</em></strong><br><br><strong><font color="blue">首先要说到的就是tcp可靠传输和流量控制的4种协议，这4种协议从无到有，从最初的单工停等协议(停止等待ARQ协议)到连续ARQ协议、选择重传ARQ协议，直到最终的滑动窗口协议，经过了一系列的演变过程。本博文就来浅析一下它们的区别和演变过程。</font></strong></p>
-<h2 id="单工停等协议"><a href="#单工停等协议" class="headerlink" title="单工停等协议"></a>单工停等协议</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong><em>即发送方每次发送完一个分组(此处可能是tcp报文也可能是MAC帧)就停止发送，等待接收方的确认，只有在收到确认之后才能够再发送下一个分组。</em></strong></p>
-<h3 id="具体描述"><a href="#具体描述" class="headerlink" title="具体描述"></a>具体描述</h3><p><strong><em><font size="3">工作原理:</font></em></strong></p>
+        <h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
+<p><strong><em>学习了计算机网络之后，发现很多基础知识其中的奥秘是经过前人一步步探索得来的，故而搜索了很多的资料，在这里用几篇博文进行总结。</em></strong><br>
+<br><strong><font color="blue">首先要说到的就是tcp可靠传输和流量控制的4种协议，这4种协议从无到有，从最初的单工停等协议(停止等待ARQ协议)到连续ARQ协议、选择重传ARQ协议，直到最终的滑动窗口协议，经过了一系列的演变过程。本博文就来浅析一下它们的区别和演变过程。</font></strong></p>
+<h2 id="单工停等协议"><a class="header-anchor" href="#单工停等协议">¶</a>单工停等协议</h2>
+<h3 id="定义"><a class="header-anchor" href="#定义">¶</a>定义</h3>
+<p><strong><em>即发送方每次发送完一个分组(此处可能是tcp报文也可能是MAC帧)就停止发送，等待接收方的确认，只有在收到确认之后才能够再发送下一个分组。</em></strong></p>
+<h3 id="具体描述"><a class="header-anchor" href="#具体描述">¶</a>具体描述</h3>
+<p><strong><em><font size="3">工作原理:</font></em></strong></p>
 <ol>
 <li>发送点对接收点发送数据包，然后等待接收点回复ACK并且开始计时。(利用超时计时器计时)</li>
 <li>在等待过程中，发送点停止发送新的数据包。</li>
 <li>当数据包没有成功被接收点接收时候，接收点不会发送ACK.这样发送点在等待一定时间后，重新发送数据包。</li>
 <li>反复以上步骤直到收到从接收点发送的ACK.</li>
 </ol>
-<p><strong><em><font size="3">原理图如下:</font><br></em></strong><br><img src="/tcp可靠传输和流量控制的4种协议的演变史/1.png" alt="无差错"><br><br>如图1即在无差错的情况下，A发送，B接收，只有A收到B的确认时才可以发送下一个分组。<br><img src="/tcp可靠传输和流量控制的4种协议的演变史/2.png" alt="有差错"><br>如图2即出现差错时利用的一种机制叫做超时重传机制，B没有收到A的报文，A也没收到来自B的确认报文，经过一个设定时间后，超时计时器到期，那么就要重传。<br><img src="/tcp可靠传输和流量控制的4种协议的演变史/3.png" alt="3"><br><br>如图3即当A的发送分组没有差错和丢弃，但是B的确认分组出现差错，那么A收不到确认也就无法判断是确认出错还是发送分组出错,因此B需要丢弃当前接收的分组，等待超时计时器到期A重新发送，而后接收。<br><img src="/tcp可靠传输和流量控制的4种协议的演变史/4.png" alt="4"><br><br>如图4即B的确认没有出错或者丢失，只是因为信道拥塞导致延时到达，因此A无法收到确认y而是需要重新发送之前的发送分组。</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p><strong>这个协议的缺点是较长的等待时间导致低的数据传输速度。在低速传输时，对连接频道的利用率比较好，但是在高速传输时，频道的利用率会显著下降。</strong></p>
-<h2 id="连续ARQ协议"><a href="#连续ARQ协议" class="headerlink" title="连续ARQ协议"></a>连续ARQ协议</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><strong><em>为了克服停止等待协议需要长时间等待的缺点，故而出现了连续ARQ协议，它是指发送方维护着一个窗口,这个窗口中不止一个分组,有好几个分组,窗口的大小是由接收方返回的win值决定的,所以窗口的大小是动态变化的,只要在窗口中的分组都可以被发送,这就使得TCP一次不是只发送一个分组了,从而大大提高了信道的利用率.并且它采用<font color="red">累积确认</font>的方式,对于<font color="red">按序</font>到达的最后一个分组发送确认。</em></strong></p>
-<h3 id="具体描述-1"><a href="#具体描述-1" class="headerlink" title="具体描述"></a>具体描述</h3><p><strong><font size="3">原理：</font></strong><br><br><img src="/tcp可靠传输和流量控制的4种协议的演变史/5.png" alt="3"><br><br><br>如图可知发送方维护一个5分组大小的窗口，只有收到接收方的一个确认后才将窗口向前挪动。<br>但是接收方由于<strong>累计确认</strong>方式,虽然一次性仍然只能接收一个确认分组，但是发送方不必等待接收方确认便可以再次发送。因此，接收方可以在收到几个分组之后，对<strong>按序到达</strong>的最后一个分组发送确认，这就表示到这个分组之前的所有分组都正确收到了。<br><strong><br>重传机制：</strong><br><br>采用回退N机制(Go-back-N)即GBN,表示凡是被发送出去尚未被确认的分组都放在发送方提供的较大的缓冲区内，若得到确认则取出。当接收方检测出失序的信息帧后，要求发送方重发最后一个正确接收的信息帧之后的所有未被确认的帧。其中利用超时计时器，若在规定时间内没有收到对应的应答帧，或者累计的应答帧，那么就说明出错了。</p>
-<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><p>虽然连续ARQ的链路效率大大提升，但是相应的需要更大的缓冲空间，且接收方窗口大小总是1，浪费很多链路的带宽。</p>
-<h2 id="选择重传ARQ协议"><a href="#选择重传ARQ协议" class="headerlink" title="选择重传ARQ协议"></a>选择重传ARQ协议</h2><h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><p>发送方据一个指定大小的窗口持续发送若干分组，即使发送过程中丢失分组，也会继续发送。和Go-back-N ARQ不一样，接收进程在出错后还是继续接收和确认帧。</p>
-<h3 id="具体描述-2"><a href="#具体描述-2" class="headerlink" title="具体描述"></a>具体描述</h3><p><strong><em>基本原理：<br></em></strong><br>如果一个发送的帧没有到达接收方，发送方继续发送后面的帧，直到它填满发送窗口 。接收方持续用接收的帧填充它的接收窗口，并且每次回复一个带有序列号的ACK帧。一旦发送窗口所有帧都发送了 ，发送方重新发送的帧号与ACK不对应的帧，然后继续。<br><img src="/tcp可靠传输和流量控制的4种协议的演变史/6.png" alt="4"><br><br><br>如图可知在2号分组出错时，继续发送其他的分组，接收方同时也接收其他的分组，但是并不提交给上层，只有等待重传的分组到达之后，再按序提交给高层。</p>
+<p><strong><em><font size="3">原理图如下:</font><br></em></strong><br>
+<img src="/tcp可靠传输和流量控制的4种协议的演变史/1.png" alt="无差错"><br>
+<br>如图1即在无差错的情况下，A发送，B接收，只有A收到B的确认时才可以发送下一个分组。<br><img src="/tcp可靠传输和流量控制的4种协议的演变史/2.png" alt="有差错"><br>如图2即出现差错时利用的一种机制叫做超时重传机制，B没有收到A的报文，A也没收到来自B的确认报文，经过一个设定时间后，超时计时器到期，那么就要重传。<br><img src="/tcp可靠传输和流量控制的4种协议的演变史/3.png" alt="3"><br>
+<br>如图3即当A的发送分组没有差错和丢弃，但是B的确认分组出现差错，那么A收不到确认也就无法判断是确认出错还是发送分组出错,因此B需要丢弃当前接收的分组，等待超时计时器到期A重新发送，而后接收。<br><img src="/tcp可靠传输和流量控制的4种协议的演变史/4.png" alt="4"><br>
+<br>如图4即B的确认没有出错或者丢失，只是因为信道拥塞导致延时到达，因此A无法收到确认y而是需要重新发送之前的发送分组。</p>
+<h3 id="缺点"><a class="header-anchor" href="#缺点">¶</a>缺点</h3>
+<p><strong>这个协议的缺点是较长的等待时间导致低的数据传输速度。在低速传输时，对连接频道的利用率比较好，但是在高速传输时，频道的利用率会显著下降。</strong></p>
+<h2 id="连续arq协议"><a class="header-anchor" href="#连续arq协议">¶</a>连续ARQ协议</h2>
+<h3 id="定义-v2"><a class="header-anchor" href="#定义-v2">¶</a>定义</h3>
+<p><strong><em>为了克服停止等待协议需要长时间等待的缺点，故而出现了连续ARQ协议，它是指发送方维护着一个窗口,这个窗口中不止一个分组,有好几个分组,窗口的大小是由接收方返回的win值决定的,所以窗口的大小是动态变化的,只要在窗口中的分组都可以被发送,这就使得TCP一次不是只发送一个分组了,从而大大提高了信道的利用率.并且它采用<font color="red">累积确认</font>的方式,对于<font color="red">按序</font>到达的最后一个分组发送确认。</em></strong></p>
+<h3 id="具体描述-v2"><a class="header-anchor" href="#具体描述-v2">¶</a>具体描述</h3>
+<p><strong><font size="3">原理：</font></strong><br>
+<br><img src="/tcp可靠传输和流量控制的4种协议的演变史/5.png" alt="3"><br><br>
+<br>如图可知发送方维护一个5分组大小的窗口，只有收到接收方的一个确认后才将窗口向前挪动。<br>
+但是接收方由于<strong>累计确认</strong>方式,虽然一次性仍然只能接收一个确认分组，但是发送方不必等待接收方确认便可以再次发送。因此，接收方可以在收到几个分组之后，对<strong>按序到达</strong>的最后一个分组发送确认，这就表示到这个分组之前的所有分组都正确收到了。<br>
+<strong><br>重传机制：</strong><br><br>
+采用回退N机制(Go-back-N)即GBN,表示凡是被发送出去尚未被确认的分组都放在发送方提供的较大的缓冲区内，若得到确认则取出。当接收方检测出失序的信息帧后，要求发送方重发最后一个正确接收的信息帧之后的所有未被确认的帧。其中利用超时计时器，若在规定时间内没有收到对应的应答帧，或者累计的应答帧，那么就说明出错了。</p>
+<h3 id="缺点-v2"><a class="header-anchor" href="#缺点-v2">¶</a>缺点</h3>
+<p>虽然连续ARQ的链路效率大大提升，但是相应的需要更大的缓冲空间，且接收方窗口大小总是1，浪费很多链路的带宽。</p>
+<h2 id="选择重传arq协议"><a class="header-anchor" href="#选择重传arq协议">¶</a>选择重传ARQ协议</h2>
+<h3 id="定义-v3"><a class="header-anchor" href="#定义-v3">¶</a>定义</h3>
+<p>发送方据一个指定大小的窗口持续发送若干分组，即使发送过程中丢失分组，也会继续发送。和Go-back-N ARQ不一样，接收进程在出错后还是继续接收和确认帧。</p>
+<h3 id="具体描述-v3"><a class="header-anchor" href="#具体描述-v3">¶</a>具体描述</h3>
+<p><strong><em>基本原理：<br></em></strong><br>
+如果一个发送的帧没有到达接收方，发送方继续发送后面的帧，直到它填满发送窗口 。接收方持续用接收的帧填充它的接收窗口，并且每次回复一个带有序列号的ACK帧。一旦发送窗口所有帧都发送了 ，发送方重新发送的帧号与ACK不对应的帧，然后继续。<br>
+<img src="/tcp可靠传输和流量控制的4种协议的演变史/6.png" alt="4"><br><br>
+<br>如图可知在2号分组出错时，继续发送其他的分组，接收方同时也接收其他的分组，但是并不提交给上层，只有等待重传的分组到达之后，再按序提交给高层。</p>
 <p><strong>注意：</strong> 接收方窗口大小与发送方要相同，并且最大的窗口值取最大序列号的一半。</p>
-<h3 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<h3 id="缺点-v3"><a class="header-anchor" href="#缺点-v3">¶</a>缺点</h3>
+<ol>
 <li>通信信道的利用率不高，也就是说，信道还远远没有被数据比特填满。</li>
 <li>是需要接收方发送ACK，这样增加了网络的负担也影响了传输速度。重复发送数据包来纠正错误的方法也严重的影响了它的传输速度。</li>
 </ol>
-<h2 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h2><h3 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h3><p>滑动窗口协议实际是选择重传ARQ的特殊情况。</p>
-<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><ol>
+<h2 id="滑动窗口协议"><a class="header-anchor" href="#滑动窗口协议">¶</a>滑动窗口协议</h2>
+<h3 id="定义-v4"><a class="header-anchor" href="#定义-v4">¶</a>定义</h3>
+<p>滑动窗口协议实际是选择重传ARQ的特殊情况。</p>
+<h3 id="前提"><a class="header-anchor" href="#前提">¶</a>前提</h3>
+<ol>
 <li>TCP协议的两端分别为发送者A和接收者B，由于是全双工协议，因此A和B应该分别维护着一个独立的发送缓冲区和接收缓冲区，由于对等性（A发B收和B发A收)。</li>
 <li>发送窗口是发送缓存中的一部分，是可以被TCP协议发送的那部分，其实应用层需要发送的所有数据都被放进了发送者的发送缓冲区；</li>
 <li>发送窗口中相关的有四个概念：已发送并收到确认的数据（不再发送窗口和发送缓冲区之内）、已发送但未收到确认的数据（位于发送窗口之中）、允许发送但尚未发送的数据以及发送窗口外发送缓冲区内暂时不允许发送的数据；</li>
 <li>每次成功发送数据之后，发送窗口就会在发送缓冲区中按顺序移动，将新的数据包含到窗口中准备发送；</li>
 </ol>
-<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><p><strong>原理图：<br></strong><br><img src="/tcp可靠传输和流量控制的4种协议的演变史/7.png" alt="7"><br><br><br>分析图中可以看出：</p>
+<h3 id="具体实现"><a class="header-anchor" href="#具体实现">¶</a>具体实现</h3>
+<p><strong>原理图：<br></strong><br>
+<img src="/tcp可靠传输和流量控制的4种协议的演变史/7.png" alt="7"><br><br>
+<br>分析图中可以看出：</p>
 <ol>
 <li>初始时发送窗口前沿是0，后沿也是0，因为前沿是指下一发送的序号，而后沿是指下一应答序号。</li>
 <li>而初始时接收窗口前沿是1，后沿是0，因为前沿和后沿之间的部分是指下一期望接收的序号。</li>
 <li>发送方前沿是发送完一个分组后就移动，后沿是收到接收确认分组之后才移动。</li>
 <li>接收方的前后沿同时移动，当接收到一个分组之后就向后移动。</li>
 </ol>
-<h2 id="4种协议的比较"><a href="#4种协议的比较" class="headerlink" title="4种协议的比较"></a>4种协议的比较</h2><table>
+<h2 id="4种协议的比较"><a class="header-anchor" href="#4种协议的比较">¶</a>4种协议的比较</h2>
+<table>
 <thead>
 <tr>
 <th></th>
@@ -526,7 +579,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p><a href="http://blog.csdn.net/guoweimelon/article/details/50879588" target="_blank" rel="noopener">http://blog.csdn.net/guoweimelon/article/details/50879588</a><br><a href="http://blog.csdn.net/wbw1985/article/details/4879224" target="_blank" rel="noopener">http://blog.csdn.net/wbw1985/article/details/4879224</a><br><a href="http://pmghong.blog.51cto.com/3221425/1242470" target="_blank" rel="noopener">http://pmghong.blog.51cto.com/3221425/1242470</a></p>
+<h3 id="参考资料："><a class="header-anchor" href="#参考资料：">¶</a>参考资料：</h3>
+<p><a href="http://blog.csdn.net/guoweimelon/article/details/50879588" target="_blank" rel="noopener">http://blog.csdn.net/guoweimelon/article/details/50879588</a><br>
+<a href="http://blog.csdn.net/wbw1985/article/details/4879224" target="_blank" rel="noopener">http://blog.csdn.net/wbw1985/article/details/4879224</a><br>
+<a href="http://pmghong.blog.51cto.com/3221425/1242470" target="_blank" rel="noopener">http://pmghong.blog.51cto.com/3221425/1242470</a></p>
 
       
     </div>
@@ -557,14 +613,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -703,10 +759,10 @@ var jiathis_config={
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -765,15 +821,27 @@ var jiathis_config={
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -783,6 +851,20 @@ var jiathis_config={
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -803,7 +885,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单工停等协议"><span class="nav-number">2.</span> <span class="nav-text">单工停等协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体描述"><span class="nav-number">2.2.</span> <span class="nav-text">具体描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">2.3.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连续ARQ协议"><span class="nav-number">3.</span> <span class="nav-text">连续ARQ协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体描述-1"><span class="nav-number">3.2.</span> <span class="nav-text">具体描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点-1"><span class="nav-number">3.3.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择重传ARQ协议"><span class="nav-number">4.</span> <span class="nav-text">选择重传ARQ协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-2"><span class="nav-number">4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体描述-2"><span class="nav-number">4.2.</span> <span class="nav-text">具体描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点-2"><span class="nav-number">4.3.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动窗口协议"><span class="nav-number">5.</span> <span class="nav-text">滑动窗口协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-3"><span class="nav-number">5.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前提"><span class="nav-number">5.2.</span> <span class="nav-text">前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体实现"><span class="nav-number">5.3.</span> <span class="nav-text">具体实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4种协议的比较"><span class="nav-number">6.</span> <span class="nav-text">4种协议的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料："><span class="nav-number">6.1.</span> <span class="nav-text">参考资料：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">¶前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单工停等协议"><span class="nav-number">2.</span> <span class="nav-text">¶单工停等协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">¶定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体描述"><span class="nav-number">2.2.</span> <span class="nav-text">¶具体描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">2.3.</span> <span class="nav-text">¶缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连续arq协议"><span class="nav-number">3.</span> <span class="nav-text">¶连续ARQ协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-v2"><span class="nav-number">3.1.</span> <span class="nav-text">¶定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体描述-v2"><span class="nav-number">3.2.</span> <span class="nav-text">¶具体描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点-v2"><span class="nav-number">3.3.</span> <span class="nav-text">¶缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择重传arq协议"><span class="nav-number">4.</span> <span class="nav-text">¶选择重传ARQ协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-v3"><span class="nav-number">4.1.</span> <span class="nav-text">¶定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体描述-v3"><span class="nav-number">4.2.</span> <span class="nav-text">¶具体描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点-v3"><span class="nav-number">4.3.</span> <span class="nav-text">¶缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动窗口协议"><span class="nav-number">5.</span> <span class="nav-text">¶滑动窗口协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-v4"><span class="nav-number">5.1.</span> <span class="nav-text">¶定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前提"><span class="nav-number">5.2.</span> <span class="nav-text">¶前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体实现"><span class="nav-number">5.3.</span> <span class="nav-text">¶具体实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4种协议的比较"><span class="nav-number">6.</span> <span class="nav-text">¶4种协议的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料："><span class="nav-number">6.1.</span> <span class="nav-text">¶参考资料：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -826,12 +908,12 @@ var jiathis_config={
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -1455,6 +1537,28 @@ var jiathis_config={
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

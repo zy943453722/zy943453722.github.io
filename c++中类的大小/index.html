@@ -115,18 +115,18 @@
 
 
 
-<meta name="description" content="类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。  空类空类的大小为1： 目的标示这个类，c++要求每个实例在内存中都具有独一无二的地址。 普通类(不继承，不含虚函数）跟struct的原理一致，内存对齐原则，但静态变量不占">
+<meta name="description" content="*** 类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。 *** ¶空类 空类的大小为1： 目的标示这个类，c++要求每个实例在内存中都具有独一无二的地址。 ¶普通类(不继承，不含虚函数） 跟struct的原理一致，内存对齐">
 <meta name="keywords" content="c++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c++中类的大小">
 <meta property="og:url" content="http://zy943453722.ink/c++中类的大小/index.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。  空类空类的大小为1： 目的标示这个类，c++要求每个实例在内存中都具有独一无二的地址。 普通类(不继承，不含虚函数）跟struct的原理一致，内存对齐原则，但静态变量不占">
+<meta property="og:description" content="*** 类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。 *** ¶空类 空类的大小为1： 目的标示这个类，c++要求每个实例在内存中都具有独一无二的地址。 ¶普通类(不继承，不含虚函数） 跟struct的原理一致，内存对齐">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-10-22T01:13:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c++中类的大小">
-<meta name="twitter:description" content="类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。  空类空类的大小为1： 目的标示这个类，c++要求每个实例在内存中都具有独一无二的地址。 普通类(不继承，不含虚函数）跟struct的原理一致，内存对齐原则，但静态变量不占">
+<meta name="twitter:description" content="*** 类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。 *** ¶空类 空类的大小为1： 目的标示这个类，c++要求每个实例在内存中都具有独一无二的地址。 ¶普通类(不继承，不含虚函数） 跟struct的原理一致，内存对齐">
 
 
 
@@ -168,6 +168,16 @@
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7cf2d06f720f78e60fd20e60462baabf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -267,6 +277,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-books">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读书目
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404/" rel="section">
             
@@ -344,7 +364,7 @@
     <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/c++中类的大小/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张越">
+      <meta itemprop="name" content="悲伤逆流">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/boys.jpg">
     </span>
@@ -442,14 +462,25 @@
       
 
       
-        <p><strong><em> 类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。 </em></strong></p>
-<h3 id="空类"><a href="#空类" class="headerlink" title="空类"></a>空类</h3><p>空类的大小为1：</p>
+        <p>*** 类所占内存的大小是有成员变量（静态变量除外）决定的，成员函数是不计算在内的，他们只是名义上在类里，其实同一个类的多个对象共享函数代码，而我们访问类的成员函数是通过类中的自引用指针实现的，所以我们访问成员函数是间接获得地址的。 ***</p>
+<h3 id="空类"><a class="header-anchor" href="#空类">¶</a>空类</h3>
+<p>空类的大小为1：</p>
 <p>目的标示这个类，c++要求每个实例在内存中都具有独一无二的地址。</p>
-<h3 id="普通类-不继承，不含虚函数）"><a href="#普通类-不继承，不含虚函数）" class="headerlink" title="普通类(不继承，不含虚函数）"></a>普通类(不继承，不含虚函数）</h3><p>跟struct的原理一致，内存对齐原则，但静态变量不占用内存，原因是编译器将其放在了全局变量区。</p>
-<h3 id="含有虚函数的类"><a href="#含有虚函数的类" class="headerlink" title="含有虚函数的类"></a>含有虚函数的类</h3><p>c++类中有虚函数的时候有一个指向虚函数的指针(vptr),因此此指针要占用字节空间，<strong>虚函数个数和大小无关。</strong></p>
-<h3 id="继承的类"><a href="#继承的类" class="headerlink" title="继承的类"></a>继承的类</h3><p>子类的大小是本身成员变量的大小加上父类的大小，若父类本身就含有虚函数，则子类无论有没有虚函数都不能算上。<br><strong>当继承空类时，不加上空类的大小，而是只算本身子类的大小。</strong></p>
-<h3 id="实例（注：笔者是在64位操作系统下操作得出的结果"><a href="#实例（注：笔者是在64位操作系统下操作得出的结果" class="headerlink" title="实例（注：笔者是在64位操作系统下操作得出的结果"></a>实例（注：笔者是在64位操作系统下操作得出的结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">class cBase</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;; //标识存在为1</span><br><span class="line">class cBase1</span><br><span class="line">&#123;</span><br><span class="line">    int a;</span><br><span class="line">    char p;</span><br><span class="line">&#125;;//内存对齐，4个字节和1个字节，1字节按4字节算</span><br><span class="line">class cBase2</span><br><span class="line">&#123;</span><br><span class="line">  public:</span><br><span class="line">      cBase2();</span><br><span class="line">      virtual ~cBase2();//virtual开辟一块指针，因此为8</span><br><span class="line">  private:</span><br><span class="line">     int a;//4，因内存对齐则为8</span><br><span class="line">    char *p;//8</span><br><span class="line">&#125;;</span><br><span class="line">class c:public cBase</span><br><span class="line">&#123;</span><br><span class="line">   virtual void fun() = 0;//纯虚函数</span><br><span class="line">&#125;;</span><br><span class="line">class b&#123;&#125;;</span><br><span class="line">class d:public b,public c&#123;&#125;;//共享虚函数的指针</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; &quot;cBase类的大小:&quot; &lt;&lt; sizeof(cBase) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;cBase1类的大小:&quot; &lt;&lt; sizeof(cBase1) &lt;&lt; endl;</span><br><span class="line">    cout&lt;&lt; &quot;cBase2类的大小:&quot; &lt;&lt; sizeof(cBase2) &lt;&lt; endl; </span><br><span class="line">    cout&lt;&lt; &quot;c类的大小:&quot; &lt;&lt; sizeof(c) &lt;&lt;endl; </span><br><span class="line">    cout &lt;&lt; &quot;d类的大小:&quot; &lt;&lt; sizeof(d) &lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果为：<br><br>cBase类的大小：1<br><br>cBase1类的大小：8<br><br>cBase2类的大小：24<br><br>c类的大小：8<br><br>d类的大小：8<br></p>
+<h3 id="普通类-不继承-不含虚函数"><a class="header-anchor" href="#普通类-不继承-不含虚函数">¶</a>普通类(不继承，不含虚函数）</h3>
+<p>跟struct的原理一致，内存对齐原则，但静态变量不占用内存，原因是编译器将其放在了全局变量区。</p>
+<h3 id="含有虚函数的类"><a class="header-anchor" href="#含有虚函数的类">¶</a>含有虚函数的类</h3>
+<p>c++类中有虚函数的时候有一个指向虚函数的指针(vptr),因此此指针要占用字节空间，<strong>虚函数个数和大小无关。</strong></p>
+<h3 id="继承的类"><a class="header-anchor" href="#继承的类">¶</a>继承的类</h3>
+<p>子类的大小是本身成员变量的大小加上父类的大小，若父类本身就含有虚函数，则子类无论有没有虚函数都不能算上。<br>
+<strong>当继承空类时，不加上空类的大小，而是只算本身子类的大小。</strong></p>
+<h3 id="实例-注：笔者是在64位操作系统下操作得出的结果"><a class="header-anchor" href="#实例-注：笔者是在64位操作系统下操作得出的结果">¶</a>实例（注：笔者是在64位操作系统下操作得出的结果</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">class cBase</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;; //标识存在为1</span><br><span class="line">class cBase1</span><br><span class="line">&#123;</span><br><span class="line">    int a;</span><br><span class="line">    char p;</span><br><span class="line">&#125;;//内存对齐，4个字节和1个字节，1字节按4字节算</span><br><span class="line">class cBase2</span><br><span class="line">&#123;</span><br><span class="line">  public:</span><br><span class="line">      cBase2();</span><br><span class="line">      virtual ~cBase2();//virtual开辟一块指针，因此为8</span><br><span class="line">  private:</span><br><span class="line">     int a;//4，因内存对齐则为8</span><br><span class="line">    char *p;//8</span><br><span class="line">&#125;;</span><br><span class="line">class c:public cBase</span><br><span class="line">&#123;</span><br><span class="line">   virtual void fun() = 0;//纯虚函数</span><br><span class="line">&#125;;</span><br><span class="line">class b&#123;&#125;;</span><br><span class="line">class d:public b,public c&#123;&#125;;//共享虚函数的指针</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; &quot;cBase类的大小:&quot; &lt;&lt; sizeof(cBase) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;cBase1类的大小:&quot; &lt;&lt; sizeof(cBase1) &lt;&lt; endl;</span><br><span class="line">    cout&lt;&lt; &quot;cBase2类的大小:&quot; &lt;&lt; sizeof(cBase2) &lt;&lt; endl; </span><br><span class="line">    cout&lt;&lt; &quot;c类的大小:&quot; &lt;&lt; sizeof(c) &lt;&lt;endl; </span><br><span class="line">    cout &lt;&lt; &quot;d类的大小:&quot; &lt;&lt; sizeof(d) &lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果为：<br><br>
+cBase类的大小：1<br><br>
+cBase1类的大小：8<br><br>
+cBase2类的大小：24<br><br>
+c类的大小：8<br><br>
+d类的大小：8<br></p>
 
       
     </div>
@@ -480,14 +511,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/weixin.png" alt="张越 微信支付">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="张越 支付宝">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -624,10 +655,10 @@ var jiathis_config={
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
-            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="张越">
+            <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
           
-            <p class="site-author-name" itemprop="name">张越</p>
-            <p class="site-description motion-element" itemprop="description">有志者，事竟成</p>
+            <p class="site-author-name" itemprop="name">悲伤逆流</p>
+            <p class="site-description motion-element" itemprop="description">Where there is a will there is a way!</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -686,15 +717,27 @@ var jiathis_config={
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://943453722@qq.com" target="_blank" title="E-Mail">
+                <a href="https://plus.google.com/115059048112115679120" target="_blank" title="Google">
                   
-                    <i class="fa fa-fw fa-e-mail"></i>E-Mail</a>
+                    <i class="fa fa-fw fa-google"></i>Google</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://m.weibo.cn/profile/5764571985" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>WeiBo</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="https://www.facebook.com/profile.php?id=100010869161296" target="_blank" title="FB Page">
                   
                     <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://laravel-china.org/users/25456" target="_blank" title="Laravel-china">
+                  
+                    <i class="fa fa-fw fa-laravel"></i>Laravel-china</a>
               </span>
             
           
@@ -704,6 +747,20 @@ var jiathis_config={
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://roux.top/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
         
   
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&id=189688&auto=1&height=66"></iframe>
@@ -724,7 +781,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#空类"><span class="nav-number">1.</span> <span class="nav-text">空类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通类-不继承，不含虚函数）"><span class="nav-number">2.</span> <span class="nav-text">普通类(不继承，不含虚函数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#含有虚函数的类"><span class="nav-number">3.</span> <span class="nav-text">含有虚函数的类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承的类"><span class="nav-number">4.</span> <span class="nav-text">继承的类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例（注：笔者是在64位操作系统下操作得出的结果"><span class="nav-number">5.</span> <span class="nav-text">实例（注：笔者是在64位操作系统下操作得出的结果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#空类"><span class="nav-number">1.</span> <span class="nav-text">¶空类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通类-不继承-不含虚函数"><span class="nav-number">2.</span> <span class="nav-text">¶普通类(不继承，不含虚函数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#含有虚函数的类"><span class="nav-number">3.</span> <span class="nav-text">¶含有虚函数的类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承的类"><span class="nav-number">4.</span> <span class="nav-text">¶继承的类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-注：笔者是在64位操作系统下操作得出的结果"><span class="nav-number">5.</span> <span class="nav-text">¶实例（注：笔者是在64位操作系统下操作得出的结果</span></a></li></ol></div>
             
 
           </div>
@@ -747,12 +804,12 @@ var jiathis_config={
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
-  &copy;  2017 &mdash; 
+  &copy; 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">张越</span>
+  <span class="author" itemprop="copyrightHolder">悲伤逆流</span>
 
   
 </div>
@@ -1376,6 +1433,28 @@ var jiathis_config={
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
