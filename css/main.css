@@ -1999,7 +1999,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #65ff18;
+  background: #7dff74;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2934,9 +2934,6 @@ pre .javascript .function {
 .brand {
   padding: 0;
   background: none;
-}
-.brand:hover {
-  color: #fff;
 }
 .site-subtitle {
   margin: 10px 10px 0;
