@@ -1999,7 +1999,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1f5ea7;
+  background: #ff2e0d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3199,4 +3199,11 @@ body {
   border-color: #49b1f5;
   color: #fff;
   background: #49b1f5;
+}
+.posts-expand .post-eof {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  background: rgba(255,255,255,0);
 }
