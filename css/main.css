@@ -1999,7 +1999,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2ede60;
+  background: #7f6b30;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2841,7 +2841,6 @@ pre .javascript .function {
   box-sizing: border-box;
   padding: 40px;
   width: 700px;
-  background: #fff;
   min-height: 700px;
   box-shadow: initial;
   border-radius: initial;
@@ -3200,13 +3199,6 @@ body {
   color: #fff;
   background: #49b1f5;
 }
-.backstretch {
-  opacity: 0.75;
-}
-.content-wrap,
-.sidebar {
-  opacity: 0.9 !important;
-}
-.header-inner {
-  background: rgba(255,255,255,0.9) !important;
+.post-type-normal {
+  background-color: #fff;
 }
