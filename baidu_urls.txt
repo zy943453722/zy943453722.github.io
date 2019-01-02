@@ -1,5 +1,5 @@
-http://zy943453722.ink/http历史及请求报文和响应报文/
-http://zy943453722.ink/划分子网与构造超网/
-http://zy943453722.ink/tcp可靠传输和流量控制的4种协议的演变史/
-http://zy943453722.ink/php中静态类、抽象类和接口类的区别/
-http://zy943453722.ink/探寻psr标准/
+http://zy943453722.ink/post/cc12a58f.html
+http://zy943453722.ink/post/40d97749.html
+http://zy943453722.ink/post/ed84d9d4.html
+http://zy943453722.ink/post/a888efb7.html
+http://zy943453722.ink/post/b09a0ec3.html
