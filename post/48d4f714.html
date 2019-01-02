@@ -171,7 +171,7 @@
 <meta property="og:image" content="http://zy943453722.ink/post/zy.png">
 <meta property="og:image" content="http://zy943453722.ink/post/5.png">
 <meta property="og:image" content="http://zy943453722.ink/post/6.png">
-<meta property="og:updated_time" content="2017-11-12T06:00:50.000Z">
+<meta property="og:updated_time" content="2019-01-02T01:58:41.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="结构体变量malloc的故事">
 <meta name="twitter:description" content="这是一个关于结构体通过malloc初始化的悲伤的故事 ¶背景 因为本身结构体是不需要malloc就可以直接创建其对象，但是，当结构体中出现柔性数组或者是数组指针时，情况就截然不同了。因为这些数组都是要动态分配内存的，因此结构体也需要malloc。 ¶问题描述： 但是此时问题就出现了，本身创建结构体对象时会在栈区分配一块地址，但是malloc之后又有另外一块地址指向了此对象，这是该怎么办呢？ ¶代码">
