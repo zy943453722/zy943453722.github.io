@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zy943453722.ink/"/>
-  <updated>2019-01-02T01:58:41.850Z</updated>
+  <updated>2019-01-07T07:17:15.167Z</updated>
   <id>http://zy943453722.ink/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP进阶基础知识剖析(一)之魔术方法</title>
+    <link href="http://zy943453722.ink/post/edd048d1.html"/>
+    <id>http://zy943453722.ink/post/edd048d1.html</id>
+    <published>2019-01-07T15:17:15.000Z</published>
+    <updated>2019-01-07T07:17:15.167Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>http历史及请求报文和响应报文</title>
@@ -561,34 +575,6 @@ exit函数在头文件stdlib.h中。&lt;/p&gt;
     
     
       <category term="linux" scheme="http://zy943453722.ink/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>c语言中struct大小计算</title>
-    <link href="http://zy943453722.ink/post/8231f9f5.html"/>
-    <id>http://zy943453722.ink/post/8231f9f5.html</id>
-    <published>2017-05-15T21:12:29.000Z</published>
-    <updated>2019-01-02T01:58:41.850Z</updated>
-    
-    <content type="html"><![CDATA[<h1>struct 大小计算</h1><p>结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储。自然对齐是指按照结构体中成员size最大的对齐。</p><h2 id="默认对齐方式："><a class="header-anchor" href="#默认对齐方式：">¶</a>默认对齐方式：</h2><p><strong>在默认对齐方式下，结构体成员的内存分配满足下面三个条件：</strong></p><ol><li>结构体第一个成员的地址和结构体的首地址相同</li><li>结构体每个成员地址相对于结构体首地址的偏移量（offset）是该成员大小的整数倍，如果不是则编译器会在成员之间添加填充字节（internal adding）。</li><li>结构体总的大小要是其成员中最大size的整数倍，如果不是编译器会在其末尾添加填充字节（trailing padding）。</li></ol><p><strong>下面是一个示例：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">struct s1&#123;</span><br><span class="line">    char ch;</span><br><span class="line">    int a;</span><br><span class="line">    double b;</span><br><span class="line">    char c1;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct s2&#123;</span><br><span class="line">    char ch;</span><br><span class="line">    int a;</span><br><span class="line">    double b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; &quot;s1的大小： &quot; &lt;&lt; sizeof(struct s1) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;ch的地址偏移是   &quot; &lt;&lt; offsetof(s1, ch) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;a 的地址偏移是   &quot; &lt;&lt; offsetof(s1, a) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;b 的地址偏移是   &quot; &lt;&lt; offsetof(s1, b) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;c1的地址偏移是   &quot; &lt;&lt; offsetof(s1, c1) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;=====================================&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;s2的大小: &quot; &lt;&lt; sizeof(struct s2) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;ch的地址偏移是   &quot; &lt;&lt; offsetof(s2, ch) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;a 的地址偏移是   &quot; &lt;&lt; offsetof(s2, a) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;b 的地址偏移是   &quot; &lt;&lt; offsetof(s2, b) &lt;&lt; endl;</span><br><span class="line">    getchar();</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>代码中 offsetof函数可以得到结构体成员相对于该结构体首地址的偏移量。<br>其运行结果如下图：<br><img src="http://img.blog.csdn.net/20151003143703690" alt="这里写图片描述"></p><p><strong>对于结构体s1来说：</strong></p><ol><li>ch是其第一个成员故其地址和结构体的地址是相同的也就是说偏移量为0；</li><li>a是int型其大小为4个字节，按照条件（2） 结构体每个成员地址相对于结构首地址的偏移量（offset）是该成员大小的整数倍，如果不是则编译器会在成员之间添加填充字节，所以其地址偏移应该是4，也就说编译器在第一个成员ch后面填充了3个字节。</li><li>b是double型占8个字节，其地址偏移应该是8的整数倍，由于a的地址偏移是4其大小为4个字节，正好b的偏移地址是8，不需要填充字节。</li><li>c1是char型占1个字节，偏移地址是16（b的偏移地址是8大小也是8，中间也没有填充字节）。</li><li>这时成员ch占1个字节后面有3个字节的填充，a占4个字节后面无填充，b占8个字节后面无填充，c1占1个字节，s1总的大小是1+3+4+8+1=17” role=”presentation”&gt;1+3+4+8+1=171+3+4+8+1=17。按照条件（3）结构体总的大小需是其最大成员所占空间的整数倍，其最大的成员b占有8字节，17显然是不符合条件的，所以需要在结构体的末尾填充7个字节，最后结构体总的大小是24字节。<br>结构体s2和s1的成员是非常相似的，唯一的区别是其末尾没有最后7个字节的填充，所以其大小是16个字节，这里用于和s1做对比说明s1末尾的填充字节。</li></ol><h2 id="指定对齐方式"><a class="header-anchor" href="#指定对齐方式">¶</a>指定对齐方式</h2><p><strong>可以使用#pragma pack(N)来指定结构体成员的对齐方式<br>对于指定的对齐方式，其成员的地址偏移以及结构的总的大小也有下面三个约束条件：</strong></p><ol><li>结构体第一个成员的地址和结构体的首地址相同</li><li>结构体每个成员的地址偏移需要满足：N大于等于该成员的大小，那么该成员的地址偏移需满足默认对齐方式（地址偏移是其成员大小的整数倍）；Ｎ小于该成员的大小，那么该成员的地址偏移是N的整数倍。</li><li>结构体总的大小需要时N的整数倍，如果不是需要在结构体的末尾进行填充。</li><li>如果N大于结构体成员中最大成员的大小，则N不起作用，仍然按照默认方式对齐。</li></ol><p><strong>还是用上述示例：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#pragma pack(4) //设定按照4字节对齐</span><br></pre></td></tr></table></figure><p>运行结果为：</p><img src="http://img.blog.csdn.net/20151003150901035" alt="这里写图片描述"><h3 id="说明："><a class="header-anchor" href="#说明：">¶</a>说明：</h3><ol><li>在使用#pragma pack设定对齐方式一定要是2的整数幂，也就是（1，2，4，8，16，…），不然不起作用的，仍然按照默认方式对齐。</li><li>当结构体中有其他的结构体作为成员时，计算最大成员是不能把结构体成员作为一个整体来计算，要看其每个成员的大小。</li></ol><p>转载自：</p><p><a href="http://www.cnblogs.com/wangguchangqing/p/4853438.html" target="_blank" rel="noopener">http://www.cnblogs.com/wangguchangqing/p/4853438.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1&gt;struct 大小计算&lt;/h1&gt;
-&lt;p&gt;结构体是一种复合数据类型，通常编译器会自动的进行其成员变量的对齐，已提高数据存取的效率。在默认情况下，编译器为结构体的成员按照自然对齐（natural alignment）条方式分配存储空间，各个成员按照其声明顺序在存储器中顺序存储
-      
-    
-    </summary>
-    
-      <category term="编程语言" scheme="http://zy943453722.ink/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-      <category term="c" scheme="http://zy943453722.ink/tags/c/"/>
-    
-      <category term="c++" scheme="http://zy943453722.ink/tags/c/"/>
     
   </entry>
   
