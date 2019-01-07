@@ -140,7 +140,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Life，Books, Code">
+  <meta name="keywords" content="php,编程基础,">
 
 
 
@@ -158,17 +158,18 @@
 
 
 
-<meta name="description" content="Where there is a will there is a way!">
+<meta name="description" content="成功的唯一秘诀——坚持到最后一分钟。 柏拉图  ¶前言  笔者近期开始一个专栏----PHP进阶基础知识剖析，专门对于那些比较生僻但很重要的语法内容，核心用法，进阶函数等等进行整理和总结，欢迎大家阅读！  那么本期要讲述的是关于魔术方法的知识 ¶介绍  魔术方法是PHP中一类很特殊的系统内置方法，将所有以 __（两个下划线）开头的类方法保留为魔术方法。可以看作PHP的“语法糖”。  ¶分类 魔术方">
+<meta name="keywords" content="php,编程基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP进阶基础知识剖析(一)之魔术方法">
 <meta property="og:url" content="http://zy943453722.ink/post/edd048d1.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="Where there is a will there is a way!">
+<meta property="og:description" content="成功的唯一秘诀——坚持到最后一分钟。 柏拉图  ¶前言  笔者近期开始一个专栏----PHP进阶基础知识剖析，专门对于那些比较生僻但很重要的语法内容，核心用法，进阶函数等等进行整理和总结，欢迎大家阅读！  那么本期要讲述的是关于魔术方法的知识 ¶介绍  魔术方法是PHP中一类很特殊的系统内置方法，将所有以 __（两个下划线）开头的类方法保留为魔术方法。可以看作PHP的“语法糖”。  ¶分类 魔术方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-07T07:17:15.167Z">
+<meta property="og:updated_time" content="2019-01-07T14:52:38.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP进阶基础知识剖析(一)之魔术方法">
-<meta name="twitter:description" content="Where there is a will there is a way!">
+<meta name="twitter:description" content="成功的唯一秘诀——坚持到最后一分钟。 柏拉图  ¶前言  笔者近期开始一个专栏----PHP进阶基础知识剖析，专门对于那些比较生僻但很重要的语法内容，核心用法，进阶函数等等进行整理和总结，欢迎大家阅读！  那么本期要讲述的是关于魔术方法的知识 ¶介绍  魔术方法是PHP中一类很特殊的系统内置方法，将所有以 __（两个下划线）开头的类方法保留为魔术方法。可以看作PHP的“语法糖”。  ¶分类 魔术方">
 
 
 
@@ -441,8 +442,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-07T23:17:15+08:00">
-                2019-01-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T23:17:15+08:00">
+                2018-05-07
               </time>
             
 
@@ -451,6 +452,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -485,7 +508,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1,924
                 </span>
               
 
@@ -501,7 +524,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  8
                 </span>
               
             </div>
@@ -522,7 +545,107 @@
       
 
       
-        
+        <blockquote class="blockquote-center">成功的唯一秘诀——坚持到最后一分钟。
+<br><b>柏拉图</b>
+</blockquote>
+<h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
+<blockquote>
+<p><strong>笔者近期开始一个专栏----PHP进阶基础知识剖析，专门对于那些比较生僻但很重要的语法内容，核心用法，进阶函数等等进行整理和总结，欢迎大家阅读！</strong></p>
+</blockquote>
+<p><strong><em>那么本期要讲述的是关于魔术方法的知识</em></strong></p>
+<h3 id="介绍"><a class="header-anchor" href="#介绍">¶</a>介绍</h3>
+<blockquote>
+<p>魔术方法是PHP中一类很特殊的系统内置方法，将所有以 __（两个下划线）开头的类方法保留为魔术方法。可以看作PHP的“语法糖”。</p>
+</blockquote>
+<h3 id="分类"><a class="header-anchor" href="#分类">¶</a>分类</h3>
+<p><strong>魔术方法种类繁多，今天也不过多赘述，就简单讲解几种重要的</strong></p>
+<blockquote>
+<ul>
+<li>__set和__get方法</li>
+<li>__construct、__destruct、__clone方法</li>
+<li>__call和__callStatic方法</li>
+<li>__sleep和__wakeup方法</li>
+<li>__toString和__debugInfo方法</li>
+<li>__invoke方法</li>
+<li>__isset和__unset方法</li>
+</ul>
+</blockquote>
+<h5 id="set和-get方法"><a class="header-anchor" href="#set和-get方法">¶</a><strong>__set和__get方法</strong></h5>
+<blockquote>
+<p>作用:用于给对象属性赋值或者取值时，即使这个属性不存在或者这个属性有访问限制，也会能够正确执行。(请看如下示例)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Account</span><br><span class="line">&#123;</span><br><span class="line">    private $user;</span><br><span class="line">    public function __set($name, $value)</span><br><span class="line">    &#123;</span><br><span class="line">        //注：此处name是外来变量不属于成员变量，因此$this-&gt;$name,否则$this-&gt;name   </span><br><span class="line">        $this-&gt;$name = $value;</span><br><span class="line">    &#125;</span><br><span class="line">    public function __get($name)</span><br><span class="line">    &#123;</span><br><span class="line">        if (!isset($this-&gt;$name)) &#123;</span><br><span class="line">            $this-&gt;$name = &quot;默认值&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return $this-&gt;$name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>分析：</strong><br><br>
+正如代码所示，有了这两个函数之后，不用向其他语言一样需要创建set方法和get方法获取访问限制的变量，其实本身这两个函数都是public的，只不过这样操作更加简单，属于PHP属性重载的一类。</p>
+<h4 id="construct-destruct-clone方法"><a class="header-anchor" href="#construct-destruct-clone方法">¶</a><strong>__construct、__destruct、__clone方法</strong></h4>
+<blockquote>
+<p>作用：分别是PHP的构造函数、析构函数和对象复制函数</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>注意点：<br><br>
+析构函数的执行时间：<br><br>
+1、对象的所有引用都被删除时<br>
+2、对象被显式销毁时(可以使用unset，或者赋值NULL，或者改变对象的值)<br>
+3、页面加载完成时(此时内存已经被GC机制自动释放，所有实例化的类自然也被销毁，最后实例化的类先销毁，最先实例化的类最后被销毁)</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>析构函数作用场景：<br><br>
+一个需要循环执行的脚本，这其中可能会涉及到频繁的创建某个对象，它可以将对象打开的一些资源及时的释放，以防止内存溢出或单个进程占用过多内存。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>__clone函数：<br><br>
+其是对对象实例进行的浅复制,当调用clone方法是会自动调用此__clone方法，<strong>对象内的基本数值类型进行的是传值复制，而对象内的对象型成员变量</strong>,如果不重写__clone方法,<strong>显式的clone这个对象成员变量的话,这个成员变量就是传引用复制,而不是生成一个新的对象。<strong>所有的引用属性仍然会是一个指向原来的变量的引用。<br><br>
+当</strong>复制完成</strong>时，如果定义了 __clone() 方法，则新创建的对象（复制生成的对象）中的 __clone() 方法会被调用，可用于修改属性的值（如果有必要的话）。<br>
+<br>其实，clone方法克隆出来的对象是一个新的对象，除了其中引用属性的成员变量外，其他的与原对象都无关，因此一般解决断开引用属性的成员变量和原对象关系的方法就是在__clone函数中再调用clone方法（如示例）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">class SubObject</span><br><span class="line">&#123;</span><br><span class="line">    static $instances = 0;</span><br><span class="line">    public $instance;</span><br><span class="line"></span><br><span class="line">    public function __construct() &#123;</span><br><span class="line">        $this-&gt;instance = ++self::$instances;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function __clone() &#123;</span><br><span class="line">        $this-&gt;instance = ++self::$instances;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MyCloneable</span><br><span class="line">&#123;</span><br><span class="line">    public $object1;</span><br><span class="line">    public $object2;</span><br><span class="line"></span><br><span class="line">    function __clone()</span><br><span class="line">    &#123;</span><br><span class="line">      </span><br><span class="line">        // 强制复制一份this-&gt;object， 否则仍然指向同一个对象</span><br><span class="line">        $this-&gt;object1 = clone $this-&gt;object1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = new MyCloneable();</span><br><span class="line"></span><br><span class="line">$obj-&gt;object1 = new SubObject();</span><br><span class="line">$obj-&gt;object2 = new SubObject();</span><br><span class="line"></span><br><span class="line">$obj2 = clone $obj;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&quot;Original Object:\n&quot;);</span><br><span class="line">print_r($obj);</span><br><span class="line"></span><br><span class="line">print(&quot;Cloned Object:\n&quot;);</span><br><span class="line">print_r($obj2);</span><br></pre></td></tr></table></figure>
+<h4 id="call和-callstatic方法"><a class="header-anchor" href="#call和-callstatic方法">¶</a><strong>__call和__callStatic方法</strong></h4>
+<blockquote>
+<p>作用：当访问<strong>对象</strong>一个不可访问的方法或未定义的方法时，__call会被调用。<br>在<strong>静态上下文</strong>中调用一个不可访问方法时，__callStatic() 会被调用。属于方法重载<br><br>
+其实，设置这两个方法的本意是让动态创建变成可能（<strong>即根据参数的不同后期创建不同的方法</strong>），另外__callStatic还可以实现延迟绑定。（请看下方示例）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class MethodTest </span><br><span class="line">&#123;</span><br><span class="line">    public function __call($name, $arguments) </span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Calling object method &apos;$name&apos; &quot;</span><br><span class="line">             . implode(&apos;, &apos;, $arguments). &quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    public static function __callStatic($name, $arguments) </span><br><span class="line">    &#123;</span><br><span class="line">        //根据参数实现不同的方法后期动态创建</span><br><span class="line">        $method = preg_replace(&apos;/^run(\w*)$/&apos;,&apos;$&#123;1&#125;&apos;,$name);</span><br><span class="line">        return self::$method();</span><br><span class="line">    &#125;</span><br><span class="line">    private static function Test()</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;test\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    private static function date()</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;date\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = new MethodTest;</span><br><span class="line">$obj-&gt;runTest(&apos;in object context&apos;);</span><br><span class="line">MethodTest::runTest(&apos;in static context&apos;);</span><br></pre></td></tr></table></figure>
+<h4 id="sleep和-wakeup方法"><a class="header-anchor" href="#sleep和-wakeup方法">¶</a><strong>__sleep和__wakeup方法</strong></h4>
+<blockquote>
+<p><strong>作用：</strong><br>用于序列化的时候调用，即serialize方法时会自动检测类中是否包含__sleep方法，<strong>__sleep方法会先被调用，然后才执行序列化操作，<strong>同理，__wakeup方法如果存在类中，会</strong>先于unserialize执行</strong></p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>注意：</strong> <br><br>
+__sleep() 方法常用于提交未提交的数据，或类似的清理操作。但必须<strong>返回</strong>所有应被序列化的变量名称的<strong>数组</strong>。<br><br>
+__wakeup() 经常用在反序列化操作中，例如重新建立数据库连接，或执行其它初始化操作。(请看下方示例！)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class Connection </span><br><span class="line">&#123;</span><br><span class="line">    protected $link;</span><br><span class="line">    private $server, $username, $password, $db;</span><br><span class="line">    </span><br><span class="line">    public function __construct($server, $username, $password, $db)</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;server = $server;</span><br><span class="line">        $this-&gt;username = $username;</span><br><span class="line">        $this-&gt;password = $password;</span><br><span class="line">        $this-&gt;db = $db;</span><br><span class="line">        $this-&gt;connect();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private function connect()</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;link = mysql_connect($this-&gt;server, $this-&gt;username, $this-&gt;password);</span><br><span class="line">        mysql_select_db($this-&gt;db, $this-&gt;link);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public function __sleep()</span><br><span class="line">    &#123;</span><br><span class="line">    //返回数组</span><br><span class="line">        return array(&apos;server&apos;, &apos;username&apos;, &apos;password&apos;, &apos;db&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    //重新创建连接</span><br><span class="line">    public function __wakeup()</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;connect();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$conn = new Connection();</span><br><span class="line">$arr = serialize($conn);</span><br><span class="line">$e = unseralize($arr);</span><br></pre></td></tr></table></figure>
+<h4 id="tostring和-debuginfo方法"><a class="header-anchor" href="#tostring和-debuginfo方法">¶</a><strong>__toString和__debugInfo方法</strong></h4>
+<blockquote>
+<p><strong>作用：</strong><br><br>
+格式化echo输出某个对象时（因为本身对象无法用echo输出），而__debugInfo是在格式化var_dump和print_r输出。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>用了这两个方法，可以更好的格式化输出（请看下方代码示例）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class TestClass</span><br><span class="line">&#123;</span><br><span class="line">    public $foo;</span><br><span class="line">    public $a;</span><br><span class="line">    public function __construct($foo) </span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;foo = $foo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function __toString() &#123;</span><br><span class="line">        return &quot;这个对象的属性是$this-&gt;foo&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    public function __debugInfo()</span><br><span class="line">    &#123;</span><br><span class="line">        return [</span><br><span class="line">            &apos;foo&apos; =&gt; $this-&gt;foo,</span><br><span class="line">            &apos;a&apos;=&gt; $this-&gt;a</span><br><span class="line">        ];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$class = new TestClass(&apos;Hello&apos;);</span><br><span class="line">echo $class;</span><br><span class="line">print_r($class);</span><br></pre></td></tr></table></figure>
+<h4 id="invoke方法"><a class="header-anchor" href="#invoke方法">¶</a><strong>__invoke方法</strong></h4>
+<blockquote>
+<p><strong>作用：</strong><br><br>
+当尝试用函数的方式调用一个对象是触发此方法。（请看下方代码示例！）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class CallableClass </span><br><span class="line">&#123;</span><br><span class="line">    function __invoke($x) &#123;</span><br><span class="line">        var_dump($x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$obj = new CallableClass;</span><br><span class="line">$obj(5); // int(5)</span><br><span class="line">var_dump(is_callable($obj)) // 检测变量内容是否可当作函数调用bool(true)</span><br></pre></td></tr></table></figure>
+<h4 id="isset和-unset方法"><a class="header-anchor" href="#isset和-unset方法">¶</a><strong>__isset和__unset方法</strong></h4>
+<blockquote>
+<p><strong>作用：</strong><br>也属于属性重载的一类，与__set、__get类似</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>用法：</strong><br>当对不可访问属性调用 isset() 或 empty() 时，__isset() 会被调用,是属于检查属性的用法<br><br>
+当对不可访问属性调用 unset() 时，__unset() 会被调用，是属于删除属性的用法。（请看下方代码示例！）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;  </span><br><span class="line">    private $name;  </span><br><span class="line">    private $sex;  </span><br><span class="line">    private $age;  </span><br><span class="line">    public function __get($property_name) &#123;  </span><br><span class="line">        if(isset($this-&gt;$property_name))  </span><br><span class="line">        &#123;  </span><br><span class="line">            return ($this-&gt;$property_name);  </span><br><span class="line">        &#125; else &#123;  </span><br><span class="line">            return (NULL);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    public function __set($property_name, $value) &#123;  </span><br><span class="line">        $this-&gt;$property_name = $value;  </span><br><span class="line">    &#125;  </span><br><span class="line">    public  function __isset($param) &#123;  </span><br><span class="line">        echo &quot;isset()函数测定私有成员时，自动调用&lt;br&gt;&quot;;  </span><br><span class="line">        return isset($this-&gt;$param);  </span><br><span class="line">    &#125;  </span><br><span class="line">    public  function __unset($param) &#123;  </span><br><span class="line">        echo &quot;当在类外部使用unset()函数来删除私有成员时自动调用的&lt;br&gt;&quot;;  </span><br><span class="line">        unset($this-&gt;$param);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">$p = new Person();  </span><br><span class="line">$p-&gt;name = &quot;LinDD&quot;;  </span><br><span class="line">echo var_dump(isset($p-&gt;name)).&quot;&lt;br&gt;&quot;;  </span><br><span class="line">echo $p-&gt;name.&quot;&lt;br&gt;&quot;;  </span><br><span class="line">unset($p-&gt;name);  </span><br><span class="line">echo $p-&gt;name;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -591,6 +714,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"><i class="fa fa-tag"></i> php</a>
+          
+            <a href="/tags/编程基础/" rel="tag"><i class="fa fa-tag"></i> 编程基础</a>
+          
+        </div>
       
 
       
@@ -697,8 +828,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
@@ -812,6 +952,22 @@ var jiathis_config={
       
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">¶前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.</span> <span class="nav-text">¶介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.2.</span> <span class="nav-text">¶分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#set和-get方法"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">¶__set和__get方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#construct-destruct-clone方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">¶__construct、__destruct、__clone方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call和-callstatic方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">¶__call和__callStatic方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sleep和-wakeup方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">¶__sleep和__wakeup方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tostring和-debuginfo方法"><span class="nav-number">1.2.4.</span> <span class="nav-text">¶__toString和__debugInfo方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#invoke方法"><span class="nav-number">1.2.5.</span> <span class="nav-text">¶__invoke方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isset和-unset方法"><span class="nav-number">1.2.6.</span> <span class="nav-text">¶__isset和__unset方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -852,7 +1008,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共25.5k字</span>
+  <span class="post-count">博客全站共27.4k字</span>
 </div>
 
         
