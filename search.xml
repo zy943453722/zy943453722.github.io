@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PHP进阶基础知识剖析(四)之传输利器curl]]></title>
+    <url>%2Fpost%2Fd44b0051.html</url>
+    <content type="text"><![CDATA[让自己的内心藏着一条巨龙，既是一种苦刑，也是一种乐趣 雨果 ¶前言 本期来讲述一下web服务中很重要的传输利器cURL，同时讲述它与PHP不得不说的秘密~~~ ¶cURL简介 cURL是使用URL语法传输数据的命令行工具，及客户端向服务器请求的工具，可支持多种协议。可用于编写 网页爬虫、获取web services服务、下载/上传文件等 ¶cURL用法 cURL的用法很多，在此仅仅简单的列出几种比较常用的！ cURL www.baidu.com //不带任何参数，用以获取此网页源码 cURL -o [fileName] www.baidu.com //将网页保存起来，相当于下载 cURL -i www.baidu.com //不仅获取网页源码还获取响应头信息 cURL -L www.baidu.com //使自动跳转的网页跳转到新网址 cURL -v www.baidu.com //显示通信整个过程包括请求头、响应头和资源 cURL -X GET/POST/DELETE/PUT www.baidu.com //通过加-X参数指定获取资源的方法 cURL实例： POST提交表单数据：curl -X POST --data “data=xxx” www.example.com 请求时添加http头：curl --xxx www.example.com(此xxx即为请求头) 登陆认证时：curl --user name:password www.example.com ¶PHP与cURL 讲完了cURL的基础之后，重点讲解一下PHP中的用法。其实作为PHP的扩展之一，cURL的支持还是比较完善的。 相关的方法如下： curl作为http客户端发送http请求： curl_init初始化curl会话 curl_escape对url进行编码 curl_unescape对url进行解码 curl_setopt和curl_setopt_array分别是对curl句柄进行会话设置 curl_exec执行curl会话 curl_close关闭curl会话 curl_getinfo获取一个cURL连接资源句柄的信息 接口并发处理： curl_multi_init 返回一个新的curl批处理句柄 curl_multi_setopt 为curl并行处理设置一个选项 curl_multi_add_handle 往curl批处理中增加一个句柄 curl_multi_remove_handle 移除一个 curl_multi_exec 运行当前批处理中每一个句柄 curl_multi_select 阻塞直到cURL批处理连接中有活动连接(轮询等待) curl_multi_close 关闭批处理 重点是setopt方法中的option参数，常见的如下所示： post方法获取资源相关： CURLOPT_POST: 设置使用post方法 CURLOPT_POSTFIELDS： 设置post方法上传的资源 CURLOPT_HTTPHEADER： 设置提交的http头 cookie相关： CURLOPT_COOKIESESSION：将开启新的一次 cookie 会话 CURLOPT_COOKIEFILE：包含cookie数据的文件 CURLOPT_COOKIEJAR：连接结束后，比如，调用 curl_close 后，保存 cookie 信息的文件 CURLOPT_COOKIE：设置具体cookie 文件传输相关： CURLOPT_URL：设置请求URL CURLOPT_RETURNTRANSFER：设置执行后不直接输出而是以文件流形式返回 CURLOPT_HEADER：是否打印头部信息 CURLOPT_FOLLOWLOCATION：是否支持页面跳转 ¶代码示例 12345678910111213141516171819202122$data = &apos;username=xxxxx&amp;password=xxx&amp;remember=1&apos;;$curl = curl_init();//初始化curl对象//设置urlcurl_setopt($curl, CURLOPT_URL, &quot;http://www.imooc.com/usr/login&quot;);curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);//设置执行后不直接打印date_default_timezone_set(&apos;PRC&apos;);//设置时区curl_setopt($curl, CURLOPT_COOKIESESSION, 1);//设置cookie和sessioncurl_setopt($curl, CURLOPT_COOKIEFILE, &quot;cookfile&quot;);//cookie保存的文件curl_setopt($curl, CURLOPT_COOKIEJAR, &quot;cookfile&quot;);//cookie读取//cookie是什么curl_setopt($curl, CURLOPT_COOKIE, session_name().&apos;=&apos;.session_id());curl_setopt($curl, CURLOPT_HEADER, 0);//不打印头部信息curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);//支持页面跳转curl_setopt($curl, CURLOPT_POST, 1);//使用post方法curl_setopt($curl, CURLOPT_POSTFIELDS, $data);curl_setopt($curl, CURLOPT_HTTPHEADER, array(&quot;application/x-www-form-urlencoded; charset=utf-8&quot;, &quot;Content_length:&quot;.strlen($data)));curl_exec($curl);curl_close($curl);]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+        <tag>编程基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PHP进阶基础知识剖析(三)之自动加载]]></title>
     <url>%2Fpost%2Fec09671a.html</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[雄心壮志是茫茫黑夜中的北斗星 罗·勃朗宁 ¶前言 这次我们来介绍又一种很有趣的技术，叫做自动加载，也是实现动态引入文件的技术。好吧，话不多说，让我们进入它的世界！ 那么本期要讲述的是关于自动加载的知识 ¶介绍 来源：在编写面向对象（OOP） 程序时，很多开发者为每个类新建一个 PHP 文件。 这会带来一个烦恼：每个脚本的开头，都需要包含（include）一个长长的列表（每个类都有个文件）。 自动加载，顾名思义，不是静态的靠include/require引入，而是自动的将需要的类引入进来，这就需要依赖一个神奇的函数： spl_autoload_register ¶spl_autoload_register 该函数可以注册任意数量的自动加载器，当使用尚未被定义的类（class）和接口（interface）时自动去加载。通过注册自动加载器，脚本引擎在 PHP 出错失败前有了最后一个机会加载所需的类。 请看下方函数定义！ 123456789101112bool spl_autoload_register ([ callable $autoload_function [, bool $throw = true [, bool $prepend = false ]]] )autoload_function欲注册的自动装载函数。如果没有提供任何参数，则自动注册 autoload 的默认实现函数spl_autoload()。throw此参数设置了 autoload_function 无法成功注册时， spl_autoload_register()是否抛出异常。prepend如果是 true，spl_autoload_register() 会添加函数到队列之首，而不是队列尾部。void __autoload ( string $class )//这个函数来启动自动加载，但用这个注册的话只能注册一个函数就是它本身，而spl_register_autoload则可以注册任意个自定义的autoload 实际上此函数是注册用户自定义的函数作为__autoload去使用，而此函数相当于建立了一个__autoload类型的队列，而__autoload函数底层就是加载未定义的类 ¶代码示例 下面的示例代码就是很典型的框架中为了引入外部的类而作的自动加载 1234567891011121314151617181920212223242526272829303132public static function autoload($className)&#123; $className = str_replace(&apos;\\&apos;,&apos;/&apos;,ltrim($className,&apos;\\&apos;)); $lastPos = strrpos($className,&apos;/&apos;); $classDir = substr($className,0,$lastPos);//从0开始，长度为$lastPos $classPublic = $classDir.&apos;/public/&apos;.substr($className,$lastPos+1); $classPrivate = $classDir.&apos;/private/&apos;.substr($className,$lastPos+1); if (isset(self::$classMap[$className])) &#123; return true; &#125; else &#123; if (is_file(PROJECT_PATH.&quot;/&quot;.$className.&quot;.php&quot;)) &#123; require_once PROJECT_PATH.&quot;/&quot;.$className.&quot;.php&quot;; self::$classMap[$className] = $className; return true; &#125; if (is_file(PROJECT_PATH.&quot;/&quot;.$classPrivate.&quot;.php&quot;)) &#123; require_once PROJECT_PATH.&quot;/&quot;.$classPrivate.&quot;.php&quot;; self::$classMap[$className] = $className; return true; &#125; if (is_file(PROJECT_PATH.&quot;/&quot;.$classPublic.&quot;.php&quot;)) &#123; require_once PROJECT_PATH.&quot;/&quot;.$classPublic.&quot;.php&quot;; self::$classMap[$className] = $className; return true; &#125; else &#123; $str = &quot;没找到对应的文件\n&quot;; self::exceptionHandle($str); return false; &#125; &#125;&#125;spl_autoload_register(&apos;self::autoload&apos;); ¶其他 SPL Autoload 具体有几个函数： spl_autoload_register：注册 _autoload() 函数 spl_autoload_unregister：注销已注册的函数 spl_autoload_functions：返回所有已注册的函数 spl_autoload_call：尝试所有已注册的函数来加载类 spl_autoload ：_autoload() 的默认实现 spl_autoload_extionsions： 注册并返回 spl_autoload 函数使用的默认文件扩展名。 详细的信息请查看php.net!!]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+        <tag>编程基础</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[PHP进阶基础知识剖析(二)之反射API]]></title>
@@ -261,8 +280,8 @@
         <category>编程语言</category>
       </categories>
       <tags>
-        <tag>c++</tag>
         <tag>c</tag>
+        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
@@ -273,8 +292,8 @@
         <category>编程语言</category>
       </categories>
       <tags>
-        <tag>c++</tag>
         <tag>c</tag>
+        <tag>c++</tag>
       </tags>
   </entry>
   <entry>

@@ -140,7 +140,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Life，Books, Code">
+  <meta name="keywords" content="php,编程基础,">
 
 
 
@@ -158,16 +158,20 @@
 
 
 
-<meta name="description" content="Where there is a will there is a way!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="悲伤逆流">
-<meta property="og:url" content="http://zy943453722.ink/archives/2019/index.html">
+<meta name="description" content="让自己的内心藏着一条巨龙，既是一种苦刑，也是一种乐趣 雨果  ¶前言  本期来讲述一下web服务中很重要的传输利器cURL，同时讲述它与PHP不得不说的秘密~~~  ¶cURL简介  cURL是使用URL语法传输数据的命令行工具，及客户端向服务器请求的工具，可支持多种协议。可用于编写 网页爬虫、获取web services服务、下载/上传文件等  ¶cURL用法 cURL的用法很多，在此仅仅简单的">
+<meta name="keywords" content="php,编程基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP进阶基础知识剖析(四)之传输利器curl">
+<meta property="og:url" content="http://zy943453722.ink/post/d44b0051.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="Where there is a will there is a way!">
+<meta property="og:description" content="让自己的内心藏着一条巨龙，既是一种苦刑，也是一种乐趣 雨果  ¶前言  本期来讲述一下web服务中很重要的传输利器cURL，同时讲述它与PHP不得不说的秘密~~~  ¶cURL简介  cURL是使用URL语法传输数据的命令行工具，及客户端向服务器请求的工具，可支持多种协议。可用于编写 网页爬虫、获取web services服务、下载/上传文件等  ¶cURL用法 cURL的用法很多，在此仅仅简单的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://zy943453722.ink/post/1.png">
+<meta property="og:updated_time" content="2019-01-11T02:38:21.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="悲伤逆流">
-<meta name="twitter:description" content="Where there is a will there is a way!">
+<meta name="twitter:title" content="PHP进阶基础知识剖析(四)之传输利器curl">
+<meta name="twitter:description" content="让自己的内心藏着一条巨龙，既是一种苦刑，也是一种乐趣 雨果  ¶前言  本期来讲述一下web服务中很重要的传输利器cURL，同时讲述它与PHP不得不说的秘密~~~  ¶cURL简介  cURL是使用URL语法传输数据的命令行工具，及客户端向服务器请求的工具，可支持多种协议。可用于编写 网页爬虫、获取web services服务、下载/上传文件等  ¶cURL用法 cURL的用法很多，在此仅仅简单的">
+<meta name="twitter:image" content="http://zy943453722.ink/post/1.png">
 
 
 
@@ -197,14 +201,14 @@
 
 
 
-  <link rel="canonical" href="http://zy943453722.ink/archives/2019/">
+  <link rel="canonical" href="http://zy943453722.ink/post/d44b0051.html">
 
 
 
 
 
 
-  <title>归档 | 悲伤逆流</title>
+  <title>PHP进阶基础知识剖析(四)之传输利器curl | 悲伤逆流</title>
   
 
 
@@ -234,7 +238,7 @@
   
 
   
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     
     <div class="headband"></div>
     <a href="https://github.com/zy943453722">
@@ -393,76 +397,393 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 25 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/post/d44b0051.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="悲伤逆流">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/boys.jpg">
+    </span>
+    
+    <span class="logospan" style="display:none" itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="悲伤逆流" src="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悲伤逆流">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/post/ec09671a.html" itemprop="url">
-              
-                <span itemprop="name">PHP进阶基础知识剖析(三)之自动加载</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">PHP进阶基础知识剖析(四)之传输利器curl</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-09T17:01:05Z" content="2019-01-09">
-          01-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T04:28:45+08:00">
+                2018-05-10
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/post/d44b0051.html" class="leancloud_visitors" data-flag-title="PHP进阶基础知识剖析(四)之传输利器curl">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+             <span>℃</span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  845
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
+      
 
+      
+        <blockquote class="blockquote-center">让自己的内心藏着一条巨龙，既是一种苦刑，也是一种乐趣
+<br><b>雨果<b>
+</b></b></blockquote>
+<h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
+<blockquote>
+<p>本期来讲述一下web服务中很重要的传输利器cURL，同时讲述它与PHP不得不说的秘密~~~</p>
+</blockquote>
+<h3 id="curl简介"><a class="header-anchor" href="#curl简介">¶</a>cURL简介</h3>
+<blockquote>
+<p>cURL是使用URL语法传输数据的命令行工具，及客户端向服务器请求的工具，可支持多种协议。可用于编写 网页爬虫、获取web services服务、下载/上传文件等</p>
+</blockquote>
+<h3 id="curl用法"><a class="header-anchor" href="#curl用法">¶</a>cURL用法</h3>
+<p><strong>cURL的用法很多，在此仅仅简单的列出几种比较常用的！</strong></p>
+<blockquote>
+<ul>
+<li>cURL <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>  //不带任何参数，用以获取此网页源码</li>
+<li>cURL -o [fileName] <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> //将网页保存起来，相当于下载</li>
+<li>cURL -i <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> //不仅获取网页源码还获取响应头信息</li>
+<li>cURL -L <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> //使自动跳转的网页跳转到新网址</li>
+<li>cURL -v <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> //显示通信整个过程包括请求头、响应头和资源</li>
+<li>cURL -X GET/POST/DELETE/PUT <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> //通过加-X参数指定获取资源的方法</li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>cURL实例：</strong><br></p>
+<ol>
+<li>POST提交表单数据：<br>curl -X POST --data “data=xxx” <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a></li>
+<li>请求时添加http头：<br>curl --xxx <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a>(此xxx即为请求头)</li>
+<li>登陆认证时：<br>curl --user name:password <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a></li>
+</ol>
+</blockquote>
+<h3 id="php与curl"><a class="header-anchor" href="#php与curl">¶</a>PHP与cURL</h3>
+<p><strong>讲完了cURL的基础之后，重点讲解一下PHP中的用法。其实作为PHP的扩展之一，cURL的支持还是比较完善的。</strong></p>
+<p><img src="/post/1.png" alt="图1"></p>
+<blockquote>
+<p><strong>相关的方法如下：</strong><br><br><br>
+<strong><em>curl作为http客户端发送http请求：<br></em></strong><br>
+	curl_init初始化curl会话<br><br>
+	curl_escape对url进行编码<br><br>
+	curl_unescape对url进行解码<br><br>
+	curl_setopt和curl_setopt_array分别是对curl句柄进行会话设置<br><br>
+	curl_exec执行curl会话<br><br>
+	curl_close关闭curl会话<br><br>
+	curl_getinfo获取一个cURL连接资源句柄的信息<br><br>
+<strong><em>接口并发处理：<br></em></strong><br>
+	curl_multi_init 返回一个新的curl批处理句柄<br><br>
+	curl_multi_setopt 为curl并行处理设置一个选项<br><br>
+	curl_multi_add_handle 往curl批处理中增加一个句柄<br><br>
+	curl_multi_remove_handle 移除一个<br><br>
+	curl_multi_exec 运行当前批处理中每一个句柄<br><br>
+	curl_multi_select 阻塞直到cURL批处理连接中有活动连接(轮询等待)<br><br>
+	curl_multi_close 关闭批处理<br></p>
+</blockquote>
+<p><strong>重点是setopt方法中的option参数，常见的如下所示：<br></strong></p>
+<blockquote>
+<ul>
+<li><strong>post方法获取资源相关：</strong><br><br>
+CURLOPT_POST: 设置使用post方法<br><br>
+CURLOPT_POSTFIELDS： 设置post方法上传的资源<br><br>
+CURLOPT_HTTPHEADER： 设置提交的http头<br></li>
+<li><strong>cookie相关：</strong><br><br>
+CURLOPT_COOKIESESSION：将开启新的一次 cookie 会话<br><br>
+CURLOPT_COOKIEFILE：包含cookie数据的文件<br><br>
+CURLOPT_COOKIEJAR：连接结束后，比如，调用 curl_close 后，保存 cookie 信息的文件<br><br>
+CURLOPT_COOKIE：设置具体cookie<br></li>
+<li><strong>文件传输相关：</strong><br><br>
+CURLOPT_URL：设置请求URL<br><br>
+CURLOPT_RETURNTRANSFER：设置执行后不直接输出而是以文件流形式返回<br><br>
+CURLOPT_HEADER：是否打印头部信息<br><br>
+CURLOPT_FOLLOWLOCATION：是否支持页面跳转<br></li>
+</ul>
+</blockquote>
+<h4 id="代码示例"><a class="header-anchor" href="#代码示例">¶</a>代码示例</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$data = &apos;username=xxxxx&amp;password=xxx&amp;remember=1&apos;;</span><br><span class="line">$curl = curl_init();//初始化curl对象</span><br><span class="line">//设置url</span><br><span class="line">curl_setopt($curl, CURLOPT_URL, &quot;http://www.imooc.com/usr/login&quot;);</span><br><span class="line">curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);//设置执行后不直接打印</span><br><span class="line"></span><br><span class="line">date_default_timezone_set(&apos;PRC&apos;);//设置时区</span><br><span class="line">curl_setopt($curl, CURLOPT_COOKIESESSION, 1);//设置cookie和session</span><br><span class="line">curl_setopt($curl, CURLOPT_COOKIEFILE, &quot;cookfile&quot;);//cookie保存的文件</span><br><span class="line">curl_setopt($curl, CURLOPT_COOKIEJAR, &quot;cookfile&quot;);//cookie读取</span><br><span class="line">//cookie是什么</span><br><span class="line">curl_setopt($curl, CURLOPT_COOKIE, session_name().&apos;=&apos;.session_id());</span><br><span class="line">curl_setopt($curl, CURLOPT_HEADER, 0);//不打印头部信息</span><br><span class="line">curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);//支持页面跳转</span><br><span class="line">curl_setopt($curl, CURLOPT_POST, 1);//使用post方法</span><br><span class="line">curl_setopt($curl, CURLOPT_POSTFIELDS, $data);</span><br><span class="line">curl_setopt($curl, CURLOPT_HTTPHEADER, array(&quot;application/x-www-form-urlencoded;</span><br><span class="line">               charset=utf-8&quot;,</span><br><span class="line">               &quot;Content_length:&quot;.strlen($data)</span><br><span class="line">));</span><br><span class="line">curl_exec($curl);</span><br><span class="line">curl_close($curl);</span><br></pre></td></tr></table></figure>
+
+      
     </div>
+    
+    
+    
+
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/post/d44b0051.html" title="PHP进阶基础知识剖析(四)之传输利器curl">http://zy943453722.ink/post/d44b0051.html</a><br><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+    <div>
+  
+    
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+  <div>
+      
+        
+
+      
+  </div>
+   </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"><i class="fa fa-tag"></i> php</a>
+          
+            <a href="/tags/编程基础/" rel="tag"><i class="fa fa-tag"></i> 编程基础</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/ec09671a.html" rel="next" title="PHP进阶基础知识剖析(三)之自动加载">
+                <i class="fa fa-chevron-left"></i> PHP进阶基础知识剖析(三)之自动加载
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
  
           </div>
           
+
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTI4Ni83ODM1"></div>
+    
+  </div>
 
 
         </div>
@@ -484,8 +805,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
@@ -501,7 +831,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -599,6 +929,22 @@
       
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">¶前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#curl简介"><span class="nav-number">1.1.</span> <span class="nav-text">¶cURL简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curl用法"><span class="nav-number">1.2.</span> <span class="nav-text">¶cURL用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php与curl"><span class="nav-number">1.3.</span> <span class="nav-text">¶PHP与cURL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码示例"><span class="nav-number">1.3.1.</span> <span class="nav-text">¶代码示例</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -639,7 +985,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共28.7k字</span>
+  <span class="post-count">博客全站共30.4k字</span>
 </div>
 
         
@@ -739,6 +1085,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -767,6 +1117,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1226,6 +1587,23 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 15805,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   
