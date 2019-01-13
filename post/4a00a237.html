@@ -140,7 +140,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Life，Books, Code">
+  <meta name="keywords" content="数据库,">
 
 
 
@@ -158,16 +158,21 @@
 
 
 
-<meta name="description" content="Where there is a will there is a way!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="悲伤逆流">
-<meta property="og:url" content="http://zy943453722.ink/categories/IPC进程通信/index.html">
+<meta name="description" content="伟大的人物都走过了荒沙大漠，才登上光荣的高峰。 巴尔扎克  ¶前言  之前对MySQL的锁机制基本是敬而远之，因为设计的太过于复杂，而且现实中还没有遇到并发量很大的情况，故而锁也很少遇到。但随着并发量的增大，我决定要啃一下这块硬骨头！！   ¶锁的分类  按概念分:  悲观锁: 假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作。 乐观锁: 假设不会发生并发冲突，只在提交操作时检查是否违反数据完">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="彻底弄懂MySQL锁机制">
+<meta property="og:url" content="http://zy943453722.ink/post/4a00a237.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="Where there is a will there is a way!">
+<meta property="og:description" content="伟大的人物都走过了荒沙大漠，才登上光荣的高峰。 巴尔扎克  ¶前言  之前对MySQL的锁机制基本是敬而远之，因为设计的太过于复杂，而且现实中还没有遇到并发量很大的情况，故而锁也很少遇到。但随着并发量的增大，我决定要啃一下这块硬骨头！！   ¶锁的分类  按概念分:  悲观锁: 假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作。 乐观锁: 假设不会发生并发冲突，只在提交操作时检查是否违反数据完">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://zy943453722.ink/post/1.png">
+<meta property="og:image" content="http://zy943453722.ink/post/2.png">
+<meta property="og:updated_time" content="2019-01-13T13:20:08.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="悲伤逆流">
-<meta name="twitter:description" content="Where there is a will there is a way!">
+<meta name="twitter:title" content="彻底弄懂MySQL锁机制">
+<meta name="twitter:description" content="伟大的人物都走过了荒沙大漠，才登上光荣的高峰。 巴尔扎克  ¶前言  之前对MySQL的锁机制基本是敬而远之，因为设计的太过于复杂，而且现实中还没有遇到并发量很大的情况，故而锁也很少遇到。但随着并发量的增大，我决定要啃一下这块硬骨头！！   ¶锁的分类  按概念分:  悲观锁: 假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作。 乐观锁: 假设不会发生并发冲突，只在提交操作时检查是否违反数据完">
+<meta name="twitter:image" content="http://zy943453722.ink/post/1.png">
 
 
 
@@ -197,14 +202,14 @@
 
 
 
-  <link rel="canonical" href="http://zy943453722.ink/categories/IPC进程通信/">
+  <link rel="canonical" href="http://zy943453722.ink/post/4a00a237.html">
 
 
 
 
 
 
-  <title>分类: IPC进程通信 | 悲伤逆流</title>
+  <title>彻底弄懂MySQL锁机制 | 悲伤逆流</title>
   
 
 
@@ -234,7 +239,7 @@
   
 
   
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     
     <div class="headband"></div>
     <a href="https://github.com/zy943453722">
@@ -393,109 +398,505 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>IPC进程通信<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/post/4a00a237.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="悲伤逆流">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/boys.jpg">
+    </span>
+    
+    <span class="logospan" style="display:none" itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="悲伤逆流" src="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悲伤逆流">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/post/c37ff4aa.html" itemprop="url">
-              
-                <span itemprop="name">IPC之管道通信的dup和dup2函数</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">彻底弄懂MySQL锁机制</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-12-06T14:56:51Z" content="2017-12-06">
-          12-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-14T00:22:23+08:00">
+                2018-10-13
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/post/4a00a237.html" class="leancloud_visitors" data-flag-title="彻底弄懂MySQL锁机制">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+             <span>℃</span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,327
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/bac82e48.html" itemprop="url">
-              
-                <span itemprop="name">I/O复用3个模型的比较</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-11-16T16:25:40Z" content="2017-11-16">
-          11-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <blockquote class="blockquote-center">伟大的人物都走过了荒沙大漠，才登上光荣的高峰。
+<br><b>巴尔扎克</b>
+</blockquote>
+<h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
+<blockquote>
+<p>之前对MySQL的锁机制基本是敬而远之，因为设计的太过于复杂，而且现实中还没有遇到并发量很大的情况，故而锁也很少遇到。但随着并发量的增大，我决定要啃一下这块硬骨头！！<br>
+<font color="red"></font></p>
+</blockquote>
+<h3 id="锁的分类"><a class="header-anchor" href="#锁的分类">¶</a>锁的分类</h3>
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p><strong>按概念分:</strong><br></p>
+<ul>
+<li><strong>悲观锁:</strong><br><br>
+假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作。</li>
+<li><strong>乐观锁:</strong><br><br>
+假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。 乐观锁不能解决脏读的问题。</li>
+</ul>
+<p><strong>按粒度分：<br></strong></p>
+<ul>
+<li><strong>行锁：</strong><br>给某个数据记录加锁,实际是对索引加锁</li>
+<li><strong>表锁：</strong><br>给某个表加锁</li>
+<li><strong>页锁：</strong><br>给某个页加锁</li>
+</ul>
+<blockquote>
+<p>乐观锁, 顾名思义，就是很乐观，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号等机制。乐观锁适用于多读的应用类型，这样可以提高吞吐量。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>悲观锁，顾名思义，就是很悲观，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会block直到它拿到锁。传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>行锁：锁开销大，粒度小，发生冲突概率低，但并发度高，可能出现死锁。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>表锁: 锁开销小，加锁快，不会出现死锁，锁粒度大，但并发度低，发生冲突概率高</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>页锁：基于行锁和表锁之间<br>
+<font color="red"></font></p>
+</blockquote>
+<h3 id="概念前提"><a class="header-anchor" href="#概念前提">¶</a>概念前提</h3>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/4bad3206.html" itemprop="url">
-              
-                <span itemprop="name">I/O复用之poll和epoll</span>
-              
-            </a>
-        
-      </h2>
+<blockquote>
+<p>MyISAM中读和共享一个意思，写和独占一个意思，这是因为读时就隐式加了共享，写时就隐式加了独占。<br>
+而InnoDB中不同，写和排他一个意思，读和共享不一个意思，即读也可以加排他锁，因为select不存在隐式加锁。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>MyISAM采取的是读写均隐式加锁。<br>
+InnoDB采取的是基于多版本的并发控制协议----MVCC：即读不加锁，读写不冲突。（后面会提到MVCC的概念）<br>
+<font color="red"></font></p>
+</blockquote>
+<h3 id="myisam中的锁"><a class="header-anchor" href="#myisam中的锁">¶</a>MyISAM中的锁</h3>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-11-12T21:59:25Z" content="2017-11-12">
-          11-12
-        </time>
-      </div>
+<blockquote>
+<p>MyISAM中的锁为表锁，其只有两种模式：表共享读锁+表独占写锁。<br>MyISAM不会死锁的原因：<strong>Mysql一次获取了sql语句需要的所有的锁，不存在去等待他人释放的问题。</strong></p>
+</blockquote>
+<p>默认情况下，写锁比读锁具有更高的优先级：当一个锁释放时，这个锁会优先给写锁队列中等候的获取锁请求，然后再给读锁队列中等候的获取锁请求。 这样就不适合有大量更新操作和查询操作的情景，会出现&quot;饿死&quot;现象。</p>
+<p>可以设置改变读锁和写锁的优先级：</p>
+<ul>
+<li>通过指定启动参数low-priority-updates，使MyISAM引擎默认给予读请求以优先的权利。</li>
+<li>通过执行命令SET LOW_PRIORITY_UPDATES=1，使该连接发出的更新请求优先级降低。</li>
+<li>通过指定INSERT、UPDATE、DELETE语句的LOW_PRIORITY属性，降低该语句的优先级。</li>
+<li>给系统参数max_write_lock_count设置一个合适的值，当一个表的读锁达到这个值后，MySQL就暂时将写请求的优先级降低，给读进程一定获得锁的机会。</li>
+</ul>
+<p><strong>对于MyISAM的加锁情况与其他用户行为关系，请看下图：</strong><br>
+<img src="/post/1.png" alt="图1"><br>
+<font color="red"></font></p>
+<h4 id="隐式加锁"><a class="header-anchor" href="#隐式加锁">¶</a>隐式加锁</h4>
 
-    </header>
-  </article>
+<blockquote>
+<p>MyISAM在执行读写之前都会自动加锁,隐式加锁的作用如下：</p>
+</blockquote>
+<p><strong><em>注：因为隐式加锁只涉及一条sql语句所以不存在对加锁方的影响</em></strong></p>
+<ul>
+<li>表共享读锁：不会阻塞其他用户读，但会阻塞其他用户写（也可以说不会阻塞其他用户加共享锁，但会阻塞其他用户加排他锁）</li>
+<li>表独占写锁：既会阻塞其他用户读，也会阻塞其他用户写（也可以说既会阻塞其他用户加共享锁，也会阻塞其他用户加排他锁）<br>
+<font color="red"></font></li>
+</ul>
+<h4 id="显式加锁"><a class="header-anchor" href="#显式加锁">¶</a>显式加锁</h4>
 
+<blockquote>
+<p>利用lock table(s) xxxx read/write [local]命令加锁，相当于多条SQL语句形成个整体或者是会话，然后加锁。有点像InnoDB中的事务。显式加锁的作用：</p>
+</blockquote>
+<ul>
+<li>对加锁方而言：
+<ul>
+<li>表读锁：当前会话只能执行加锁的表上的select，既不能对加锁的表进行update、insert、delete,也不能执行其他未加锁表上的任何操作</li>
+<li>表写锁：当前会话仍不能访问其他未加锁表的任何操作，但可以对加锁表执行select、update、insert、delete操作</li>
+</ul>
+</li>
+<li>对其他并发用户而言：
+<ul>
+<li>表读锁：能顺利select，执行update/delete会阻塞，如果开了并发插入功能，且无空隙那么能顺利insert，否则阻塞</li>
+<li>表写锁：做任何操作都会阻塞。<br>
+<font color="red"></font></li>
+</ul>
+</li>
+</ul>
+<h4 id="并发插入"><a class="header-anchor" href="#并发插入">¶</a>并发插入</h4>
+
+<blockquote>
+<p>特别需要提一下的是并发插入，对于MyISAM表存在这个原理。</p>
+</blockquote>
+<p>如果你使用LOCK TABLES显式获取表锁，则可以请求READ LOCAL锁而不是READ锁，以便在锁定表时，其他会话可以使用并发插入。</p>
+<ul>
+<li>当concurrent_insert设置为0时，不允许并发插入。</li>
+<li>当concurrent_insert设置为1时，如果MyISAM表中没有空洞（即表的中间没有被删除的行），MyISAM允许在一个线程读表的同时，另一个线程从表尾插入记录。这也是MySQL的默认设置。</li>
+<li>当concurrent_insert设置为2时，无论MyISAM表中有没有空洞，都允许在表尾并发插入记录。<br>
+<font color="red"></font></li>
+</ul>
+<h3 id="innodb中的锁"><a class="header-anchor" href="#innodb中的锁">¶</a>InnoDB中的锁</h3>
+
+<blockquote>
+<p>众所周知，InnoDB中的锁分为行锁和表锁，那下面就分开来谈谈行锁和表锁~~</p>
+</blockquote>
+<p><strong>对于InnoDB的行加锁情况与其他用户行为关系，请看下图：</strong><br>
+<img src="/post/2.png" alt="图1"><br>
+<font color="red"></font></p>
+<h4 id="innodb的行锁"><a class="header-anchor" href="#innodb的行锁">¶</a>InnoDB的行锁</h4>
+
+<blockquote>
+<p>InnoDB 实现了以下两种类型的行锁：</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>共享锁（S）：允许一个事务去读一行，阻止其他事务获得相同数据集的排他锁。</li>
+<li>排他锁（X）：允许获得排他锁的事务更新数据，阻止其他事务取得相同数据集的共享读锁和排他写锁。</li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<p>为了允许行锁和表锁共存，实现多粒度锁机制，InnoDB 还有两种内部使用的意向锁（Intention Locks），这两种意向锁都是<strong>表锁</strong>：</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>意向共享锁（IS）：事务打算给数据行加行共享锁，事务在给一个数据行加共享锁前必须先取得该表的 IS 锁。</li>
+<li>意向排他锁（IX）：事务打算给数据行加行排他锁，事务在给一个数据行加排他锁前必须先取得该表的 IX 锁。<br>
+<font color="red"></font></li>
+</ul>
+</blockquote>
+<h5 id="隐式加锁-v2"><a class="header-anchor" href="#隐式加锁-v2">¶</a>隐式加锁</h5>
+
+<blockquote>
+<ul>
+<li>意向锁(IS/IX)是引擎自己加，不需要用户干预</li>
+<li>对于 UPDATE、 DELETE 和 INSERT 语句， InnoDB会自动给涉及数据集加排他锁（X)</li>
+<li>对于普通 SELECT 语句，InnoDB 不会加任何锁</li>
+</ul>
+</blockquote>
+<p><strong>注：InnoDB在事务执行过程中，使用两阶段锁协议：<br>
+随时都可以执行锁定，InnoDB会根据隔离级别在需要的时候自动加锁；<br>
+锁只有在执行commit或者rollback的时候才会释放，并且所有的锁都是在同一时刻被释放。</strong><br>
+<font color="red"></font></p>
+<h5 id="显式加锁-v2"><a class="header-anchor" href="#显式加锁-v2">¶</a>显式加锁</h5>
+
+<blockquote>
+<p>select … lock in share mode //共享锁 <br><br>
+select … for update //排他锁</p>
+</blockquote>
+<p><strong>由上图可以看出：</strong><br>
+<br>加了共享锁，其他 session 仍然可以查询记录，并也可以对该记录加 share mode 的共享锁。但是如果当前事务需要对该记录进行更新操作，则很有可能造成死锁。<br>
+而加了排他锁，其他 session仍 可以查询该记录，但是不能对该记录加共享锁或排他锁，而是等待获得锁<br>
+<font color="red"></font></p>
+<h5 id="行锁实现及mvcc"><a class="header-anchor" href="#行锁实现及mvcc">¶</a>行锁实现及MVCC</h5>
+
+<blockquote>
+<p><strong>实现方式:</strong><br><br>
+InnoDB 行锁是通过给索引上的索引项加锁来实现的，这一点 MySQL 与 Oracle 不同，后者是通过在数据块中对相应数据行加锁来实现的。InnoDB 这种行锁实现特点意味着：只有通过索引条件检索数据，InnoDB 才使用行级锁，否则，InnoDB 将使用表锁！<br><br>
+<strong>但是，如果索引是个非主键非唯一索引，那么可能存在两行数据其中的索引列数据一致，这时候加锁就会出现锁冲突！！</strong></p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>MVCC解释：</strong><br>
+多版本控制: 指的是一种提高并发的技术。最早的数据库系统，只有读读之间可以并发，读写，写读，写写都要阻塞。引入多版本之后，只有写写之间相互阻塞，其他三种操作都可以并行，这样大幅度提高了InnoDB的并发度。<br>
+（更多MVCC内容请参见<a href="https://segmentfault.com/a/1190000012650596" target="_blank" rel="noopener">MVCC</a>）<br>
+<font color="red"></font></p>
+</blockquote>
+<h4 id="innodb的表锁"><a class="header-anchor" href="#innodb的表锁">¶</a>InnoDB的表锁</h4>
+
+<blockquote>
+<p>值得一提的是，InnoDB的表锁实际是由MySQL Server管理的，而非InnoDB引擎，仅当autocommit=0、innodb_table_locks=1(默认设置)，InnoDB层才知道MySQL加的表锁，因此做表锁时，<strong>记得set autocommit = 0</strong></p>
+</blockquote>
+<p>参考资料：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/29150809" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/29150809</a><br>
+<a href="https://segmentfault.com/a/1190000012650596" target="_blank" rel="noopener">https://segmentfault.com/a/1190000012650596</a></p>
 
       
     </div>
+    
+    
+    
 
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/post/4a00a237.html" title="彻底弄懂MySQL锁机制">http://zy943453722.ink/post/4a00a237.html</a><br><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+    <div>
+  
+    
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+  <div>
+      
+        
+
+      
+  </div>
+   </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/ba6dd70.html" rel="next" title="PHP进阶基础知识剖析(五)之通信神器socket">
+                <i class="fa fa-chevron-left"></i> PHP进阶基础知识剖析(五)之通信神器socket
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
  
           </div>
           
+
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTI4Ni83ODM1"></div>
+    
+  </div>
 
 
         </div>
@@ -517,8 +918,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
@@ -631,6 +1041,22 @@
 
       
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">¶前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#锁的分类"><span class="nav-number">1.1.</span> <span class="nav-text">¶锁的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念前提"><span class="nav-number">1.2.</span> <span class="nav-text">¶概念前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#myisam中的锁"><span class="nav-number">1.3.</span> <span class="nav-text">¶MyISAM中的锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式加锁"><span class="nav-number">1.3.1.</span> <span class="nav-text">¶隐式加锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显式加锁"><span class="nav-number">1.3.2.</span> <span class="nav-text">¶显式加锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发插入"><span class="nav-number">1.3.3.</span> <span class="nav-text">¶并发插入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#innodb中的锁"><span class="nav-number">1.4.</span> <span class="nav-text">¶InnoDB中的锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#innodb的行锁"><span class="nav-number">1.4.1.</span> <span class="nav-text">¶InnoDB的行锁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐式加锁-v2"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">¶隐式加锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#显式加锁-v2"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">¶显式加锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行锁实现及mvcc"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">¶行锁实现及MVCC</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#innodb的表锁"><span class="nav-number">1.4.2.</span> <span class="nav-text">¶InnoDB的表锁</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -772,6 +1198,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -800,6 +1230,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1259,6 +1700,23 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 15805,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   

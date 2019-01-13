@@ -140,7 +140,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Life，Books, Code">
+  <meta name="keywords" content="php,编程基础,">
 
 
 
@@ -158,16 +158,18 @@
 
 
 
-<meta name="description" content="Where there is a will there is a way!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="悲伤逆流">
-<meta property="og:url" content="http://zy943453722.ink/categories/IPC进程通信/index.html">
+<meta name="description" content="人若志趣不远，心不在焉，虽学不成。 张载  ¶前言  上一篇我们讲解了php网络通信中的传输利器cURL，同样的，作为在网络中不可或缺的一部分，socket也是必须要了解的。下面，让我们一同探寻PHP与socket的故事~~~  ¶Socket介绍  Socket通常称之为套接字，用于描述ip和端口，是一个通信链的句柄。应用程序中可以通过其向网络发送请求或应答网络请求。socket不是一个程序，也">
+<meta name="keywords" content="php,编程基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP进阶基础知识剖析(五)之通信神器socket">
+<meta property="og:url" content="http://zy943453722.ink/post/ba6dd70.html">
 <meta property="og:site_name" content="悲伤逆流">
-<meta property="og:description" content="Where there is a will there is a way!">
+<meta property="og:description" content="人若志趣不远，心不在焉，虽学不成。 张载  ¶前言  上一篇我们讲解了php网络通信中的传输利器cURL，同样的，作为在网络中不可或缺的一部分，socket也是必须要了解的。下面，让我们一同探寻PHP与socket的故事~~~  ¶Socket介绍  Socket通常称之为套接字，用于描述ip和端口，是一个通信链的句柄。应用程序中可以通过其向网络发送请求或应答网络请求。socket不是一个程序，也">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-12T08:00:10.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="悲伤逆流">
-<meta name="twitter:description" content="Where there is a will there is a way!">
+<meta name="twitter:title" content="PHP进阶基础知识剖析(五)之通信神器socket">
+<meta name="twitter:description" content="人若志趣不远，心不在焉，虽学不成。 张载  ¶前言  上一篇我们讲解了php网络通信中的传输利器cURL，同样的，作为在网络中不可或缺的一部分，socket也是必须要了解的。下面，让我们一同探寻PHP与socket的故事~~~  ¶Socket介绍  Socket通常称之为套接字，用于描述ip和端口，是一个通信链的句柄。应用程序中可以通过其向网络发送请求或应答网络请求。socket不是一个程序，也">
 
 
 
@@ -197,14 +199,14 @@
 
 
 
-  <link rel="canonical" href="http://zy943453722.ink/categories/IPC进程通信/">
+  <link rel="canonical" href="http://zy943453722.ink/post/ba6dd70.html">
 
 
 
 
 
 
-  <title>分类: IPC进程通信 | 悲伤逆流</title>
+  <title>PHP进阶基础知识剖析(五)之通信神器socket | 悲伤逆流</title>
   
 
 
@@ -234,7 +236,7 @@
   
 
   
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     
     <div class="headband"></div>
     <a href="https://github.com/zy943453722">
@@ -393,109 +395,373 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>IPC进程通信<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zy943453722.ink/post/ba6dd70.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="悲伤逆流">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/boys.jpg">
+    </span>
+    
+    <span class="logospan" style="display:none" itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="悲伤逆流" src="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悲伤逆流">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/post/c37ff4aa.html" itemprop="url">
-              
-                <span itemprop="name">IPC之管道通信的dup和dup2函数</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">PHP进阶基础知识剖析(五)之通信神器socket</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-12-06T14:56:51Z" content="2017-12-06">
-          12-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T22:51:16+08:00">
+                2018-05-12
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/post/ba6dd70.html" class="leancloud_visitors" data-flag-title="PHP进阶基础知识剖析(五)之通信神器socket">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+             <span>℃</span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  760
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/bac82e48.html" itemprop="url">
-              
-                <span itemprop="name">I/O复用3个模型的比较</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-11-16T16:25:40Z" content="2017-11-16">
-          11-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/post/4bad3206.html" itemprop="url">
-              
-                <span itemprop="name">I/O复用之poll和epoll</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-11-12T21:59:25Z" content="2017-11-12">
-          11-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <blockquote class="blockquote-center">人若志趣不远，心不在焉，虽学不成。
+<br><b>张载<b>
+</b></b></blockquote>
+<h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
+<blockquote>
+<p>上一篇我们讲解了php网络通信中的传输利器cURL，同样的，作为在网络中不可或缺的一部分，socket也是必须要了解的。下面，让我们一同探寻PHP与socket的故事~~~</p>
+</blockquote>
+<h2 id="socket介绍"><a class="header-anchor" href="#socket介绍">¶</a>Socket介绍</h2>
+<blockquote>
+<p>Socket通常称之为套接字，用于描述ip和端口，是一个通信链的句柄。应用程序中可以通过其向网络发送请求或应答网络请求。socket不是一个程序，也不是一种协议，而是操作系统提供的传输层与应用层之间的一组抽象API。</p>
+</blockquote>
+<h2 id="php与socket"><a class="header-anchor" href="#php与socket">¶</a>PHP与Socket</h2>
+<blockquote>
+<p>而在PHP中，由于PHP自身是由c语言开发而成，因此，无法涉及到底层API和系统调用。仅仅是将API进行封装之后的调用。<br><br>
+另外，由于历史的缘故，PHP中的socket不像c/java中那般智能，其作为服务器的效率较低，因此一般不用其作为服务器编程的利器，同时PHP的socket中对I/O复用的封装仅仅实现了select，而现阶段大多数服务器采用的epoll模型并未涉及。如果想要用PHP实现网络的高效通信，可以添加swoole扩展，具体介绍请移步：<a href="https://www.swoole.com/" target="_blank" rel="noopener">swoole</a></p>
+</blockquote>
+<h3 id="php中socket原型"><a class="header-anchor" href="#php中socket原型">¶</a>PHP中Socket原型</h3>
+<p><strong>原型定义如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SOCKET socket(int af, int type, int protocol);</span><br><span class="line">该函数共有三个参数：</span><br><span class="line">af: 指定应用程序的通信协议族，对于TCP/IP协议族该置为AF_INET</span><br><span class="line">type: 是指创建socket的类型：</span><br><span class="line">    包括基于TCP协议的流套接字类型：SOCK_STREAM</span><br><span class="line">    基于UDP协议的数据报套接字类型：SOCK_DGRAM</span><br><span class="line">    原始套接字类型：SOCK_RAW</span><br><span class="line">protocol:指定使用的通信协议</span><br></pre></td></tr></table></figure>
+<h3 id="几种使用socket的方法"><a class="header-anchor" href="#几种使用socket的方法">¶</a>几种使用socket的方法</h3>
+<blockquote>
+<ol>
+<li>使用原始方式创建一个套接字：<br>
+socket_create(int $domain,int $type,int $protocol)</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>使用fsockopen方式:<br>
+fsockopen($host, $port, &amp;errno, &amp;errstr, $timeout)</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>使用pfsockopen方式：<br>
+跟fsockopen定义一致，只不过fsockopen是长连接</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>使用stream_socket_server/stream_socket_client方式：<br>
+以流方式执行socket</li>
+</ol>
+</blockquote>
+<h3 id="其他方法"><a class="header-anchor" href="#其他方法">¶</a>其他方法</h3>
+<blockquote>
+<p>其实其他方法和原始c语言中的socket API大同小异，只不过是做了一层封装而已。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">socket_bind ( resource $socket , string $address [, int $port = 0 ] ) : bool//绑定函数</span><br><span class="line"></span><br><span class="line">socket_listen ( resource $socket [, int $backlog = 0 ] ) : bool//监听函数</span><br><span class="line"></span><br><span class="line">socket_read ( resource $socket , int $length [, int $type = PHP_BINARY_READ ] ) : string//读数据函数</span><br><span class="line"></span><br><span class="line">socket_recv ( resource $socket , string &amp;$buf , int $len , int $flags ) : int//接收数据函数</span><br><span class="line"></span><br><span class="line">socket_select ( array &amp;$read , array &amp;$write , array &amp;$except , int $tv_sec [, int $tv_usec = 0 ] ) : int//I/O复用的select函数</span><br><span class="line"></span><br><span class="line">socket_send ( resource $socket , string $buf , int $len , int $flags ) : int//发送函数</span><br><span class="line"></span><br><span class="line">socket_set_block ( resource $socket ) : bool//设置阻塞模式</span><br><span class="line"></span><br><span class="line">socket_write ( resource $socket , string $buffer [, int $length = 0 ] ) : int//写数据函数</span><br><span class="line"></span><br><span class="line">socket_accept ( resource $socket ) : resource//服务端接受请求函数</span><br><span class="line"></span><br><span class="line">socket_connect ( resource $socket , string $address [, int $port = 0 ] ) : bool//客户端连接服务器函数</span><br><span class="line"></span><br><span class="line">socket_close ( resource $socket ) : void//关闭套接口资源函数</span><br></pre></td></tr></table></figure>
+<h5 id="代码示例"><a class="header-anchor" href="#代码示例">¶</a><strong>代码示例</strong></h5>
+<p>请移步我的<a href="https://github.com/zy943453722/php-basic-code/tree/master/php-socket" target="_blank" rel="noopener">github</a>查看示例代码实现c/s聊天室和smtp客户端</p>
 
       
     </div>
+    
+    
+    
 
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/post/ba6dd70.html" title="PHP进阶基础知识剖析(五)之通信神器socket">http://zy943453722.ink/post/ba6dd70.html</a><br><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+    <div>
+  
+    
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+  <div>
+      
+        
+
+      
+  </div>
+   </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.png" alt="悲伤逆流 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="悲伤逆流 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"><i class="fa fa-tag"></i> php</a>
+          
+            <a href="/tags/编程基础/" rel="tag"><i class="fa fa-tag"></i> 编程基础</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/d44b0051.html" rel="next" title="PHP进阶基础知识剖析(四)之传输利器curl">
+                <i class="fa fa-chevron-left"></i> PHP进阶基础知识剖析(四)之传输利器curl
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/4a00a237.html" rel="prev" title="彻底弄懂MySQL锁机制">
+                彻底弄懂MySQL锁机制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
  
           </div>
           
+
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTI4Ni83ODM1"></div>
+    
+  </div>
 
 
         </div>
@@ -517,8 +783,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image" src="/images/boys.jpg" alt="悲伤逆流">
@@ -631,6 +906,22 @@
 
       
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">¶前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#socket介绍"><span class="nav-number">2.</span> <span class="nav-text">¶Socket介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php与socket"><span class="nav-number">3.</span> <span class="nav-text">¶PHP与Socket</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#php中socket原型"><span class="nav-number">3.1.</span> <span class="nav-text">¶PHP中Socket原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几种使用socket的方法"><span class="nav-number">3.2.</span> <span class="nav-text">¶几种使用socket的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他方法"><span class="nav-number">3.3.</span> <span class="nav-text">¶其他方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码示例"><span class="nav-number">3.3.0.1.</span> <span class="nav-text">¶代码示例</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -772,6 +1063,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -800,6 +1095,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1259,6 +1565,23 @@
 
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 15805,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   
